@@ -1,0 +1,42 @@
+{
+  "name": "mv-ui",
+  "version": "1.0.0",
+  "homepage": "https://github.com/marcusvy/mvcosmos",
+  "authors": [
+    "Marcus Vinicius <marcusvy@gmail.com>"
+  ],
+  "description": "Plataforma de criação de software ERP",
+  "keywords": [
+    "MVinicius",
+    "mvCosmos",
+    "ERP"
+  ],
+  "license": "BSD 3-Clause",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "dependencies": {
+    "angular": "1.2.16",
+    "json3": "~3.3.1",
+    "es5-shim": "~3.1.0",
+    "angular-resource": "1.2.16",
+    "angular-cookies": "1.2.16",
+    "angular-sanitize": "1.2.16",
+    "angular-animate": "1.2.16",
+    "angular-touch": "1.2.16",
+    "angular-route": "1.2.16",
+    "angular-i18n": "~1.2.19",
+    "normalize-scss": "~3.0.1",
+    "modernizr": "~2.8.3",
+    "marcusvy-font-awesome": "~4.*"
+  },
+  "directory": "bower_components",
+  "mvApp": "html",
+  "mvServer": "mvserver",
+  "mvServerRoot": "public",
+  "mvDist": "dist",
+  "mvTmpPath": ".tmp"
+}
