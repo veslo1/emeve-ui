@@ -1,0 +1,15 @@
+nbproject
+._*
+.~lock.*
+.buildpath
+.DS_Store
+.tmp
+.idea
+.project
+.vagrant
+.settings
+composer.lock
+vendor/bin
+html/bower_components
+node_modules
+dev
