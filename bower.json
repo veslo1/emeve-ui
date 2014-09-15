@@ -1,17 +1,18 @@
 {
-  "name": "mv-ui",
+  "name": "emeve-ui",
   "version": "1.0.0",
-  "homepage": "https://github.com/marcusvy/mvcosmos",
+  "homepage": "https://github.com/marcusvy/emeve-ui",
   "authors": [
     "Marcus Vinicius <marcusvy@gmail.com>"
   ],
-  "description": "Plataforma de criação de software ERP",
+  "description": "Emeve user interface for MVCosmos ERP",
   "keywords": [
     "MVinicius",
     "mvCosmos",
-    "ERP"
+    "ERP",
+    "User Interface"
   ],
-  "license": "BSD 3-Clause",
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -33,7 +34,7 @@
     "modernizr": "~2.8.3",
     "marcusvy-font-awesome": "~4.*"
   },
-  "directory": "bower_components",
+  "directory": "html/bower_components",
   "mvApp": "html",
   "mvServer": "mvserver",
   "mvServerRoot": "public",
