@@ -5,14 +5,25 @@
 <div class="container-fluid">
 
     <div class="mv-row">
-        <div class="mv-col xs-1 sm-1 md-1 lg-1" ng-repeat="num in [1,2,3,4,5,6,7,8,9,10,11,12]">
+        <div class="mv-col-12">
+            mv-col . xs-4 . sm-1 . md-1 . lg-1
+        </div>
+    </div>
+    <div class="mv-row">
+        <div class="mv-col xs-12 sm-1 md-1 lg-1" ng-repeat="num in [1,2,3,4,5,6,7,8,9,10,11,12]">
             <div class="test-content">
                 {{num}}
             </div>
         </div>
-
     </div>
+
     <hr/>
+
+    <div class="mv-row">
+        <div class="mv-col-12">
+            mv-col . xs-4 . sm-1 . md-1 . lg-1
+        </div>
+    </div>
     <div class="mv-row">
         <div class="mv-col xs-2 sm-2 md-2 lg-2" ng-repeat="num in [1,2,3,4,5,6]">
             <div class="test-content">
@@ -32,7 +43,7 @@
     <div class="mv-row">
         <div class="mv-col xs-4 sm-4 md-4 lg-4" ng-repeat="num in [1,2,3]">
             <div class="test-content">
-                4
+                mv-col . xs-4 . sm-4 . md-4 . lg-4
             </div>
         </div>
     </div>
@@ -40,9 +51,181 @@
     <div class="mv-row">
         <div class="mv-col mv-col-6 lg-3" ng-repeat="num in [1,2]">
             <div class="test-content">
+                mv-col-6 lg-3
+            </div>
+        </div>
+    </div>
+
+
+    <hr/>
+    <div class="mv-row">
+        <div class="mv-col mv-col-3">
+            <div class="test-content">
+                3
+            </div>
+        </div>
+        <div class="mv-col mv-col-9">
+            <div class="test-content">
+                9
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+    <div class="mv-row">
+        <div class="mv-col mv-col-4">
+            <div class="test-content">
+                4
+            </div>
+        </div>
+        <div class="mv-col mv-col-8">
+            <div class="test-content">
+                8
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+    <div class="mv-row">
+        <div class="mv-col mv-col-5">
+            <div class="test-content">
+                5
+            </div>
+        </div>
+        <div class="mv-col mv-col-7">
+            <div class="test-content">
+                7
+            </div>
+        </div>
+    </div>
+
+
+    <hr/>
+    <div class="mv-row">
+        <div class="mv-col mv-col-6">
+            <div class="test-content">
+                6
+            </div>
+        </div>
+        <div class="mv-col mv-col-6">
+            <div class="test-content">
                 6
             </div>
         </div>
     </div>
 
+
+    <hr/>
+    <div class="mv-row">
+        <div class="mv-col mv-col-7">
+            <div class="test-content">
+                7
+            </div>
+        </div>
+        <div class="mv-col mv-col-5">
+            <div class="test-content">
+                5
+            </div>
+        </div>
+    </div>
+
+
+    <hr/>
+    <div class="mv-row">
+        <div class="mv-col mv-col-8">
+            <div class="test-content">
+                8
+            </div>
+        </div>
+        <div class="mv-col mv-col-4">
+            <div class="test-content">
+                4
+            </div>
+        </div>
+    </div>
+
+
+    <hr/>
+    <div class="mv-row">
+        <div class="mv-col mv-col-9">
+            <div class="test-content">
+                9
+            </div>
+        </div>
+        <div class="mv-col mv-col-3">
+            <div class="test-content">
+                3
+            </div>
+        </div>
+    </div>
+
+
+    <hr/>
+    <div class="mv-row">
+        <div class="mv-col mv-col-10">
+            <div class="test-content">
+                10
+            </div>
+        </div>
+        <div class="mv-col mv-col-2">
+            <div class="test-content">
+                2
+            </div>
+        </div>
+    </div>
+
+
+    <hr/>
+    <div class="mv-row">
+        <div class="mv-col mv-col-11">
+            <div class="test-content">
+                11
+            </div>
+        </div>
+        <div class="mv-col mv-col-1">
+            <div class="test-content">
+                1
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container">
+    <div class="mv-row">
+        <div id="content" class="mv-col lg-4 lg-push-4 sm-12">
+            <h2>This is Content</h2>
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+
+        <div id="sidebar-left" class="mv-col lg-4  sm-6 lg-pull-4">
+            <h2>This is Left Sidebar</h2>
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+
+
+        <div id="sidebar-right" class="mv-col lg-4 sm-6">
+            <h2>This is Right Sidebar</h2>
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+    </div>
 </div>
