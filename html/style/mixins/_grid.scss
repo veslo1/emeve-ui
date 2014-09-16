@@ -9,8 +9,8 @@
 }
 
 //float decision
-@mixin make-col($direction: 'left'){
-  float: $direction;
+@mixin make-col(){
+  float: left;
 }
 
 // Centered container element
@@ -31,7 +31,6 @@
 // Generate the extra small columns
 @mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
   position: relative;
-  //float: left;
   width: percentage(($columns / $grid-columns));
   min-height: 1px;
   @include make-gutter-space($gutter);
@@ -53,7 +52,6 @@
   @include make-gutter-space($gutter);
 
   @media (min-width: $screen-sm-min) {
-    //float: left;
     width: percentage(($columns / $grid-columns));
   }
 }
@@ -80,7 +78,6 @@
   @include make-gutter-space($gutter);
 
   @media (min-width: $screen-md-min) {
-    //float: left;
     width: percentage(($columns / $grid-columns));
   }
 }
@@ -107,7 +104,6 @@
   @include make-gutter-space($gutter);
 
   @media (min-width: $screen-lg-min) {
-    //float: left;
     width: percentage(($columns / $grid-columns));
   }
 }

@@ -1,3 +1,48 @@
 <h1>
     Grids system
 </h1>
+
+<div class="container-fluid">
+
+    <div class="mv-row">
+        <div class="mv-col xs-1 sm-1 md-1 lg-1" ng-repeat="num in [1,2,3,4,5,6,7,8,9,10,11,12]">
+            <div class="test-content">
+                {{num}}
+            </div>
+        </div>
+
+    </div>
+    <hr/>
+    <div class="mv-row">
+        <div class="mv-col xs-2 sm-2 md-2 lg-2" ng-repeat="num in [1,2,3,4,5,6]">
+            <div class="test-content">
+                2
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="mv-row">
+        <div class="mv-col xs-3 sm-3 md-3 lg-3" ng-repeat="num in [1,2,3,4]">
+            <div class="test-content">
+                3
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="mv-row">
+        <div class="mv-col xs-4 sm-4 md-4 lg-4" ng-repeat="num in [1,2,3]">
+            <div class="test-content">
+                4
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="mv-row">
+        <div class="mv-col-6" ng-repeat="num in [1,2]">
+            <div class="test-content">
+                6
+            </div>
+        </div>
+    </div>
+
+</div>
