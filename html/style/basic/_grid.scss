@@ -50,6 +50,12 @@
 
 @include make-grid-columns();
 
+// Normal grid (default grid (xs alias)
+//
+// Default columns, offsets, pushes, and pulls for all devices
+
+@include make-grid(mv-col);
+
 
 // Extra small grid
 //

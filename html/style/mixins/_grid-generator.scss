@@ -5,9 +5,9 @@
 // Baseado no Bootstrap 3
 
 // [converter] This is defined recursively in LESS, but Sass supports real loops
-@mixin make-grid-columns($i: 1, $list: ".xs-#{$i}, .sm-#{$i}, .md-#{$i}, .lg-#{$i}") {
+@mixin make-grid-columns($i: 1, $list: ".mv-col-#{$i}, .xs-#{$i}, .sm-#{$i}, .md-#{$i}, .lg-#{$i}") {
   @for $i from (1 + 1) through $grid-columns {
-    $list: "#{$list}, .xs-#{$i}, .sm-#{$i}, .md-#{$i}, .lg-#{$i}";
+    $list: ".mv-col-#{$i}, #{$list}, .xs-#{$i}, .sm-#{$i}, .md-#{$i}, .lg-#{$i}";
   }
   #{$list} {
     position: relative;
