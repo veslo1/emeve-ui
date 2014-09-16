@@ -1,12 +1,13 @@
 // Framework grid generation
 //
-// Used only by Bootstrap to generate the correct number of grid classes given
-// any value of `$grid-columns`.
+// Usado somente para gerar o número de classes da grade fornecida
+// e o valor de '$grid-columns'.
+// Baseado no Bootstrap 3
 
 // [converter] This is defined recursively in LESS, but Sass supports real loops
-@mixin make-grid-columns($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
+@mixin make-grid-columns($i: 1, $list: ".xs-#{$i}, .sm-#{$i}, .md-#{$i}, .lg-#{$i}") {
   @for $i from (1 + 1) through $grid-columns {
-    $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
+    $list: "#{$list}, .xs-#{$i}, .sm-#{$i}, .md-#{$i}, .lg-#{$i}";
   }
   #{$list} {
     position: relative;
@@ -20,44 +21,43 @@
 
 
 // [converter] This is defined recursively in LESS, but Sass supports real loops
-@mixin float-grid-columns($class, $i: 1, $list: ".col-#{$class}-#{$i}") {
+@mixin float-grid-columns($class, $i: 1, $list: ".#{$class}-#{$i}") {
   @for $i from (1 + 1) through $grid-columns {
-    $list: "#{$list}, .col-#{$class}-#{$i}";
+    $list: "#{$list}, .#{$class}-#{$i}";
   }
   #{$list} {
     float: left;
   }
 }
 
-
 @mixin calc-grid-column($index, $class, $type) {
   @if ($type == width) and ($index > 0) {
-    .col-#{$class}-#{$index} {
+    .#{$class}-#{$index} {
       width: percentage(($index / $grid-columns));
     }
   }
   @if ($type == push) and ($index > 0) {
-    .col-#{$class}-push-#{$index} {
+    .#{$class}-push-#{$index} {
       left: percentage(($index / $grid-columns));
     }
   }
   @if ($type == push) and ($index == 0) {
-    .col-#{$class}-push-0 {
+    .#{$class}-push-0 {
       left: auto;
     }
   }
   @if ($type == pull) and ($index > 0) {
-    .col-#{$class}-pull-#{$index} {
+    .#{$class}-pull-#{$index} {
       right: percentage(($index / $grid-columns));
     }
   }
   @if ($type == pull) and ($index == 0) {
-    .col-#{$class}-pull-0 {
+    .#{$class}-pull-0 {
       right: auto;
     }
   }
   @if ($type == offset) {
-    .col-#{$class}-offset-#{$index} {
+    .#{$class}-offset-#{$index} {
       margin-left: percentage(($index / $grid-columns));
     }
   }
