@@ -410,14 +410,14 @@ th {
   .container-fluid:after {
     clear: both; }
 
-.row {
+.mv-row {
   margin-left: -15px;
   margin-right: -15px;
   zoom: 1; }
-  .row:before, .row:after {
+  .mv-row:before, .mv-row:after {
     content: "";
     display: table; }
-  .row:after {
+  .mv-row:after {
     clear: both; }
 
 .mv-col {
