@@ -2,16 +2,22 @@
 //
 // Generate semantic grid columns with these mixins.
 
-@mixin make-col($gutter){
+//gerador de espaço
+@mixin make-gutter-space($gutter){
   padding-left:  ($gutter / 2);
   padding-right: ($gutter / 2);
+}
+
+//float decision
+@mixin make-col($direction: 'left'){
+  float: $direction;
 }
 
 // Centered container element
 @mixin container-fixed($gutter: $grid-gutter-width) {
   margin-right: auto;
   margin-left: auto;
-  @include make-col($gutter);
+  @include make-gutter-space($gutter);
   @include clearfix();
 }
 
@@ -25,10 +31,10 @@
 // Generate the extra small columns
 @mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
   position: relative;
-  float: left;
+  //float: left;
   width: percentage(($columns / $grid-columns));
   min-height: 1px;
-  @include make-col($gutter);
+  @include make-gutter-space($gutter);
 }
 @mixin make-xs-column-offset($columns) {
   margin-left: percentage(($columns / $grid-columns));
@@ -44,10 +50,10 @@
 @mixin make-sm-column($columns, $gutter: $grid-gutter-width) {
   position: relative;
   min-height: 1px;
-  @include make-col($gutter);
+  @include make-gutter-space($gutter);
 
   @media (min-width: $screen-sm-min) {
-    float: left;
+    //float: left;
     width: percentage(($columns / $grid-columns));
   }
 }
@@ -71,10 +77,10 @@
 @mixin make-md-column($columns, $gutter: $grid-gutter-width) {
   position: relative;
   min-height: 1px;
-  @include make-col($gutter);
+  @include make-gutter-space($gutter);
 
   @media (min-width: $screen-md-min) {
-    float: left;
+    //float: left;
     width: percentage(($columns / $grid-columns));
   }
 }
@@ -98,10 +104,10 @@
 @mixin make-lg-column($columns, $gutter: $grid-gutter-width) {
   position: relative;
   min-height: 1px;
-  @include make-col($gutter);
+  @include make-gutter-space($gutter);
 
   @media (min-width: $screen-lg-min) {
-    float: left;
+    //float: left;
     width: percentage(($columns / $grid-columns));
   }
 }
