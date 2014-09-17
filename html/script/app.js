@@ -17,6 +17,10 @@ var app = angular.module('EmeveUiApp', [
             templateUrl: 'views/grid.html',
             controller: 'DefaultCtrl'
         })
+        .when('/typography', {
+            templateUrl: 'views/typography.html',
+            controller: 'DefaultCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });
