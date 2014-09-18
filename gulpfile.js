@@ -20,3 +20,8 @@ gulp.task('style', function(){
   .pipe(rename('app.js'))
   .pipe(gulp.dest('./dist/script'));
 });
+
+gulp.task('fontCopy',function(){
+    gulp.src('./html/bower_components/marcusvy-font-awesome/fonts/*')
+        .pipe(gulp.dest('./dist/fonts'))
+})

@@ -1,0 +1,9 @@
+$fa-font-path:        "../fonts/font-awesome" !default;
+$fa-css-prefix:       fa !default;
+$fa-border-color:     $color-light-alt !default;
+$fa-inverse:          $color-white !default;
+
+@import "../../bower_components/marcusvy-font-awesome/scss/font-awesome";
+
+.mv-icon{}
+.mv-icon-stack{}

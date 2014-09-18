@@ -3,15 +3,19 @@
 <head lang="pt-br">
     <meta charset="utf-8">
     <title>Emeve Ui</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style/main.css"/>
     <link rel="stylesheet" href="style/demo.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body class="test">
 
-    <h1>Emeve Ui</h1>
-    <aside id="mainNav" ng-include="'views/layout/main-nav.html'"></aside>
-    <section id="mainContent" ng-view=""></section>
+    <div class="container">
+        <h1><a href="/">Emeve Ui</a></h1>
+        <aside id="mainNav" ng-include="'views/layout/main-nav.html'"></aside>
+    </div>
+    <section id="mainContent" ng-view="" class="container"></section>
 
     <!-- Scripts -->
 
