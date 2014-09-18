@@ -1589,6 +1589,191 @@ pre {
 /**
  * Components
  */
+.mv-btn {
+  display: inline-block;
+  min-width: 6rem;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  padding: 0 .4rem;
+  margin-bottom: 0;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  color: #585858;
+  background-color: transparent;
+  background-image: none;
+  outline: none;
+  border: 1px solid transparent;
+  white-space: nowrap; }
+  .mv-btn:focus, .mv-btn:active:focus, .mv-btn.active:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px; }
+  .mv-btn:hover, .mv-btn:focus {
+    color: #585858;
+    text-decoration: none; }
+  .mv-btn:active, .mv-btn.active {
+    outline: 0;
+    background-image: none; }
+  .mv-btn.disabled, .mv-btn[disabled], fieldset[disabled] .mv-btn {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    box-shadow: none; }
+  .mv-btn.default {
+    color: #585858;
+    background-color: whitesmoke;
+    border-color: #e6e6e6; }
+    .mv-btn.default:hover, .mv-btn.default:focus, .mv-btn.default:active, .mv-btn.default.active, .open > .mv-btn.default.dropdown-toggle {
+      color: #585858;
+      background-color: gainsboro;
+      border-color: #cdcdcd; }
+    .mv-btn.default:active, .mv-btn.default.active, .open > .mv-btn.default.dropdown-toggle {
+      background-image: none; }
+    .mv-btn.default.disabled, .mv-btn.default.disabled:hover, .mv-btn.default.disabled:focus, .mv-btn.default.disabled:active, .mv-btn.default.disabled.active, .mv-btn.default[disabled], .mv-btn.default[disabled]:hover, .mv-btn.default[disabled]:focus, .mv-btn.default[disabled]:active, .mv-btn.default[disabled].active, fieldset[disabled] .mv-btn.default, fieldset[disabled] .mv-btn.default:hover, fieldset[disabled] .mv-btn.default:focus, fieldset[disabled] .mv-btn.default:active, fieldset[disabled] .mv-btn.default.active {
+      background-color: whitesmoke;
+      border-color: #e6e6e6; }
+    .mv-btn.default .badge {
+      color: whitesmoke;
+      background-color: #585858; }
+  .mv-btn.inverse {
+    color: #e6e6e6;
+    background-color: #363636;
+    border-color: #e6e6e6; }
+    .mv-btn.inverse:hover, .mv-btn.inverse:focus, .mv-btn.inverse:active, .mv-btn.inverse.active, .open > .mv-btn.inverse.dropdown-toggle {
+      color: #e6e6e6;
+      background-color: #1c1c1c;
+      border-color: #cdcdcd; }
+    .mv-btn.inverse:active, .mv-btn.inverse.active, .open > .mv-btn.inverse.dropdown-toggle {
+      background-image: none; }
+    .mv-btn.inverse.disabled, .mv-btn.inverse.disabled:hover, .mv-btn.inverse.disabled:focus, .mv-btn.inverse.disabled:active, .mv-btn.inverse.disabled.active, .mv-btn.inverse[disabled], .mv-btn.inverse[disabled]:hover, .mv-btn.inverse[disabled]:focus, .mv-btn.inverse[disabled]:active, .mv-btn.inverse[disabled].active, fieldset[disabled] .mv-btn.inverse, fieldset[disabled] .mv-btn.inverse:hover, fieldset[disabled] .mv-btn.inverse:focus, fieldset[disabled] .mv-btn.inverse:active, fieldset[disabled] .mv-btn.inverse.active {
+      background-color: #363636;
+      border-color: #e6e6e6; }
+    .mv-btn.inverse .badge {
+      color: #363636;
+      background-color: #e6e6e6; }
+  .mv-btn.info {
+    color: white;
+    background-color: #203240;
+    border-color: #314d62; }
+    .mv-btn.info:hover, .mv-btn.info:focus, .mv-btn.info:active, .mv-btn.info.active, .open > .mv-btn.info.dropdown-toggle {
+      color: white;
+      background-color: #0f171e;
+      border-color: #203240; }
+    .mv-btn.info:active, .mv-btn.info.active, .open > .mv-btn.info.dropdown-toggle {
+      background-image: none; }
+    .mv-btn.info.disabled, .mv-btn.info.disabled:hover, .mv-btn.info.disabled:focus, .mv-btn.info.disabled:active, .mv-btn.info.disabled.active, .mv-btn.info[disabled], .mv-btn.info[disabled]:hover, .mv-btn.info[disabled]:focus, .mv-btn.info[disabled]:active, .mv-btn.info[disabled].active, fieldset[disabled] .mv-btn.info, fieldset[disabled] .mv-btn.info:hover, fieldset[disabled] .mv-btn.info:focus, fieldset[disabled] .mv-btn.info:active, fieldset[disabled] .mv-btn.info.active {
+      background-color: #203240;
+      border-color: #314d62; }
+    .mv-btn.info .badge {
+      color: #203240;
+      background-color: white; }
+  .mv-btn.error {
+    color: white;
+    background-color: #ae3311;
+    border-color: #dc4116; }
+    .mv-btn.error:hover, .mv-btn.error:focus, .mv-btn.error:active, .mv-btn.error.active, .open > .mv-btn.error.dropdown-toggle {
+      color: white;
+      background-color: #80250c;
+      border-color: #ae3311; }
+    .mv-btn.error:active, .mv-btn.error.active, .open > .mv-btn.error.dropdown-toggle {
+      background-image: none; }
+    .mv-btn.error.disabled, .mv-btn.error.disabled:hover, .mv-btn.error.disabled:focus, .mv-btn.error.disabled:active, .mv-btn.error.disabled.active, .mv-btn.error[disabled], .mv-btn.error[disabled]:hover, .mv-btn.error[disabled]:focus, .mv-btn.error[disabled]:active, .mv-btn.error[disabled].active, fieldset[disabled] .mv-btn.error, fieldset[disabled] .mv-btn.error:hover, fieldset[disabled] .mv-btn.error:focus, fieldset[disabled] .mv-btn.error:active, fieldset[disabled] .mv-btn.error.active {
+      background-color: #ae3311;
+      border-color: #dc4116; }
+    .mv-btn.error .badge {
+      color: #ae3311;
+      background-color: white; }
+  .mv-btn.success {
+    color: #527310;
+    background-color: #b4e650;
+    border-color: #c7ec7d; }
+    .mv-btn.success:hover, .mv-btn.success:focus, .mv-btn.success:active, .mv-btn.success.active, .open > .mv-btn.success.dropdown-toggle {
+      color: #527310;
+      background-color: #a1e023;
+      border-color: #b4e650; }
+    .mv-btn.success:active, .mv-btn.success.active, .open > .mv-btn.success.dropdown-toggle {
+      background-image: none; }
+    .mv-btn.success.disabled, .mv-btn.success.disabled:hover, .mv-btn.success.disabled:focus, .mv-btn.success.disabled:active, .mv-btn.success.disabled.active, .mv-btn.success[disabled], .mv-btn.success[disabled]:hover, .mv-btn.success[disabled]:focus, .mv-btn.success[disabled]:active, .mv-btn.success[disabled].active, fieldset[disabled] .mv-btn.success, fieldset[disabled] .mv-btn.success:hover, fieldset[disabled] .mv-btn.success:focus, fieldset[disabled] .mv-btn.success:active, fieldset[disabled] .mv-btn.success.active {
+      background-color: #b4e650;
+      border-color: #c7ec7d; }
+    .mv-btn.success .badge {
+      color: #b4e650;
+      background-color: #527310; }
+  .mv-btn.warning {
+    color: #604c09;
+    background-color: #ecc22f;
+    border-color: #f0d05e; }
+    .mv-btn.warning:hover, .mv-btn.warning:focus, .mv-btn.warning:active, .mv-btn.warning.active, .open > .mv-btn.warning.dropdown-toggle {
+      color: #604c09;
+      background-color: #d5aa13;
+      border-color: #ecc22f; }
+    .mv-btn.warning:active, .mv-btn.warning.active, .open > .mv-btn.warning.dropdown-toggle {
+      background-image: none; }
+    .mv-btn.warning.disabled, .mv-btn.warning.disabled:hover, .mv-btn.warning.disabled:focus, .mv-btn.warning.disabled:active, .mv-btn.warning.disabled.active, .mv-btn.warning[disabled], .mv-btn.warning[disabled]:hover, .mv-btn.warning[disabled]:focus, .mv-btn.warning[disabled]:active, .mv-btn.warning[disabled].active, fieldset[disabled] .mv-btn.warning, fieldset[disabled] .mv-btn.warning:hover, fieldset[disabled] .mv-btn.warning:focus, fieldset[disabled] .mv-btn.warning:active, fieldset[disabled] .mv-btn.warning.active {
+      background-color: #ecc22f;
+      border-color: #f0d05e; }
+    .mv-btn.warning .badge {
+      color: #ecc22f;
+      background-color: #604c09; }
+  .mv-btn.muted {
+    color: #848484;
+    background-color: whitesmoke;
+    border-color: #e6e6e6; }
+    .mv-btn.muted:hover, .mv-btn.muted:focus, .mv-btn.muted:active, .mv-btn.muted.active, .open > .mv-btn.muted.dropdown-toggle {
+      color: #848484;
+      background-color: gainsboro;
+      border-color: #cdcdcd; }
+    .mv-btn.muted:active, .mv-btn.muted.active, .open > .mv-btn.muted.dropdown-toggle {
+      background-image: none; }
+    .mv-btn.muted.disabled, .mv-btn.muted.disabled:hover, .mv-btn.muted.disabled:focus, .mv-btn.muted.disabled:active, .mv-btn.muted.disabled.active, .mv-btn.muted[disabled], .mv-btn.muted[disabled]:hover, .mv-btn.muted[disabled]:focus, .mv-btn.muted[disabled]:active, .mv-btn.muted[disabled].active, fieldset[disabled] .mv-btn.muted, fieldset[disabled] .mv-btn.muted:hover, fieldset[disabled] .mv-btn.muted:focus, fieldset[disabled] .mv-btn.muted:active, fieldset[disabled] .mv-btn.muted.active {
+      background-color: whitesmoke;
+      border-color: #e6e6e6; }
+    .mv-btn.muted .badge {
+      color: whitesmoke;
+      background-color: #848484; }
+  .mv-btn.radius {
+    border-radius: 1.125rem; }
+  .mv-btn.circle {
+    width: 2.25rem;
+    min-width: 2.25rem;
+    border-radius: 50%; }
+  .mv-btn.rounded {
+    border-radius: 4px; }
+  .mv-btn:hover {
+    background-color: whitesmoke; }
+  .mv-btn.component {
+    min-width: 3rem;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.5rem;
+    background-color: white;
+    border-color: transparent; }
+    .mv-btn.component.icon {
+      padding: 0; }
+    .mv-btn.component.error {
+      color: #ae3311 !important; }
+    .mv-btn.component:hover {
+      color: white !important; }
+
+.btn-block {
+  display: block;
+  width: 100%; }
+
+.btn-block + .btn-block {
+  margin-top: 5px; }
+
+.mv-btn-default:hover {
+  background-color: #e6e6e6;
+  border-color: #b4e650; }
+
+.mv-btn-default:focus {
+  color: whitesmoke;
+  background-color: #363636;
+  border: 0.1rem solid #969696;
+  box-shadow: none; }
+
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

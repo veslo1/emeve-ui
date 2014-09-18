@@ -1,0 +1,137 @@
+.mv-btn {
+  display: inline-block;
+  min-width: 6rem;
+  height: $size-line-control;
+  line-height: $size-line-control;
+  padding:0 .4rem;
+  margin-bottom: 0;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  color: $color-dark;
+  background-color: transparent;
+  background-image: none;
+  outline: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+
+  &,
+  &:active,
+  &.active {
+    &:focus {
+      @include tab-focus();
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-dark;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    //@include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+    @include opacity(.60);
+    box-shadow: none;
+  }
+
+  &.default {
+    @include button-variant($color-dark,$color-light-alt,$color-light);
+  }
+
+  &.inverse {
+    @include button-variant($color-light,$color-shadow,$color-light);
+  }
+
+  &.info {
+    @include button-variant($color-white,$color-info,$color-state-info);
+  }
+
+  &.error {
+    @include button-variant($color-white,$color-error,$color-state-error);
+  }
+
+  &.success {
+    @include button-variant(darken($color-success,35%),$color-success,$color-state-success);
+  }
+
+  &.warning {
+    @include button-variant(darken($color-warning,35%),$color-warning,$color-state-warning);
+  }
+
+  &.muted {
+    @include button-variant($color-gray,$color-light-alt,$color-light);
+  }
+
+  &.radius{
+    border-radius: $size-line-control/2;
+  }
+
+  &.circle {
+    width: $size-line-control;
+    min-width: $size-line-control;
+    border-radius: 50%;
+  }
+
+  &.rounded {
+    border-radius: $border-radius-base;
+  }
+
+  &:hover {
+    background-color: $color-light-alt;
+  }
+
+  &.component{
+    min-width: 3rem;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: $size-line;
+    background-color: $color-white;
+    border-color: transparent;
+
+    &.icon{
+      padding: 0;
+    }
+    &.error{
+      color: $color-error !important;
+    }
+
+    &:hover{
+      color: $color-white !important;
+    }
+  }
+}
+
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+
+.mv-btn-default:hover {
+  background-color: $color-light;
+  border-color: $color-default;
+}
+
+.mv-btn-default:focus {
+  color: $color-light-alt;
+  background-color: $color-shadow;
+  border: 0.1rem solid $color-bright;
+  box-shadow: none;
+}

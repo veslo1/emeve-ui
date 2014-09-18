@@ -154,9 +154,15 @@ $container-lg:                 $container-large-desktop !default;
 
 //== Sizes
 $size-header: $font-size-base * 3; // 48px;
+$size-component-height: 4rem; //64px
 $size-component: $font-size-base * 12;
 $size-panel: $font-size-base * 25;  // 400px
-
+$size-line: 1.5rem; // 24px
+$size-line-control: 2.25rem;//36px
+$size-line-header: 3rem; //48px
+$size-header: 3rem; // 48px;
+$size-base: 4.25rem; // 68px
+$size-panel: 25rem;  // 400px
 
 
 //== Components
