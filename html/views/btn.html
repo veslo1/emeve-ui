@@ -171,19 +171,27 @@
     <pre>&lt;button class=&quot;mv-btn warning&quot; data-icon=&quot;pencil&quot;&gt;Editar&lt;/button&gt;</pre>
     <button class="mv-btn warning" data-icon="pencil">Editar</button>
 
+</section>
 
+<section class="demo-section">
+    <header>
+        <h1>Radio</h1>
+    </header>
+    <strong>Número da sala: <code>{{numSala}}</code></strong> <br/>
+    <div class="mv-btn-group">
+        <button class="mv-btn-radio default" value="1" ng-model="numSala">Item 1</button>
+        <button class="mv-btn-radio default" value="2" ng-model="numSala">Item 2</button>
+        <button class="mv-btn-radio info" value="3" ng-model="numSala">Item 3</button>
+    </div>
 </section>
 
 <section class="demo-section">
     <header>
         <h1>Checkbox</h1>
     </header>
-
-    <button class="mv-btn rounded default">Default</button>
-    <button class="mv-btn rounded info">Info</button>
-    <button class="mv-btn rounded error">Error</button>
-    <button class="mv-btn rounded success">Success</button>
-    <button class="mv-btn rounded warning">Warning</button>
-    <button class="mv-btn rounded muted">Muted</button>
+    <strong>Blastoise!!! <code>{{blastoise}}</code></strong> <br/>
+    <div class="mv-btn-group">
+        <button class="mv-btn-checkbox default" ng-model="blastoise">Blastoise</button>
+    </div>
 </section>
 

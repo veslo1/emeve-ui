@@ -27,7 +27,7 @@ var app = angular.module('EmeveUiApp', [
         })
         .when('/btn', {
             templateUrl: 'views/btn.html',
-            controller: 'DefaultCtrl'
+            controller: 'BtnCtrl'
         })
         .otherwise({
             redirectTo: '/'
