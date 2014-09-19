@@ -1,0 +1,21 @@
+//gera font-face
+
+/**
+ * @url Url da Fonte
+ * @font-family Nome da família de fonte
+ * @font-map Mapa do tipo (whight: nomeArquivo)
+ */
+@mixin font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style) {
+
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('#{$url}#{$base-filename}.eot');
+    src: url('#{$url}#{$base-filename}.eot?#iefix') format('embedded-opentype'),
+    url('#{$url}#{$base-filename}.woff') format('woff'),
+    url('#{$url}#{$base-filename}.ttf') format('truetype'),
+    url('#{$url}#{$base-filename}.svg#robotoblack') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+
+}

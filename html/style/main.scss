@@ -1,9 +1,15 @@
 //init
 @import "variables";
-@import "theme";
 
 //mixins
 @import "mixins";
+
+//webfonts
+@import "fonts";
+
+
+//themes
+@import "theme";
 
 //reset
 @import "../bower_components/normalize-scss/normalize";
