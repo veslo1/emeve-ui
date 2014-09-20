@@ -5,7 +5,6 @@ var rename      = require('gulp-rename');
 var uglify      = require('gulp-uglify');
 var sass        = require('gulp-sass');
 var browserSync = require('browser-sync');
-var reload      = browserSync.reload;
 
 //== Development
 // browser-sync task for starting the server.
@@ -33,7 +32,7 @@ gulp.task('sass', function () {
   return gulp.src('html/style/**/*.scss')
     .pipe(sass())
     .pipe(gulp.dest('html/style'))
-    .pipe(reload({stream:true}));
+    .pipe(browserSync.reload({stream:true}));
 });
 
 // Default task to be run with `gulp`
