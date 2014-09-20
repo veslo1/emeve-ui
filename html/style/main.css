@@ -38,13 +38,6 @@
   font-weight: 300;
   font-style: italic; }
 
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/roboto/roboto-thinitalic-webfont.eot");
-  src: url("../fonts/roboto/roboto-thinitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto/roboto-thinitalic-webfont.woff") format("woff"), url("../fonts/roboto/roboto-thinitalic-webfont.ttf") format("truetype"), url("../fonts/roboto/roboto-thinitalic-webfont.svg#robotoblack") format("svg");
-  font-weight: 100;
-  font-style: italic; }
-
 /* ==========================================================================
    Normalize.scss settings
    ========================================================================== */
@@ -3645,6 +3638,29 @@ pre {
 
 .fa-meanpath:before {
   content: "\f20c"; }
+
+.mv-page-header {
+  padding: 1rem;
+  min-height: 3rem;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6); }
+  .mv-page-header .mv-page-title {
+    padding: 0;
+    margin: 0; }
+    .mv-page-header .mv-page-title .title-icon {
+      display: inline-block;
+      font-size: 75%;
+      height: 3rem;
+      margin-right: .5rem;
+      width: 3rem;
+      line-height: 3rem;
+      text-align: center;
+      border-radius: 50%;
+      color: #b4e650;
+      background-color: #203240; }
+    .mv-page-header .mv-page-title .title-label {
+      display: inline-block;
+      color: #203240; }
 
 * {
   box-sizing: border-box; }

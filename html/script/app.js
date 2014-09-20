@@ -29,6 +29,10 @@ var app = angular.module('EmeveUiApp', [
             templateUrl: 'views/btn.html',
             controller: 'BtnCtrl'
         })
+        .when('/pageheader', {
+            templateUrl: 'views/pageheader.html',
+            controller: 'DefaultCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });
