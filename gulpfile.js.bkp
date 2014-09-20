@@ -1,0 +1,57 @@
+var gulp  = require('gulp');
+var concat = require('gulp-concat');
+var jshint = require('gulp-jshint');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
+var sass = require('gulp-sass');
+var browerSync = require('browser-sync');
+//var compass = require('gulp-compass');
+
+
+//== Development
+
+// browser-sync task for starting the server.
+gulp.task('browser-sync', function() {
+  browserSync({
+    server: {
+      baseDir: "./"
+    }
+  });
+});
+
+// Sass task, will run when any SCSS files change & BrowserSync
+// will auto-update browsers
+gulp.task('sass', function () {
+  return gulp.src('scss/**/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('css'))
+    .pipe(browerSync.reload({stream:true}));
+});
+
+//== Up
+gulp.task('up',['sass','browser-sync'],function(){
+  gulp.watch("scss/*.scss",['sass']);
+});
+*/
+//== Build
+gulp.task('scripts', function(){
+  gulp.src('./html/script/**/*.js')
+  .pipe(concat('./dist'))
+  .pipe(rename('app.js'))
+  .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('style', function(){
+  gulp.src('./html/script/**/*.js')
+  .pipe(concat('./dist'))
+  .pipe(rename('app.js'))
+  .pipe(gulp.dest('./dist/script'));
+});
+
+gulp.task('fontawesome',function(){
+    gulp.src('./html/bower_components/marcusvy-font-awesome/fonts/*')
+        .pipe(gulp.dest('./dist/fonts'))
+});
+
+
+//gulp.task('build',['scripts','style','fontawesome']);

@@ -33,6 +33,10 @@ var app = angular.module('EmeveUiApp', [
             templateUrl: 'views/pageheader.html',
             controller: 'DefaultCtrl'
         })
+        .when('/table', {
+            templateUrl: 'views/table.html',
+            controller: 'DefaultCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });
