@@ -5,6 +5,7 @@ var rename      = require('gulp-rename');
 var uglify      = require('gulp-uglify');
 var sass        = require('gulp-sass');
 var browserSync = require('browser-sync');
+var wiredep     = require('wiredep').stream;
 
 //== Development
 // browser-sync task for starting the server.
@@ -34,6 +35,19 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('html/style'))
     .pipe(browserSync.reload({stream:true}));
 });
+
+//Wire dependencies
+gulp.task('wiredep',function(){
+
+  //bower
+  gulp.src('html/index.html')
+    .pipe(wiredep({
+      directory: 'html/bower_components',
+      ignorePath: 'html/'
+    }))
+    .pipe(gulp.dest('html'));
+});
+
 
 // Default task to be run with `gulp`
 gulp.task('default', ['sass', 'browser-sync'], function () {
