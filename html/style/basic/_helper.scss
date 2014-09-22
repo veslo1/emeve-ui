@@ -1,8 +1,7 @@
 /**
  * Divisores
  */
-
-// hr
+a{}
 hr{
   display: block;
   height: 1px;
@@ -15,15 +14,17 @@ hr{
 
   clear: both;
 
-  .solid{
+  &.solid{
     border-style: solid;
   }
 
-  .double{
-    border-style: double;
+  &.double{
+    border-width: 1px 0 1px 0;
+    height: 2px;
+    border-style: solid;
   }
 
-  .dot{
+  &.dot{
     border-style: dotted;
   }
 }

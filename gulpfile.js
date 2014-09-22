@@ -2,20 +2,21 @@
  * Gulp
  * @author Marcus Vinícius da R G Cardoso <marcusvy@gmail.com>
  */
-var gulp    = require('gulp');
+var gulp        = require('gulp');
 //server
 var browserSync = require('browser-sync');
 //basic
-var concat  = require('gulp-concat');
-var inject  = require('gulp-inject');
-var jshint  = require('gulp-jshint');
-var rename  = require('gulp-rename');
-var sass    = require('gulp-sass');
-var uglify  = require('gulp-uglify');
-var wiredep = require('wiredep').stream;
+var concat      = require('gulp-concat');
+var inject      = require('gulp-inject');
+var jshint      = require('gulp-jshint');
+var minifyCSS   = require('gulp-minify-css');
+var rename      = require('gulp-rename');
+var sass        = require('gulp-sass');
+var uglify      = require('gulp-uglify');
+var wiredep     = require('wiredep').stream;
 //debug
-var print   = require('gulp-print');
-var using   = require('gulp-using');
+var print       = require('gulp-print');
+var using       = require('gulp-using');
 
 /**
  * Development
@@ -34,7 +35,6 @@ gulp.task('browser-sync', function () {
 //Process JS files and return the stream.
 gulp.task('js', function () {
   return gulp.src('js/*js')
-    .pipe(browserify())
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'));
 });
@@ -43,6 +43,7 @@ gulp.task('js', function () {
 gulp.task('sass', function () {
   return gulp.src('html/style/**/*.scss')
     .pipe(sass())
+    .pipe(minifyCSS({keepSpecialComments:0}))
     .pipe(gulp.dest('html/style'))
     .pipe(browserSync.reload({stream: true}));
 });
