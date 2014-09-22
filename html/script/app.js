@@ -33,6 +33,10 @@ var app = angular.module('EmeveUiApp', [
             templateUrl: 'views/pageheader.html',
             controller: 'DefaultCtrl'
         })
+        .when('/divisores', {
+            templateUrl: 'views/divisores.html',
+            controller: 'DefaultCtrl'
+        })
         .when('/table', {
             templateUrl: 'views/table.html',
             controller: 'DefaultCtrl'

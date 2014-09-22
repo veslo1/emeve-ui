@@ -1,0 +1,29 @@
+/**
+ * Divisores
+ */
+
+// hr
+hr{
+  display: block;
+  height: 1px;
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  border-color: $color-light;
+}
+
+.divisor{
+
+  clear: both;
+
+  .solid{
+    border-style: solid;
+  }
+
+  .double{
+    border-style: double;
+  }
+
+  .dot{
+    border-style: dotted;
+  }
+}

@@ -1377,6 +1377,25 @@ pre {
     margin-left: 100%; } }
 
 /**
+ * Divisores
+ */
+hr {
+  display: block;
+  height: 1px;
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  border-color: #585858; }
+
+.divisor {
+  clear: both; }
+  .divisor .solid {
+    border-style: solid; }
+  .divisor .double {
+    border-style: double; }
+  .divisor .dot {
+    border-style: dotted; }
+
+/**
  * Components
  */
 .mv-btn-group, .mv-btn-group-vertical {

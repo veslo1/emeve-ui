@@ -7,18 +7,37 @@
 //webfonts
 @import "fonts";
 
-
 //themes
 @import "theme";
 
 //reset
 @import "../bower_components/normalize-scss/normalize";
 
-//basic
-@import "basic";
+/**
+ * Basic
+ */
+@import "basic/typography";
+@import "basic/grid";
+@import "basic/images";
+@import "basic/helpers";
+@import "basic/form";
+@import "basic/table";
 
-//components
-@import "components";
+/**
+ * Components
+ */
+@import "components/btn-checkbox";
+@import "components/btn-group";
+@import "components/btn";
+@import "components/control";
+@import "components/gropdown";
+@import "components/icon";
+@import "components/list";
+@import "components/modal";
+@import "components/notification";
+@import "components/page-header";
+@import "components/tab";
+@import "components/tooltip";
 
 //Global Definition
 @import "globals";
