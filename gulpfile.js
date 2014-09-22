@@ -1,17 +1,29 @@
-var gulp        = require('gulp');
-var concat      = require('gulp-concat');
-var jshint      = require('gulp-jshint');
-var rename      = require('gulp-rename');
-var uglify      = require('gulp-uglify');
-var sass        = require('gulp-sass');
+/**
+ * Gulp
+ * @author Marcus Vinícius da R G Cardoso <marcusvy@gmail.com>
+ */
+var gulp    = require('gulp');
+//server
 var browserSync = require('browser-sync');
-var wiredep     = require('wiredep').stream;
+//basic
+var concat  = require('gulp-concat');
+var inject  = require('gulp-inject');
+var jshint  = require('gulp-jshint');
+var rename  = require('gulp-rename');
+var sass    = require('gulp-sass');
+var uglify  = require('gulp-uglify');
+var wiredep = require('wiredep').stream;
+//debug
+var print   = require('gulp-print');
+var using   = require('gulp-using');
 
-//== Development
-// browser-sync task for starting the server.
-gulp.task('browser-sync', function() {
+/**
+ * Development
+ */
+//Browser-sync
+gulp.task('browser-sync', function () {
   browserSync({
-    browser:["google chrome", "firefox"],
+    browser: ["google chrome", "firefox"],
     server: {
       baseDir: "./html"
     },
@@ -19,7 +31,7 @@ gulp.task('browser-sync', function() {
   });
 });
 
-// process JS files and return the stream.
+//Process JS files and return the stream.
 gulp.task('js', function () {
   return gulp.src('js/*js')
     .pipe(browserify())
@@ -27,19 +39,16 @@ gulp.task('js', function () {
     .pipe(gulp.dest('dist/js'));
 });
 
-// Sass task, will run when any SCSS files change & BrowserSync
-// will auto-update browsers
+//Sass
 gulp.task('sass', function () {
   return gulp.src('html/style/**/*.scss')
     .pipe(sass())
     .pipe(gulp.dest('html/style'))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(browserSync.reload({stream: true}));
 });
 
-//Wire dependencies
-gulp.task('wiredep',function(){
-
-  //bower
+//Wiredep
+gulp.task('bower', function () {
   gulp.src('html/index.html')
     .pipe(wiredep({
       directory: 'html/bower_components',
@@ -48,9 +57,25 @@ gulp.task('wiredep',function(){
     .pipe(gulp.dest('html'));
 });
 
+//Injeção do aplicativo no index.html
+gulp.task('angularApp', function () {
+  var sources = gulp.src(['html/script/**/*.js'], {
+    read: false
+  });
 
-// Default task to be run with `gulp`
+  var options = {
+    name: 'angularApp',
+    addRootSlash: false,
+    ignorePath: 'html'
+  };
+
+  return gulp.src('html/index.html')
+    .pipe(inject(sources,options))
+    .pipe(gulp.dest('html'));
+});
+
+//Default
 gulp.task('default', ['sass', 'browser-sync'], function () {
   gulp.watch("html/style/*.scss", ['sass']);
-  gulp.watch("js/*.js", ['js', browserSync.reload]);
+  gulp.watch("js/*.js", ['js','angularApp', browserSync.reload]);
 });

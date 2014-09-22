@@ -1,47 +1,45 @@
 <!DOCTYPE html>
 <html ng-app="EmeveUiApp" class="no-js">
 <head lang="pt-br">
-    <meta charset="utf-8">
-    <title>Emeve Ui</title>
-    <!--<link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>-->
-    <link rel="stylesheet" href="style/main.css"/>
-    <link rel="stylesheet" href="style/demo.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Emeve Ui</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!--<link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>-->
+  <link rel="stylesheet" href="style/main.css"/>
+  <link rel="stylesheet" href="style/demo.css"/>
 </head>
-<body class="test">
 
-    <div class="container">
-        <h1><a href="/">Emeve Ui</a></h1>
-        <aside id="mainNav" ng-include="'views/layout/main-nav.html'"></aside>
-    </div>
-    <section id="mainContent" ng-view="" class="container"></section>
+<body>
+  <div class="container">
+    <h1><a href="/">Emeve Ui</a></h1>
+    <aside id="mainNav" ng-include="'views/layout/main-nav.html'"></aside>
+    <section id="mainContent" ng-view=""></section>
+  </div>
 
-    <!-- Scripts -->
-
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.js"></script>
-    <![endif]-->
-
-
-    <!-- bower:js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <!-- endbower -->
-
-    <script src="script/app.js"></script>
-    <script src="script/controllers/default.js"></script>
-    <script src="script/controllers/btn.js"></script>
-    <script src="script/directives/mv-btn.js"></script>
-    <script src="script/directives/mv-col.js"></script>
-    <script src="script/directives/mv-row.js"></script>
-    <script src="script/directives/mv-pageheader.js"></script>
+  <!-- Scripts -->
+  <!--[if lt IE 9]>
+  <script src="bower_components/es5-shim/es5-shim.js"></script>
+  <script src="bower_components/json3/lib/json3.js"></script>
+  <![endif]-->
+  <!-- bower:js -->
+  <script src="bower_components/modernizr/modernizr.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <!-- endbower -->
+  <!-- angularApp:js -->
+  <script src="script/app.js"></script>
+  <script src="script/controllers/btn.js"></script>
+  <script src="script/controllers/default.js"></script>
+  <script src="script/directives/mv-btn.js"></script>
+  <script src="script/directives/mv-col.js"></script>
+  <script src="script/directives/mv-pageheader.js"></script>
+  <script src="script/directives/mv-row.js"></script>
+  <!-- endinject -->
 </body>
 </html>
