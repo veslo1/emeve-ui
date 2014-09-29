@@ -1,0 +1,32 @@
+302776 silly gunzTarPerm extractEntry lib/reporters/xunit.js
+302777 silly gunzTarPerm modified mode [ 'lib/reporters/xunit.js', 420, 438 ]
+302778 silly gunzTarPerm extractEntry lib/reporters/list.js
+302779 silly gunzTarPerm modified mode [ 'lib/reporters/list.js', 420, 438 ]
+302780 silly gunzTarPerm extractEntry LICENSE
+302781 silly gunzTarPerm modified mode [ 'LICENSE', 436, 438 ]
+302782 silly gunzTarPerm extractEntry lib/stack/index.js
+302783 silly gunzTarPerm modified mode [ 'lib/stack/index.js', 420, 438 ]
+302784 silly gunzTarPerm extractEntry bin/uglifyjs
+302785 silly gunzTarPerm modified mode [ 'bin/uglifyjs', 509, 511 ]
+302786 silly gunzTarPerm extractEntry .travis.yml
+302787 silly gunzTarPerm modified mode [ '.travis.yml', 436, 438 ]
+302788 silly gunzTarPerm extractEntry tools/node.js
+302789 silly gunzTarPerm modified mode [ 'tools/node.js', 436, 438 ]
+302790 silly gunzTarPerm extractEntry lib/reporters/templates/coverage.jade
+302791 silly gunzTarPerm modified mode [ 'lib/reporters/templates/coverage.jade', 420, 438 ]
+302792 silly gunzTarPerm extractEntry lib/reporters/templates/menu.jade
+302793 silly gunzTarPerm modified mode [ 'lib/reporters/templates/menu.jade', 420, 438 ]
+302794 silly gunzTarPerm extractEntry lib/less/join-selector-visitor.js
+302795 error Error: ENOENT, open 'D:\Projetos\emeve-ui\node_modules\gulp-rename\node_modules\map-stream\node_modules\event-stream\node_modules\through\node_modules\assertions\"false"'
+302796 error If you need help, you may report this *entire* log,
+302796 error including the npm and node versions, at:
+302796 error     <http://github.com/npm/npm/issues>
+302797 error System Windows_NT 6.2.9200
+302798 error command "C:\\Dev\\nodejs\\\\node.exe" "C:\\Dev\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--dev"
+302799 error cwd D:\Projetos\emeve-ui
+302800 error node -v v0.10.32
+302801 error npm -v 1.4.28
+302802 error path D:\Projetos\emeve-ui\node_modules\gulp-rename\node_modules\map-stream\node_modules\event-stream\node_modules\through\node_modules\assertions\"false"
+302803 error code ENOENT
+302804 error errno 34
+302805 verbose exit [ 34, true ]

@@ -24,7 +24,7 @@ var using       = require('gulp-using');
 //Browser-sync
 gulp.task('browser-sync', function () {
   browserSync({
-    browser: ["google chrome", "firefox"],
+    browser: ["google chrome"],
     server: {
       baseDir: "./html"
     },

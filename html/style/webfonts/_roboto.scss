@@ -1,0 +1,102 @@
+$font-family: 'Roboto';
+$url: '../fonts/roboto/';
+
+/**
+ * Roboto Condensed
+ */
+$base-filename: 'Roboto';
+
+//$base-filename : 'Roboto-Black';
+$font-weight : '900';
+$font-style : 'normal';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'Roboto-BlackItalic';
+$font-weight : '900';
+$font-style : 'italic';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'Roboto-Bold';
+$font-weight : '700';
+$font-style : 'normal';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'Roboto-BoldItalic';
+$font-weight : '700';
+$font-style : 'italic';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'Roboto-Italic';
+$font-weight : '500';
+$font-style : 'italic';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'Roboto-Light';
+$font-weight : '300';
+$font-style : 'normal';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'Roboto-LightItalic';
+$font-weight : '300';
+$font-style : 'italic';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'Roboto-Medium';
+$font-weight : '500';
+$font-style : 'normal';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'Roboto-MediumItalic';
+$font-weight : '500';
+$font-style : 'italic';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'Roboto-Regular';
+$font-weight : '500';
+$font-style : 'normal';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'Roboto-Thin';
+$font-weight : '100';
+$font-style : 'normal';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'Roboto-ThinItalic';
+$font-weight : '100';
+$font-style : 'italic';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+/**
+ * Roboto Condensed
+ */
+$base-filename: 'Roboto Condesed';
+
+//$base-filename : 'RobotoCondensed-Bold';
+$font-weight : '700';
+$font-style : 'normal';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'RobotoCondensed-BoldItalic';
+$font-weight : '700';
+$font-style : 'italic';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'RobotoCondensed-Italic';
+$font-weight : '400';
+$font-style : 'italic';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'RobotoCondensed-Light';
+$font-weight : '300';
+$font-style : 'normal';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'RobotoCondensed-LightItalic';
+$font-weight : '300';
+$font-style : 'italic';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
+
+//$base-filename : 'RobotoCondensed-Regular';
+$font-weight : '400';
+$font-style : 'normal';
+@include font-face-generator($font-family, $url, $base-filename, $font-weight, $font-style);
