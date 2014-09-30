@@ -92,15 +92,6 @@
 }
 
 
-// Sizing
-//
-// Remix the default button sizing classes into new ones for easier manipulation.
-
-.mv-btn-group-xs > .btn { @extend .mv-btn-xs; }
-.mv-btn-group-sm > .btn { @extend .mv-btn-sm; }
-.mv-btn-group-lg > .btn { @extend .mv-btn-lg; }
-
-
 // Split button dropdowns
 // ----------------------
 

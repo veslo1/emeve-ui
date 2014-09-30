@@ -3,11 +3,7 @@
  */
 a{}
 hr{
-  display: block;
-  height: 1px;
-  border-width: 0 0 2px 0;
-  border-style: solid;
-  border-color: $color-light;
+  @include divider();
 }
 
 .divisor{

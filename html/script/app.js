@@ -29,6 +29,10 @@ var app = angular.module('EmeveUiApp', [
             templateUrl: 'views/btn.html',
             controller: 'BtnCtrl'
         })
+        .when('/dropdown', {
+            templateUrl: 'views/dropdown.html',
+            controller: 'DefaultCtrl'
+        })
         .when('/pageheader', {
             templateUrl: 'views/pageheader.html',
             controller: 'DefaultCtrl'

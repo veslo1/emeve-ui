@@ -156,7 +156,7 @@ ol {
 
 // Inline turns list items into inline-block
 .list-inline {
-  @extend .list-unstyled;
+  @extend .no-list;
   margin-left: -5px;
 
   > li {
