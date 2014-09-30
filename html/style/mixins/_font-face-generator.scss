@@ -9,11 +9,11 @@
 
   @font-face {
     font-family: '#{$font-family}';
-    src: url('#{$url}#{$base-filename}-webfont.eot');
-    src: url('#{$url}#{$base-filename}-webfont.eot?#iefix') format('embedded-opentype'),
-    url('#{$url}#{$base-filename}-webfont.woff') format('woff'),
-    url('#{$url}#{$base-filename}-webfont.ttf') format('truetype'),
-    url('#{$url}#{$base-filename}-webfont.svg#robotoblack') format('svg');
+    src:  url('#{$url}#{$base-filename}-webfont.eot');
+    src:  url('#{$url}#{$base-filename}-webfont.eot?#iefix') format('embedded-opentype'),
+          url('#{$url}#{$base-filename}-webfont.woff') format('woff'),
+          url('#{$url}#{$base-filename}-webfont.ttf') format('truetype'),
+          url('#{$url}#{$base-filename}-webfont.svg#robotoblack') format('svg');
     font-weight: $font-weight;
     font-style: $font-style;
   }
