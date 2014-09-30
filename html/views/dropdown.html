@@ -1,13 +1,20 @@
-<div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-        Dropdowna asd
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-        <li role="presentation" class="divider"></li>
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-    </ul>
-</div>
+<hr/>
+{{status}}
+<hr/>
+<ul class="list-inline">
+  <li ng-repeat="item in list" class="mv-dropdown">
+      <button class="mv-btn default" type="button">
+        {{item}}
+      </button>
+      <ul class="dropdown-menu">
+        <li><a ng-click="setStatus(item)">{{item}}</a></li>
+        <li><a ng-click="setStatus('vinte')">vinte</a></li>
+        <li class="divider"></li>
+        <li><a ng-click="setStatus(30)">30</a></li>
+      </ul>
+  </li>
+</ul>
+<button ng-click="setStatus(3)">3</button>
+<button ng-click="setStatus('sei la')">sei lá</button>
+<button ng-click="setStatus('status')">Reset</button>
+

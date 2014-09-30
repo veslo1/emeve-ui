@@ -1,4 +1,3 @@
-/** Page Title */
 app.directive('mvPageHeader', function () {
   return {
     restrict: 'C',

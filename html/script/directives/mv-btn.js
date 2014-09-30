@@ -1,6 +1,3 @@
-'use strict';
-
-
 angular.module('EmeveUiApp')
   .directive('mvBtn', function ($parse) {
     return {
