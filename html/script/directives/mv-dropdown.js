@@ -36,7 +36,6 @@ angular.module('EmeveUiApp')
         element.attr({ 'aria-haspopup': true, 'aria-expanded': false });
         scope.$watch('isOpen', function( isOpen) {
           element.attr('aria-expanded', isOpen);
-          console.log('isOpen: ',isOpen);
         });
 
         //Abertura do menu
