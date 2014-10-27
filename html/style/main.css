@@ -1723,6 +1723,213 @@ hr {
   .divisor.dot {
     border-style: dotted; }
 
+table {
+  background-color: transparent; }
+
+th {
+  text-align: left; }
+
+.mv-table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 24px; }
+  .mv-table > thead > tr > th,
+  .mv-table > thead > tr > td,
+  .mv-table > tbody > tr > th,
+  .mv-table > tbody > tr > td,
+  .mv-table > tfoot > tr > th,
+  .mv-table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.5;
+    vertical-align: top;
+    border-top: 1px solid #e6e6e6; }
+  .mv-table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #e6e6e6; }
+  .mv-table > caption + thead > tr:first-child > th,
+  .mv-table > caption + thead > tr:first-child > td,
+  .mv-table > colgroup + thead > tr:first-child > th,
+  .mv-table > colgroup + thead > tr:first-child > td,
+  .mv-table > thead:first-child > tr:first-child > th,
+  .mv-table > thead:first-child > tr:first-child > td {
+    color: #203240;
+    border-top: 0; }
+  .mv-table > tbody + tbody {
+    border-top: 2px solid #e6e6e6; }
+  .mv-table .mv-table {
+    background-color: #fff; }
+
+.table-condensed > thead > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > th,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > th,
+.table-condensed > tfoot > tr > td {
+  padding: 5px; }
+
+.table-bordered {
+  border: 1px solid #e6e6e6; }
+  .table-bordered > thead > tr > th,
+  .table-bordered > thead > tr > td,
+  .table-bordered > tbody > tr > th,
+  .table-bordered > tbody > tr > td,
+  .table-bordered > tfoot > tr > th,
+  .table-bordered > tfoot > tr > td {
+    border: 1px solid #e6e6e6; }
+  .table-bordered > thead > tr > th,
+  .table-bordered > thead > tr > td {
+    border-bottom-width: 2px; }
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #f5f5f5; }
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+  color: #e6e6e6;
+  background-color: #203240; }
+
+table col[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-column; }
+
+table td[class*="col-"],
+table th[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-cell; }
+
+.mv-table > thead > tr > td.active,
+.mv-table > thead > tr > th.active, .mv-table > thead > tr.active > td, .mv-table > thead > tr.active > th,
+.mv-table > tbody > tr > td.active,
+.mv-table > tbody > tr > th.active,
+.mv-table > tbody > tr.active > td,
+.mv-table > tbody > tr.active > th,
+.mv-table > tfoot > tr > td.active,
+.mv-table > tfoot > tr > th.active,
+.mv-table > tfoot > tr.active > td,
+.mv-table > tfoot > tr.active > th {
+  color: #f5f5f5;
+  background-color: #203240; }
+
+.mv-table-hover > tbody > tr > td.active:hover,
+.mv-table-hover > tbody > tr > th.active:hover, .mv-table-hover > tbody > tr.active:hover > td, .mv-table-hover > tbody > tr:hover > .active, .mv-table-hover > tbody > tr.active:hover > th {
+  color: #f5f5f5;
+  background-color: #18252f; }
+
+.mv-table > thead > tr > td.success,
+.mv-table > thead > tr > th.success, .mv-table > thead > tr.success > td, .mv-table > thead > tr.success > th,
+.mv-table > tbody > tr > td.success,
+.mv-table > tbody > tr > th.success,
+.mv-table > tbody > tr.success > td,
+.mv-table > tbody > tr.success > th,
+.mv-table > tfoot > tr > td.success,
+.mv-table > tfoot > tr > th.success,
+.mv-table > tfoot > tr.success > td,
+.mv-table > tfoot > tr.success > th {
+  color: #425d0d;
+  background-color: #b4e650; }
+
+.mv-table-hover > tbody > tr > td.success:hover,
+.mv-table-hover > tbody > tr > th.success:hover, .mv-table-hover > tbody > tr.success:hover > td, .mv-table-hover > tbody > tr:hover > .success, .mv-table-hover > tbody > tr.success:hover > th {
+  color: #425d0d;
+  background-color: #aae33a; }
+
+.mv-table > thead > tr > td.info,
+.mv-table > thead > tr > th.info, .mv-table > thead > tr.info > td, .mv-table > thead > tr.info > th,
+.mv-table > tbody > tr > td.info,
+.mv-table > tbody > tr > th.info,
+.mv-table > tbody > tr.info > td,
+.mv-table > tbody > tr.info > th,
+.mv-table > tfoot > tr > td.info,
+.mv-table > tfoot > tr > th.info,
+.mv-table > tfoot > tr.info > td,
+.mv-table > tfoot > tr.info > th {
+  color: #b7cbdb;
+  background-color: #203240; }
+
+.mv-table-hover > tbody > tr > td.info:hover,
+.mv-table-hover > tbody > tr > th.info:hover, .mv-table-hover > tbody > tr.info:hover > td, .mv-table-hover > tbody > tr:hover > .info, .mv-table-hover > tbody > tr.info:hover > th {
+  color: #b7cbdb;
+  background-color: #18252f; }
+
+.mv-table > thead > tr > td.warning,
+.mv-table > thead > tr > th.warning, .mv-table > thead > tr.warning > td, .mv-table > thead > tr.warning > th,
+.mv-table > tbody > tr > td.warning,
+.mv-table > tbody > tr > th.warning,
+.mv-table > tbody > tr.warning > td,
+.mv-table > tbody > tr.warning > th,
+.mv-table > tfoot > tr > td.warning,
+.mv-table > tfoot > tr > th.warning,
+.mv-table > tfoot > tr.warning > td,
+.mv-table > tfoot > tr.warning > th {
+  color: #483a07;
+  background-color: #ecc22f; }
+
+.mv-table-hover > tbody > tr > td.warning:hover,
+.mv-table-hover > tbody > tr > th.warning:hover, .mv-table-hover > tbody > tr.warning:hover > td, .mv-table-hover > tbody > tr:hover > .warning, .mv-table-hover > tbody > tr.warning:hover > th {
+  color: #483a07;
+  background-color: #eabb18; }
+
+.mv-table > thead > tr > td.error,
+.mv-table > thead > tr > th.error, .mv-table > thead > tr.error > td, .mv-table > thead > tr.error > th,
+.mv-table > tbody > tr > td.error,
+.mv-table > tbody > tr > th.error,
+.mv-table > tbody > tr.error > td,
+.mv-table > tbody > tr.error > th,
+.mv-table > tfoot > tr > td.error,
+.mv-table > tfoot > tr > th.error,
+.mv-table > tfoot > tr.error > td,
+.mv-table > tfoot > tr.error > th {
+  color: #fef5f3;
+  background-color: #ae3311; }
+
+.mv-table-hover > tbody > tr > td.error:hover,
+.mv-table-hover > tbody > tr > th.error:hover, .mv-table-hover > tbody > tr.error:hover > td, .mv-table-hover > tbody > tr:hover > .error, .mv-table-hover > tbody > tr.error:hover > th {
+  color: #fef5f3;
+  background-color: #972c0f; }
+
+@media screen and (max-width: 767px) {
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 18px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #e6e6e6;
+    -webkit-overflow-scrolling: touch; }
+    .table-responsive > .mv-table {
+      margin-bottom: 0; }
+      .table-responsive > .mv-table > thead > tr > th,
+      .table-responsive > .mv-table > thead > tr > td,
+      .table-responsive > .mv-table > tbody > tr > th,
+      .table-responsive > .mv-table > tbody > tr > td,
+      .table-responsive > .mv-table > tfoot > tr > th,
+      .table-responsive > .mv-table > tfoot > tr > td {
+        white-space: nowrap; }
+    .table-responsive > .table-bordered {
+      border: 0; }
+      .table-responsive > .table-bordered > thead > tr > th:first-child,
+      .table-responsive > .table-bordered > thead > tr > td:first-child,
+      .table-responsive > .table-bordered > tbody > tr > th:first-child,
+      .table-responsive > .table-bordered > tbody > tr > td:first-child,
+      .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+      .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+        border-left: 0; }
+      .table-responsive > .table-bordered > thead > tr > th:last-child,
+      .table-responsive > .table-bordered > thead > tr > td:last-child,
+      .table-responsive > .table-bordered > tbody > tr > th:last-child,
+      .table-responsive > .table-bordered > tbody > tr > td:last-child,
+      .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+      .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+        border-right: 0; }
+      .table-responsive > .table-bordered > tbody > tr:last-child > th,
+      .table-responsive > .table-bordered > tbody > tr:last-child > td,
+      .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+      .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+        border-bottom: 0; } }
+
 /**
  * Components
  */
