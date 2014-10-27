@@ -1,17 +1,21 @@
 <hr/>
 {{status}}
+  {{isOpen}}
 <hr/>
+<div class="mv-d">
+  {{list}}
+</div>
 <ul class="list-inline">
-  <li ng-repeat="item in list" class="mv-dropdown">
-      <button class="mv-btn default" type="button">
-        {{item}}
-      </button>
-      <ul class="dropdown-menu">
-        <li><a ng-click="setStatus(item)">{{item}}</a></li>
-        <li><a ng-click="setStatus('vinte')">vinte</a></li>
-        <li class="divider"></li>
-        <li><a ng-click="setStatus(30)">30</a></li>
-      </ul>
+  <li class="dropdown" ng-class="{open:isOpen}">
+    <button class="mv-btn default" type="button" ng-click="isOpen=!isOpen">
+      <i class="fa fa-ellipsis-v"></i>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#" ng-click="setStatus(3)">Item</a></li>
+      <li><a href="#">Item</a></li>
+      <li><a href="#">Item</a></li>
+      <li><a href="#">Item</a></li>
+    </ul>
   </li>
 </ul>
 <button ng-click="setStatus(3)">3</button>

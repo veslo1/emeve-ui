@@ -1,12 +1,18 @@
 angular.module('EmeveUiApp')
-  .directive('mvDropdown', function ($rootScope) {
+  .directive('mvDropdowna', function ($rootScope) {
     return {
-      restrict: 'C',
-      scope:false,
+      restrict: 'A',
       controller: function ($scope, $element, $attrs) {
         $scope.isOpen = false;
 
-        $scope.open = function ($event) {
+        this.addCaret = function(){
+          var caret = angular.element('<i>');
+          caret.addClass('fa');
+          caret.addClass('fa-ellipsis-v');
+          return caret;
+        };
+
+        this.open = function ($event) {
           $scope.isOpen = !$scope.isOpen;
           $scope.$apply(function () {
             $element.toggleClass('open', $scope.isOpen);
@@ -14,19 +20,16 @@ angular.module('EmeveUiApp')
           return $scope.isOpen;
         };
       },
-      link: function (scope, element, attrs, ctrl) {
+      link: function (scope, element, attrs, DropdowCtrl) {
         var btn = angular.element(element.children()[0]);
         var menu = angular.element(element.children()[1]);
 
         //adicionar caret
-        var caret = angular.element('<i>');
-        caret.addClass('fa');
-        caret.addClass('fa-ellipsis-v');
-        btn.append(caret);
+        btn.append(DropdowCtrl.addCaret());
 
         var doOpen = function ($event) {
           $event.preventDefault();
-          scope.open();
+          DropdowCtrl.open();
         };
 
         //Abertura do menu
@@ -42,3 +45,12 @@ angular.module('EmeveUiApp')
   });
 
 
+angular.module('EmeveUiApp')
+.directive('mvD',function(){
+    return {
+      restrict: 'C',
+      link: function(scope,element,attrs,ctrl){
+        scope.vai();
+      }
+    }
+  });

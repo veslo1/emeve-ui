@@ -10,13 +10,13 @@ angular.module('EmeveUiApp')
     $scope.status = 'status';
 
     $scope.vai = function($event){
-      $event.preventDefault();
-      console.log('vai');
+      //$event.preventDefault();
+      console.log($scope.status)
 
-      $scope.$apply(function(){alert('vai')});
     }
 
     $scope.setStatus = function(value){
       $scope.status = value;
+      console.log(value);
     };
   });
