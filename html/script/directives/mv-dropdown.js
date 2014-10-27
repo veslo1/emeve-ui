@@ -39,6 +39,7 @@ angular.module('EmeveUiApp')
         scope.$on('$destroy', function() {
           btn.unbind('click', doOpen);
           element.unbind('focusout', doOpen);
+          scope.$destroy();
         });
       }
     };
