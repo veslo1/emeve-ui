@@ -27,8 +27,7 @@ gulp.task('browser-sync', function () {
     browser: ["google chrome"],
     server: {
       baseDir: "./html"
-    },
-    port: 8002
+    }
   });
 });
 
@@ -75,8 +74,13 @@ gulp.task('angularApp', function () {
     .pipe(gulp.dest('html'));
 });
 
+gulp.task('bs-reload',function(){
+  gulp.src('html/index.html')
+    .pipe(browserSync.reload({stream: true}));
+});
 //Default
 gulp.task('default', ['sass', 'browser-sync'], function () {
   gulp.watch("html/style/*.scss", ['sass']);
-  gulp.watch("js/*.js", ['js','angularApp', browserSync.reload]);
+  gulp.watch("html/js/*.js", ['js','angularApp', 'bs-reload']);
+  gulp.watch("html/**/*.html", ['bs-reload']);
 });

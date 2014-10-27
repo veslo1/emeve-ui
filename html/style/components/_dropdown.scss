@@ -12,7 +12,7 @@
   vertical-align: middle;
 }
 // The dropdown wrapper (div)
-.dropdown {
+.mv-dropdown {
   position: relative;
 
   & > .mv-btn{
@@ -183,7 +183,7 @@
 // TODO: abstract this so that the navbar fixed styles are not placed here?
 
 .dropup,
-.navbar-fixed-bottom .dropdown {
+.navbar-fixed-bottom .mv-dropdown {
   // Reverse the caret
   .caret {
     border-top: 0;

@@ -6,13 +6,13 @@
   {{list}}
 </div>
 <ul class="list-inline">
-  <li class="dropdown" ng-class="{open:isOpen}">
-    <button class="mv-btn default" type="button" ng-click="isOpen=!isOpen">
-      <i class="fa fa-ellipsis-v"></i>
+  <li class="mv-dropdown">
+    <button class="mv-btn default" type="button">
+      MENU
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#" ng-click="setStatus(3)">Item</a></li>
-      <li><a href="#">Item</a></li>
+      <li><button class="mv-btn link" href="#" ng-click="setStatus(3)">Item</button></li>
+      <li><a ng-click="setStatus('sei la')" href="#">Item</a></li>
       <li><a href="#">Item</a></li>
       <li><a href="#">Item</a></li>
     </ul>

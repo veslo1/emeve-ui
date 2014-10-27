@@ -1,9 +1,9 @@
 angular.module('EmeveUiApp')
-  .directive('mvDropdowna', function ($rootScope) {
+  .directive('mvDropdown', function () {
     return {
-      restrict: 'A',
+      restrict: 'C',
       controller: function ($scope, $element, $attrs) {
-        $scope.isOpen = false;
+        this.isOpen = false;
 
         this.addCaret = function(){
           var caret = angular.element('<i>');
@@ -13,11 +13,11 @@ angular.module('EmeveUiApp')
         };
 
         this.open = function ($event) {
-          $scope.isOpen = !$scope.isOpen;
+          this.isOpen = !this.isOpen;
           $scope.$apply(function () {
-            $element.toggleClass('open', $scope.isOpen);
+            $element.toggleClass('open', this.isOpen);
           });
-          return $scope.isOpen;
+          return this.isOpen;
         };
       },
       link: function (scope, element, attrs, DropdowCtrl) {
@@ -34,7 +34,7 @@ angular.module('EmeveUiApp')
 
         //Abertura do menu
         btn.bind('click', doOpen);
-        element.bind('focusout',doOpen);
+        //element.bind('focusout',doOpen);
 
         scope.$on('$destroy', function() {
           btn.unbind('click', doOpen);
@@ -45,12 +45,40 @@ angular.module('EmeveUiApp')
   });
 
 
-angular.module('EmeveUiApp')
-.directive('mvD',function(){
-    return {
-      restrict: 'C',
-      link: function(scope,element,attrs,ctrl){
-        scope.vai();
-      }
-    }
-  });
+//atual
+//angular.module('EmeveUiApp')
+//  .directive('mvDropdown', function () {
+//    return {
+//      restrict: 'C',
+//      controller: function ($scope, $element, $attrs) {
+//        $scope.isOpen = false;
+//
+//        this.open = function ($event) {
+//          $scope.isOpen = !$scope.isOpen;
+//          $scope.$apply(function () {
+//            $element.toggleClass('open', $scope.isOpen);
+//          });
+//          return $scope.isOpen;
+//        };
+//      },
+//      link: function (scope, element, attrs, DropdowCtrl) {
+//        var btn = angular.element(element.children()[0]);
+//
+//        element.addClass('dropdown')
+//
+//        var doOpen = function ($event) {
+//          $event.preventDefault();
+//          DropdowCtrl.open();
+//        };
+//
+//        //Abertura do menu
+//        btn.bind('click', doOpen);
+//        //element.bind('focusout',doOpen);
+//
+//        scope.$on('$destroy', function() {
+//          btn.unbind('click', doOpen);
+//          element.unbind('focusout', doOpen);
+//        });
+//      }
+//    };
+//  });

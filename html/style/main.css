@@ -2082,11 +2082,11 @@ hr {
   margin-left: 2px;
   vertical-align: middle; }
 
-.dropdown {
+.mv-dropdown {
   position: relative; }
-  .dropdown > .mv-btn {
+  .mv-dropdown > .mv-btn {
     min-width: 2rem; }
-    .dropdown > .mv-btn > .fa {
+    .mv-dropdown > .mv-btn > .fa {
       padding: 0 .5rem 0 .25rem;
       margin: 0 0 0 .25rem; }
 
@@ -2185,12 +2185,12 @@ hr {
   left: auto; }
 
 .dropup .caret,
-.navbar-fixed-bottom .dropdown .caret {
+.navbar-fixed-bottom .mv-dropdown .caret {
   border-top: 0;
   border-bottom: 4px solid;
   content: ""; }
 .dropup .dropdown-menu,
-.navbar-fixed-bottom .dropdown .dropdown-menu {
+.navbar-fixed-bottom .mv-dropdown .dropdown-menu {
   top: auto;
   bottom: 100%;
   margin-bottom: 1px; }
