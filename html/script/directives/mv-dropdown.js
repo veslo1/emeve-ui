@@ -3,7 +3,7 @@ angular.module('EmeveUiApp')
     return {
       restrict: 'C',
       controller: function ($scope, $element, $attrs) {
-        this.isOpen = false;
+        $scope.isOpen = false;
 
         this.addCaret = function(){
           var caret = angular.element('<i>');
@@ -13,24 +13,31 @@ angular.module('EmeveUiApp')
         };
 
         this.open = function ($event) {
-          this.isOpen = !this.isOpen;
+          $scope.isOpen = !$scope.isOpen;
           $scope.$apply(function () {
-            $element.toggleClass('open', this.isOpen);
+            $element.toggleClass('open', $scope.isOpen);
           });
-          return this.isOpen;
+          return $scope.isOpen;
         };
       },
-      link: function (scope, element, attrs, DropdowCtrl) {
+      link: function (scope, element, attrs, DropdownCtrl) {
         var btn = angular.element(element.children()[0]);
         var menu = angular.element(element.children()[1]);
 
         //adicionar caret
-        btn.append(DropdowCtrl.addCaret());
+        btn.append(DropdownCtrl.addCaret());
 
         var doOpen = function ($event) {
           $event.preventDefault();
-          DropdowCtrl.open();
+          DropdownCtrl.open();
         };
+
+        //WAI ARIA
+        element.attr({ 'aria-haspopup': true, 'aria-expanded': false });
+        scope.$watch('isOpen', function( isOpen) {
+          element.attr('aria-expanded', isOpen);
+          console.log('isOpen: ',isOpen);
+        });
 
         //Abertura do menu
         btn.bind('click', doOpen);
