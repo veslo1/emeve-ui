@@ -1,11 +1,11 @@
 angular.module('EmeveUiApp')
-  .directive('mvDropdown', function () {
+  .directive('mvDropdown', function ($document) {
     return {
       restrict: 'C',
       controller: function ($scope, $element, $attrs) {
         $scope.isOpen = false;
 
-        this.addCaret = function(){
+        $scope.addCaret = function () {
           var caret = angular.element('<i>');
           caret.addClass('fa');
           caret.addClass('fa-ellipsis-v');
@@ -17,32 +17,37 @@ angular.module('EmeveUiApp')
           $scope.$apply(function () {
             $element.toggleClass('open', $scope.isOpen);
           });
-          return $scope.isOpen;
         };
+
       },
       link: function (scope, element, attrs, DropdownCtrl) {
         var btn = angular.element(element.children()[0]);
-        var doOpen = function ($event) {
-          $event.preventDefault();
+        var menu = angular.element(element.children()[1]);
+        var doOpen = function($event){
+          if($event){
+            $event.stopPropagation();
+          }
           DropdownCtrl.open();
+          $document.bind('click',DropdownCtrl.open);
         };
 
-        //adicionar caret
-        btn.append(DropdownCtrl.addCaret());
-
         //WAI ARIA
-        element.attr({ 'aria-haspopup': true, 'aria-expanded': false });
-        scope.$watch('isOpen', function( isOpen) {
-          element.attr('aria-expanded', isOpen);
-        });
+        element.attr({'aria-haspopup': true, 'aria-expanded': false});
 
-        //Abertura do menu
+        //Botão
+        btn.append(scope.addCaret());
         btn.bind('click', doOpen);
-        //element.bind('focusout',doOpen);
 
-        scope.$on('$destroy', function() {
-          btn.unbind('click', doOpen);
-          //scope.$destroy();
+        scope.$watch('isOpen', function (isOpen) {
+          element.attr('aria-expanded', isOpen);
+          if(!isOpen){
+            $document.unbind('click',DropdownCtrl.open);
+          }
+        },true);
+
+        scope.$on('$destroy', function () {
+          btn.unbind('click', scope.open);
+          $document.unbind('click',DropdownCtrl.open);
         });
       }
     };
