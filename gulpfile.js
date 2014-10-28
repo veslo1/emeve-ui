@@ -24,6 +24,7 @@ var using       = require('gulp-using');
 //Browser-sync
 gulp.task('browser-sync', function () {
   browserSync({
+    notify:false,
     browser: ["google chrome"],
     server: {
       baseDir: "./html"
@@ -35,7 +36,8 @@ gulp.task('browser-sync', function () {
 gulp.task('js', function () {
   return gulp.src('js/*js')
     .pipe(uglify())
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('dist/js'))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 //Sass
@@ -47,6 +49,16 @@ gulp.task('sass', function () {
     .pipe(browserSync.reload({stream: true}));
 });
 
+//Style
+gulp.task('style', function () {
+  return gulp.src('html/style/**/*.css')
+    .pipe(minifyCSS({keepSpecialComments:0}))
+    .pipe(gulp.dest('html/style'))
+    .pipe(browserSync.reload({stream: true}));
+});
+
+
+
 //Wiredep
 gulp.task('bower', function () {
   gulp.src('html/index.html')
@@ -54,7 +66,8 @@ gulp.task('bower', function () {
       directory: 'html/bower_components',
       ignorePath: 'html/'
     }))
-    .pipe(gulp.dest('html'));
+    .pipe(gulp.dest('html'))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 //Injeção do aplicativo no index.html
@@ -71,7 +84,8 @@ gulp.task('angularApp', function () {
 
   return gulp.src('html/index.html')
     .pipe(inject(sources,options))
-    .pipe(gulp.dest('html'));
+    .pipe(gulp.dest('html'))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('bs-reload',function(){
@@ -81,6 +95,7 @@ gulp.task('bs-reload',function(){
 //Default
 gulp.task('default', ['sass', 'browser-sync'], function () {
   gulp.watch("html/style/*.scss", ['sass']);
+  gulp.watch("html/style/*.css", ['style']);
   gulp.watch("html/js/*.js", ['js','angularApp', 'bs-reload']);
   gulp.watch("html/**/*.html", ['bs-reload']);
 });

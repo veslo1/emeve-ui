@@ -50,7 +50,7 @@ $pre-scrollable-max-height:   340px !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #fff !default;
+$body-bg:               $color-white !default;
 //** Global text color on `<body>`.
 $text-color:            $color-black !default;
 
@@ -217,6 +217,23 @@ $table-bg-active:               $table-bg-hover !default;
 
 //** Border color for table and cell borders.
 $table-border-color:            $color-light !default;
+
+//== Tooltips
+//
+//##
+
+//** Tooltip max width
+$tooltip-max-width:           200px !default;
+//** Tooltip text color
+$tooltip-color:               $color-light-alt !default;
+//** Tooltip background color
+$tooltip-bg:                  $color-info !default;
+$tooltip-opacity:             .9 !default;
+
+//** Tooltip arrow width
+$tooltip-arrow-width:         5px !default;
+//** Tooltip arrow color
+$tooltip-arrow-color:         $tooltip-bg !default;
 
 
 //-- Z-index master list

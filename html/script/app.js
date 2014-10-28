@@ -45,6 +45,10 @@ var app = angular.module('EmeveUiApp', [
             templateUrl: 'views/table.html',
             controller: 'DefaultCtrl'
         })
+        .when('/tooltip', {
+            templateUrl: 'views/tooltip.html',
+            controller: 'DefaultCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });
