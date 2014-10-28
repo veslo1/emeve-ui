@@ -9,11 +9,14 @@ var browserSync = require('browser-sync');
 var concat      = require('gulp-concat');
 var inject      = require('gulp-inject');
 var jshint      = require('gulp-jshint');
-var minifyCSS   = require('gulp-minify-css');
+var minifyCss   = require('gulp-minify-css');
+var minifyHtml = require('gulp-minify-html');
 var rename      = require('gulp-rename');
 var sass        = require('gulp-sass');
 var uglify      = require('gulp-uglify');
 var wiredep     = require('wiredep').stream;
+//angular
+var templateCache = require('gulp-templateCache')
 //debug
 var print       = require('gulp-print');
 var using       = require('gulp-using');
@@ -44,7 +47,7 @@ gulp.task('js', function () {
 gulp.task('sass', function () {
   return gulp.src('html/style/**/*.scss')
     .pipe(sass())
-    .pipe(minifyCSS({keepSpecialComments:0}))
+    .pipe(minifyCss({keepSpecialComments:0}))
     .pipe(gulp.dest('html/style'))
     .pipe(browserSync.reload({stream: true}));
 });
@@ -52,7 +55,7 @@ gulp.task('sass', function () {
 //Style
 gulp.task('style', function () {
   return gulp.src('html/style/**/*.css')
-    .pipe(minifyCSS({keepSpecialComments:0}))
+    .pipe(minifyCss({keepSpecialComments:0}))
     .pipe(gulp.dest('html/style'))
     .pipe(browserSync.reload({stream: true}));
 });
@@ -92,9 +95,28 @@ gulp.task('bs-reload',function(){
   gulp.src('html/index.html')
     .pipe(browserSync.reload({stream: true}));
 });
+
+gulp.task('ngDirectives',function(){
+  var mhOptions ={
+    comments:true
+  };
+  var tcOptions = {
+    output: 'html/script/templates.js',
+    strip: 'html/views/directives',
+    prepend: '',
+    moduleName: 'EmeveUiApp',
+    minify: {}
+  };
+
+  gulp.src('html/views/directives/**/*.html')
+    .pipe(minifyHtml(mhOptions))
+    .pipe(templateCache(tcOptions))
+    .pipe(gulp.dest('./'));
+});
+
 //Default
 gulp.task('default', ['sass', 'browser-sync'], function () {
-  gulp.watch("html/style/*.scss", ['sass']);
+  //gulp.watch("html/style/*.scss", ['sass']);
   gulp.watch("html/style/*.css", ['style']);
   gulp.watch("html/js/*.js", ['js','angularApp', 'bs-reload']);
   gulp.watch("html/**/*.html", ['bs-reload']);

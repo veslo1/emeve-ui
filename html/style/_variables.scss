@@ -40,6 +40,7 @@ $color-state-code: lighten($color-default, 20%);
 $color-state-kbd: $color-shadow;
 
 
+
 //pre
 $pre-scrollable-max-height:   340px !default;
 
@@ -225,7 +226,7 @@ $table-border-color:            $color-light !default;
 //** Tooltip max width
 $tooltip-max-width:           200px !default;
 //** Tooltip text color
-$tooltip-color:               $color-light-alt !default;
+$tooltip-color:               $color-info !default;
 //** Tooltip background color
 $tooltip-bg:                  $color-info !default;
 $tooltip-opacity:             .9 !default;
