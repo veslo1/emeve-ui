@@ -111,13 +111,15 @@ gulp.task('ngDirectives',function(){
   gulp.src('html/views/directives/**/*.html')
     .pipe(minifyHtml(mhOptions))
     .pipe(templateCache(tcOptions))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./'))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 //Default
-gulp.task('default', ['sass', 'browser-sync'], function () {
+gulp.task('default', ['style', 'browser-sync'], function () {
   //gulp.watch("html/style/*.scss", ['sass']);
   gulp.watch("html/style/*.css", ['style']);
   gulp.watch("html/js/*.js", ['js','angularApp', 'bs-reload']);
   gulp.watch("html/**/*.html", ['bs-reload']);
+  gulp.watch("html/views/**/*.html",['ngDirectives']);
 });
