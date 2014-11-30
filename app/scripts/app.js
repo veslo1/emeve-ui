@@ -10,5 +10,6 @@ var mvUi = angular.module('mvUi', [
   'mvUi.dropdown',
   'mvUi.pageheader',
   'mvUi.grid',
-  'mvUi.tooltip'
+  'mvUi.tooltip',
+  'mvUi.icon'
 ]);

@@ -10,7 +10,8 @@ var mvUi = angular.module('mvUi', [
   'mvUi.dropdown',
   'mvUi.pageheader',
   'mvUi.grid',
-  'mvUi.tooltip'
+  'mvUi.tooltip',
+  'mvUi.icon'
 ]);
 
 !function(a){try{a=angular.module("Emeve.Ui")}catch(e){a=angular.module("Emeve.Ui",[])}a.run(["$templateCache",function(a){a.put("partials/directives/mv-pageheader.html",'<h2 class="mv-page-title"><span class="title-icon" data-ng-if="icon"><i class="fa fa-{{icon}}"></i></span> <span class="title-label">{{title}}</span></h2><div class="content-wrapper" data-ng-transclude=""></div>')}])}();
@@ -292,6 +293,24 @@ angular.module('mvUi.grid', [])
     };
   }]);
 
+
+angular.module('mvUi.icon',[])
+  .directive('mvIcon',[function(){
+    return {
+      restrict: 'EAC',
+      scope:{
+        icon: '@',
+        prefix:'@'
+      },
+      link: function(scope,element,attr){
+        scope.icon = angular.isDefined(scope.icon) ? scope.icon : false;
+        scope.prefix = angular.isDefined(scope.prefix) ? scope.prefix : 'fa';
+
+        element.addClass(scope.prefix);
+        element.addClass(scope.prefix+'-' + scope.icon);
+      }
+    };
+  }]);
 
 angular.module('mvUi.pageheader', [])
   .directive('mvPageHeader', [function () {
