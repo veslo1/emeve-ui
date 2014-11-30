@@ -64,6 +64,9 @@ gulp.task('serve', ['watch'], function () {
     'app/scripts/**/*.js',
     'app/partials/**/*.html',
     'app/images/**/*'
+  ],
+  [
+    'firefox'
   ]);
 });
 

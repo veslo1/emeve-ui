@@ -26,7 +26,6 @@ angular.module('mvUi.btn',[])
         behavior: '@',
         active: '@'
       },
-      controllerAs: 'mvBtnCtrl',
       controller: function ($scope, $element, $attrs) {
         $scope.active = false;
 
@@ -42,7 +41,7 @@ angular.module('mvUi.btn',[])
           }
         });
       },
-      link: function (scope, element, attrs, mvBtnCtrl, transclude) {
+      link: function (scope, element, attrs, ctrl, transclude) {
         scope.icon = angular.isDefined(scope.icon) ? scope.icon : false;
         scope.border = angular.isDefined(scope.border) ? scope.border : false;
         scope.color = angular.isDefined(scope.color) ? scope.color : 'default';
