@@ -5,7 +5,7 @@
   "ignore": [
     ".*",
     "**/.*",
-    "html",
+    "app",
     "test",
     "bower.json",
     "gulpfile.js",
