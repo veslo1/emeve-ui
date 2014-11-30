@@ -37,5 +37,5 @@
     "erp",
     "user interface"
   ],
-  "directory": "html/bower_components"
+  "directory": "app/bower_components"
 }

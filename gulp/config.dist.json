@@ -1,0 +1,25 @@
+{
+  "appSettings": {
+    "moduleName": "mvApp",
+    "directory":{
+      "dev": "app/",
+      "app": "www/app/",
+      "build": "dist"
+    },
+    "zf2":{
+      "backend": "module/BackEnd/view/layout/"
+    },
+    "server":{
+      "proxy": "localhost:8001"
+    },
+    "deploy": {
+      "ftp": {
+        "host": "website.com",
+        "port": 21,
+        "user": "user",
+        "pass": "1234",
+        "remotePath":"/www/"
+      }
+    }
+  }
+}

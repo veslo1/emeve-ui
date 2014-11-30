@@ -1,0 +1,221 @@
+'use strict';
+
+/**
+ *  Tarefas comuns
+ */
+var gulp = require('gulp');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
+var wiredep = require('wiredep').stream;
+
+var $ = require('gulp-load-plugins')({
+  pattern: ['gulp-*', 'del', 'main-bower-files', 'favicons']
+});
+
+var appSettings = require('./config.json').appSettings;
+var dirDev = appSettings.directory.dev; //app
+var dirApp = appSettings.directory.app; //www/app
+//var buildPhp = appSettings.buildPhp;
+
+function handleError(err) {
+  console.error(err.toString());
+  this.emit('end');
+}
+
+//== Limpeza
+gulp.task('clean', function () {
+  $.del(['.tmp', '.sass-cache']);
+});
+
+gulp.task('clean:core', function () {
+  $.del([dirApp]);
+});
+
+//== Ruby Sass
+gulp.task('sass', function () {
+  return gulp.src(dirDev + 'styles/**/*.scss')
+    .pipe($.sass())
+    .on('error', handleError)
+    .pipe(gulp.dest(dirDev + 'styles/'))
+    .pipe($.size());
+});
+
+gulp.task('styles', function () {
+  return gulp.src(dirDev + 'styles/*.css')
+    .pipe($.autoprefixer('last 1 version'))
+    .pipe($.minifyCss({keepSpecialComments: 0}))
+    .pipe(gulp.dest(dirApp + 'styles/'))
+    .pipe(reload({stream: true}))
+    .pipe($.size());
+});
+
+//== Wiredep
+gulp.task('bower', function () {
+  return gulp.src(dirDev + 'index.html')
+    .pipe(wiredep({
+      directory: dirDev + 'bower_components',
+      ignorePath: dirDev
+    }))
+    .pipe(gulp.dest(dirDev))
+    .pipe(reload({stream: true}));
+});
+
+//== JSHint e Scripts
+gulp.task('scripts', function () {
+  // .pipe($.ngAnnotate())
+ gulp.src(dirDev + 'scripts/**/*.js')
+    .pipe($.concat('scripts/scripts.js'))
+    //.pipe($.ngAnnotate())
+    //.pipe($.uglify())
+    .pipe(gulp.dest(dirApp))
+    .pipe(reload({stream: true}))
+    .pipe($.size());
+  gulp.src([
+    dirDev + 'scripts/mv-premium/**/!(app)*.js',
+    dirDev + 'scripts/mv-premium/app.js'
+    ])
+    .pipe($.concat('scripts/mv-premium.js'))
+    //.pipe($.ngAnnotate())
+    //.pipe($.uglify())
+    .pipe(gulp.dest(dirApp))
+    .pipe(reload({stream: true}))
+    .pipe($.size());
+});
+
+gulp.task('jsHint', function () {
+  return gulp.src(dirDev + 'scripts/**/*.js')
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.size());
+});
+
+//== partials
+gulp.task('partials', function () {
+  return gulp.src(dirDev + 'partials/**/*.html')
+    .pipe($.angularHtmlify())
+    .pipe($.minifyHtml({
+      empty: true,
+      spare: true,
+      quotes: true
+    }))
+    .pipe($.ngHtml2js({
+      moduleName: appSettings.moduleName,
+      prefix: 'partials/'
+    }))
+    .pipe(gulp.dest('.tmp/partials'))
+    .pipe($.size());
+});
+
+gulp.task('partialsConcat', function () {
+  return gulp.src('.tmp/partials/**/*.js')
+    .pipe($.concat('scripts/template.js'))
+    .pipe($.ngAnnotate())
+    .pipe($.uglify())
+    .pipe(gulp.dest(dirDev))
+    .pipe($.size());
+});
+
+
+gulp.task('ngDirectives', function () {
+  var tcOptions = {
+    module: 'mvApp'
+  };
+  gulp.src(dirDev + 'views/directives/**/*.html')
+    .pipe($.angularTemplatecache(tcOptions))
+    .pipe(gulp.dest(dirDev + 'scripts/'))
+    .pipe(browserSync.reload({stream: true}));
+});
+
+//== Injeção do aplicativo no index.html
+gulp.task('injectJs', ['partials', 'partialsConcat'], function () {
+  var optionsApp = {
+    name: 'mvApp',
+    addRootSlash: false,
+    ignorePath: [dirDev]
+  };
+  var sourcesApp = gulp.src(dirDev + 'scripts/**/*.js', {
+    read: false
+  }).pipe($.print());
+
+
+  gulp.src(dirDev + 'index.html')
+    .pipe($.inject(sourcesApp, optionsApp))
+    .pipe(gulp.dest(dirDev))
+    .pipe(reload({stream: true}));
+});
+
+//== Usemin : gera diretório www/core
+gulp.task('html', function () {
+  return gulp.src('./' + dirDev + 'index.html')
+    .pipe($.usemin({
+      css: [$.minifyCss(), $.autoprefixer('last 1 version'), $.csso()],
+      //html: [minifyHtml({empty: true})],
+      js: [$.ngAnnotate(), $.uglify()]
+    }))
+    .pipe(gulp.dest(dirApp))
+    .pipe(reload({stream: true}));
+});
+
+//== Imagens: otimização
+gulp.task('images', function () {
+  return gulp.src(dirDev + 'images/**/*.{png,jpg,gif}')
+    .pipe($.cache.clear())
+    .pipe($.cache($.imagemin({
+      optimizationLevel: 3,
+      progressive: true,
+      interlaced: true
+    })))
+    .pipe(gulp.dest(dirApp + 'images'))
+    .pipe($.size());
+});
+
+gulp.task('favicon', function (callbackFnc) {
+  $.favicons({
+    // I/O
+    source: {
+      small: dirDev + 'favicon/64x64.png',    // Should be 64x64px or smaller
+      medium: dirDev + 'favicon/256x256.png',  // Should be between 65x65px to 310x310px
+      large: dirDev + 'favicon/500x500.png'     // Should be 311x311px or larger
+    },
+    dest: dirApp + 'favicon/images',
+
+    // Icon Types
+    android: true,
+    apple: true,
+    coast: true,
+    favicons: true,
+    firefox: true,
+    opengraph: true,
+    windows: true,
+
+    // Miscellaneous
+    html: null,
+    background: 'transparent',
+    tileBlackWhite: false,
+    manifest: null,
+    trueColor: false,
+    url: null,
+    logging: true,
+    callback: callbackFnc
+  });
+});
+
+//== Bower Fonts
+gulp.task('fontsBower', function () {
+  return gulp.src($.mainBowerFiles())
+    .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
+    .pipe($.flatten())
+    .pipe(gulp.dest(dirApp + 'fonts/bower'))
+    .pipe($.size());
+});
+
+//== Fontes normais
+gulp.task('fontsApp', function () {
+  return gulp.src(dirDev + 'fonts/**/*.{eot,svg,ttf,woff}')
+    .pipe(gulp.dest(dirApp + 'fonts'))
+    .pipe($.size());
+});
+
+gulp.task('fonts', ['fontsBower', 'fontsApp']);
+
+gulp.task('build', ['bower', 'styles', 'injectJs', 'html', 'images', 'fonts']);
