@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="EmeveUiApp" class="no-js">
+<head lang="pt-br">
+  <meta charset="utf-8">
+  <title>Emeve Ui</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles/vendor.css"/>
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="stylesheet" href="styles/demo.css"/>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1><a href="/">Emeve Ui</a></h1>
+    <aside id="mainNav" ng-include="'views/layout/main-nav.html'"></aside>
+    <section id="mainContent" ng-view=""></section>
+  </div>
+
+  <!--[if lt IE 9]>
+  <script src="scripts/oldieshim.js"></script>
+  <![endif]-->
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/scripts.js"></script>
+
+  <!--demostração-->
+  <script src="scripts/demo.js"></script>
+  <script src="scripts/controllers/btn.js"></script>
+  <script src="scripts/controllers/default.js"></script>
+</body>
+</html>

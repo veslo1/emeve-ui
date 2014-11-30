@@ -1,12 +1,31 @@
 {
   "name": "emeve-ui",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
+  "homepage": "https://github.com/marcusvy/emeve-ui",
+  "authors": [
+    "Marcus Vinicius <marcusvy@gmail.com>"
+  ],
+  "description": "mvUi is a framework for developing responsive, mobile first web projects",
+  "keywords": [
+    "emeve",
+    "mvinicius",
+    "erp",
+    "user interface"
+  ],
+  "main": [
+    "./css/font-awesome.css",
+    "./fonts/*"
+  ],
   "ignore": [
-    ".*",
     "**/.*",
+    "*.md",
+    ".tmp",
     "app",
-    "test",
+    "demo",
+    "dist/index.html",
+    "dist/scripts/scripts.js",
+    "dist/styles/main.js",
     "bower.json",
     "gulpfile.js",
     "package.json"
@@ -25,17 +44,5 @@
     "normalize-scss": "~3.0.1",
     "modernizr": "~2.8.3",
     "fontawesome": "~4.2.0"
-  },
-  "homepage": "https://github.com/marcusvy/emeve-ui",
-  "authors": [
-    "Marcus Vinicius <marcusvy@gmail.com>"
-  ],
-  "description": "mvUi is a framework for developing responsive, mobile first web projects",
-  "keywords": [
-    "emeve",
-    "mvinicius",
-    "erp",
-    "user interface"
-  ],
-  "directory": "app/bower_components"
+  }
 }

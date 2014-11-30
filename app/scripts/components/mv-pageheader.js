@@ -1,4 +1,5 @@
-app.directive('mvUi.pageheader', [function () {
+angular.module('mvUi.pageheader', [])
+  .directive('mvPageHeader', [function () {
   return {
     restrict: 'C',
     templateUrl: '../../views/directives/mv-pageheader.html',
