@@ -21,6 +21,7 @@ angular.module('EmeveUiApp.Controller', [])
       console.log(value);
     };
   }])
+
   .controller('BtnCtrl', ['$scope',function ($scope) {
     $scope.list = ['um', 'dois', 'tres'];
 
