@@ -53,7 +53,7 @@ gulp.task('up',['watch'],function () {
 
 gulp.task('serve', ['watch'], function () {
   browserSyncInit([
-    appSettings.directory.dev,
+    appSettings.directory.demo,
     appSettings.directory.tmp
   ], [
     'app/*.html',
