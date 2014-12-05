@@ -6,9 +6,11 @@ var mvUi = angular.module('mvUi', [
   'ngResource',
   'ngSanitize',
   'ngTouch',
-  'mvUi.btn',
-  'mvUi.dropdown',
-  'mvUi.pageheader',
-  'mvUi.grid',
-  'mvUi.tooltip'
+  'mvUi.Button',
+  'mvUi.Dropdown',
+  'mvUi.Pageheader',
+  'mvUi.Grid',
+  'mvUi.Tooltip',
+  'mvUi.Icon',
+  'mvUi.Switch'
 ]);

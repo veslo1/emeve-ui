@@ -66,7 +66,7 @@ gulp.task('serve', ['watch'], function () {
     'app/images/**/*'
   ],
   [
-    'firefox'
+    'google chrome'
   ]);
 });
 

@@ -1,4 +1,4 @@
-angular.module('mvUi.btn',[])
+angular.module('mvUi.Button',[])
   .directive('mvBtn', function ($parse) {
     return {
       restrict: 'C',
