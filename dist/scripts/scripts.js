@@ -6,16 +6,17 @@ var mvUi = angular.module('mvUi', [
   'ngResource',
   'ngSanitize',
   'ngTouch',
-  'mvUi.btn',
-  'mvUi.dropdown',
-  'mvUi.pageheader',
-  'mvUi.grid',
-  'mvUi.tooltip',
-  'mvUi.icon'
+  'mvUi.Button',
+  'mvUi.Dropdown',
+  'mvUi.PageHeader',
+  'mvUi.Grid',
+  'mvUi.Tooltip',
+  'mvUi.Icon',
+  'mvUi.Switch'
 ]);
 
 !function(a){try{a=angular.module("Emeve.Ui")}catch(e){a=angular.module("Emeve.Ui",[])}a.run(["$templateCache",function(a){a.put("partials/directives/mv-pageheader.html",'<h2 class="mv-page-title"><span class="title-icon" data-ng-if="icon"><i class="fa fa-{{icon}}"></i></span> <span class="title-label">{{title}}</span></h2><div class="content-wrapper" data-ng-transclude=""></div>')}])}();
-angular.module('mvUi.btn',[])
+angular.module('mvUi.Button',[])
   .directive('mvBtn', function ($parse) {
     return {
       restrict: 'C',
@@ -159,7 +160,7 @@ angular.module('mvUi.btn',[])
   });
 
 
-angular.module('mvUi.dropdown', [])
+angular.module('mvUi.Dropdown', [])
   .directive('mvDropdown', ['$document', function ($document) {
     return {
       restrict: 'C',
@@ -214,7 +215,7 @@ angular.module('mvUi.dropdown', [])
     };
   }]);
 
-angular.module('mvUi.grid', [])
+angular.module('mvUi.Grid', [])
   .directive('mvCol', ['$parse', '$compile', function ($parse, $compile) {
     return {
       restrict: 'C',
@@ -294,7 +295,7 @@ angular.module('mvUi.grid', [])
   }]);
 
 
-angular.module('mvUi.icon',[])
+angular.module('mvUi.Icon',[])
   .directive('mvIcon',[function(){
     return {
       restrict: 'EAC',
@@ -312,7 +313,7 @@ angular.module('mvUi.icon',[])
     };
   }]);
 
-angular.module('mvUi.pageheader', [])
+angular.module('mvUi.PageHeader', [])
   .directive('mvPageHeader', [function () {
   return {
     restrict: 'C',
@@ -329,7 +330,35 @@ angular.module('mvUi.pageheader', [])
   };
 }]);
 
-angular.module('mvUi.tooltip', [])
+angular.module('mvUi.Switch', [])
+  .directive('mvTabContainer', ['$parse', '$compile', function ($parse, $compile) {
+    return {
+      restrict: 'EC',
+      template: '',
+      transclude: true,
+      controller: function ($scope, $element, $attrs) {
+        /**
+         * Aba ativa
+         * @type {number}
+         */
+        $scope.active = 0;
+
+        /**
+         * menu
+         * @type {Array}
+         */
+        $scope.nav = [];
+
+
+      },
+      link: function (scope, element, attrs) {
+
+      }
+    };
+  }]);
+
+
+angular.module('mvUi.Tooltip', [])
   .directive('mvTooltip', [function () {
     return {
       restrict: 'C',

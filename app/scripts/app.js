@@ -8,7 +8,7 @@ var mvUi = angular.module('mvUi', [
   'ngTouch',
   'mvUi.Button',
   'mvUi.Dropdown',
-  'mvUi.Pageheader',
+  'mvUi.PageHeader',
   'mvUi.Grid',
   'mvUi.Tooltip',
   'mvUi.Icon',

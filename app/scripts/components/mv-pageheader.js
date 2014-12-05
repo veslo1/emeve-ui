@@ -1,4 +1,4 @@
-angular.module('mvUi.pageheader', [])
+angular.module('mvUi.PageHeader', [])
   .directive('mvPageHeader', [function () {
   return {
     restrict: 'C',
