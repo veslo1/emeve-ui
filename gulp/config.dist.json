@@ -3,8 +3,10 @@
     "moduleName": "mvApp",
     "directory":{
       "dev": "app/",
-      "app": "www/app/",
-      "build": "dist"
+      "demo": "demo/",
+      "app": "dist/",
+      "build": "dist/",
+      "tmp":".tmp"
     },
     "zf2":{
       "backend": "module/BackEnd/view/layout/"
