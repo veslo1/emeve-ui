@@ -75,5 +75,6 @@ gulp.task('serve:dist', [], function () {
 });
 
 gulp.task('bs-reload',function(){
-  reload({ stream: true });
+  gulp.src('app/index.html', {read: false})
+    .pipe(reload({stream: true}));
 });
