@@ -1,4 +1,4 @@
-angular.module('mvUi.grid', [])
+angular.module('mvUi.Grid', [])
   .directive('mvCol', ['$parse', '$compile', function ($parse, $compile) {
     return {
       restrict: 'C',

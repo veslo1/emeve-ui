@@ -1,4 +1,4 @@
-angular.module('mvUi.tooltip', [])
+angular.module('mvUi.Tooltip', [])
   .directive('mvTooltip', [function () {
     return {
       restrict: 'C',

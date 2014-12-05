@@ -1,4 +1,4 @@
-angular.module('mvUi.icon',[])
+angular.module('mvUi.Icon',[])
   .directive('mvIcon',[function(){
     return {
       restrict: 'EAC',

@@ -1,4 +1,4 @@
-angular.module('mvUi.dropdown', [])
+angular.module('mvUi.Dropdown', [])
   .directive('mvDropdown', ['$document', function ($document) {
     return {
       restrict: 'C',
