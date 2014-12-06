@@ -69,7 +69,7 @@ gulp.task('scripts', function () {
     dirDev + 'scripts/app.js'
   ])
     .pipe($.concat('mv-ui.js'))
-    //.pipe($.ngAnnotate())
+    // .pipe($.ngAnnotate())
     //.pipe($.uglify())
     .pipe(gulp.dest(dirApp))
     .pipe(reload({stream: true}))
@@ -132,6 +132,8 @@ gulp.task('ngDirectives', function () {
   };
   gulp.src(dirDev + 'partials/directives/**/*.html')
     .pipe($.angularTemplatecache(tcOptions))
+    .pipe($.ngAnnotate())
+    .pipe($.uglify())
     .pipe(gulp.dest(dirDev + 'scripts/'))
     .pipe(browserSync.reload({stream: true}));
 });
