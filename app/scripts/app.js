@@ -1,12 +1,10 @@
-'use strict';
-
 var mvUi = angular.module('mvUi', [
   'ngAnimate',
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ngTouch',
-  'mvUi.Templates',
+  'mvUi.Template',
   'mvUi.Button',
   'mvUi.Dropdown',
   'mvUi.PageHeader',

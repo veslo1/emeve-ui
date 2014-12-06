@@ -63,7 +63,7 @@ angular.module('mvUi.Grid', [])
       },
       transclude: true,
       link: function (scope, element, attrs, mvRowCtrl, transclude) {
-        scope.layoutFill = (angular.isDefined(scope.layoutFill)) ? JSON.parse(scope.layoutFill) : false
+        scope.layoutFill = (angular.isDefined(scope.layoutFill)) ? JSON.parse(scope.layoutFill) : false;
         element.append(transclude());
 
         if (scope.layoutFill) {

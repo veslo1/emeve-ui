@@ -39,7 +39,7 @@ angular.module('mvUi.Button',[])
           icon.addClass('fa');
           icon.addClass('fa-' + scope.icon);
           icon.addClass('fa-fw');
-          element.prepend(icon)
+          element.prepend(icon);
         }
 
         if (scope.border) {
@@ -52,7 +52,7 @@ angular.module('mvUi.Button',[])
           element.addClass('default');
         }
       }
-    }
+    };
   })
 
   .directive('mvBtnRadio', function ($parse) {
@@ -89,7 +89,7 @@ angular.module('mvUi.Button',[])
         });
 
       }
-    }
+    };
   })
 
   .directive('mvBtnCheckbox', function ($parse) {
@@ -138,6 +138,6 @@ angular.module('mvUi.Button',[])
         });
 
       }
-    }
+    };
   });
 

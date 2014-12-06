@@ -76,7 +76,7 @@ gulp.task('scripts', function () {
     .pipe($.size());
 
   gulp.src(dirDemo + 'scripts/**/*.js')
-    .pipe($.concat('scripts/demo-app.js'))
+    .pipe($.concat('demo-app.js'))
     //.pipe($.ngAnnotate())
     //.pipe($.uglify())
     .pipe(gulp.dest(dirDemo))
@@ -112,15 +112,9 @@ gulp.task('partials', function () {
       moduleName: appSettings.moduleName,
       prefix: 'partials/'
     }))
-    .pipe(gulp.dest('.tmp/partials'))
-    .pipe($.size());
-});
-
-gulp.task('partialsConcat', function () {
-  return gulp.src('.tmp/partials/**/*.js')
     .pipe($.concat('scripts/templates.js'))
     .pipe($.ngAnnotate())
-    .pipe($.uglify())
+    // .pipe($.uglify())
     .pipe(gulp.dest(dirDev))
     .pipe($.size());
 });
@@ -128,7 +122,8 @@ gulp.task('partialsConcat', function () {
 
 gulp.task('ngDirectives', function () {
   var tcOptions = {
-    module: 'mvUi.Templates'
+    module: 'mvUi.Template',
+    standalone:true
   };
   gulp.src(dirDev + 'partials/directives/**/*.html')
     .pipe($.angularTemplatecache(tcOptions))
@@ -139,7 +134,7 @@ gulp.task('ngDirectives', function () {
 });
 
 //== Injeção do aplicativo no index.html
-gulp.task('injectJs', ['partials', 'partialsConcat'], function () {
+gulp.task('inject', ['partials'], function () {
   var optionsApp = {
     name: 'mvApp',
     addRootSlash: false,
@@ -230,4 +225,4 @@ gulp.task('fontsApp', function () {
 
 gulp.task('fonts', ['fontsBower', 'fontsApp']);
 
-gulp.task('build', ['bower', 'styles', 'injectJs', 'html', 'images', 'fonts']);
+gulp.task('build', ['bower', 'styles', 'inject', 'html', 'images', 'fonts']);

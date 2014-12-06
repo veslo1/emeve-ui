@@ -1,4 +1,4 @@
-angular.module("mvUi.Templates",[]).run(["$templateCache",function(n){n.put("mv-pageheader.html",'<h2 class="mv-page-title">\n  <span class="title-icon" ng-if="icon">\n    <i class="fa fa-{{icon}}"></i>\n  </span>\n  <span class="title-label">{{title}}</span>\n</h2>\n<div class="content-wrapper" ng-transclude>\n\n</div>\n'),n.put("mv-switch-nav.html",'<ul>\n  <li ng-repeat="slide in slides">\n    <button ng-click="selectSlide(slide.title)">{{slide.title}}</button>\n  </li>\n</ul>\n')}]);
+angular.module("mvUi.Template",[]).run(["$templateCache",function(n){n.put("mv-pageheader.html",'<h2 class="mv-page-title">\n  <span class="title-icon" ng-if="icon">\n    <i class="fa fa-{{icon}}"></i>\n  </span>\n  <span class="title-label">{{title}}</span>\n</h2>\n<div class="content-wrapper" ng-transclude>\n\n</div>\n'),n.put("mv-switch-nav.html",'<ul>\n  <li ng-repeat="slide in slides">\n    <button ng-click="selectSlide(slide.title)">{{slide.title}}</button>\n  </li>\n</ul>\n')}]);
 
 angular.module('mvUi.Button',[])
   .directive('mvBtn', function ($parse) {
@@ -41,7 +41,7 @@ angular.module('mvUi.Button',[])
           icon.addClass('fa');
           icon.addClass('fa-' + scope.icon);
           icon.addClass('fa-fw');
-          element.prepend(icon)
+          element.prepend(icon);
         }
 
         if (scope.border) {
@@ -54,7 +54,7 @@ angular.module('mvUi.Button',[])
           element.addClass('default');
         }
       }
-    }
+    };
   })
 
   .directive('mvBtnRadio', function ($parse) {
@@ -91,7 +91,7 @@ angular.module('mvUi.Button',[])
         });
 
       }
-    }
+    };
   })
 
   .directive('mvBtnCheckbox', function ($parse) {
@@ -140,7 +140,7 @@ angular.module('mvUi.Button',[])
         });
 
       }
-    }
+    };
   });
 
 
@@ -264,7 +264,7 @@ angular.module('mvUi.Grid', [])
       },
       transclude: true,
       link: function (scope, element, attrs, mvRowCtrl, transclude) {
-        scope.layoutFill = (angular.isDefined(scope.layoutFill)) ? JSON.parse(scope.layoutFill) : false
+        scope.layoutFill = (angular.isDefined(scope.layoutFill)) ? JSON.parse(scope.layoutFill) : false;
         element.append(transclude());
 
         if (scope.layoutFill) {
@@ -298,10 +298,12 @@ angular.module('mvUi.Icon',[])
   }]);
 
 angular.module('mvUi.PageHeader', [])
-  .directive('mvPageHeader', [function () {
+  .directive('mvPageHeader', [
+    '$templateCache',
+    function ($templateCache) {
   return {
     restrict: 'C',
-    templateUrl: '../../views/directives/mv-pageheader.html',
+    template: $templateCache.get('mv-pageheader.html'),
     scope: {
       title: '@',
       icon: '@'
@@ -309,7 +311,6 @@ angular.module('mvUi.PageHeader', [])
     transclude: true,
     link: function (scope, element, attrs) {
       scope.icon = angular.isDefined(scope.icon) ? scope.icon : false;
-
     }
   };
 }]);
@@ -346,7 +347,7 @@ angular.module('mvUi.Switch', [])
 
           this.addSlide = function(slide){
             $scope.slides.push(slide);
-          }
+          };
 
 
         },
@@ -390,15 +391,13 @@ angular.module('mvUi.Tooltip', [])
     };
   }]);
 
-'use strict';
-
 var mvUi = angular.module('mvUi', [
   'ngAnimate',
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ngTouch',
-  'mvUi.Templates',
+  'mvUi.Template',
   'mvUi.Button',
   'mvUi.Dropdown',
   'mvUi.PageHeader',

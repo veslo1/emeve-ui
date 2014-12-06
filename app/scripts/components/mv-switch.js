@@ -30,7 +30,7 @@ angular.module('mvUi.Switch', [])
 
           this.addSlide = function(slide){
             $scope.slides.push(slide);
-          }
+          };
 
 
         },

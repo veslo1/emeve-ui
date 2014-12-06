@@ -1,8 +1,10 @@
 angular.module('mvUi.PageHeader', [])
-  .directive('mvPageHeader', [function () {
+  .directive('mvPageHeader', [
+    '$templateCache',
+    function ($templateCache) {
   return {
     restrict: 'C',
-    templateUrl: '../../views/directives/mv-pageheader.html',
+    template: $templateCache.get('mv-pageheader.html'),
     scope: {
       title: '@',
       icon: '@'
@@ -10,7 +12,6 @@ angular.module('mvUi.PageHeader', [])
     transclude: true,
     link: function (scope, element, attrs) {
       scope.icon = angular.isDefined(scope.icon) ? scope.icon : false;
-
     }
   };
 }]);
