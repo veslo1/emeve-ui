@@ -15,6 +15,7 @@ var $ = require('gulp-load-plugins')({
 var appSettings = require('./config.json').appSettings;
 var dirDev = appSettings.directory.dev; //app
 var dirApp = appSettings.directory.app; //www/app
+var dirDemo = appSettings.directory.demo;
 //var buildPhp = appSettings.buildPhp;
 
 function handleError(err) {
@@ -62,28 +63,37 @@ gulp.task('bower', function () {
 
 //== JSHint e Scripts
 gulp.task('scripts', function () {
-  // .pipe($.ngAnnotate())
- gulp.src(dirDev + 'scripts/**/*.js')
-    .pipe($.concat('scripts/scripts.js'))
-    //.pipe($.ngAnnotate())
-    //.pipe($.uglify())
-    .pipe(gulp.dest(dirApp))
-    .pipe(reload({stream: true}))
-    .pipe($.size());
+
   gulp.src([
-    dirDev + 'scripts/mv-premium/**/!(app)*.js',
-    dirDev + 'scripts/mv-premium/app.js'
-    ])
-    .pipe($.concat('scripts/mv-premium.js'))
+    dirDev + 'scripts/**/!(app)*.js',
+    dirDev + 'scripts/app.js'
+  ])
+    .pipe($.concat('mv-ui.js'))
     //.pipe($.ngAnnotate())
     //.pipe($.uglify())
     .pipe(gulp.dest(dirApp))
     .pipe(reload({stream: true}))
     .pipe($.size());
+
+  gulp.src(dirDemo + 'scripts/**/*.js')
+    .pipe($.concat('scripts/demo-app.js'))
+    //.pipe($.ngAnnotate())
+    //.pipe($.uglify())
+    .pipe(gulp.dest(dirDemo))
+    .pipe(reload({stream: true}))
+    .pipe($.size());
+
 });
 
 gulp.task('jsHint', function () {
   return gulp.src(dirDev + 'scripts/**/*.js')
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.size());
+});
+
+gulp.task('jsHint:core', function () {
+  return gulp.src('gulp/**/*.js')
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.size());
@@ -108,7 +118,7 @@ gulp.task('partials', function () {
 
 gulp.task('partialsConcat', function () {
   return gulp.src('.tmp/partials/**/*.js')
-    .pipe($.concat('scripts/template.js'))
+    .pipe($.concat('scripts/templates.js'))
     .pipe($.ngAnnotate())
     .pipe($.uglify())
     .pipe(gulp.dest(dirDev))
@@ -118,9 +128,9 @@ gulp.task('partialsConcat', function () {
 
 gulp.task('ngDirectives', function () {
   var tcOptions = {
-    module: 'mvApp'
+    module: 'mvUi.Templates'
   };
-  gulp.src(dirDev + 'views/directives/**/*.html')
+  gulp.src(dirDev + 'partials/directives/**/*.html')
     .pipe($.angularTemplatecache(tcOptions))
     .pipe(gulp.dest(dirDev + 'scripts/'))
     .pipe(browserSync.reload({stream: true}));

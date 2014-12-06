@@ -22,7 +22,6 @@ angular.module('EmeveUiApp.Route', ['ngRoute', 'ngAnimate'])
       });
   });
 
-
 var EmeveUiApp = angular.module('EmeveUiApp', [
   'ngAnimate',
   'ngCookies',

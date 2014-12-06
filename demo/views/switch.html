@@ -7,8 +7,26 @@
   <p>O componente interruptor (switch) é utilizado quando há necessidade de alternar um conteúdo através de um menu
     pré-estabelecido. Dependendo do comportamento ela possui um visual diferente. Por exemplo: Se adicionarmos o
     comportamento <code>Tab</code> ele atuará com Abas, se colocar <code>List</code> ele atuara como uma lista ou
-    tera um efeito acordeão.</p> 
-  ok
+    tera um efeito acordeão.</p>
+
+  <h3>Navegação</h3>
+
+  <p>A navegaçao é definida com um elemento <code>mv-switch-nav</code> ou classe respectiva. Dentro dele deve estar uma
+    lista
+    (geralmente <code>ul</code>) contendo os links</p>
+</section>
+
+<section class="demo-section">
+  <header>
+    <h1>TESTE</h1>
+  </header>
+  <mv-switch ng-switch="usersTab" data-behavior="tab">
+
+      <mv-switch-slide title="Aba 1">Conteúdo 1</mv-switch-slide>
+      <mv-switch-slide title="Aba 2">Conteúdo 2</mv-switch-slide>
+      <mv-switch-slide title="Aba 2"></mv-switch-slide>
+    </div>
+  </mv-switch>
 </section>
 
 <section class="demo-section">
@@ -18,7 +36,7 @@
     </h1>
   </header>
 
-  <section class="mv-switch tab" data-behavior="tab">
+  <section class="mv-switch2 tab" data-behavior="tab">
     <nav class="mv-switch-nav">
       <ul class="mv-switch-menu">
         <li><a href="#">Aba 1</a></li>
