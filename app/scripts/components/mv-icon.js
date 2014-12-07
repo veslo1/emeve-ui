@@ -1,5 +1,5 @@
 angular.module('mvUi.Icon',[])
-  .directive('mvIcon',[function(){
+  .directive('mvI',[function(){
     return {
       restrict: 'EAC',
       scope:{
