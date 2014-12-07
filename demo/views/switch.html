@@ -20,13 +20,20 @@
   <header>
     <h1>TESTE</h1>
   </header>
-  <mv-switch ng-switch="usersTab" data-behavior="tab">
-
-      <mv-switch-slide title="Aba 1">Conteúdo 1</mv-switch-slide>
-      <mv-switch-slide title="Aba 2">Conteúdo 2</mv-switch-slide>
-      <mv-switch-slide title="Aba 2"></mv-switch-slide>
+  <mv-switch ng-init="usersTab='1'" ng-switch="usersTab" data-behavior="tab">
+    <mv-switch-nav></mv-switch-nav>
+    <mv-switch-slide title="1">Conteúdo 1</mv-switch-slide>
+    <mv-switch-slide title="2">Conteúdo 2</mv-switch-slide>
+    <mv-switch-slide title="3">Conteúdo 3</mv-switch-slide>
     </div>
   </mv-switch>
+
+  <div class="animate-switch-container"
+    ng-switch="selection">
+      <div class="animate-switch" ng-switch-when="settings">Settings Div</div>
+      <div class="animate-switch" ng-switch-when="home">Home Span</div>
+      <div class="animate-switch" ng-switch-default>default</div>
+  </div>
 </section>
 
 <section class="demo-section">
@@ -37,22 +44,22 @@
   </header>
 
   <section class="mv-switch2 tab" data-behavior="tab">
-    <nav class="mv-switch-nav">
-      <ul class="mv-switch-menu">
+    <nav class="mv-switch-nav2">
+      <ul class="mv-switch-menu2">
         <li><a href="#">Aba 1</a></li>
         <li><a href="#">Aba 2</a></li>
         <li><a href="#">Aba 3</a></li>
         <li><a href="#">Aba 4</a></li>
       </ul>
     </nav>
-    <ul class="mv-switch-list">
-      <li class="mv-switch-item active">
+    <ul class="mv-switch-list22">
+      <li class="mv-switch-item22 active">
         Conteúdo 1
       </li>
-      <li class="mv-switch-item">
+      <li class="mv-switch-item2">
         Conteúdo 2
       </li>
-      <li class="mv-switch-item">
+      <li class="mv-switch-item2">
         Conteúdo 3
       </li>
     </ul>

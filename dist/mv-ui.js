@@ -327,33 +327,20 @@ angular.module('mvUi.Switch', [])
         },
         controller: function ($scope, $element, $attrs, $transclude) {
 
-          $scope.active = $scope.ngSwitch;
-          $scope.nav = '';
-          $scope.slides =  [];
-
-          this.createNav = function () {
-            $scope.nav = angular.element('<nav>');
-            $scope.nav.addClass('mv-switch-nav');
-            return $element.prepend($scope.nav);
-          };
-
-          this.analiseItems = function () {
-            //angular.forEach($scope)
-          };
-
-          this.fillNav = function () {
-
-          };
+          $scope.value = '';
+          this.slides =  [];
 
           this.addSlide = function(slide){
-            $scope.slides.push(slide);
+            this.slides.push(slide);
           };
 
+          this.selectSlide = function(title){
+              $scope.ngSwitch = title;
+          };
 
         },
         link: function (scope, iElement, iAttrs, mvSwitchCtrl) {
-          mvSwitchCtrl.createNav();
-          mvSwitchCtrl.fillNav();
+          mvSwitchCtrl.slides[0].title;
         }
       };
     }])
@@ -369,6 +356,19 @@ angular.module('mvUi.Switch', [])
         },
         link: function (scope, iElement, iAttrs, mvSwitchCtrl) {
           mvSwitchCtrl.addSlide(scope);
+        }
+      };
+    }])
+  .directive('mvSwitchNav', ['$templateCache',
+    function ($templateCache) {
+      return {
+        require: '^mvSwitch',
+        restrict: 'EAC',
+        template: $templateCache.get('mv-switch-nav.html'),
+        transclude: true,
+        link: function (scope, iElement, iAttrs,mvSwitchCtrl) {
+          scope.slides = mvSwitchCtrl.slides;
+          scope.selectSlide = mvSwitchCtrl.selectSlide
         }
       };
     }]);
