@@ -44,7 +44,8 @@ angular.module('EmeveUiApp.Controller', [])
     // Número da sala de prova
     $scope.mvFormData = {
       textToggle: 1,
-      selectName: 'white'
+      selectName: 'white',
+      textInfo: 'Um informação qualquer'
     };
 
   }]);
