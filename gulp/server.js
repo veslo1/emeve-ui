@@ -31,6 +31,7 @@ function browserSyncInit(baseDir, files, browser) {
 
   browserSync.instance = browserSync.init(files, {
     startPath: '/index.html',
+    port: appSettings.server.sync.port,
     server: {
       baseDir: baseDir,
       middleware: proxyMiddleware

@@ -5,7 +5,33 @@ $fa-inverse:          $color-white !default;
 
 @import "../../bower_components/fontawesome/scss/font-awesome";
 
+mv-i,
 .mv-icon{
   @extend .fa;
+
+  &.color-default{
+  background-color: $color-default;
+  }
+  &.color-info{
+  background-color: $color-state-info;
+  }
+  &.color-alert{
+  background-color: $color-state-alert;
+  }
+  &.color-error{
+  background-color: $color-state-error;
+  }
+  &.color-success{
+  background-color: $color-state-success;
+  }
+  &.color-warning{
+  background-color: $color-state-warning;
+  }
+  &.color-muted{
+  background-color: $color-state-muted;
+  }
+  &.color-popup{
+  background-color: $color-state-popup;
+  }
+
 }
-.mv-icon-stack{}

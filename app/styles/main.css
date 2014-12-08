@@ -1980,7 +1980,7 @@ table td[class*="col-"], table th[class*="col-"] {
   position: relative; }
   .mv-dropdown > .mv-btn {
     min-width: 2rem; }
-    .mv-dropdown > .mv-btn > .fa, .mv-dropdown > .mv-btn > .mv-icon {
+    .mv-dropdown > .mv-btn > .fa, .mv-dropdown > .mv-btn > mv-i, .mv-dropdown > .mv-btn > .mv-icon {
       padding: 0 0.5rem 0 0.25rem;
       margin: 0 0 0 0.25rem; }
 
@@ -2096,6 +2096,36 @@ table td[class*="col-"], table th[class*="col-"] {
     right: auto; }
  }
 
+.mv-form {
+  overflow: hidden; }
+
+.mv-control {
+  position: relative;
+  min-height: 5rem;
+  padding: 0 0.5rem 0.5rem 4.5rem; }
+  .mv-control label {
+    display: block;
+    padding-top: 0.5rem;
+    line-height: 1.5rem;
+    min-height: 2.5rem;
+    color: #203240;
+    font-weight: 300; }
+
+.mv-control-icon {
+  position: absolute;
+  height: 100%;
+  font-size: 3rem;
+  width: 4rem;
+  left: 0; }
+
+.mv-control-input {
+  display: block;
+  width: 100%;
+  border: none;
+  min-height: 2rem;
+  background-color: transparent;
+  border-bottom: 0.2rem solid #969696; }
+
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2109,7 +2139,7 @@ table td[class*="col-"], table th[class*="col-"] {
   font-weight: normal;
   font-style: normal; }
 
-.fa, .mv-icon {
+.fa, mv-i, .mv-icon {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -2166,9 +2196,9 @@ table td[class*="col-"], table th[class*="col-"] {
 .pull-left {
   float: left; }
 
-.fa.pull-left, .pull-left.mv-icon {
+.fa.pull-left, mv-i.pull-left, .pull-left.mv-icon {
   margin-right: 0.3em; }
-.fa.pull-right, .pull-right.mv-icon {
+.fa.pull-right, mv-i.pull-right, .pull-right.mv-icon {
   margin-left: 0.3em; }
 
 .fa-spin {
@@ -3687,6 +3717,23 @@ table td[class*="col-"], table th[class*="col-"] {
 
 .fa-meanpath:before {
   content: "\f20c"; }
+
+mv-i.color-default, .mv-icon.color-default {
+  background-color: #b4e650; }
+mv-i.color-info, .mv-icon.color-info {
+  background-color: #314d62; }
+mv-i.color-alert, .mv-icon.color-alert {
+  background-color: #dfa160; }
+mv-i.color-error, .mv-icon.color-error {
+  background-color: #dc4116; }
+mv-i.color-success, .mv-icon.color-success {
+  background-color: #c7ec7d; }
+mv-i.color-warning, .mv-icon.color-warning {
+  background-color: #f0d05e; }
+mv-i.color-muted, .mv-icon.color-muted {
+  background-color: #9e9e9e; }
+mv-i.color-popup, .mv-icon.color-popup {
+  background-color: #ffdd99; }
 
 .mv-page-header {
   padding: 1rem;

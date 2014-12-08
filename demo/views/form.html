@@ -3,38 +3,41 @@
 <section class="demo-section">
   <header>
     <h1>Form
-      <small>.form</small>
+      <small>.mv-form</small>
     </h1>
   </header>
 
   <form class="mv-form" novalidate>
     <!--Text-->
-    <div class="mv-form-group">
-      <mv-i icon="triangle"></mv-i>
+    <div class="mv-control">
+      <mv-i class="mv-control-icon" icon="user"></mv-i>
       <label for="mvFormTextName">Text</label>
       <input type="text" name="textName" id="mvFormTextName" value=""
+             class="mv-control-input"
              placeholder="Value"
              ng-model="mvFormData.textName"/>
     </div>
 
     <!--E-mail-->
-    <div class="mv-form-group">
+    <div class="mv-control">
       <label for="mvFormEmailName">E-mail</label>
       <input type="email" name="emailName" id="mvFormEmailName" value=""
+             class="mv-control-input"
              placeholder="meuemail@dominio.com"
              ng-model="mvFormData.textEmail"/>
     </div>
 
     <!--Password-->
-    <div class="mv-form-group">
+    <div class="mv-control">
       <label for="mvFormPasswordName">Password</label>
       <input type="password" name="passwordName" id="mvFormPasswordName" value=""
+             class="mv-control-input"
              placeholder="****"
              ng-model="mvFormData.textPassword"/>
     </div>
 
     <!--Toggle-->
-    <div class="mv-form-group">
+    <div class="mv-control">
       <label for="mvFormToggleName">Toggle</label>
 
       <div ng-switch="mvFormData.textToggle">
@@ -50,7 +53,7 @@
     </div>
 
     <!--Info (Information)-->
-    <div class="mv-form-group">
+    <div class="mv-control">
       <label for="mvFormInfoName">Info</label>
       <input type="text" name="toggleName" id="mvFormInfoName"
              value="Some information"
@@ -71,7 +74,7 @@
 
 
     <!--Select-->
-    <div class="mv-form-group">
+    <div class="mv-control">
       <label for="mvFormSelectName">Select</label>
       <span>{{mvFormData.selectName}}</span>
       <button type="button">
@@ -84,7 +87,7 @@
     </div>
 
     <!--Checklist-->
-    <div class="mv-form-group">
+    <div class="mv-control">
       <label>Checklist (Question)</label>
       <span>{{mvFormData.textInfo}}</span>
       <button type="button">
@@ -101,7 +104,7 @@
     </div>
 
     <!--Radio Group -->
-    <div class="mv-form-group">
+    <div class="mv-control">
       <label>Radio Group</label>
       <span>{{mvFormData.textInfo}}</span>
       <button type="button">
@@ -118,7 +121,7 @@
     </div>
 
     <!--File-->
-    <div class="mv-form-group">
+    <div class="mv-control">
       <label for="mvFormFileName">File</label>
       <button type="button">
         <mv-i icon="angle-down"></mv-i>
@@ -134,7 +137,7 @@
     </div>
 
     <!--Date-->
-    <div class="mv-form-group">
+    <div class="mv-control">
       <label for="mvFormDateName">Date</label>
       <input type="date" name="dateName" id="mvFormDateName" value=""
              ng-model="mvFormData.textDate"/>
@@ -147,7 +150,7 @@
     </div>
 
     <!--Time-->
-    <div class="mv-form-group">
+    <div class="mv-control">
       <label for="mvFormDatetimeName">Time</label>
       <input type="datetime" name="datetimeName" id="mvFormDatetimeName" value=""
              ng-model="mvFormData.textDateTime"/>
@@ -160,7 +163,7 @@
     </div>
 
     <!--Color-->
-    <div class="mv-form-group">
+    <div class="mv-control">
       <label for="mvFormColorName">Color</label>
       <input type="color" name="colorName" id="mvFormColorName" value="#f4450c"
              ng-model="mvFormData.textColor"/>

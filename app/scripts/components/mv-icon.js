@@ -2,6 +2,7 @@ angular.module('mvUi.Icon',[])
   .directive('mvI',[function(){
     return {
       restrict: 'EAC',
+      template: '<i class="{{prefix}} {{prefix}}-{{icon}}"></i>',
       scope:{
         icon: '@',
         prefix:'@'
@@ -10,8 +11,11 @@ angular.module('mvUi.Icon',[])
         scope.icon = angular.isDefined(scope.icon) ? scope.icon : false;
         scope.prefix = angular.isDefined(scope.prefix) ? scope.prefix : 'fa';
 
-        element.addClass(scope.prefix);
-        element.addClass(scope.prefix+'-' + scope.icon);
+        //if(!element.hasClass('mv-icon')){
+        //  element.addClass('mv-icon')
+        //}
+        //element.addClass(scope.prefix);
+        //element.addClass(scope.prefix+'-' + scope.icon);
       }
     };
   }]);
