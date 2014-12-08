@@ -2,36 +2,175 @@
 
 <section class="demo-section">
   <header>
-    <h1>Form <small>.form</small></h1>
+    <h1>Form
+      <small>.form</small>
+    </h1>
   </header>
 
-  <form class="mv-form" ng-form novalidate>
-  <!--Text-->
+  <form class="mv-form" novalidate>
+    <!--Text-->
     <div class="mv-form-group">
-      mv-icon
+      <mv-i icon="triangle"></mv-i>
+      <label for="mvFormTextName">Text</label>
+      <input type="text" name="textName" id="mvFormTextName" value=""
+             placeholder="Value"
+             ng-model="mvFormData.textName"/>
     </div>
-  <!--E-mail-->
 
-  <!--Password-->
+    <!--E-mail-->
+    <div class="mv-form-group">
+      <label for="mvFormEmailName">E-mail</label>
+      <input type="email" name="emailName" id="mvFormEmailName" value=""
+             placeholder="meuemail@dominio.com"
+             ng-model="mvFormData.textEmail"/>
+    </div>
 
-  <!--Toggle-->
+    <!--Password-->
+    <div class="mv-form-group">
+      <label for="mvFormPasswordName">Password</label>
+      <input type="password" name="passwordName" id="mvFormPasswordName" value=""
+             placeholder="****"
+             ng-model="mvFormData.textPassword"/>
+    </div>
 
-  <!--Information-->
+    <!--Toggle-->
+    <div class="mv-form-group">
+      <label for="mvFormToggleName">Toggle</label>
 
-  <!--Select-->
+      <div ng-switch="mvFormData.textToggle">
+        <span ng-switch-when="0">Value Off</span>
+        <span ng-switch-when="1">Value On</span>
+      </div>
+      <input type="text" name="toggleName" id="mvFormToggleName" value="1"
+             ng-model="mvFormData.textToggle"/>
+      <button type="button" ng-switch="mvFormData.textToggle">
+        <mv-i icon="toggle-off" ng-switch-when="0"></mv-i>
+        <mv-i icon="toggle-on" ng-switch-when="1"></mv-i>
+      </button>
+    </div>
 
-  <!--Checklist-->
+    <!--Info (Information)-->
+    <div class="mv-form-group">
+      <label for="mvFormInfoName">Info</label>
+      <input type="text" name="toggleName" id="mvFormInfoName"
+             value="Some information"
+             ng-model="mvFormData.textInfo"/>
+      <button type="button">
+        <mv-i icon="question-circle"></mv-i>
+      </button>
+    </div>
 
-  <!--File-->
 
-  <!--Range-->
+    <!--Range-->
+    <label for="mvFormFileName">Range</label>
+    <input type="number" name="toggleName" id="mvFormRangeName" value="1"
+           ng-model="mvFormData.textRange"/>
+    <button type="button">
+      <mv-i icon="angle-down"></mv-i>
+    </button>
 
-  <!--Date-->
 
-  <!--Time-->
+    <!--Select-->
+    <div class="mv-form-group">
+      <label for="mvFormSelectName">Select</label>
+      <span>{{mvFormData.selectName}}</span>
+      <button type="button">
+        <mv-i icon="angle-down"></mv-i>
+      </button>
+      <select name="selectName" id="mvFormSelectName"
+              ng-model="mvFormData.selectName"
+              ng-options="color.name for color in colors">
+      </select>
+    </div>
 
-  <!--Color-->
+    <!--Checklist-->
+    <div class="mv-form-group">
+      <label>Checklist (Question)</label>
+      <span>{{mvFormData.textInfo}}</span>
+      <button type="button">
+        <mv-i icon="angle-down"></mv-i>
+      </button>
+      <div class="mv-form-setup" ng-show="false">
+        <dl>
+          <dt>Check1</dt>
+          <dd><input type="checkbox" name="checkName"/></dd>
+          <dt>Check2</dt>
+          <dd><input type="checkbox" name="checkName"/></dd>
+        </dl>
+      </div>
+    </div>
 
+    <!--Radio Group -->
+    <div class="mv-form-group">
+      <label>Radio Group</label>
+      <span>{{mvFormData.textInfo}}</span>
+      <button type="button">
+        <mv-i icon="angle-down"></mv-i>
+      </button>
+      <div class="mv-form-setup" ng-show="false">
+        <dl>
+          <dt>Check1</dt>
+          <dd><input type="checkbox" name="radioName"/></dd>
+          <dt>Check2</dt>
+          <dd><input type="checkbox" name="radioName"/></dd>
+        </dl>
+      </div>
+    </div>
+
+    <!--File-->
+    <div class="mv-form-group">
+      <label for="mvFormFileName">File</label>
+      <button type="button">
+        <mv-i icon="angle-down"></mv-i>
+      </button>
+      <div class="mv-form-setup mv-form-file-select"
+           ng-show="true"
+           ng-switch="mvFormData.FileName">
+        <!--ng-switch-when="angular.isDefined(mvFormData.selectName)"-->
+        <input type="file" name="fileName" id="mvFormFileName"
+               ng-model="mvFormData.fileName"
+               />
+      </div>
+    </div>
+
+    <!--Date-->
+    <div class="mv-form-group">
+      <label for="mvFormDateName">Date</label>
+      <input type="date" name="dateName" id="mvFormDateName" value=""
+             ng-model="mvFormData.textDate"/>
+      <button type="button">
+        <mv-i icon="calendar"></mv-i>
+      </button>
+      <div class="mv-form-setup">
+           <!--Calendário angular ui-->
+      </div>
+    </div>
+
+    <!--Time-->
+    <div class="mv-form-group">
+      <label for="mvFormDatetimeName">Time</label>
+      <input type="datetime" name="datetimeName" id="mvFormDatetimeName" value=""
+             ng-model="mvFormData.textDateTime"/>
+      <button type="button">
+        <mv-i icon="clock-o"></mv-i>
+      </button>
+      <div class="mv-form-setup">
+        <!--Time angular ui-->
+      </div>
+    </div>
+
+    <!--Color-->
+    <div class="mv-form-group">
+      <label for="mvFormColorName">Color</label>
+      <input type="color" name="colorName" id="mvFormColorName" value="#f4450c"
+             ng-model="mvFormData.textColor"/>
+      <button type="button">
+        <mv-i icon="eyedropper"></mv-i>
+      </button>
+      <div class="mv-form-setup">
+        <!--Time angular ui-->
+      </div>
+    </div>
   </form>
 </section>
 
