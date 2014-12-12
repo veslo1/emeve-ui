@@ -1,5 +1,4 @@
-angular.module("mvUi.Template",[]).run(["$templateCache",function(n){n.put("mv-pageheader.html",'<h2 class="mv-page-title">\n  <span class="title-icon" ng-if="icon">\n    <i class="fa fa-{{icon}}"></i>\n  </span>\n  <span class="title-label">{{title}}</span>\n</h2>\n<div class="content-wrapper" ng-transclude>\n\n</div>\n'),n.put("mv-switch-nav.html",'<ul>\n  <li ng-repeat="slide in slides">\n    <button ng-click="selectSlide(slide.title)">{{slide.title}}</button>\n  </li>\n</ul>\n')}]);
-
+angular.module("mvUi.Template",[]).run(["$templateCache",function(n){n.put("mv-pageheader.html",'<h2 class="mv-page-title">\n  <span class="title-icon" ng-if="icon">\n    <i class="fa fa-{{icon}}"></i>\n  </span>\n  <span class="title-label">{{title}}</span>\n</h2>\n<div class="content-wrapper" ng-transclude>\n\n</div>\n'),n.put("mv-switch-nav.html",'<ul>\n  <li ng-repeat="slide in slides">\n    <button type="button" ng-click="selectSlide(slide.title)">{{slide.title}}</button>\n  </li>\n</ul>\n'),n.put("mv-control/text.html",'<!--Info (Information)-->\n<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n<label for="{{controlId}}">{{label}}</label>\n<div ng-transclude>\n\n</div>\n'),n.put("mv-control/toggle.html",'<!--<div class="mv-control mv-control-toggle mv-control-button">-->\n  <mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n  <label for="{{controlId}}">{{label}}</label>\n\n  <div class="mv-control-value" ng-switch="{{status}}">\n    <span ng-switch-when="0">{{off}}</span>\n    <span ng-switch-when="1">{{on}}</span>\n  </div>\n  <div ng-transclude>\n\n  </div>\n  <div class="mv-control-button-area">\n    <button class="mv-btn" type="button"\n            ng-switch="{{status}}">\n      <mv-i class="mv-btn-off" icon="toggle-off" ng-switch-when="0"></mv-i>\n      <mv-i class="mv-btn-on" icon="toggle-on" ng-switch-when="1"></mv-i>\n    </button>\n  </div>\n<!--</div>-->\n')}]);
 angular.module('mvUi.Button',[])
   .directive('mvBtn', function ($parse) {
     return {
@@ -143,6 +142,137 @@ angular.module('mvUi.Button',[])
     };
   });
 
+
+angular.module('mvUi.Control', [])
+  .controller('MvControlController', [
+    '$scope', '$element', '$attrs',
+    function ($scope, $element, $attrs) {
+      this.mainClass = 'mv-control';
+
+      this.genSubClass = function (subclass) {
+        return this.mainClass + '-' + subclass;
+      };
+
+      /**
+       * Analize if the class mv-control exist
+       */
+      this.checkMainClass = function () {
+        if (!$element.hasClass(this.mainClass)) {
+          $element.addClass(this.mainClass);
+        }
+      };
+
+      /**
+       * Enable a property for display use. It let to css customize the component
+       * @param property class to increment
+       */
+      this.setupFunctionality = function (property) {
+        $element.addClass('mv-control-' + property);
+      };
+
+    }])
+  .directive('mvControlText', [
+    '$templateCache',
+    function ($templateCache) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/text.html'),
+        scope: {
+          display: '@',
+          label: '@',
+          icon: '@'
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          var control = iElement.find('input');
+          scope.controlId = control.attr('id');
+          scope.enableIcon = false;
+          scope.display = (angular.isDefined(scope.display)) ? scope.display : control.attr('type');
+
+            //init
+          mvCtrl.checkMainClass();
+          control.addClass(mvCtrl.genSubClass(scope.display));
+
+          if (scope.display=='info') {
+            control.attr('disabled', 'disabled');
+          }
+
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
+          }
+
+        }
+      };
+    }])
+  .directive('mvControlInput', [
+    '$templateCache',
+    function ($templateCache) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/text.html'),
+        scope: {
+          display: '@',
+          label: '@',
+          icon: '@'
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          var control = iElement.find('input');
+          scope.controlId = control.attr('id');
+          scope.enableIcon = false;
+          scope.display = (angular.isDefined(scope.display)) ? scope.display : control.attr('type');
+
+            //init
+          mvCtrl.checkMainClass();
+          control.addClass(mvCtrl.genSubClass('input'));
+          control.addClass(mvCtrl.genSubClass(scope.display));
+
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
+          }
+
+        }
+      };
+    }])
+  .directive('mvControlToggle', [
+    '$templateCache',
+    function ($templateCache) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/toggle.html'),
+        scope: {
+          label: '@',
+          icon: '@'
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          var control = iElement.find('input');
+          scope.controlId = control.attr('id');
+          scope.enableIcon = false;
+          scope.status = angular.isDefined(control) ? control.ngModel : control.val();
+
+            //init
+          mvCtrl.checkMainClass();
+          mvCtrl.setupFunctionality('toggle');
+          mvCtrl.setupFunctionality('button');
+          control.addClass(mvCtrl.genSubClass('toggle'));
+
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
+          }
+
+        }
+      };
+    }]);
 
 angular.module('mvUi.Dropdown', [])
   .directive('mvDropdown', ['$document', function ($document) {
@@ -400,6 +530,7 @@ var mvUi = angular.module('mvUi', [
   'ngSanitize',
   'ngTouch',
   'mvUi.Template',
+  'mvUi.Control',
   'mvUi.Button',
   'mvUi.Dropdown',
   'mvUi.PageHeader',

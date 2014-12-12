@@ -1980,7 +1980,7 @@ table td[class*="col-"], table th[class*="col-"] {
   position: relative; }
   .mv-dropdown > .mv-btn {
     min-width: 2rem; }
-    .mv-dropdown > .mv-btn > .fa, .mv-dropdown > .mv-btn > mv-i, .mv-dropdown > .mv-btn > .mv-icon {
+    .mv-dropdown > .mv-btn > .fa, .mv-dropdown > .mv-btn > .mv-icon {
       padding: 0 0.5rem 0 0.25rem;
       margin: 0 0 0 0.25rem; }
 
@@ -2110,6 +2110,7 @@ table td[class*="col-"], table th[class*="col-"] {
  * Control (Inputs)
  * ======================================================================== */
 .mv-control {
+  display: block;
   position: relative;
   min-height: 4rem;
   padding: 0 0.5rem 0.5rem 0;
@@ -2243,7 +2244,7 @@ table td[class*="col-"], table th[class*="col-"] {
   font-weight: normal;
   font-style: normal; }
 
-.fa, mv-i, .mv-icon {
+.fa, .mv-icon {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -2300,9 +2301,9 @@ table td[class*="col-"], table th[class*="col-"] {
 .pull-left {
   float: left; }
 
-.fa.pull-left, mv-i.pull-left, .pull-left.mv-icon {
+.fa.pull-left, .pull-left.mv-icon {
   margin-right: 0.3em; }
-.fa.pull-right, mv-i.pull-right, .pull-right.mv-icon {
+.fa.pull-right, .pull-right.mv-icon {
   margin-left: 0.3em; }
 
 .fa-spin {

@@ -25,7 +25,7 @@ gulp.task('watch', function () {
     dirDev + 'scripts/**/*.js',
     dirDemo + 'scripts/**/*.js'
   ], ['scripts']);
-  gulp.watch(dirDev + "partial/directives/**/*.html",['ngDirectives']);
+  gulp.watch(dirDev + "partials/directives/**/*.html",['ngDirectives']);
   gulp.watch(dirDemo + "views/**/*.html",['bs-reload']);
   gulp.watch(dirDev + "images/**/*.{gif,png,jpg}",['images']);
 });

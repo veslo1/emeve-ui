@@ -1,5 +1,5 @@
 angular.module('EmeveUiApp.Controller', [])
-  .controller('DefaultCtrl', ['$scope',
+  .controller('DefaultController', ['$scope',
     function ($scope) {
     $scope.list = ['um', 'dois', 'tres'];
     $scope.options = [
@@ -22,7 +22,7 @@ angular.module('EmeveUiApp.Controller', [])
     };
   }])
 
-  .controller('BtnCtrl', ['$scope',function ($scope) {
+  .controller('BtnController', ['$scope',function ($scope) {
     $scope.list = ['um', 'dois', 'tres'];
 
     // Número da sala de prova
@@ -32,7 +32,7 @@ angular.module('EmeveUiApp.Controller', [])
   }])
 
 
-  .controller('FormCtrl', ['$scope',function ($scope) {
+  .controller('FormController', ['$scope',function ($scope) {
     $scope.colors = [
       {name:'black', shade:'dark'},
       {name:'white', shade:'light'},
@@ -41,12 +41,15 @@ angular.module('EmeveUiApp.Controller', [])
       {name:'yellow', shade:'light'}
     ];
 
-    // Número da sala de prova
-    $scope.mvFormData = {
-      textToggle: 1,
-      selectName: 'white',
-      textInfo: 'Um informação qualquer'
+    $scope.mvfData = {
+      version: '3.2.0b~Kernel2.5'
     };
+    // Número da sala de prova
+    //$scope.mvFormData = {
+    //  textToggle: 1,
+    //  selectName: 'white',
+    //  textInfo: 'Um informação qualquer'
+    //};
 
   }]);
 

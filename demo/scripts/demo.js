@@ -5,21 +5,21 @@ angular.module('EmeveUiApp.Route', ['ngRoute', 'ngAnimate'])
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'DefaultCtrl'
+        controller: 'DefaultController'
       })
       .when('/btn', {
         templateUrl: 'views/button.html',
-        controller: 'BtnCtrl'
+        controller: 'BtnController'
       })
       .when('/form', {
         templateUrl: 'views/form.html',
-        controller: 'FormCtrl'
+        controller: 'FormController'
       })
       .when('/:controller',{
         templateUrl:function(attrs){
           return 'views/' + attrs.controller + '.html';
         },
-        controller: 'DefaultCtrl'
+        controller: 'DefaultController'
       })
       .otherwise({
         redirectTo: '/'
