@@ -1,19 +1,21 @@
 <!--<div class="mv-control mv-control-toggle mv-control-button">-->
   <mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>
-  <label for="{{controlId}}">{{label}}</label>
+  <label for="{{id}}-control">{{label}}</label>
 
-  <div class="mv-control-value" ng-switch="{{status}}">
-    <span ng-switch-when="0">{{off}}</span>
-    <span ng-switch-when="1">{{on}}</span>
+  <div class="mv-control-value" ng-switch="setup">
+    <span ng-switch-when="false">{{off}}</span>
+    <span ng-switch-when="true">{{on}}</span>
   </div>
-  <div ng-transclude>
-
+  <div>
+    <input type="checkbox" id="{{id}}-control" name="toggleName" class="mv-control-toggle"
+           ng-model="ngModel"/>
   </div>
   <div class="mv-control-button-area">
     <button class="mv-btn" type="button"
-            ng-switch="{{status}}">
-      <mv-i class="mv-btn-off" icon="toggle-off" ng-switch-when="0"></mv-i>
-      <mv-i class="mv-btn-on" icon="toggle-on" ng-switch-when="1"></mv-i>
+            ng-switch="setup"
+            ng-click="setupToggle($event)">
+      <mv-i class="mv-btn-off" icon="toggle-off" ng-switch-when="false"></mv-i>
+      <mv-i class="mv-btn-on" icon="toggle-on" ng-switch-when="true"></mv-i>
     </button>
   </div>
 <!--</div>-->

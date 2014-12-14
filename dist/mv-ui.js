@@ -1,4 +1,4 @@
-angular.module("mvUi.Template",[]).run(["$templateCache",function(n){n.put("mv-pageheader.html",'<h2 class="mv-page-title">\n  <span class="title-icon" ng-if="icon">\n    <i class="fa fa-{{icon}}"></i>\n  </span>\n  <span class="title-label">{{title}}</span>\n</h2>\n<div class="content-wrapper" ng-transclude>\n\n</div>\n'),n.put("mv-switch-nav.html",'<ul>\n  <li ng-repeat="slide in slides">\n    <button type="button" ng-click="selectSlide(slide.title)">{{slide.title}}</button>\n  </li>\n</ul>\n'),n.put("mv-control/text.html",'<!--Info (Information)-->\n<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n<label for="{{controlId}}">{{label}}</label>\n<div ng-transclude>\n\n</div>\n'),n.put("mv-control/toggle.html",'<!--<div class="mv-control mv-control-toggle mv-control-button">-->\n  <mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n  <label for="{{controlId}}">{{label}}</label>\n\n  <div class="mv-control-value" ng-switch="{{status}}">\n    <span ng-switch-when="0">{{off}}</span>\n    <span ng-switch-when="1">{{on}}</span>\n  </div>\n  <div ng-transclude>\n\n  </div>\n  <div class="mv-control-button-area">\n    <button class="mv-btn" type="button"\n            ng-switch="{{status}}">\n      <mv-i class="mv-btn-off" icon="toggle-off" ng-switch-when="0"></mv-i>\n      <mv-i class="mv-btn-on" icon="toggle-on" ng-switch-when="1"></mv-i>\n    </button>\n  </div>\n<!--</div>-->\n')}]);
+angular.module("mvUi.Template",[]).run(["$templateCache",function(n){n.put("mv-pageheader.html",'<h2 class="mv-page-title">\n  <span class="title-icon" ng-if="icon">\n    <i class="fa fa-{{icon}}"></i>\n  </span>\n  <span class="title-label">{{title}}</span>\n</h2>\n<div class="content-wrapper" ng-transclude>\n\n</div>\n'),n.put("mv-switch-nav.html",'<ul>\n  <li ng-repeat="slide in slides">\n    <button type="button" ng-click="selectSlide(slide.title)">{{slide.title}}</button>\n  </li>\n</ul>\n'),n.put("mv-control/input.html",'<!--Info (Information)-->\n<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n<label for="{{id}}-control">{{label}}</label>\n<input type="{{type}}" name="{{name}}" id="{{id}}-control" class="mv-control-input"\n       ng-model="ngModel"/>\n<div ng-transclude>\n\n</div>\n'),n.put("mv-control/select.html",'<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n<label for="{{id}}-control">{{label}}</label>\n<select id="{{id}}-control" name="{{name}}" class="mv-control-select"\n        ng-model="ngModel"\n        ng-options="a.{{col}} for a in options">\n</select>\n<div ng-transclude>\n\n</div>\n'),n.put("mv-control/text.html",'<!--Info (Information)-->\n<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n<label>{{label}}</label>\n<span class="mv-control-value">{{ngModel}}</span>\n<div ng-transclude>\n\n</div>\n'),n.put("mv-control/toggle.html",'<!--<div class="mv-control mv-control-toggle mv-control-button">-->\n  <mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n  <label for="{{id}}-control">{{label}}</label>\n\n  <div class="mv-control-value" ng-switch="setup">\n    <span ng-switch-when="false">{{off}}</span>\n    <span ng-switch-when="true">{{on}}</span>\n  </div>\n  <div>\n    <input type="checkbox" id="{{id}}-control" name="toggleName" class="mv-control-toggle"\n           ng-model="ngModel"/>\n  </div>\n  <div class="mv-control-button-area">\n    <button class="mv-btn" type="button"\n            ng-switch="setup"\n            ng-click="setupToggle($event)">\n      <mv-i class="mv-btn-off" icon="toggle-off" ng-switch-when="false"></mv-i>\n      <mv-i class="mv-btn-on" icon="toggle-on" ng-switch-when="true"></mv-i>\n    </button>\n  </div>\n<!--</div>-->\n')}]);
 angular.module('mvUi.Button',[])
   .directive('mvBtn', function ($parse) {
     return {
@@ -148,7 +148,20 @@ angular.module('mvUi.Control', [])
     '$scope', '$element', '$attrs',
     function ($scope, $element, $attrs) {
       this.mainClass = 'mv-control';
+      this.setup = false;
 
+      /**
+       * Return setup for use in setup area
+       * @returns {setup}
+       */
+      this.getSetup = function () {
+        return this.setup;
+      }
+      /**
+       * Generate subclass for use in element
+       * @param subclass
+       * @returns {string}
+       */
       this.genSubClass = function (subclass) {
         return this.mainClass + '-' + subclass;
       };
@@ -170,8 +183,27 @@ angular.module('mvUi.Control', [])
         $element.addClass('mv-control-' + property);
       };
 
+      /**
+       * Toggle setup area
+       * @param $event Event object
+       * @returns retorna o valor do próprio setup
+       */
+      this.setupToggle = function ($event) {
+        $event.preventDefault();
+        this.setup = !!!this.setup;
+        return this.setup;
+      }
+
+      this.init = function (control, subclass, icon) {
+        this.checkMainClass();
+        angular.forEach(subclass, function (sc) {
+          control.addClass(this.genSubClass(sc));
+        })
+
+      };
+
     }])
-  .directive('mvControlText', [
+  .directive('mvInfo', [
     '$templateCache',
     function ($templateCache) {
       return {
@@ -180,23 +212,51 @@ angular.module('mvUi.Control', [])
         scope: {
           display: '@',
           label: '@',
-          icon: '@'
+          icon: '@',
+          ngModel: '='
         },
         transclude: true,
         controller: 'MvControlController',
         link: function (scope, iElement, iAttr, mvCtrl) {
           var control = iElement.find('input');
-          scope.controlId = control.attr('id');
           scope.enableIcon = false;
-          scope.display = (angular.isDefined(scope.display)) ? scope.display : control.attr('type');
 
-            //init
+          //init
           mvCtrl.checkMainClass();
-          control.addClass(mvCtrl.genSubClass(scope.display));
+          control.addClass(mvCtrl.genSubClass('info'));
 
-          if (scope.display=='info') {
-            control.attr('disabled', 'disabled');
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
           }
+        }
+      };
+    }])
+  .directive('mvInput', [
+    '$templateCache',
+    function ($templateCache) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/input.html'),
+        scope: {
+          label: '@',
+          icon: '@',
+          id: '@',
+          type: '@',
+          name: '@',
+          ngModel: '='
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          var control = iElement.find('input');
+          scope.enableIcon = false;
+          scope.type = angular.isDefined(scope.type) ? scope.type : 'text';
+
+          //init
+          mvCtrl.checkMainClass();
+          control.addClass(mvCtrl.genSubClass(scope.type));
 
           //enable icon
           if (angular.isDefined(scope.icon)) {
@@ -207,40 +267,7 @@ angular.module('mvUi.Control', [])
         }
       };
     }])
-  .directive('mvControlInput', [
-    '$templateCache',
-    function ($templateCache) {
-      return {
-        restrict: 'E',
-        template: $templateCache.get('mv-control/text.html'),
-        scope: {
-          display: '@',
-          label: '@',
-          icon: '@'
-        },
-        transclude: true,
-        controller: 'MvControlController',
-        link: function (scope, iElement, iAttr, mvCtrl) {
-          var control = iElement.find('input');
-          scope.controlId = control.attr('id');
-          scope.enableIcon = false;
-          scope.display = (angular.isDefined(scope.display)) ? scope.display : control.attr('type');
-
-            //init
-          mvCtrl.checkMainClass();
-          control.addClass(mvCtrl.genSubClass('input'));
-          control.addClass(mvCtrl.genSubClass(scope.display));
-
-          //enable icon
-          if (angular.isDefined(scope.icon)) {
-            mvCtrl.setupFunctionality('icon');
-            scope.enableIcon = true;
-          }
-
-        }
-      };
-    }])
-  .directive('mvControlToggle', [
+  .directive('mvToggle', [
     '$templateCache',
     function ($templateCache) {
       return {
@@ -248,28 +275,68 @@ angular.module('mvUi.Control', [])
         template: $templateCache.get('mv-control/toggle.html'),
         scope: {
           label: '@',
-          icon: '@'
+          icon: '@',
+          off: '@',
+          on: '@',
+          ngModel: '='
         },
         transclude: true,
         controller: 'MvControlController',
         link: function (scope, iElement, iAttr, mvCtrl) {
           var control = iElement.find('input');
-          scope.controlId = control.attr('id');
           scope.enableIcon = false;
-          scope.status = angular.isDefined(control) ? control.ngModel : control.val();
+          scope.setup = angular.isDefined(scope.ngModel) ? !!scope.ngModel : mvCtrl.getSetup();
+          scope.on = angular.isDefined(scope.on) ? scope.on : 'On';
+          scope.off = angular.isDefined(scope.off) ? scope.off : 'Off';
 
-            //init
+          scope.setupToggle = function ($event) {
+            scope.setup = mvCtrl.setupToggle($event);
+            scope.ngModel = scope.setup;
+          };
+
+          //init
           mvCtrl.checkMainClass();
           mvCtrl.setupFunctionality('toggle');
           mvCtrl.setupFunctionality('button');
-          control.addClass(mvCtrl.genSubClass('toggle'));
 
           //enable icon
           if (angular.isDefined(scope.icon)) {
             mvCtrl.setupFunctionality('icon');
             scope.enableIcon = true;
           }
+        }
+      };
+    }])
+  .directive('mvSelect', [
+    '$templateCache',
+    function ($templateCache) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/select.html'),
+        scope: {
+          label: '@',
+          icon: '@',
+          id: '@',
+          name: '@',
+          col:'@',
+          options: '=',
+          ngModel: '='
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          scope.enableIcon = false;
 
+          //init
+          mvCtrl.checkMainClass();
+          mvCtrl.setupFunctionality('toggle');
+          mvCtrl.setupFunctionality('button');
+
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
+          }
         }
       };
     }]);
