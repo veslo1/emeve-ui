@@ -200,7 +200,7 @@ angular.module('mvUi.Control', [])
     function ($templateCache) {
       return {
         restrict: 'E',
-        template: $templateCache.get('mv-control/check.html'),
+        template: $templateCache.get('mv-control/checklist.html'),
         scope: {
           label: '@',
           icon: '@',
@@ -246,7 +246,7 @@ angular.module('mvUi.Control', [])
       };
     }])
 
-  .directive('mvRadioList', [
+  .directive('mvRadioGroup', [
     '$templateCache',
     function ($templateCache) {
       return {
