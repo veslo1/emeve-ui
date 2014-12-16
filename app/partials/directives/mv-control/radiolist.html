@@ -1,0 +1,28 @@
+<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>
+<label>{{label}}</label>
+<span class="mv-control-value">
+  <strong  ng-show="showValue">{{ngModel}}</strong>
+</span>
+<div class="mv-control-button-area">
+  <button class="mv-btn" type="button"
+          ng-switch="setup"
+          ng-click="setupToggle($event)">
+    <mv-i icon="angle-down" ng-switch-when="false"></mv-i>
+    <mv-i icon="angle-up" ng-switch-when="true"></mv-i>
+  </button>
+</div>
+<ul class="mv-control-setup-area mv-container-fluid" ng-class="{open:setup}">
+  <li ng-repeat="item in options">
+    <label for="{{id}}-{{$index}}">
+    <mv-row>
+    <div class="mv-col xs-10">
+      {{item.label}}
+    </div>
+    <div class="mv-control-area mv-col xs-2">
+      <input type="checkbox" class="mv-control-checkbox" id="{{id}}-{{$index}}"
+        ng-click="select($index,item,$event)"/>
+    </div>
+    </mv-row>
+    </label>
+  </li>
+</ul>

@@ -215,7 +215,57 @@ angular.module('mvUi.Control', [])
           scope.enableIcon = false;
           scope.setup = mvCtrl.getSetup();
           scope.showValue = angular.isDefined(scope.showValue) ? !!scope.showValue : false;
-          console.log(scope.showValue);
+          scope.ngModel = angular.isDefined(scope.ngModel) ? scope.ngModel : [];
+
+          scope.setupToggle = function ($event) {
+            scope.setup = mvCtrl.setupToggle($event);
+          };
+
+          scope.select = function (index, item, $event) {
+            var index = scope.ngModel.indexOf(item);
+
+            if (index === -1) {
+              scope.ngModel.splice(index, 0, item)
+            } else {
+              scope.ngModel.splice(index, 1);
+            }
+          };
+
+          //init
+          mvCtrl.checkMainClass();
+          mvCtrl.setupFunctionality('checklist');
+          mvCtrl.setupFunctionality('button');
+          mvCtrl.setupFunctionality('setup');
+
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
+          }
+        }
+      };
+    }])
+
+  .directive('mvRadioList', [
+    '$templateCache',
+    function ($templateCache) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/check.html'),
+        scope: {
+          label: '@',
+          icon: '@',
+          id: '@',
+          showValue: '@',
+          options: '=',
+          ngModel: '='
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          scope.enableIcon = false;
+          scope.setup = mvCtrl.getSetup();
+          scope.showValue = angular.isDefined(scope.showValue) ? !!scope.showValue : false;
           scope.ngModel = angular.isDefined(scope.ngModel) ? scope.ngModel : [];
 
           scope.setupToggle = function ($event) {
