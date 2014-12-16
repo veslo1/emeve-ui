@@ -245,8 +245,55 @@ angular.module('mvUi.Control', [])
         }
       };
     }])
-
   .directive('mvRadioGroup', [
+    '$templateCache',
+    function ($templateCache) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/radiogroup.html'),
+        scope: {
+          label: '@',
+          icon: '@',
+          id: '@',
+          name: '@',
+          showValue: '@',
+          options: '=',
+          ngModel: '='
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          scope.enableIcon = false;
+          scope.setup = mvCtrl.getSetup();
+          scope.showValue = angular.isDefined(scope.showValue) ? !!scope.showValue : true;
+          scope.value = '';
+          scope.ngModel = angular.isDefined(scope.ngModel) ? scope.ngModel : [];
+          scope.name = angular.isDefined(scope.name) ? scope.name : scope.id;
+
+          scope.setupToggle = function ($event) {
+            scope.setup = mvCtrl.setupToggle($event);
+          };
+
+          scope.select = function (index, item, $event) {
+            scope.ngModel = item;
+            scope.value = item.label;
+          };
+
+          //init
+          mvCtrl.checkMainClass();
+          mvCtrl.setupFunctionality('checklist');
+          mvCtrl.setupFunctionality('button');
+          mvCtrl.setupFunctionality('setup');
+
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
+          }
+        }
+      };
+    }])
+  .directive('mvFile', [
     '$templateCache',
     function ($templateCache) {
       return {

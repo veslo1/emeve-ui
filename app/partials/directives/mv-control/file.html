@@ -1,0 +1,52 @@
+<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>
+<label>{{label}}</label>
+<span class="mv-control-value">
+  <strong  ng-show="showValue">{{value}}</strong>
+</span>
+<div class="mv-control-button-area">
+  <button class="mv-btn" type="button"
+          ng-switch="setup"
+          ng-click="setupToggle($event)">
+    <mv-i icon="angle-down" ng-switch-when="false"></mv-i>
+    <mv-i icon="angle-up" ng-switch-when="true"></mv-i>
+  </button>
+</div>
+<ul class="mv-control-setup-area mv-container-fluid" ng-class="{open:setup}">
+  <li ng-repeat="item in options">
+    <label for="{{id}}-{{$index}}">
+    <mv-row>
+    <div class="mv-col xs-10">
+      {{item.label}}
+    </div>
+    <div class="mv-control-area mv-col xs-2">
+      <input type="radio" name="{{name}}" class="mv-control-radio" id="{{id}}-{{$index}}"
+        ng-click="select($index,item,$event)"/>
+    </div>
+    </mv-row>
+    </label>
+  </li>
+</ul>
+
+<div class="mv-control mv-control-file mv-control-icon mv-control-button mv-control-setup">
+  <mv-i icon="camera-retro"></mv-i>
+  <label for="mvFormFileName">File</label>
+      <span class="mv-control-value">
+        {{mvFormData.fileName.file[0]}}
+      </span>
+
+  <div class="mv-control-button-area">
+    <button type="button" class="mv-btn">
+      <mv-i icon="paperclip"></mv-i>
+    </button>
+  </div>
+  <div class="mv-control-setup-area" ng-show="true">
+    <div class="mv-control-file-area">
+      <input type="file" id="mvFormFileName" name="fileName"
+             ng-model="mvFormData.fileName"/>
+    </div>
+    <div class="mv-control-file-upload-area">
+      <mv-i icon="cloud-upload"></mv-i>
+      Clique ou arraste seu arquivo
+    </div>
+  </div>
+</div>
