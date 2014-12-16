@@ -76,16 +76,15 @@
 }
 
 .mv-control-setup {
-  &.open{
-    .mv-control-setup-area {
-      display: block;
-    }
-  }
   .mv-control-setup-area {
     display: none;
     padding: 1rem .5rem;
     border-top: .2rem solid $color-light-alt;
     background-color: $color-white;
+
+    &.open{
+      display: block;
+    }
   }
 }
 
@@ -178,6 +177,7 @@
     }
     li{
       display: block;
+      overflow: hidden;
       padding: .5rem 0;
     }
     li:hover{
@@ -185,6 +185,10 @@
     }
     li .mv-icon{
       font-size: 1.5rem;
+    }
+    label, input{
+      padding: 0;
+      line-height: 2rem;
     }
   }
 }

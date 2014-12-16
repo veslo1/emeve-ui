@@ -41,8 +41,15 @@ angular.module('EmeveUiApp.Controller', [])
       {name:'yellow', shade:'light'}
     ];
 
+    $scope.colorNames = [
+      {label:'Vermelho', value: '#f00'},
+      {label:'Verde', value: '#0f0'},
+      {label:'Azul', value: '#00f'}
+    ];
+
     $scope.mvfData = {
       version: '3.2.0b~Kernel2.5'
+      //colorPerfil: {}
     };
     // Número da sala de prova
     //$scope.mvFormData = {
