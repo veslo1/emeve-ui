@@ -9,26 +9,31 @@
 
 <form class="mv-form mv-form-icon" name="mvf">
 
-  <pre>{{mvfData}}</pre>
-
   <h2>mv-info</h2>
 
   <mv-info display="info" label="Info" icon="question-circle"
            ng-model="mvfData.version"></mv-info>
 
+  <pre>{{mvfData.version}}</pre>
+
+
   <h2>mv-input</h2>
 
   <mv-input label="Text" id="mvf-user" name="user" icon="user"
             ng-model="mvfData.user"></mv-input>
+  <pre>{{mvfData.user}}</pre>
 
   <mv-input type="email" label="E-mail" id="mvf-email" name="email" icon="envelope"
             ng-model="mvfData.email"></mv-input>
+  <pre>{{mvfData.email}}</pre>
 
   <mv-input type="password" label="Password" id="mvf-password" name="pasword"
             ng-model="mvfData.password"></mv-input>
+  <pre>{{mvfData.password}}</pre>
 
   <mv-input type="number" label="Number" id="mvf-number" name="number"
             ng-model="mvfData.number"></mv-input>
+  <pre>{{mvfData.number}}</pre>
 
   <h2>mv-toggle</h2>
 
@@ -40,12 +45,21 @@
              options="colors" col="name"
              ng-model="mvfData.color">
   </mv-select>
+  <pre>{{mvfData.color}}</pre>
 
   <h2>mv-checklist</h2>
   <mv-check-list label="Que cores você gosta?" id="mvf-colorlist"
                  ng-model="mvfData.colorPerfil"
                  options="colorNames">
   </mv-check-list>
+  <pre>{{mvfData.colorPerfil}}</pre>
+
+  <h2>mv-radiogroup</h2>
+  <mv-radio-group label="Qual sua cor favorita?" id="mvf-radiogroup" name="favoriteColor"
+                  ng-model="mvfData.favoriteColor"
+                 options="colorNames">
+  </mv-radio-group>
+  <pre>{{mvfData.favoriteColor}}</pre>
 
 </form>
 

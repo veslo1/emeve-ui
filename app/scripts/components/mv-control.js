@@ -256,6 +256,7 @@ angular.module('mvUi.Control', [])
           label: '@',
           icon: '@',
           id: '@',
+          name: '@',
           showValue: '@',
           options: '=',
           ngModel: '='
@@ -265,21 +266,18 @@ angular.module('mvUi.Control', [])
         link: function (scope, iElement, iAttr, mvCtrl) {
           scope.enableIcon = false;
           scope.setup = mvCtrl.getSetup();
-          scope.showValue = angular.isDefined(scope.showValue) ? !!scope.showValue : false;
+          scope.showValue = angular.isDefined(scope.showValue) ? !!scope.showValue : true;
+          scope.value = '';
           scope.ngModel = angular.isDefined(scope.ngModel) ? scope.ngModel : [];
+          scope.name = angular.isDefined(scope.name) ? scope.name : scope.id;
 
           scope.setupToggle = function ($event) {
             scope.setup = mvCtrl.setupToggle($event);
           };
 
           scope.select = function (index, item, $event) {
-            var index = scope.ngModel.indexOf(item);
-
-            if (index === -1) {
-              scope.ngModel.splice(index, 0, item)
-            } else {
-              scope.ngModel.splice(index, 1);
-            }
+            scope.ngModel = item;
+            scope.value = item.label;
           };
 
           //init

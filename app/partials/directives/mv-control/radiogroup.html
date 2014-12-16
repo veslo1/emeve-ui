@@ -1,7 +1,7 @@
 <mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>
 <label>{{label}}</label>
 <span class="mv-control-value">
-  <strong  ng-show="showValue">{{ngModel}}</strong>
+  <strong  ng-show="showValue">{{value}}</strong>
 </span>
 <div class="mv-control-button-area">
   <button class="mv-btn" type="button"
@@ -19,7 +19,7 @@
       {{item.label}}
     </div>
     <div class="mv-control-area mv-col xs-2">
-      <input type="checkbox" class="mv-control-checkbox" id="{{id}}-{{$index}}"
+      <input type="radio" name="{{name}}" class="mv-control-radio" id="{{id}}-{{$index}}"
         ng-click="select($index,item,$event)"/>
     </div>
     </mv-row>
