@@ -281,7 +281,7 @@ angular.module('mvUi.Control', [])
 
           //init
           mvCtrl.checkMainClass();
-          mvCtrl.setupFunctionality('checklist');
+          mvCtrl.setupFunctionality('radiogroup');
           mvCtrl.setupFunctionality('button');
           mvCtrl.setupFunctionality('setup');
 
