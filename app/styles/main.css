@@ -2202,19 +2202,19 @@ table td[class*="col-"], table th[class*="col-"] {
 .mv-control-area {
   text-align: center; }
 
-.mv-control-checklist .mv-control-setup-area ul, .mv-control-radiolist .mv-control-setup-area ul {
+.mv-control-checklist .mv-control-setup-area ul, .mv-control-radiogroup .mv-control-setup-area ul {
   position: relative;
   list-style: none;
   padding: 0; }
-.mv-control-checklist .mv-control-setup-area li, .mv-control-radiolist .mv-control-setup-area li {
+.mv-control-checklist .mv-control-setup-area li, .mv-control-radiogroup .mv-control-setup-area li {
   display: block;
   overflow: hidden;
   padding: 0.5rem 0; }
-.mv-control-checklist .mv-control-setup-area li:hover, .mv-control-radiolist .mv-control-setup-area li:hover {
+.mv-control-checklist .mv-control-setup-area li:hover, .mv-control-radiogroup .mv-control-setup-area li:hover {
   background-color: #e6e6e6; }
-.mv-control-checklist .mv-control-setup-area li .mv-icon, .mv-control-radiolist .mv-control-setup-area li .mv-icon {
+.mv-control-checklist .mv-control-setup-area li .mv-icon, .mv-control-radiogroup .mv-control-setup-area li .mv-icon {
   font-size: 1.5rem; }
-.mv-control-checklist .mv-control-setup-area label, .mv-control-checklist .mv-control-setup-area input, .mv-control-radiolist .mv-control-setup-area label, .mv-control-radiolist .mv-control-setup-area input {
+.mv-control-checklist .mv-control-setup-area label, .mv-control-checklist .mv-control-setup-area input, .mv-control-radiogroup .mv-control-setup-area label, .mv-control-radiogroup .mv-control-setup-area input {
   padding: 0;
   line-height: 2rem; }
 

@@ -298,10 +298,11 @@ angular.module('mvUi.Control', [])
     function ($templateCache) {
       return {
         restrict: 'E',
-        template: $templateCache.get('mv-control/radiogroup.html'),
+        template: $templateCache.get('mv-control/file.html'),
         scope: {
           label: '@',
           icon: '@',
+          btnIcon: '@',
           id: '@',
           name: '@',
           showValue: '@',
@@ -312,24 +313,29 @@ angular.module('mvUi.Control', [])
         controller: 'MvControlController',
         link: function (scope, iElement, iAttr, mvCtrl) {
           scope.enableIcon = false;
-          scope.setup = mvCtrl.getSetup();
-          scope.showValue = angular.isDefined(scope.showValue) ? !!scope.showValue : true;
           scope.value = '';
+          scope.setup = mvCtrl.getSetup();
+          scope.setup = true;
+          scope.showValue = angular.isDefined(scope.showValue) ? !!scope.showValue : true;
           scope.ngModel = angular.isDefined(scope.ngModel) ? scope.ngModel : [];
           scope.name = angular.isDefined(scope.name) ? scope.name : scope.id;
+          scope.btnIcon = angular.isDefined(scope.btnIcon) ? scope.btnIcon : 'paperclip';
+          scope.files = [];
+          var inputFile = iElement.find('input');
+
+          inputFile.bind('change', function () {
+            scope.files = inputFile[0].files;
+            console.log(scope.files);
+            scope.$apply();
+          });
 
           scope.setupToggle = function ($event) {
             scope.setup = mvCtrl.setupToggle($event);
           };
 
-          scope.select = function (index, item, $event) {
-            scope.ngModel = item;
-            scope.value = item.label;
-          };
-
           //init
           mvCtrl.checkMainClass();
-          mvCtrl.setupFunctionality('checklist');
+          mvCtrl.setupFunctionality('file');
           mvCtrl.setupFunctionality('button');
           mvCtrl.setupFunctionality('setup');
 
