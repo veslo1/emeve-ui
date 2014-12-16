@@ -251,7 +251,7 @@ angular.module('mvUi.Control', [])
     function ($templateCache) {
       return {
         restrict: 'E',
-        template: $templateCache.get('mv-control/check.html'),
+        template: $templateCache.get('mv-control/radiogroup.html'),
         scope: {
           label: '@',
           icon: '@',
