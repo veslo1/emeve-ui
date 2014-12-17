@@ -1,4 +1,37 @@
 angular.module('mvUi.Control', [])
+  .service('mvControlFileService', ['$http',
+    function ($http) {
+
+      /**
+       * Response of success or error
+       * @type {{}}
+       */
+      this.response = {};
+
+      this.setResponse = function(value){
+        this.response = value;
+        return this.response;
+      };
+      /**
+       * Efetua o upload de um
+       * @param url
+       * @param data Um
+       */
+      this.upload = function (url, data) {
+        $http.post(url, data, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        })
+        .success(function (data, status, headers, config) {
+          return this.setResponse(data);
+        })
+        .error(function (data, status, headers, config) {
+          return this.setResponse(data);
+        });
+      };
+
+    }])
   .controller('MvControlController', [
     '$scope', '$element', '$attrs',
     function ($scope, $element, $attrs) {
@@ -294,8 +327,8 @@ angular.module('mvUi.Control', [])
       };
     }])
   .directive('mvFile', [
-    '$templateCache',
-    function ($templateCache) {
+    '$templateCache','mvControlFileService',
+    function ($templateCache, mvControlFileService) {
       return {
         restrict: 'E',
         template: $templateCache.get('mv-control/file.html'),
@@ -304,8 +337,10 @@ angular.module('mvUi.Control', [])
           icon: '@',
           btnIcon: '@',
           id: '@',
+          url: '@',
           name: '@',
           showValue: '@',
+          multiple: '@',
           options: '=',
           ngModel: '='
         },
@@ -315,19 +350,27 @@ angular.module('mvUi.Control', [])
           scope.enableIcon = false;
           scope.value = '';
           scope.setup = mvCtrl.getSetup();
-          scope.setup = true;
           scope.showValue = angular.isDefined(scope.showValue) ? !!scope.showValue : true;
           scope.ngModel = angular.isDefined(scope.ngModel) ? scope.ngModel : [];
           scope.name = angular.isDefined(scope.name) ? scope.name : scope.id;
           scope.btnIcon = angular.isDefined(scope.btnIcon) ? scope.btnIcon : 'paperclip';
+          scope.multiple = angular.isDefined(scope.multiple) ? true : false;
           scope.files = [];
           var inputFile = iElement.find('input');
 
           inputFile.bind('change', function () {
             scope.files = inputFile[0].files;
-            console.log(scope.files);
             scope.$apply();
           });
+
+          if(scope.multiple){
+            inputFile.attr('multiple')
+          }
+
+          scope.upload = function ($event) {
+            $event.preventDefault();
+            mvControlFileService.upload(scope.url, scope.files);
+          }
 
           scope.setupToggle = function ($event) {
             scope.setup = mvCtrl.setupToggle($event);

@@ -2225,6 +2225,9 @@ table td[class*="col-"], table th[class*="col-"] {
   text-align: center;
   padding: 2rem 0.5rem;
   border-top: 1px solid #e6e6e6; }
+.mv-control-file .mv-control-file-button {
+  display: block;
+  width: 100%; }
 
 /**
  * Control: Colors

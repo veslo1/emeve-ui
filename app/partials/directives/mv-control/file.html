@@ -10,13 +10,15 @@
   </button>
 </div>
 <div class="mv-control-setup-area" ng-class="{open:setup}">
+  <ul>
+    <li ng-if="files.length>0" ng-repeat="file in files">
+      {{file.name}}
+    </li>
+  </ul>
   <div class="mv-control-file-area">
     <input type="file" name="fileName"/>
   </div>
-  <div class="mv-control-file-upload-area">
-    <mv-i icon="cloud-upload"></mv-i>
-    Clique ou arraste seu arquivo
-
-    <pre>{{files}}</pre>
-  </div>
+  <button class="mv-btn mv-control-file-button" type="button" ng-click="upload($event)">
+    <mv-i icon="cloud-upload"></mv-i> Upload
+  </button>
 </div>
