@@ -1,15 +1,14 @@
 'use strict';
 
 /**
- *  Image processing
+ *  BrowserSync
  */
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-var wiredep = require('wiredep').stream;
 
 var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*']
+    pattern: ['gulp-*', 'main-bower-files']
 });
 
 var appSettings = require('./../config.json').appSettings;
@@ -22,15 +21,8 @@ function handleError(err) {
     this.emit('end');
 }
 
-//== Imagens: otimização
-gulp.task('tool:images', function () {
-    return gulp.src(dirDev + 'images/**/*.{png,jpg,gif}')
-        .pipe($.cache.clear())
-        .pipe($.cache($.imagemin({
-            optimizationLevel: 3,
-            progressive: true,
-            interlaced: true
-        })))
-        .pipe(gulp.dest(dirApp + 'images'))
-        .pipe($.size());
+//#== BrowserSync Reload
+gulp.task('tool:bsr', function () {
+    gulp.src('app/index.html', {read: false})
+        .pipe(reload({stream: true}));
 });

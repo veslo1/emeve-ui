@@ -10,8 +10,8 @@ var $ = require('gulp-load-plugins')({
 });
 
 var appSettings = require('./../config.json').appSettings;
-var dirDev = appSettings.directory.dev; //app
-var dirApp = appSettings.directory.app; //www/app
+var dirDev = appSettings.directory.dev; //app directory development
+var dirApp = appSettings.directory.app; //compile directory
 
 function handleError(err) {
     console.error(err.toString());

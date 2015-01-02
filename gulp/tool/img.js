@@ -1,11 +1,12 @@
 'use strict';
 
 /**
- *  Sass compiler
+ *  Image processing
  */
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var wiredep = require('wiredep').stream;
 
 var $ = require('gulp-load-plugins')({
     pattern: ['gulp-*']
@@ -21,12 +22,15 @@ function handleError(err) {
     this.emit('end');
 }
 
-//== Node Sass
-gulp.task('tool:sass', function () {
-    browserSync.notify("Sass...");
-    return gulp.src(dirDev + 'styles/**/*.scss')
-        .pipe($.sass())
-        .on('error', handleError)
-        .pipe(gulp.dest(dirDev + 'styles/'))
+//== Imagens: otimização
+gulp.task('tool:img', function () {
+    return gulp.src(dirDev + 'images/**/*.{png,jpg,gif}')
+        .pipe($.cache.clear())
+        .pipe($.cache($.imagemin({
+            optimizationLevel: 3,
+            progressive: true,
+            interlaced: true
+        })))
+        .pipe(gulp.dest(dirApp + 'images'))
         .pipe($.size());
 });

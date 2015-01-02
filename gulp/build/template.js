@@ -22,7 +22,7 @@ function handleError(err) {
     this.emit('end');
 }
 
-gulp.task('angular:template', function () {
+gulp.task('build:template', function () {
     var tcOptions = {
         module: 'mvUi.Template',
         standalone:true

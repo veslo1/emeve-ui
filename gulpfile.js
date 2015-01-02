@@ -7,13 +7,13 @@
 var gulp = require('gulp');
 
 require('require-dir')('./gulp/tool');
-require('require-dir')('./gulp/angular');
 require('require-dir')('./gulp/font');
+require('require-dir')('./gulp/build');
 require('require-dir')('./gulp/deploy');
 require('require-dir')('./gulp');
 
 //Default
 gulp.task('default', [
-    'serve',
+    'server',
     'watch'
 ]);
