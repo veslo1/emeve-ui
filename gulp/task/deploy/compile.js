@@ -3,21 +3,17 @@
 /**
  *  Compila um aplicativo para ser enviado para o servidor
  */
+var madeira = require('./../../index');
+var appSettings = madeira.getConfig();
+var dirDev = appSettings.directory.dev; //app directory development
+var dirApp = appSettings.directory.app; //compile directory
+var dirDemo = appSettings.directory.demo;
+
 var gulp = require('gulp');
 
 var $ = require('gulp-load-plugins')({
     pattern: ['gulp-*', 'del']
 });
-
-var appSettings = require('./../config.json').appSettings;
-var dirDev = appSettings.directory.dev; //app directory development
-var dirApp = appSettings.directory.app; //compile directory
-
-
-function handleError(err) {
-    console.error(err.toString());
-    this.emit('end');
-};
 
 gulp.task('deploy:compile-prepare',function(){
     $.del(['tool']);

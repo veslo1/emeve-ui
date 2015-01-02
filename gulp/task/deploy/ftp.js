@@ -3,24 +3,16 @@
 /**
  *  Envia um diretório para o servidor vai FTP
  */
+var madeira = require('./../../index');
+var appSettings = madeira.getConfig();
+var dirDev = appSettings.directory.dev; //app directory development
+var dirApp = appSettings.directory.app; //compile directory
+var dirDemo = appSettings.directory.demo;
+
 var gulp = require('gulp');
 
 var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*', 'del']
-});
-
-var appSettings = require('./../config.json').appSettings;
-var dirDev = appSettings.directory.dev; //app directory development
-var dirApp = appSettings.directory.app; //compile directory
-
-function handleError(err) {
-    console.error(err.toString());
-    this.emit('end');
-};
-
-gulp.task('deploy:prepare',function(){
-    //@todo mudar para diretório dist
-    $.del(['tool']);
+    pattern: ['gulp-*']
 });
 
 gulp.task("deploy:ftp",function(){
