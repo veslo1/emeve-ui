@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <!-- build:css({.,app}) styles/vendor.css -->
+  <!-- tool:css({.,app}) styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
   <!-- endbower -->
   <!-- endbuild -->
-  <!-- build:css({.tmp,app}) mv-ui.css -->
+  <!-- tool:css({.tmp,app}) mv-ui.css -->
   <link rel="stylesheet" href="styles/main.css"/>
   <!-- endbuild -->
   <link rel="stylesheet" href=""/>
@@ -24,14 +24,14 @@
     <a href="/demo.html">Demonstrações</a>
   </div>
 
-  <!-- build:js({.,app}) scripts/oldieshim.js -->
+  <!-- tool:js({.,app}) scripts/oldieshim.js -->
   <!--[if lt IE 9]>
   <script src="bower_components/es5-shim/es5-shim.js"></script>
   <script src="bower_components/json3/lib/json3.js"></script>
   <![endif]-->
   <!-- endbuild -->
 
-  <!-- build:js({.,app}) scripts/vendor.js -->
+  <!-- tool:js({.,app}) scripts/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/modernizr/modernizr.js"></script>
   <script src="bower_components/angular/angular.js"></script>
@@ -45,7 +45,7 @@
   <script src="bower_components/angular-i18n/angular-locale_pt-br.js"></script>
   <!-- endbuild -->
 
-  <!-- build:js({.tmp,app}) mv-ui.js -->
+  <!-- tool:js({.tmp,app}) mv-ui.js -->
   <!-- mvApp:js -->
   <script src="scripts/app.js"></script>
   <script src="scripts/templates.js"></script>
@@ -59,6 +59,7 @@
   <script src="scripts/components/mv-tooltip.js"></script>
   <!-- endinject -->
   <!-- endbuild -->
+
 
 </body>
 </html>

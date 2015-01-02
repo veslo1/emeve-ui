@@ -40,10 +40,7 @@ function browserSyncInit(baseDir, files, browser) {
   });
 }
 
-/**
- * Development
- */
-//Browser-sync
+//#== Inicializa um servidor a partir de um proxy
 gulp.task('up',['watch'],function () {
   browserSync({
     notify:appSettings.server.sync.notify,
@@ -52,7 +49,8 @@ gulp.task('up',['watch'],function () {
   });
 });
 
-gulp.task('serve', ['watch'], function () {
+//#== Inicializa um servidor do zero para aplicação HTML
+gulp.task('server', ['watch'], function () {
   browserSyncInit([
     appSettings.directory.demo,
     appSettings.directory.build,
@@ -71,11 +69,7 @@ gulp.task('serve', ['watch'], function () {
   ]);
 });
 
-gulp.task('serve:dist', [], function () {
-  browserSyncInit('dist');
-});
-
-gulp.task('bs-reload',function(){
-  gulp.src('app/index.html', {read: false})
-    .pipe(reload({stream: true}));
+//#== Inicializa um servidor a partir do diretório de distribuição
+gulp.task('server:dist', [], function () {
+  browserSyncInit(appSettings.directory.build);
 });
