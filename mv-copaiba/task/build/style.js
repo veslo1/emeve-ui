@@ -1,26 +1,26 @@
 'use strict';
 
 /**
- *  Copy bower fonts
+ *  Estilização CSS
  */
 var madeira = require('./../../index');
-var appSettings = madeira.getConfig();
+var appSettings = madeira.config();
 var dirDev = appSettings.directory.dev; //app directory development
 var dirApp = appSettings.directory.app; //compile directory
-var dirDemo = appSettings.directory.demo;
 
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
 var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*', 'main-bower-files']
+    pattern: ['gulp-*', 'del']
 });
 
-gulp.task('font:bower', function () {
-    return gulp.src($.mainBowerFiles())
-        .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
-        .pipe($.flatten())
-        .pipe(gulp.dest(dirApp + 'fonts/bower'))
+gulp.task('build:style', function () {
+    return gulp.src(dirDev + 'styles/*.css')
+        .pipe($.autoprefixer('last 1 version'))
+        .pipe($.minifyCss({keepSpecialComments: 0}))
+        .pipe(gulp.dest(dirApp + 'styles/'))
+        .pipe(reload({stream: true}))
         .pipe($.size());
 });

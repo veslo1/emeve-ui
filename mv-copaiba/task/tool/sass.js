@@ -1,10 +1,10 @@
 'use strict';
 
 /**
- *  Copy application fonts
+ *  Sass compiler
  */
 var madeira = require('./../../index');
-var appSettings = madeira.getConfig();
+var appSettings = madeira.config();
 var dirDev = appSettings.directory.dev; //app directory development
 var dirApp = appSettings.directory.app; //compile directory
 var dirDemo = appSettings.directory.demo;
@@ -17,8 +17,12 @@ var $ = require('gulp-load-plugins')({
     pattern: ['gulp-*']
 });
 
-gulp.task('font:app', function () {
-    return gulp.src(dirDev + 'fonts/**/*.{eot,svg,ttf,woff}')
-        .pipe(gulp.dest(dirApp + 'fonts'))
+//== Node Sass
+gulp.task('tool:sass', function () {
+    browserSync.notify("Sass...");
+    return gulp.src(dirDev + 'styles/**/*.scss')
+        .pipe($.sass())
+        .on('error', madeira.error.handleError)
+        .pipe(gulp.dest(dirDev + 'styles/'))
         .pipe($.size());
 });

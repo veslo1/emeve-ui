@@ -1,5 +1,5 @@
 'use strict';
 
 exports.message = {
-  'sass':'sassssss'
+  'sass':'Injetando estilo...'
 }

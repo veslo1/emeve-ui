@@ -6,8 +6,8 @@
  */
 var gulp = require('gulp');
 
-var madeira = require('./gulp/index');
-madeira.init();
+var mvCopaiba = require('./mv-copaiba/index');
+mvCopaiba.init();
 
 //Default
 gulp.task('default', [

@@ -1,26 +1,24 @@
 'use strict';
 
 /**
- *  Estilização CSS
+ *  Copy application fonts
  */
 var madeira = require('./../../index');
-var appSettings = madeira.getConfig();
+var appSettings = madeira.config();
 var dirDev = appSettings.directory.dev; //app directory development
 var dirApp = appSettings.directory.app; //compile directory
+var dirDemo = appSettings.directory.demo;
 
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
 var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*', 'del']
+    pattern: ['gulp-*']
 });
 
-gulp.task('build:style', function () {
-    return gulp.src(dirDev + 'styles/*.css')
-        .pipe($.autoprefixer('last 1 version'))
-        .pipe($.minifyCss({keepSpecialComments: 0}))
-        .pipe(gulp.dest(dirApp + 'styles/'))
-        .pipe(reload({stream: true}))
+gulp.task('font:app', function () {
+    return gulp.src(dirDev + 'fonts/**/*.{eot,svg,ttf,woff}')
+        .pipe(gulp.dest(dirApp + 'fonts'))
         .pipe($.size());
 });

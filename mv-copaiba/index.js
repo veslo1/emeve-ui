@@ -1,13 +1,11 @@
 'use strict';
-var Madeira = function () {
-
-  this.getFossa = 'fossa';
+var mvCopaiba = function () {
 
   /**
    * Obtem aquivo de configuração
    * @returns {exports}
    */
-  this.getConfig = function(){
+  this.config = function(){
     return require('./config.json');
   };
 
@@ -37,7 +35,8 @@ var Madeira = function () {
     require('require-dir')('./task/deploy');
     require('require-dir')('./task/');
   }
+
 };
 
-var inst = new Madeira();
+var inst = new mvCopaiba();
 module.exports = inst;

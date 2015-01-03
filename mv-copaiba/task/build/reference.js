@@ -4,7 +4,7 @@
  *  Replaces references to non-optimized scripts or stylesheets into a set of HTML files
  */
 var madeira = require('./../../index');
-var appSettings = madeira.getConfig();
+var appSettings = madeira.config();
 var dirDev = appSettings.directory.dev; //app directory development
 var dirApp = appSettings.directory.app; //compile directory
 var dirDemo = appSettings.directory.demo;

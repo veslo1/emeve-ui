@@ -3,7 +3,7 @@
  * Executa um servidor
  */
 var madeira = require('./../index');
-var appSettings = madeira.getConfig();
+var appSettings = madeira.config();
 
 var gulp = require('gulp');
 var httpProxy = require('http-proxy');
