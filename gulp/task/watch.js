@@ -8,10 +8,18 @@ var gulp = mvApp.gulp;
 
 gulp.task('watch', function () {
   //#== Bower
-  gulp.watch('bower.json', ['tool:bower']);
+  gulp.watch([
+    'bower.json'
+  ], [
+    'tool:bower'
+  ]);
 
   //#== Php Files
-  gulp.watch('module/**/*.{php,phtml}', ['tool:bsr']);
+  gulp.watch([
+    'module/**/*.{php,phtml}'
+  ], [
+    'tool:bsr'
+  ]);
 
   //#== Css
   gulp.watch([
