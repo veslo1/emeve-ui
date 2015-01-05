@@ -12,7 +12,7 @@ exports.config = {
    * @returns {*}
    */
   load: function () {
-    this.data = require('./../data/' + this.file);
+    this.data = require('./../' + this.file);
     return this;
   },
 
@@ -30,5 +30,13 @@ exports.config = {
    */
   dir: function(){
     return this.data.directory;
+  },
+
+  /**
+   * Retorna configurações do servidor
+   * @returns {Function|mvApp.bs.instance.server}
+   */
+  server: function(){
+    return this.data.server;
   }
 };

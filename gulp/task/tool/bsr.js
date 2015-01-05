@@ -6,7 +6,7 @@
 var mvApp = require('./../../index');
 mvApp.init();
 var appSettings = mvApp.config();
-console.log(appSettings)
+
 var dirDev = appSettings.directory.dev; //app directory development
 var dirApp = appSettings.directory.app; //compile directory
 var dirDemo = appSettings.directory.demo;
