@@ -137,7 +137,6 @@ var mvApp = function () {
     });
   };
 
-
 };
 
 var mvAppInstance = new mvApp();

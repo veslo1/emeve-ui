@@ -19,7 +19,7 @@ gulp.task('up', ['watch'], function () {
 //@todo mudar para diretório de desenvolvimento
 gulp.task('server', ['watch'], function () {
   mvApp.initStaticServer([
-      mvApp.config().dir().demo,
+      mvApp.config().dir().dev,
       mvApp.config().dir().build
     ], [
       'app/*.html',

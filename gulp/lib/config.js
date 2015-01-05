@@ -41,7 +41,7 @@ exports.config = {
    * @returns {String|*}
    */
   dir: function () {
-    return this.data.directory;
+    return this.data.app.dir;
   },
 
   /**
