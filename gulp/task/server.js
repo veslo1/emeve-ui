@@ -11,7 +11,7 @@ gulp.task('up', ['watch'], function () {
   this.$().browserSync({
     notify: mvApp.config().server().sync.notify,
     port: mvApp.config().server().sync.port,
-    proxy: mvApp.config().server().proxy
+    proxy: mvApp.config().server().sync.proxy
   });
 });
 
@@ -20,7 +20,7 @@ gulp.task('up', ['watch'], function () {
 gulp.task('server', ['watch'], function () {
   mvApp.initStaticServer([
       mvApp.config().dir().dev,
-      mvApp.config().dir().build
+      mvApp.config().dir().tmp
     ], [
       'app/*.html',
       'app/fonts/**/*.{otf,eot,svg,ttf,woff}',
@@ -30,12 +30,13 @@ gulp.task('server', ['watch'], function () {
       'app/partials/**/*.html',
       'app/images/**/*'
     ],
-    [
-      'google chrome'
-    ]);
+    mvApp.config().server().browser
+  );
 });
 
 //#== Inicializa um servidor a partir do diretório de distribuição
 gulp.task('server:dist', [], function () {
-  mvApp.initStaticServer(mvApp.config().dir().build);
+  mvApp.initStaticServer(
+    mvApp.config().dir().build
+  );
 });
