@@ -1,0 +1,11 @@
+{
+  "module": {
+    "name": "mvApp",
+    "version": "1.0.1"
+  },
+  "dir": {
+    "dev": "app/",
+    "tmp": ".tmp/",
+    "build": "dist/"
+  }
+}

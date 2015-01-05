@@ -1,0 +1,10 @@
+{
+  "ftp": {
+    "enabled":false,
+    "host": "website.com",
+    "port": 21,
+    "user": "user",
+    "pass": "1234",
+    "remotePath": "/www/"
+  }
+}

@@ -2,7 +2,15 @@
 
 exports.config = {
   //arquivo de configuração
-  file: 'config.json',
+  files: {
+    dir: './../config/',
+    extension: '.json',
+    autoload: [
+      'app',
+      'deploy',
+      'server'
+    ]
+  },
 
   //lista de configurações
   data: {},
@@ -12,7 +20,11 @@ exports.config = {
    * @returns {*}
    */
   load: function () {
-    this.data = require('./../' + this.file);
+    for (var i = 0; i < this.files.autoload.length; i++) {
+      var config = this.files.autoload[i];
+      var file = this.files.dir + config + this.files.extension;
+      this.data[config] = require(file);
+    }
     return this;
   },
 
@@ -20,7 +32,7 @@ exports.config = {
    * Obtem lista de configurações
    * @returns {*}
    */
-  get: function(){
+  get: function () {
     return this.data;
   },
 
@@ -28,7 +40,7 @@ exports.config = {
    * Retorna um parâmetro de diretório
    * @returns {String|*}
    */
-  dir: function(){
+  dir: function () {
     return this.data.directory;
   },
 
@@ -36,7 +48,7 @@ exports.config = {
    * Retorna configurações do servidor
    * @returns {Function|mvApp.bs.instance.server}
    */
-  server: function(){
+  server: function () {
     return this.data.server;
   }
 };
