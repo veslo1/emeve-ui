@@ -3,8 +3,10 @@
 /**
  *  Inject Bower components
  */
-var madeira = require('./../../index');
-var appSettings = madeira.config();
+var mvApp = require('./../../index');
+mvApp.init();
+var appSettings = mvApp.config().get();
+console.log(appSettings);
 var dirDev = appSettings.directory.dev; //app directory development
 var dirApp = appSettings.directory.app; //compile directory
 var dirDemo = appSettings.directory.demo;
@@ -12,7 +14,7 @@ var dirDemo = appSettings.directory.demo;
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-var wiredep = require('wiredep').stream;
+
 
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files']

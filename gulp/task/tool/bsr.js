@@ -1,10 +1,12 @@
 'use strict';
 
 /**
- *  Copy bower fonts
+ *  BrowserSync
  */
-var madeira = require('./../../index');
-var appSettings = madeira.config();
+var mvApp = require('./../../index');
+mvApp.init();
+var appSettings = mvApp.config();
+console.log(appSettings)
 var dirDev = appSettings.directory.dev; //app directory development
 var dirApp = appSettings.directory.app; //compile directory
 var dirDemo = appSettings.directory.demo;
@@ -17,10 +19,8 @@ var $ = require('gulp-load-plugins')({
     pattern: ['gulp-*', 'main-bower-files']
 });
 
-gulp.task('font:bower', function () {
-    return gulp.src($.mainBowerFiles())
-        .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
-        .pipe($.flatten())
-        .pipe(gulp.dest(dirApp + 'fonts/bower'))
-        .pipe($.size());
+//#== BrowserSync Reload
+gulp.task('tool:bsr', function () {
+    gulp.src('app/index.html', {read: false})
+        .pipe(reload({stream: true}));
 });

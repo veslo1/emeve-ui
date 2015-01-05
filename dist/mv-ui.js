@@ -1,1 +1,910 @@
-var mvUi=angular.module("mvUi",["ngAnimate","ngCookies","ngResource","ngSanitize","ngTouch","mvUi.Template","mvUi.Control","mvUi.Button","mvUi.Dropdown","mvUi.PageHeader","mvUi.Grid","mvUi.Tooltip","mvUi.Icon","mvUi.Switch"]);angular.module("mvUi.Template",[]).run(["$templateCache",function(n){n.put("mv-pageheader.html",'<h2 class="mv-page-title">\n  <span class="title-icon" ng-if="icon">\n    <i class="fa fa-{{icon}}"></i>\n  </span>\n  <span class="title-label">{{title}}</span>\n</h2>\n<div class="content-wrapper" ng-transclude>\n\n</div>\n'),n.put("mv-switch-nav.html",'<ul>\n  <li ng-repeat="slide in slides">\n    <button type="button" ng-click="selectSlide(slide.title)">{{slide.title}}</button>\n  </li>\n</ul>\n'),n.put("mv-control/checklist.html",'<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n<label>{{label}}</label>\n<span class="mv-control-value">\n  <strong  ng-show="showValue">{{ngModel}}</strong>\n</span>\n<div class="mv-control-button-area">\n  <button class="mv-btn" type="button"\n          ng-switch="setup"\n          ng-click="setupToggle($event)">\n    <mv-i icon="angle-down" ng-switch-when="false"></mv-i>\n    <mv-i icon="angle-up" ng-switch-when="true"></mv-i>\n  </button>\n</div>\n<ul class="mv-control-setup-area mv-container-fluid" ng-class="{open:setup}">\n  <li ng-repeat="item in options">\n    <label for="{{id}}-{{$index}}">\n    <mv-row>\n    <div class="mv-col xs-10">\n      {{item.label}}\n    </div>\n    <div class="mv-control-area mv-col xs-2">\n      <input type="checkbox" class="mv-control-checkbox" id="{{id}}-{{$index}}"\n        ng-click="select($index,item,$event)"/>\n    </div>\n    </mv-row>\n    </label>\n  </li>\n</ul>\n'),n.put("mv-control/file.html",'<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n<label>{{label}}</label>\n<span class="mv-control-value">\n  <strong  ng-show="showValue">{{value}}</strong>\n</span>\n<div class="mv-control-button-area">\n  <button type="button" class="mv-btn"\n          ng-click="setupToggle($event)">\n    <mv-i icon="{{btnIcon}}"></mv-i>\n  </button>\n</div>\n<div class="mv-control-setup-area" ng-class="{open:setup}">\n  <ul>\n    <li ng-if="files.length>0" ng-repeat="file in files">\n      {{file.name}}\n    </li>\n  </ul>\n  <div class="mv-control-file-area">\n    <input type="file" name="fileName"/>\n  </div>\n  <button class="mv-btn mv-control-file-button" type="button" ng-click="upload($event)">\n    <mv-i icon="cloud-upload"></mv-i> Upload\n  </button>\n</div>\n'),n.put("mv-control/input.html",'<!--Info (Information)-->\n<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n<label for="{{id}}-control">{{label}}</label>\n<input type="{{type}}" name="{{name}}" id="{{id}}-control" class="mv-control-input"\n       ng-model="ngModel"/>\n<div ng-transclude>\n\n</div>\n'),n.put("mv-control/radiogroup.html",'<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n<label>{{label}}</label>\n<span class="mv-control-value">\n  <strong  ng-show="showValue">{{value}}</strong>\n</span>\n<div class="mv-control-button-area">\n  <button class="mv-btn" type="button"\n          ng-switch="setup"\n          ng-click="setupToggle($event)">\n    <mv-i icon="angle-down" ng-switch-when="false"></mv-i>\n    <mv-i icon="angle-up" ng-switch-when="true"></mv-i>\n  </button>\n</div>\n<ul class="mv-control-setup-area mv-container-fluid" ng-class="{open:setup}">\n  <li ng-repeat="item in options">\n    <label for="{{id}}-{{$index}}">\n    <mv-row>\n    <div class="mv-col xs-10">\n      {{item.label}}\n    </div>\n    <div class="mv-control-area mv-col xs-2">\n      <input type="radio" name="{{name}}" class="mv-control-radio" id="{{id}}-{{$index}}"\n        ng-click="select($index,item,$event)"/>\n    </div>\n    </mv-row>\n    </label>\n  </li>\n</ul>\n'),n.put("mv-control/select.html",'<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n<label for="{{id}}-control">{{label}}</label>\n<select id="{{id}}-control" name="{{name}}" class="mv-control-select"\n        ng-model="ngModel"\n        ng-options="a.{{col}} for a in options">\n</select>\n<div ng-transclude>\n\n</div>\n'),n.put("mv-control/text.html",'<!--Info (Information)-->\n<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n<label>{{label}}</label>\n<span class="mv-control-value">{{ngModel}}</span>\n<div ng-transclude>\n\n</div>\n'),n.put("mv-control/toggle.html",'<!--<div class="mv-control mv-control-toggle mv-control-button">-->\n  <mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>\n  <label for="{{id}}-control">{{label}}</label>\n\n  <div class="mv-control-value" ng-switch="setup">\n    <span ng-switch-when="false">{{off}}</span>\n    <span ng-switch-when="true">{{on}}</span>\n  </div>\n  <div>\n    <input type="checkbox" id="{{id}}-control" name="toggleName" class="mv-control-toggle"\n           ng-model="ngModel"/>\n  </div>\n  <div class="mv-control-button-area">\n    <button class="mv-btn" type="button"\n            ng-switch="setup"\n            ng-click="setupToggle($event)">\n      <mv-i class="mv-btn-off" icon="toggle-off" ng-switch-when="false"></mv-i>\n      <mv-i class="mv-btn-on" icon="toggle-on" ng-switch-when="true"></mv-i>\n    </button>\n  </div>\n<!--</div>-->\n')}]),angular.module("mvUi.Button",[]).directive("mvBtn",["$parse",function(){return{restrict:"C",scope:{icon:"@",border:"@",color:"@",disabled:"@",behavior:"@",active:"@"},controller:["$scope","$element","$attrs",function(n,e){n.active=!1,n.toogleActive=function(){n.active=!n.active},n.$watch("active",function(n){n?e.addClass("active"):e.removeClass("active")})}],link:function(n,e){if(n.icon=angular.isDefined(n.icon)?n.icon:!1,n.border=angular.isDefined(n.border)?n.border:!1,n.color=angular.isDefined(n.color)?n.color:"default",angular.isDefined(n.disabled)&&e.addClass("disabled"),n.icon){var t=angular.element("<i>");t.addClass("fa"),t.addClass("fa-"+n.icon),t.addClass("fa-fw"),e.prepend(t)}n.border&&e.addClass(n.border),e.addClass(angular.isDefined(n.border)?n.color:"default")}}}]).directive("mvBtnRadio",["$parse",function(){return{restrict:"C",require:["?ngModel"],scope:{active:"@?",value:"@?"},link:function(n,e,t,l){e.addClass("mv-btn");var i=l[0];i&&(n.active=angular.isDefined(n.active)?n.active:"active",i.$render=function(){var t=angular.equals(i.$modelValue,n.$eval(n.value));e.toggleClass("active",t)},e.bind("click",function(t){var l=e.hasClass(n.active);t.preventDefault(),n.$apply(function(){i.$setViewValue(l?null:n.$eval(n.value)),i.$render()})}))}}}]).directive("mvBtnCheckbox",["$parse",function(){return{restrict:"C",require:["?ngModel"],scope:{active:"@?",on:"@?",off:"@?"},controller:["$scope","$element","$attrs",function(n){n.active=angular.isDefined(n.active)?n.active:"active"}],link:function(n,e,t,l){function i(){return a(t.on,!0)}function o(){return a(t.off,!1)}function a(e,t){var l=n.$eval(e);return angular.isDefined(l)?l:t}e.addClass("mv-btn");var c=l[0];c&&(c.$render=function(){e.toggleClass("active",angular.equals(c.$modelValue,i()))},e.bind("click",function(t){t.preventDefault(),n.$apply(function(){c.$setViewValue(e.hasClass("active")?o():i()),c.$render()})}))}}}]),angular.module("mvUi.Control",[]).service("mvControlFileService",["$http",function(n){this.response={},this.setResponse=function(n){return this.response=n,this.response},this.upload=function(e,t){n.post(e,t,{headers:{"Content-Type":"multipart/form-data"}}).success(function(n){return this.setResponse(n)}).error(function(n){return this.setResponse(n)})}}]).controller("MvControlController",["$scope","$element","$attrs",function(n,e){this.mainClass="mv-control",this.setup=!1,this.getSetup=function(){return this.setup},this.genSubClass=function(n){return this.mainClass+"-"+n},this.checkMainClass=function(){e.hasClass(this.mainClass)||e.addClass(this.mainClass)},this.setupFunctionality=function(n){e.addClass("mv-control-"+n)},this.setupToggle=function(n){return n.preventDefault(),this.setup=!this.setup,this.setup},this.init=function(n,e){this.checkMainClass(),angular.forEach(e,function(e){n.addClass(this.genSubClass(e))})}}]).directive("mvInfo",["$templateCache",function(n){return{restrict:"E",template:n.get("mv-control/text.html"),scope:{display:"@",label:"@",icon:"@",ngModel:"="},transclude:!0,controller:"MvControlController",link:function(n,e,t,l){var i=e.find("input");n.enableIcon=!1,l.checkMainClass(),i.addClass(l.genSubClass("info")),angular.isDefined(n.icon)&&(l.setupFunctionality("icon"),n.enableIcon=!0)}}}]).directive("mvInput",["$templateCache",function(n){return{restrict:"E",template:n.get("mv-control/input.html"),scope:{label:"@",icon:"@",id:"@",type:"@",name:"@",ngModel:"="},transclude:!0,controller:"MvControlController",link:function(n,e,t,l){var i=e.find("input");n.enableIcon=!1,n.type=angular.isDefined(n.type)?n.type:"text",l.checkMainClass(),i.addClass(l.genSubClass(n.type)),angular.isDefined(n.icon)&&(l.setupFunctionality("icon"),n.enableIcon=!0)}}}]).directive("mvToggle",["$templateCache",function(n){return{restrict:"E",template:n.get("mv-control/toggle.html"),scope:{label:"@",icon:"@",off:"@",on:"@",ngModel:"="},transclude:!0,controller:"MvControlController",link:function(n,e,t,l){e.find("input");n.enableIcon=!1,n.setup=angular.isDefined(n.ngModel)?!!n.ngModel:l.getSetup(),n.on=angular.isDefined(n.on)?n.on:"On",n.off=angular.isDefined(n.off)?n.off:"Off",n.setupToggle=function(e){n.setup=l.setupToggle(e),n.ngModel=n.setup},l.checkMainClass(),l.setupFunctionality("toggle"),l.setupFunctionality("button"),angular.isDefined(n.icon)&&(l.setupFunctionality("icon"),n.enableIcon=!0)}}}]).directive("mvSelect",["$templateCache",function(n){return{restrict:"E",template:n.get("mv-control/select.html"),scope:{label:"@",icon:"@",id:"@",name:"@",col:"@",options:"=",ngModel:"="},transclude:!0,controller:"MvControlController",link:function(n,e,t,l){n.enableIcon=!1,l.checkMainClass(),l.setupFunctionality("toggle"),l.setupFunctionality("button"),angular.isDefined(n.icon)&&(l.setupFunctionality("icon"),n.enableIcon=!0)}}}]).directive("mvCheckList",["$templateCache",function(n){return{restrict:"E",template:n.get("mv-control/checklist.html"),scope:{label:"@",icon:"@",id:"@",showValue:"@",options:"=",ngModel:"="},transclude:!0,controller:"MvControlController",link:function(n,e,t,l){n.enableIcon=!1,n.setup=l.getSetup(),n.showValue=angular.isDefined(n.showValue)?!!n.showValue:!1,n.ngModel=angular.isDefined(n.ngModel)?n.ngModel:[],n.setupToggle=function(e){n.setup=l.setupToggle(e)},n.select=function(e,t){var e=n.ngModel.indexOf(t);-1===e?n.ngModel.splice(e,0,t):n.ngModel.splice(e,1)},l.checkMainClass(),l.setupFunctionality("checklist"),l.setupFunctionality("button"),l.setupFunctionality("setup"),angular.isDefined(n.icon)&&(l.setupFunctionality("icon"),n.enableIcon=!0)}}}]).directive("mvRadioGroup",["$templateCache",function(n){return{restrict:"E",template:n.get("mv-control/radiogroup.html"),scope:{label:"@",icon:"@",id:"@",name:"@",showValue:"@",options:"=",ngModel:"="},transclude:!0,controller:"MvControlController",link:function(n,e,t,l){n.enableIcon=!1,n.setup=l.getSetup(),n.showValue=angular.isDefined(n.showValue)?!!n.showValue:!0,n.value="",n.ngModel=angular.isDefined(n.ngModel)?n.ngModel:[],n.name=angular.isDefined(n.name)?n.name:n.id,n.setupToggle=function(e){n.setup=l.setupToggle(e)},n.select=function(e,t){n.ngModel=t,n.value=t.label},l.checkMainClass(),l.setupFunctionality("radiogroup"),l.setupFunctionality("button"),l.setupFunctionality("setup"),angular.isDefined(n.icon)&&(l.setupFunctionality("icon"),n.enableIcon=!0)}}}]).directive("mvFile",["$templateCache","mvControlFileService",function(n,e){return{restrict:"E",template:n.get("mv-control/file.html"),scope:{label:"@",icon:"@",btnIcon:"@",id:"@",url:"@",name:"@",showValue:"@",multiple:"@",options:"=",ngModel:"="},transclude:!0,controller:"MvControlController",link:function(n,t,l,i){n.enableIcon=!1,n.value="",n.setup=i.getSetup(),n.showValue=angular.isDefined(n.showValue)?!!n.showValue:!0,n.ngModel=angular.isDefined(n.ngModel)?n.ngModel:[],n.name=angular.isDefined(n.name)?n.name:n.id,n.btnIcon=angular.isDefined(n.btnIcon)?n.btnIcon:"paperclip",n.multiple=angular.isDefined(n.multiple)?!0:!1,n.files=[];var o=t.find("input");o.bind("change",function(){n.files=o[0].files,n.$apply()}),n.multiple&&o.attr("multiple"),n.upload=function(t){t.preventDefault(),e.upload(n.url,n.files)},n.setupToggle=function(e){n.setup=i.setupToggle(e)},i.checkMainClass(),i.setupFunctionality("file"),i.setupFunctionality("button"),i.setupFunctionality("setup"),angular.isDefined(n.icon)&&(i.setupFunctionality("icon"),n.enableIcon=!0)}}}]),angular.module("mvUi.Dropdown",[]).directive("mvDropdown",["$document",function(n){return{restrict:"C",controller:["$scope","$element","$attrs",function(n,e){n.isOpen=!1,n.addCaret=function(){var n=angular.element("<i>");return n.addClass("fa"),n.addClass("fa-ellipsis-v"),n},this.open=function(){n.isOpen=!n.isOpen,n.$apply(function(){e.toggleClass("open",n.isOpen)})}}],link:function(e,t,l,i){var o=angular.element(t.children()[0]),a=(angular.element(t.children()[1]),function(e){e&&e.stopPropagation(),i.open(),n.bind("click",i.open)});t.attr({"aria-haspopup":!0,"aria-expanded":!1}),o.append(e.addCaret()),o.bind("click",a),e.$watch("isOpen",function(e){t.attr("aria-expanded",e),e||n.unbind("click",i.open)},!0),e.$on("$destroy",function(){o.unbind("click",e.open),n.unbind("click",i.open)})}}}]),angular.module("mvUi.Grid",[]).directive("mvCol",["$parse","$compile",function(n){return{restrict:"C",template:"",transclude:!0,scope:{layout:"@size",layoutPush:"@push",layoutPull:"@pull"},controller:["$scope","$element","$attrs",function(n,e){n.layoutObj={},n.produceClass=function(n,t){var l=n+"-"+t;e.addClass(l)},n.produceAdjustmentClass=function(n,t,l){var i=n+"-"+l+"-"+t;e.addClass(i)}}],link:function(e,t,l,i,o){e.layout=angular.isDefined(e.layout)?n(e.layout)(e):e.layoutObj,e.layoutPush=angular.isDefined(e.layoutPush)?n(e.layoutPush)(e):e.layoutObj,e.layoutPull=angular.isDefined(e.layoutPull)?n(e.layoutPull)(e):e.layoutObj,o(e.$parent,function(n){t.append(n)}),0!==Object.keys(e.layout).length&&angular.forEach(e.layout,function(n,t){e.produceClass(t,n)}),0!==Object.keys(e.layoutPush).length&&angular.forEach(e.layoutPush,function(n,t){e.produceAdjustmentClass(t,n,"push")}),0!==Object.keys(e.layoutPull).length&&angular.forEach(e.layoutPull,function(n,t){e.produceAdjustmentClass(t,n,"pull")})}}}]).directive("mvRow",[function(){return{restrict:"C",template:"",scope:{layoutFill:"@"},transclude:!0,link:function(n,e,t,l,i){if(n.layoutFill=angular.isDefined(n.layoutFill)?JSON.parse(n.layoutFill):!1,e.append(i()),n.layoutFill){var o=e[0].offsetHeight;angular.forEach(e[0].children,function(n){angular.element(n).css("height",o+"px")})}}}}]),angular.module("mvUi.Icon",[]).directive("mvI",[function(){return{restrict:"EAC",template:'<i class="{{prefix}} {{prefix}}-{{icon}}"></i>',scope:{icon:"@",prefix:"@"},link:function(n,e){n.icon=angular.isDefined(n.icon)?n.icon:!1,n.prefix=angular.isDefined(n.prefix)?n.prefix:"fa",e.hasClass("mv-icon")||e.addClass("mv-icon")}}}]),angular.module("mvUi.PageHeader",[]).directive("mvPageHeader",["$templateCache",function(n){return{restrict:"C",template:n.get("mv-pageheader.html"),scope:{title:"@",icon:"@"},transclude:!0,link:function(n){n.icon=angular.isDefined(n.icon)?n.icon:!1}}}]),angular.module("mvUi.Switch",[]).directive("mvSwitch",["$compile",function(){return{restrict:"EAC",template:"<section ng-transclude></section>",transclude:!0,scope:{ngSwitch:"@"},controller:["$scope","$element","$attrs","$transclude",function(n){n.value="",this.slides=[],this.addSlide=function(n){this.slides.push(n)},this.selectSlide=function(e){n.ngSwitch=e}}],link:function(n,e,t,l){l.slides[0].title}}}]).directive("mvSwitchSlide",["$compile",function(){return{require:"^mvSwitch",restrict:"EAC",template:'<div ng-switch-when="{{title}}" ng-transclude></div>',transclude:!0,scope:{title:"@"},link:function(n,e,t,l){l.addSlide(n)}}}]).directive("mvSwitchNav",["$templateCache",function(n){return{require:"^mvSwitch",restrict:"EAC",template:n.get("mv-switch-nav.html"),transclude:!0,link:function(n,e,t,l){n.slides=l.slides,n.selectSlide=l.selectSlide}}}]),angular.module("mvUi.Tooltip",[]).directive("mvTooltip",[function(){return{restrict:"C",templateUrl:"../../views/directives/mv-pageheader.html",scope:{title:"@",position:"@"},transclude:!0,link:function(n){n.position=angular.isDefined(n.position)?n.position:"top"}}}]);
+(function(module) {
+try {
+  module = angular.module('mvApp');
+} catch (e) {
+  module = angular.module('mvApp', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('partials/directives/mv-pageheader.html',
+    '<h2 class="mv-page-title"><span class="title-icon" data-ng-if="icon"><i class="fa fa-{{icon}}"></i></span> <span class="title-label">{{title}}</span></h2><div class="content-wrapper" data-ng-transclude=""></div>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('mvApp');
+} catch (e) {
+  module = angular.module('mvApp', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('partials/directives/mv-switch-nav.html',
+    '<ul><li data-ng-repeat="slide in slides"><button type="button" data-ng-click="selectSlide(slide.title)">{{slide.title}}</button></li></ul>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('mvApp');
+} catch (e) {
+  module = angular.module('mvApp', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('partials/directives/mv-control/checklist.html',
+    '<mv-i data-ng-if="enableIcon" icon="{{icon}}"></mv-i><label>{{label}}</label> <span class="mv-control-value"><strong data-ng-show="showValue">{{ngModel}}</strong></span><div class="mv-control-button-area"><button class="mv-btn" type="button" data-ng-switch="setup" data-ng-click="setupToggle($event)"><mv-i icon="angle-down" data-ng-switch-when="false"></mv-i><mv-i icon="angle-up" data-ng-switch-when="true"></mv-i></button></div><ul class="mv-control-setup-area mv-container-fluid" data-ng-class="{open:setup}"><li data-ng-repeat="item in options"><label for="{{id}}-{{$index}}"><mv-row><div class="mv-col xs-10">{{item.label}}</div><div class="mv-control-area mv-col xs-2"><input type="checkbox" class="mv-control-checkbox" id="{{id}}-{{$index}}" data-ng-click="select($index,item,$event)"></div></mv-row></label></li></ul>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('mvApp');
+} catch (e) {
+  module = angular.module('mvApp', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('partials/directives/mv-control/file.html',
+    '<mv-i data-ng-if="enableIcon" icon="{{icon}}"></mv-i><label>{{label}}</label> <span class="mv-control-value"><strong data-ng-show="showValue">{{value}}</strong></span><div class="mv-control-button-area"><button type="button" class="mv-btn" data-ng-click="setupToggle($event)"><mv-i icon="{{btnIcon}}"></mv-i></button></div><div class="mv-control-setup-area" data-ng-class="{open:setup}"><ul><li data-ng-if="files.length>0" data-ng-repeat="file in files">{{file.name}}</li></ul><div class="mv-control-file-area"><input type="file" name="fileName"></div><button class="mv-btn mv-control-file-button" type="button" data-ng-click="upload($event)"><mv-i icon="cloud-upload"></mv-i>Upload</button></div>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('mvApp');
+} catch (e) {
+  module = angular.module('mvApp', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('partials/directives/mv-control/input.html',
+    '<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i><label for="{{id}}-control">{{label}}</label> <input type="{{type}}" name="{{name}}" id="{{id}}-control" class="mv-control-input" ng-model="ngModel"><div ng-transclude=""></div>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('mvApp');
+} catch (e) {
+  module = angular.module('mvApp', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('partials/directives/mv-control/radiogroup.html',
+    '<mv-i data-ng-if="enableIcon" icon="{{icon}}"></mv-i><label>{{label}}</label> <span class="mv-control-value"><strong data-ng-show="showValue">{{value}}</strong></span><div class="mv-control-button-area"><button class="mv-btn" type="button" data-ng-switch="setup" data-ng-click="setupToggle($event)"><mv-i icon="angle-down" data-ng-switch-when="false"></mv-i><mv-i icon="angle-up" data-ng-switch-when="true"></mv-i></button></div><ul class="mv-control-setup-area mv-container-fluid" data-ng-class="{open:setup}"><li data-ng-repeat="item in options"><label for="{{id}}-{{$index}}"><mv-row><div class="mv-col xs-10">{{item.label}}</div><div class="mv-control-area mv-col xs-2"><input type="radio" name="{{name}}" class="mv-control-radio" id="{{id}}-{{$index}}" data-ng-click="select($index,item,$event)"></div></mv-row></label></li></ul>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('mvApp');
+} catch (e) {
+  module = angular.module('mvApp', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('partials/directives/mv-control/select.html',
+    '<mv-i data-ng-if="enableIcon" icon="{{icon}}"></mv-i><label for="{{id}}-control">{{label}}</label><select id="{{id}}-control" name="{{name}}" class="mv-control-select" data-ng-model="ngModel" data-ng-options="a.{{col}} for a in options"></select><div data-ng-transclude=""></div>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('mvApp');
+} catch (e) {
+  module = angular.module('mvApp', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('partials/directives/mv-control/text.html',
+    '<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i><label>{{label}}</label> <span class="mv-control-value">{{ngModel}}</span><div ng-transclude=""></div>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('mvApp');
+} catch (e) {
+  module = angular.module('mvApp', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('partials/directives/mv-control/toggle.html',
+    '<mv-i data-ng-if="enableIcon" icon="{{icon}}"></mv-i><label for="{{id}}-control">{{label}}</label><div class="mv-control-value" data-ng-switch="setup"><span data-ng-switch-when="false">{{off}}</span> <span data-ng-switch-when="true">{{on}}</span></div><div><input type="checkbox" id="{{id}}-control" name="toggleName" class="mv-control-toggle" data-ng-model="ngModel"></div><div class="mv-control-button-area"><button class="mv-btn" type="button" data-ng-switch="setup" data-ng-click="setupToggle($event)"><mv-i class="mv-btn-off" icon="toggle-off" data-ng-switch-when="false"></mv-i><mv-i class="mv-btn-on" icon="toggle-on" data-ng-switch-when="true"></mv-i></button></div>');
+}]);
+})();
+
+angular.module('mvUi.Button',[])
+  .directive('mvBtn', function ($parse) {
+    return {
+      restrict: 'C',
+      scope: {
+        icon: '@',
+        border: '@',
+        color: '@',
+        disabled: '@',
+        behavior: '@',
+        active: '@'
+      },
+      controller: function ($scope, $element, $attrs) {
+        $scope.active = false;
+
+        $scope.toogleActive = function () {
+          $scope.active = !$scope.active;
+        };
+
+        $scope.$watch('active', function (newValue) {
+          if (newValue) {
+            $element.addClass('active');
+          } else {
+            $element.removeClass('active');
+          }
+        });
+      },
+      link: function (scope, element, attrs, ctrl, transclude) {
+        scope.icon = angular.isDefined(scope.icon) ? scope.icon : false;
+        scope.border = angular.isDefined(scope.border) ? scope.border : false;
+        scope.color = angular.isDefined(scope.color) ? scope.color : 'default';
+
+        if (angular.isDefined(scope.disabled)) {
+          element.addClass('disabled');
+        }
+
+        if (scope.icon) {
+          var icon = angular.element('<i>');
+          icon.addClass('fa');
+          icon.addClass('fa-' + scope.icon);
+          icon.addClass('fa-fw');
+          element.prepend(icon);
+        }
+
+        if (scope.border) {
+          element.addClass(scope.border);
+        }
+
+        if (angular.isDefined(scope.border)) {
+          element.addClass(scope.color);
+        } else {
+          element.addClass('default');
+        }
+      }
+    };
+  })
+
+  .directive('mvBtnRadio', function ($parse) {
+    return {
+      restrict: 'C',
+      require: ['?ngModel'],
+      scope: {
+        active: '@?',
+        value: '@?'
+      },
+      link: function (scope, element, attrs, controllers) {
+        element.addClass('mv-btn');
+
+        var ngModelCtrl = controllers[0];
+        if (!ngModelCtrl) return;
+
+        scope.active = angular.isDefined(scope.active) ? scope.active : 'active';
+
+        //model -> ui
+        ngModelCtrl.$render = function () {
+          var analise = angular.equals(ngModelCtrl.$modelValue, scope.$eval(scope.value));
+          element.toggleClass('active', analise);
+        };
+
+        // ui -> model
+        element.bind('click', function ($event) {
+          var isActive = element.hasClass(scope.active);
+
+          $event.preventDefault();
+          scope.$apply(function () {
+            ngModelCtrl.$setViewValue(isActive ? null : scope.$eval(scope.value));
+            ngModelCtrl.$render();
+          });
+        });
+
+      }
+    };
+  })
+
+  .directive('mvBtnCheckbox', function ($parse) {
+    return {
+      restrict: 'C',
+      require: ['?ngModel'],
+      scope: {
+        active: '@?',
+        on: '@?',
+        off: '@?'
+      },
+      controller: function($scope, $element, $attrs){
+        $scope.active = angular.isDefined($scope.active) ? $scope.active : 'active';
+      },
+      link: function (scope, element, attrs, controllers) {
+        element.addClass('mv-btn');
+
+        var ngModelCtrl = controllers[0];
+        if (!ngModelCtrl) return;
+
+        function getTrueValue() {
+          return getCheckboxValue(attrs.on, true);
+        }
+
+        function getFalseValue() {
+          return getCheckboxValue(attrs.off, false);
+        }
+
+        function getCheckboxValue(attributeValue, defaultValue) {
+          var val = scope.$eval(attributeValue);
+          return angular.isDefined(val) ? val : defaultValue;
+        }
+
+        //model -> ui
+        ngModelCtrl.$render = function () {
+          element.toggleClass('active', angular.equals(ngModelCtrl.$modelValue, getTrueValue()));
+        };
+
+        // ui -> model
+        element.bind('click', function ($event) {
+          $event.preventDefault();
+          scope.$apply(function () {
+            ngModelCtrl.$setViewValue(element.hasClass('active') ? getFalseValue() : getTrueValue());
+            ngModelCtrl.$render();
+          });
+        });
+
+      }
+    };
+  });
+
+
+angular.module('mvUi.Control', [])
+  .service('mvControlFileService', ['$http',
+    function ($http) {
+
+      /**
+       * Response of success or error
+       * @type {{}}
+       */
+      this.response = {};
+
+      this.setResponse = function(value){
+        this.response = value;
+        return this.response;
+      };
+      /**
+       * Efetua o upload de um
+       * @param url
+       * @param data Um
+       */
+      this.upload = function (url, data) {
+        $http.post(url, data, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        })
+        .success(function (data, status, headers, config) {
+          return this.setResponse(data);
+        })
+        .error(function (data, status, headers, config) {
+          return this.setResponse(data);
+        });
+      };
+
+    }])
+  .controller('MvControlController', [
+    '$scope', '$element', '$attrs',
+    function ($scope, $element, $attrs) {
+      this.mainClass = 'mv-control';
+      this.setup = false;
+
+      /**
+       * Return setup for use in setup area
+       * @returns {setup}
+       */
+      this.getSetup = function () {
+        return this.setup;
+      }
+      /**
+       * Generate subclass for use in element
+       * @param subclass
+       * @returns {string}
+       */
+      this.genSubClass = function (subclass) {
+        return this.mainClass + '-' + subclass;
+      };
+
+      /**
+       * Analize if the class mv-control exist
+       */
+      this.checkMainClass = function () {
+        if (!$element.hasClass(this.mainClass)) {
+          $element.addClass(this.mainClass);
+        }
+      };
+
+      /**
+       * Enable a property for display use. It let to css customize the component
+       * @param property class to increment
+       */
+      this.setupFunctionality = function (property) {
+        $element.addClass('mv-control-' + property);
+      };
+
+      /**
+       * Toggle setup area
+       * @param $event Event object
+       * @returns retorna o valor do próprio setup
+       */
+      this.setupToggle = function ($event) {
+        $event.preventDefault();
+        this.setup = !!!this.setup;
+        return this.setup;
+      }
+
+      this.init = function (control, subclass, icon) {
+        this.checkMainClass();
+        angular.forEach(subclass, function (sc) {
+          control.addClass(this.genSubClass(sc));
+        })
+
+      };
+
+    }])
+  .directive('mvInfo', [
+    '$templateCache',
+    function ($templateCache) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/text.html'),
+        scope: {
+          display: '@',
+          label: '@',
+          icon: '@',
+          ngModel: '='
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          var control = iElement.find('input');
+          scope.enableIcon = false;
+
+          //init
+          mvCtrl.checkMainClass();
+          control.addClass(mvCtrl.genSubClass('info'));
+
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
+          }
+        }
+      };
+    }])
+  .directive('mvInput', [
+    '$templateCache',
+    function ($templateCache) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/input.html'),
+        scope: {
+          label: '@',
+          icon: '@',
+          id: '@',
+          type: '@',
+          name: '@',
+          ngModel: '='
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          var control = iElement.find('input');
+          scope.enableIcon = false;
+          scope.type = angular.isDefined(scope.type) ? scope.type : 'text';
+
+          //init
+          mvCtrl.checkMainClass();
+          control.addClass(mvCtrl.genSubClass(scope.type));
+
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
+          }
+
+        }
+      };
+    }])
+  .directive('mvToggle', [
+    '$templateCache',
+    function ($templateCache) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/toggle.html'),
+        scope: {
+          label: '@',
+          icon: '@',
+          off: '@',
+          on: '@',
+          ngModel: '='
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          var control = iElement.find('input');
+          scope.enableIcon = false;
+          scope.setup = angular.isDefined(scope.ngModel) ? !!scope.ngModel : mvCtrl.getSetup();
+          scope.on = angular.isDefined(scope.on) ? scope.on : 'On';
+          scope.off = angular.isDefined(scope.off) ? scope.off : 'Off';
+
+          scope.setupToggle = function ($event) {
+            scope.setup = mvCtrl.setupToggle($event);
+            scope.ngModel = scope.setup;
+          };
+
+          //init
+          mvCtrl.checkMainClass();
+          mvCtrl.setupFunctionality('toggle');
+          mvCtrl.setupFunctionality('button');
+
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
+          }
+        }
+      };
+    }])
+  .directive('mvSelect', [
+    '$templateCache',
+    function ($templateCache) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/select.html'),
+        scope: {
+          label: '@',
+          icon: '@',
+          id: '@',
+          name: '@',
+          col: '@',
+          options: '=',
+          ngModel: '='
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          scope.enableIcon = false;
+
+          //init
+          mvCtrl.checkMainClass();
+          mvCtrl.setupFunctionality('toggle');
+          mvCtrl.setupFunctionality('button');
+
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
+          }
+        }
+      };
+    }])
+  .directive('mvCheckList', [
+    '$templateCache',
+    function ($templateCache) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/checklist.html'),
+        scope: {
+          label: '@',
+          icon: '@',
+          id: '@',
+          showValue: '@',
+          options: '=',
+          ngModel: '='
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          scope.enableIcon = false;
+          scope.setup = mvCtrl.getSetup();
+          scope.showValue = angular.isDefined(scope.showValue) ? !!scope.showValue : false;
+          scope.ngModel = angular.isDefined(scope.ngModel) ? scope.ngModel : [];
+
+          scope.setupToggle = function ($event) {
+            scope.setup = mvCtrl.setupToggle($event);
+          };
+
+          scope.select = function (index, item, $event) {
+            var index = scope.ngModel.indexOf(item);
+
+            if (index === -1) {
+              scope.ngModel.splice(index, 0, item)
+            } else {
+              scope.ngModel.splice(index, 1);
+            }
+          };
+
+          //init
+          mvCtrl.checkMainClass();
+          mvCtrl.setupFunctionality('checklist');
+          mvCtrl.setupFunctionality('button');
+          mvCtrl.setupFunctionality('setup');
+
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
+          }
+        }
+      };
+    }])
+  .directive('mvRadioGroup', [
+    '$templateCache',
+    function ($templateCache) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/radiogroup.html'),
+        scope: {
+          label: '@',
+          icon: '@',
+          id: '@',
+          name: '@',
+          showValue: '@',
+          options: '=',
+          ngModel: '='
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          scope.enableIcon = false;
+          scope.setup = mvCtrl.getSetup();
+          scope.showValue = angular.isDefined(scope.showValue) ? !!scope.showValue : true;
+          scope.value = '';
+          scope.ngModel = angular.isDefined(scope.ngModel) ? scope.ngModel : [];
+          scope.name = angular.isDefined(scope.name) ? scope.name : scope.id;
+
+          scope.setupToggle = function ($event) {
+            scope.setup = mvCtrl.setupToggle($event);
+          };
+
+          scope.select = function (index, item, $event) {
+            scope.ngModel = item;
+            scope.value = item.label;
+          };
+
+          //init
+          mvCtrl.checkMainClass();
+          mvCtrl.setupFunctionality('radiogroup');
+          mvCtrl.setupFunctionality('button');
+          mvCtrl.setupFunctionality('setup');
+
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
+          }
+        }
+      };
+    }])
+  .directive('mvFile', [
+    '$templateCache','mvControlFileService',
+    function ($templateCache, mvControlFileService) {
+      return {
+        restrict: 'E',
+        template: $templateCache.get('mv-control/file.html'),
+        scope: {
+          label: '@',
+          icon: '@',
+          btnIcon: '@',
+          id: '@',
+          url: '@',
+          name: '@',
+          showValue: '@',
+          multiple: '@',
+          options: '=',
+          ngModel: '='
+        },
+        transclude: true,
+        controller: 'MvControlController',
+        link: function (scope, iElement, iAttr, mvCtrl) {
+          scope.enableIcon = false;
+          scope.value = '';
+          scope.setup = mvCtrl.getSetup();
+          scope.showValue = angular.isDefined(scope.showValue) ? !!scope.showValue : true;
+          scope.ngModel = angular.isDefined(scope.ngModel) ? scope.ngModel : [];
+          scope.name = angular.isDefined(scope.name) ? scope.name : scope.id;
+          scope.btnIcon = angular.isDefined(scope.btnIcon) ? scope.btnIcon : 'paperclip';
+          scope.multiple = angular.isDefined(scope.multiple) ? true : false;
+          scope.files = [];
+          var inputFile = iElement.find('input');
+
+          inputFile.bind('change', function () {
+            scope.files = inputFile[0].files;
+            scope.$apply();
+          });
+
+          if(scope.multiple){
+            inputFile.attr('multiple')
+          }
+
+          scope.upload = function ($event) {
+            $event.preventDefault();
+            mvControlFileService.upload(scope.url, scope.files);
+          }
+
+          scope.setupToggle = function ($event) {
+            scope.setup = mvCtrl.setupToggle($event);
+          };
+
+          //init
+          mvCtrl.checkMainClass();
+          mvCtrl.setupFunctionality('file');
+          mvCtrl.setupFunctionality('button');
+          mvCtrl.setupFunctionality('setup');
+
+          //enable icon
+          if (angular.isDefined(scope.icon)) {
+            mvCtrl.setupFunctionality('icon');
+            scope.enableIcon = true;
+          }
+        }
+      };
+    }]);
+
+angular.module('mvUi.Dropdown', [])
+  .directive('mvDropdown', ['$document', function ($document) {
+    return {
+      restrict: 'C',
+      controller: function ($scope, $element, $attrs) {
+        $scope.isOpen = false;
+
+        $scope.addCaret = function () {
+          var caret = angular.element('<i>');
+          caret.addClass('fa');
+          caret.addClass('fa-ellipsis-v');
+          return caret;
+        };
+
+        this.open = function ($event) {
+          $scope.isOpen = !$scope.isOpen;
+          $scope.$apply(function () {
+            $element.toggleClass('open', $scope.isOpen);
+          });
+        };
+
+      },
+      link: function (scope, element, attrs, DropdownCtrl) {
+        var btn = angular.element(element.children()[0]);
+        var menu = angular.element(element.children()[1]);
+        var doOpen = function ($event) {
+          if ($event) {
+            $event.stopPropagation();
+          }
+          DropdownCtrl.open();
+          $document.bind('click', DropdownCtrl.open);
+        };
+
+        //WAI ARIA
+        element.attr({'aria-haspopup': true, 'aria-expanded': false});
+
+        //Botão
+        btn.append(scope.addCaret());
+        btn.bind('click', doOpen);
+
+        scope.$watch('isOpen', function (isOpen) {
+          element.attr('aria-expanded', isOpen);
+          if (!isOpen) {
+            $document.unbind('click', DropdownCtrl.open);
+          }
+        }, true);
+
+        scope.$on('$destroy', function () {
+          btn.unbind('click', scope.open);
+          $document.unbind('click', DropdownCtrl.open);
+        });
+      }
+    };
+  }]);
+
+angular.module('mvUi.Grid', [])
+  .directive('mvCol', ['$parse', '$compile', function ($parse, $compile) {
+    return {
+      restrict: 'C',
+      template: '',
+      transclude: true,
+      scope: {
+        layout: '@size',
+        layoutPush: '@push',
+        layoutPull: '@pull'
+      },
+      controller: function ($scope, $element, $attrs) {
+        $scope.layoutObj = {};
+
+        $scope.produceClass = function (type, size) {
+          var className = type + '-' + size;
+          $element.addClass(className);
+        };
+
+        $scope.produceAdjustmentClass = function (type, size, adjustment) {
+          var className = type + '-' + adjustment + '-' + size;
+          $element.addClass(className);
+        };
+
+      },
+      link: function (scope, element, attrs, mvColCtrl, transclude) {
+        scope.layout = angular.isDefined(scope.layout) ? $parse(scope.layout)(scope) : scope.layoutObj;
+        scope.layoutPush = angular.isDefined(scope.layoutPush) ? $parse(scope.layoutPush)(scope) : scope.layoutObj;
+        scope.layoutPull = angular.isDefined(scope.layoutPull) ? $parse(scope.layoutPull)(scope) : scope.layoutObj;
+
+
+        transclude(scope.$parent, function (clone, scope) {
+          element.append(clone);
+        });
+
+        if (Object.keys(scope.layout).length !== 0) {
+          angular.forEach(scope.layout, function (value, key) {
+            scope.produceClass(key, value);
+          });
+        }
+
+        if (Object.keys(scope.layoutPush).length !== 0) {
+          angular.forEach(scope.layoutPush, function (value, key) {
+            scope.produceAdjustmentClass(key, value, 'push');
+          });
+        }
+
+        if (Object.keys(scope.layoutPull).length !== 0) {
+          angular.forEach(scope.layoutPull, function (value, key) {
+            scope.produceAdjustmentClass(key, value, 'pull');
+          });
+        }
+
+      }
+    };
+  }])
+  .directive('mvRow', [function () {
+    return {
+      restrict: 'C',
+      template: '',
+      scope: {
+        layoutFill: '@'
+      },
+      transclude: true,
+      link: function (scope, element, attrs, mvRowCtrl, transclude) {
+        scope.layoutFill = (angular.isDefined(scope.layoutFill)) ? JSON.parse(scope.layoutFill) : false;
+        element.append(transclude());
+
+        if (scope.layoutFill) {
+          var max = element[0].offsetHeight;
+          angular.forEach(element[0].children, function (value) {
+            angular.element(value).css('height', max + 'px');
+          });
+        }
+
+      }
+    };
+  }]);
+
+
+angular.module('mvUi.Icon',[])
+  .directive('mvI',[function(){
+    return {
+      restrict: 'EAC',
+      template: '<i class="{{prefix}} {{prefix}}-{{icon}}"></i>',
+      scope:{
+        icon: '@',
+        prefix:'@'
+      },
+      link: function(scope,element,attr){
+        scope.icon = angular.isDefined(scope.icon) ? scope.icon : false;
+        scope.prefix = angular.isDefined(scope.prefix) ? scope.prefix : 'fa';
+
+        if(!element.hasClass('mv-icon')){
+          element.addClass('mv-icon')
+        }
+      }
+    };
+  }]);
+
+angular.module('mvUi.PageHeader', [])
+  .directive('mvPageHeader', [
+    '$templateCache',
+    function ($templateCache) {
+  return {
+    restrict: 'C',
+    template: $templateCache.get('mv-pageheader.html'),
+    scope: {
+      title: '@',
+      icon: '@'
+    },
+    transclude: true,
+    link: function (scope, element, attrs) {
+      scope.icon = angular.isDefined(scope.icon) ? scope.icon : false;
+    }
+  };
+}]);
+
+angular.module('mvUi.Switch', [])
+  .directive('mvSwitch', ['$compile',
+    function ($compile) {
+      return {
+        restrict: 'EAC',
+        template: '<section ng-transclude></section>',
+        transclude: true,
+        scope: {
+          ngSwitch: '@'
+        },
+        controller: function ($scope, $element, $attrs, $transclude) {
+
+          $scope.value = '';
+          this.slides =  [];
+
+          this.addSlide = function(slide){
+            this.slides.push(slide);
+          };
+
+          this.selectSlide = function(title){
+              $scope.ngSwitch = title;
+          };
+
+        },
+        link: function (scope, iElement, iAttrs, mvSwitchCtrl) {
+          mvSwitchCtrl.slides[0].title;
+        }
+      };
+    }])
+  .directive('mvSwitchSlide', ['$compile',
+    function ($compile) {
+      return {
+        require: '^mvSwitch',
+        restrict: 'EAC',
+        template: '<div ng-switch-when="{{title}}" ng-transclude></div>',
+        transclude: true,
+        scope: {
+          title: '@'
+        },
+        link: function (scope, iElement, iAttrs, mvSwitchCtrl) {
+          mvSwitchCtrl.addSlide(scope);
+        }
+      };
+    }])
+  .directive('mvSwitchNav', ['$templateCache',
+    function ($templateCache) {
+      return {
+        require: '^mvSwitch',
+        restrict: 'EAC',
+        template: $templateCache.get('mv-switch-nav.html'),
+        transclude: true,
+        link: function (scope, iElement, iAttrs,mvSwitchCtrl) {
+          scope.slides = mvSwitchCtrl.slides;
+          scope.selectSlide = mvSwitchCtrl.selectSlide
+        }
+      };
+    }]);
+
+
+angular.module('mvUi.Tooltip', [])
+  .directive('mvTooltip', [function () {
+    return {
+      restrict: 'C',
+      templateUrl: '../../views/directives/mv-pageheader.html',
+      scope: {
+        title: '@',
+        position: '@'
+      },
+      transclude: true,
+      link: function (scope, element, attrs) {
+        scope.position = angular.isDefined(scope.position) ? scope.position : 'top';
+
+      }
+    };
+  }]);
+
+var mvUi = angular.module('mvUi', [
+  'ngAnimate',
+  'ngCookies',
+  'ngResource',
+  'ngSanitize',
+  'ngTouch',
+  'mvUi.Template',
+  'mvUi.Control',
+  'mvUi.Button',
+  'mvUi.Dropdown',
+  'mvUi.PageHeader',
+  'mvUi.Grid',
+  'mvUi.Tooltip',
+  'mvUi.Icon',
+  'mvUi.Switch'
+]);

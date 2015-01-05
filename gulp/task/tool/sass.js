@@ -3,8 +3,9 @@
 /**
  *  Sass compiler
  */
-var madeira = require('./../../index');
-var appSettings = madeira.config();
+var mvApp = require('./../../index');
+mvApp.init();
+var appSettings = mvApp.config();
 var dirDev = appSettings.directory.dev; //app directory development
 var dirApp = appSettings.directory.app; //compile directory
 var dirDemo = appSettings.directory.demo;
@@ -22,7 +23,7 @@ gulp.task('tool:sass', function () {
     browserSync.notify("Sass...");
     return gulp.src(dirDev + 'styles/**/*.scss')
         .pipe($.sass())
-        .on('error', madeira.error.handleError)
+        .on('error', mvApp.error.handleError)
         .pipe(gulp.dest(dirDev + 'styles/'))
         .pipe($.size());
 });

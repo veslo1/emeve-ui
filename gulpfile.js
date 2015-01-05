@@ -4,13 +4,12 @@
  * Gulp
  * @author Marcus Vinícius da R G Cardoso <marcusvy@gmail.com>
  */
-var gulp = require('gulp');
 
-var mvCopaiba = require('./mv-copaiba/index');
-mvCopaiba.init();
+var mvApp = require('./gulp/index');
+mvApp.init();
+mvApp.loadTasks();
 
-//Default
-gulp.task('default', [
+mvApp.gulp.task('default', [
   //'server',
   'watch'
 ]);

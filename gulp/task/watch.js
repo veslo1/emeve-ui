@@ -3,8 +3,9 @@
 /**
  *  Tarefas comuns
  */
-var madeira = require('./../index');
-var appSettings = madeira.config();
+var mvApp = require('./../index');
+mvApp.init();
+var appSettings = mvApp.config().data;
 var dirDev = appSettings.directory.dev; //app directory development
 var dirApp = appSettings.directory.app; //compile directory
 var dirDemo = appSettings.directory.demo;

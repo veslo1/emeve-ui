@@ -3,8 +3,9 @@
 /**
  *  Inject script (js) files to index.html(app index page) file
  */
-var madeira = require('./../../index');
-var appSettings = madeira.config();
+var mvApp = require('./../../index');
+mvApp.init();
+var appSettings = mvApp.config();
 var dirDev = appSettings.directory.dev; //app directory development
 var dirApp = appSettings.directory.app; //compile directory
 var dirDemo = appSettings.directory.demo;

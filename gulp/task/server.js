@@ -2,13 +2,19 @@
 /**
  * Executa um servidor
  */
-var madeira = require('./../index');
-var appSettings = madeira.config();
+var mvApp = require('./../index');
+mvApp.init();
+
+var appSettings = mvApp.config().data;
 
 var gulp = require('gulp');
 var httpProxy = require('http-proxy');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+
+if(mvApp.$().browserSync === browserSync){
+  console.log('cade');
+}
 
 var proxy = httpProxy.createProxyServer({
   target: appSettings.server.proxy
