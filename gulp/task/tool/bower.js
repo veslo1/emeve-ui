@@ -5,14 +5,15 @@
  */
 var mvApp = require('./../../index');
 var gulp = mvApp.gulp;
+var dirDev = mvApp.config().dir().dev;
 
 //== Wiredep
 gulp.task('tool:bower', function () {
-  return gulp.src(mvApp.config().dir().dev + 'index.html')
+  return gulp.src(dirDev + 'index.html')
     .pipe(mvApp.$().wiredep.stream({
-      directory: mvApp.config().dir().dev + 'bower_components',
-      ignorePath: mvApp.config().dir().dev
+      directory: dirDev + 'bower_components',
+      ignorePath: dirDev
     }))
-    .pipe(gulp.dest(mvApp.config().dir().dev))
+    .pipe(gulp.dest(dirDev))
     .pipe(mvApp.reload());
 });

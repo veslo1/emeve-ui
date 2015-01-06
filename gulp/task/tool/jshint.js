@@ -4,22 +4,11 @@
  *  JSHint
  */
 var mvApp = require('./../../index');
-mvApp.init();
-var appSettings = mvApp.config();
-var dirDev = appSettings.directory.dev; //app directory development
-var dirApp = appSettings.directory.app; //compile directory
-var dirDemo = appSettings.directory.demo;
-
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-
-var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*', 'main-bower-files']
-});
+var gulp = mvApp.gulp;
+var $ = mvApp.$();
 
 gulp.task('tool:jshint', function () {
-    return gulp.src(dirDev + 'scripts/**/*.js')
+    return gulp.src(mvApp.config().dir().dev + 'scripts/**/*.js')
         .pipe($.jshint())
         .pipe($.jshint.reporter('jshint-stylish'))
         .pipe($.size());

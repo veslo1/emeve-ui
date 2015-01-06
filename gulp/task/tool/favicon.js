@@ -4,29 +4,19 @@
  *  Tarefas comuns
  */
 var mvApp = require('./../../index');
-mvApp.init();
-var appSettings = mvApp.config();
-var dirDev = appSettings.directory.dev; //app directory development
-var dirApp = appSettings.directory.app; //compile directory
-var dirDemo = appSettings.directory.demo;
-
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-
-var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*','favicons']
-});
+var gulp = mvApp.gulp;
+var $ = mvApp.$();
+var dirDev = mvApp.config().dir().dev;
+var dirBuild = mvApp.config().dir().build;
 
 gulp.task('tool:favicon', function (callbackFnc) {
-    $.favicons({
-        // I/O
+  mvApp.$().favicons({
         source: {
             small: dirDev + 'favicon/64x64.png',    // Should be 64x64px or smaller
             medium: dirDev + 'favicon/256x256.png',  // Should be between 65x65px to 310x310px
             large: dirDev + 'favicon/500x500.png'     // Should be 311x311px or larger
         },
-        dest: dirApp + 'favicon/images',
+        dest: dirBuild + '/images/favicon/',
 
         // Icon Types
         android: true,
