@@ -49,9 +49,9 @@ var mvApp = function () {
   this.bootstrap = function () {
     require('require-dir')('./task/core');
     require('require-dir')('./task/tool');
-    //require('require-dir')('./task/font');
-    //require('require-dir')('./task/build');
-    //require('require-dir')('./task/deploy');
+    require('require-dir')('./task/font');
+    require('require-dir')('./task/build');
+    require('require-dir')('./task/deploy');
     require('require-dir')('./task/');
 
 
