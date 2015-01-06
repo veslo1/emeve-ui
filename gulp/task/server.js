@@ -8,7 +8,7 @@ var gulp = mvApp.gulp;
 
 //#== Inicializa um servidor a partir de um proxy
 gulp.task('up', ['watch'], function () {
-  this.$().browserSync({
+  mvApp.$().browserSync({
     notify: mvApp.config().server().sync.notify,
     port: mvApp.config().server().sync.port,
     proxy: mvApp.config().server().sync.proxy

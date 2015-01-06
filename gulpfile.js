@@ -6,9 +6,4 @@
  */
 
 var mvApp = require('./gulp/index');
-mvApp.loadTasks();
-
-mvApp.gulp.task('default', [
-  'server',
-  'watch'
-]);
+mvApp.bootstrap();

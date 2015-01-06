@@ -1,11 +1,22 @@
 {
   "module": {
-    "name": "mvApp",
-    "version": "1.0.1"
+    "name": "mvApp"
   },
   "dir": {
     "dev": "app/",
     "tmp": ".tmp/",
     "build": "dist/"
+  },
+  "autoload": {
+    "plugin": [
+      "gulp-*",
+      "browser-sync",
+      "del",
+      "favicons",
+      "http-proxy",
+      "jshint-stylish",
+      "main-bower-files",
+      "wiredep"
+    ]
   }
 }

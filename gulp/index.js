@@ -6,16 +6,6 @@ var mvApp = function () {
   this.bs = {};
   this.wiredep = {};
   this.plugins = {};
-  this.requiredPlugins = [
-    'gulp-*',
-    'browser-sync',
-    'del',
-    'favicons',
-    'http-proxy',
-    'jshint-stylish',
-    'main-bower-files',
-    'wiredep'
-  ];
 
   /**
    * Obtem aquivo de configuração
@@ -58,13 +48,20 @@ var mvApp = function () {
    * Carrega as outras tarefas
    * @returns {mvApp}
    */
-  this.loadTasks = function () {
+  this.bootstrap = function () {
+    require('require-dir')('./task/core');
     //require('require-dir')('./task/tool');
     //require('require-dir')('./task/font');
     //require('require-dir')('./task/build');
     //require('require-dir')('./task/deploy');
     require('require-dir')('./task/');
-    return this;
+
+
+    return this.gulp.task('default', [
+      'core',
+      'server',
+      'watch'
+    ]);
   };
 
   /**
@@ -73,7 +70,7 @@ var mvApp = function () {
    */
   this.initPluginCollection = function () {
     this.plugins = require('gulp-load-plugins')({
-      pattern: this.requiredPlugins
+      pattern: this.config().app().autoload.plugin
     });
     return this.plugins;
   };
@@ -126,7 +123,7 @@ var mvApp = function () {
     browser = browser === undefined ? 'default' : browser;
 
     return this.bs.instance = this.bs.init(files, {
-      startPath: '/index.html',
+      startPath: this.config().server().home,
       port: this.config().server().sync.port,
       server: {
         startPath: '/index.html',
@@ -136,6 +133,42 @@ var mvApp = function () {
       browser: browser
     });
   };
+
+  /**
+   * Checa se a configuração do bower é a mesma do npm
+   * @returns {exports.config}
+   */
+  this.assertRepositoriesMetadata = function () {
+    var bowerData = this.config().bower();
+    var npmData = this.config().package();
+    var msgError = this.message().metadata.error;
+
+    if (bowerData.name !== npmData.name) {
+      this.$().util.log(
+        this.$().util.colors.red(msgError.assert + msgError.name), "\n",
+        '==>bower: ', bowerData.name, "\n",
+        '==>package: ', npmData.name
+      );
+    }
+
+    if (bowerData.version !== npmData.version) {
+      this.$().util.log(
+        this.$().util.colors.red(msgError.assert + msgError.version), "\n",
+        '==>bower: ', bowerData.version, "\n",
+        '==>package: ', npmData.version
+      );
+    }
+
+    if (bowerData.description !== npmData.description) {
+      this.$().util.log(
+        this.$().util.colors.red(msgError.assert + msgError.description), "\n",
+        '==>bower: ', bowerData.description, "\n",
+        '==>package: ', npmData.description
+      );
+    }
+
+    return this;
+  }
 
 };
 
