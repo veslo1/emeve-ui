@@ -4,7 +4,6 @@ var mvApp = function () {
 
   this.gulp = {};
   this.bs = {};
-  this.wiredep = {};
   this.plugins = {};
 
   /**
@@ -40,7 +39,6 @@ var mvApp = function () {
     this.config().load();
     this.initPluginCollection();
     this.bs = this.$().browserSync;
-    this.wiredep = this.$().wiredep.stream;
     return this;
   };
 
@@ -50,7 +48,7 @@ var mvApp = function () {
    */
   this.bootstrap = function () {
     require('require-dir')('./task/core');
-    //require('require-dir')('./task/tool');
+    require('require-dir')('./task/tool');
     //require('require-dir')('./task/font');
     //require('require-dir')('./task/build');
     //require('require-dir')('./task/deploy');

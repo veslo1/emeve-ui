@@ -13,7 +13,6 @@ var dirDemo = appSettings.directory.demo;
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-var wiredep = require('wiredep').stream;
 
 var $ = require('gulp-load-plugins')({
     pattern: ['gulp-*','favicons']

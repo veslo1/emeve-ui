@@ -4,29 +4,15 @@
  *  Inject Bower components
  */
 var mvApp = require('./../../index');
-mvApp.init();
-var appSettings = mvApp.config().get();
-console.log(appSettings);
-var dirDev = appSettings.directory.dev; //app directory development
-var dirApp = appSettings.directory.app; //compile directory
-var dirDemo = appSettings.directory.demo;
-
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-
-
-var $ = require('gulp-load-plugins')({
-  pattern: ['gulp-*', 'main-bower-files']
-});
+var gulp = mvApp.gulp;
 
 //== Wiredep
 gulp.task('tool:bower', function () {
-  return gulp.src(dirDev + 'index.html')
-    .pipe(wiredep({
-      directory: dirDev + 'bower_components',
-      ignorePath: dirDev
+  return gulp.src(mvApp.config().dir().dev + 'index.html')
+    .pipe(mvApp.$().wiredep.stream({
+      directory: mvApp.config().dir().dev + 'bower_components',
+      ignorePath: mvApp.config().dir().dev
     }))
-    .pipe(gulp.dest(dirDev))
-    .pipe(reload({stream: true}));
+    .pipe(gulp.dest(mvApp.config().dir().dev))
+    .pipe(mvApp.reload());
 });

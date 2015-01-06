@@ -17,6 +17,9 @@
       "jshint-stylish",
       "main-bower-files",
       "wiredep"
+    ],
+    "task":[
+
     ]
   }
 }
