@@ -1,6 +1,7 @@
 {
   "module": {
-    "name": "mvApp"
+    "name": "mvApp",
+    "template": "mvUi.Template"
   },
   "dir": {
     "dev": "app/",

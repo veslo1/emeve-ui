@@ -4,31 +4,29 @@
  *  Delete direcory
  */
 var mvApp = require('./../../index');
-mvApp.init();
-
-var gulp = mvApp.gulp,
-  $ = mvApp.$(),
-  configDir = mvApp.config().dir();
+var gulp = mvApp.gulp;
+var $ = mvApp.$();
+var dirDev = mvApp.config().dir().dev;
+var dirBuild = mvApp.config().dir().build;
 
 //== JSHint e Scripts
 gulp.task('build:script', function () {
 
   gulp.src([
-    configDir.dev + 'scripts/**/!(app)*.js',
-    configDir.dev + 'scripts/app.js'
+    dirDev + 'scripts/**/!(app)*.js',
+    dirDev + 'scripts/app.js'
   ])
     .pipe($.concat('mv-ui.js'))
-    // .pipe($.ngAnnotate())
-    //.pipe($.uglify())
-    .pipe(gulp.dest(configDir.app))
-    .pipe(mvApp.reload())
+    .pipe($.ngAnnotate())
+    .pipe($.uglify())
+    .pipe(gulp.dest(dirBuild))
     .pipe($.size());
 
-  gulp.src(configDir.demo + 'scripts/**/*.js')
-    .pipe($.concat('demo-app.js'))
-    //.pipe($.ngAnnotate())
-    //.pipe($.uglify())
-    .pipe(gulp.dest(configDir.demo))
-    .pipe(mvApp.reload())
-    .pipe($.size());
+  //gulp.src(cDir.demo + 'scripts/**/*.js')
+  //  .pipe($.concat('demo-app.js'))
+  //  .pipe($.ngAnnotate())
+  //  .pipe($.uglify())
+  //  .pipe(gulp.dest(dirBuild))
+  //  .pipe(mvApp.reload())
+  //  .pipe($.size());
 });

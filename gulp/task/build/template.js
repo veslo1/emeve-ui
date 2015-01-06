@@ -4,30 +4,22 @@
  *  Angular TemplateCache
  */
 var mvApp = require('./../../index');
-mvApp.init();
-var appSettings = mvApp.config();
-var dirDev = appSettings.directory.dev; //app directory development
-var dirApp = appSettings.directory.app; //compile directory
-var dirDemo = appSettings.directory.demo;
-
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-
-
-var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*']
-});
+var gulp = mvApp.gulp;
+var $ = mvApp.$();
+var dirDev = mvApp.config().dir().dev;
+var dirTmp = mvApp.config().dir().tmp;
 
 gulp.task('build:template', function () {
-    var tcOptions = {
-        module: 'mvUi.Template',
-        standalone:true
-    };
-    gulp.src(dirDev + 'partials/directives/**/*.html')
-        .pipe($.angularTemplatecache(tcOptions))
-        .pipe($.ngAnnotate())
-        .pipe($.uglify())
-        .pipe(gulp.dest(dirDev + 'scripts/'))
-        .pipe(browserSync.reload({stream: true}));
+
+  var tcOptions = {
+    module: mvApp.config().app().module.template,
+    standalone: true
+  };
+
+  gulp.src(dirDev + 'partials/directives/**/*.html')
+    .pipe($.angularTemplatecache(tcOptions))
+    .pipe($.ngAnnotate())
+    .pipe($.uglify())
+    .pipe(gulp.dest(dirTmp + 'scripts/'))
+    .pipe(mvApp.reload());
 });

@@ -4,22 +4,12 @@
  *  Comprime os partials em um arquivo templates.js
  */
 var mvApp = require('./../../index');
-mvApp.init();
-var appSettings = mvApp.config();
-var dirDev = appSettings.directory.dev; //app directory development
-var dirApp = appSettings.directory.app; //compile directory
-var dirDemo = appSettings.directory.demo;
+var gulp = mvApp.gulp;
+var $ = mvApp.$();
+var dirDev = mvApp.config().dir().dev;
+var dirTmp = mvApp.config().dir().tmp;
 
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-
-
-var $ = require('gulp-load-plugins')({
-  pattern: ['gulp-*', 'del']
-});
-
-//== partials
+//== Partials angular folder
 gulp.task('build:partial', function () {
   return gulp.src(dirDev + 'partials/**/*.html')
     .pipe($.angularHtmlify())
@@ -29,12 +19,12 @@ gulp.task('build:partial', function () {
       quotes: true
     }))
     .pipe($.ngHtml2js({
-      moduleName: appSettings.moduleName,
+      moduleName: mvApp.config().app().module.name,
       prefix: 'partials/'
     }))
     .pipe($.concat('scripts/templates.js'))
     .pipe($.ngAnnotate())
-    // .pipe($.uglify())
-    .pipe(gulp.dest(dirDev))
+    .pipe($.uglify())
+    .pipe(gulp.dest(dirTmp))
     .pipe($.size());
 });

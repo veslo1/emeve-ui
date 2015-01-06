@@ -4,24 +4,21 @@
  *  Estilização CSS
  */
 var mvApp = require('./../../index');
-mvApp.init();
-var appSettings = mvApp.config();
-var dirDev = appSettings.directory.dev; //app directory development
-var dirApp = appSettings.directory.app; //compile directory
-
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-
-var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*', 'del']
-});
+var gulp = mvApp.gulp;
+var $ = mvApp.$();
+var dirDev = mvApp.config().dir().dev;
+var dirTmp = mvApp.config().dir().tmp;
 
 gulp.task('build:style', function () {
-    return gulp.src(dirDev + 'styles/*.css')
-        .pipe($.autoprefixer('last 1 version'))
-        .pipe($.minifyCss({keepSpecialComments: 0}))
-        .pipe(gulp.dest(dirApp + 'styles/'))
-        .pipe(reload({stream: true}))
-        .pipe($.size());
+
+  var minifyCssOptions = {
+    keepSpecialComments: 0
+  };
+
+  return gulp.src(dirDev + 'styles/*.css')
+    .pipe($.autoprefixer('last 1 version'))
+    .pipe($.minifyCss(minifyCssOptions))
+    .pipe(gulp.dest(dirTmp + 'styles/'))
+    .pipe(mvApp.reload())
+    .pipe($.size());
 });
