@@ -10,6 +10,7 @@ var gulp = mvApp.gulp;
 gulp.task('server', ['watch'], function () {
   mvApp.initStaticServer([
       mvApp.config().dir().dev,
+      'demo/',
       mvApp.config().dir().tmp
     ], [
       'app/*.html',

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html ng-app="EmeveUiApp" class="no-js">
 <head lang="pt-br">
   <meta charset="utf-8">
   <title>Emeve Ui</title>
@@ -14,17 +14,19 @@
   <!-- tool:css({.tmp,app}) mv-ui.css -->
   <link rel="stylesheet" href="styles/main.css"/>
   <!-- endbuild -->
-  <link rel="stylesheet" href="styles.demo.css"/>
+  <link rel="stylesheet" href="styles/demo.css"/>
 
 </head>
 
 <body>
   <header id="mainHeader">
-    <h2>Uma interface de usuário para profissionais</h2>
+    <a href="/index.html"><img src="images/logo-emeveui.png" alt=""/></a>
+    <h2 class="text-center">Uma interface de usuário para profissionais</h2>
   </header>
+
   <div class="container">
-    <h1><a href="/">Emeve Ui</a></h1>
-    <a href="/demo.html">Demonstrações</a>
+    <aside id="mainNav" ng-include="'views/layout/main-nav.html'"></aside>
+    <section id="mainContent" ng-view=""></section>
   </div>
 
   <!-- tool:js({.,app}) scripts/oldieshim.js -->
@@ -62,6 +64,10 @@
   <script src="scripts/components/mv-tooltip.js"></script>
   <!-- endinject -->
   <!-- endbuild -->
+
+  <!--demostração-->
+  <script src="scripts/demo-controllers.js"></script>
+  <script src="scripts/demo.js"></script>
 
 
 </body>

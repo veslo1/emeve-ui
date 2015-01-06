@@ -7,7 +7,7 @@ var mvApp = require('./../../index');
 var gulp = mvApp.gulp;
 var dirDev = mvApp.config().dir().dev;
 
-gulp.task('build:inject', ['partials'], function () {
+gulp.task('build:inject', ['build:partial'], function () {
   var optionsApp = {
     name: mvApp.config().app().module.name,
     addRootSlash: false,
@@ -18,6 +18,7 @@ gulp.task('build:inject', ['partials'], function () {
   });
 
   gulp.src(dirDev + 'index.html')
+    .pipe(mvApp.$().print())
     .pipe(mvApp.$().inject(sourcesApp, optionsApp))
     .pipe(gulp.dest(dirDev))
     .pipe(mvApp.reload());

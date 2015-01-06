@@ -1,11 +1,13 @@
 body{
-
+ background-image: url("../images/textures/old_mathematics.png");
 }
 
 #mainHeader{
-  min-height: 50vh;
-  background-image: url("/images/logo-emeveui.png");
-  background-size: cover;
+  text-align: center;
+
+  img{
+    width: auto;
+  }
 }
 
 
@@ -44,6 +46,14 @@ body{
 
     h1,h2,h3,h4,h5,h6{
       color: #9c0;
+    }
+  }
+}
+
+@media (min-width: 720px){
+  #mainHeader{
+    img{
+      width: 512px;
     }
   }
 }

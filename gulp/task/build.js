@@ -10,6 +10,7 @@ gulp.task('build', [
     'build:style',
     'build:inject',
     'build:reference',
-    'tool:images',
+    'build:template',
+    'tool:img',
     'font'
 ]);
