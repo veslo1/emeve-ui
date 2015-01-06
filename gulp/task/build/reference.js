@@ -7,7 +7,7 @@ var mvApp = require('./../../index');
 var gulp = mvApp.gulp;
 var $ = mvApp.$();
 var dirDev = mvApp.config().dir().dev;
-var dirTmp = mvApp.config.dir().tmp;
+var dirTmp = mvApp.config().dir().tmp;
 
 gulp.task('build:reference', function () {
   return gulp.src('./' + dirDev + 'index.html')

@@ -5,63 +5,38 @@
  */
 var mvApp = require('./../index');
 var gulp = mvApp.gulp;
+var dirDev = mvApp.config().dir().dev;
 
 gulp.task('watch', function () {
-  //#== Bower
-  gulp.watch([
-    'bower.json'
-  ], [
-    'tool:bower'
-  ]);
 
-  //#== Php Files
-  gulp.watch([
-    'module/**/*.{php,phtml}'
-  ], [
-    'tool:bsr'
-  ]);
+  //#== Bower
+  gulp.watch('bower.json', ['tool:bower']);
 
   //#== Css
-  gulp.watch([
-    mvApp.config().dir().dev + 'styles/**/*.css'
-  ], [
-    'build:style'
-  ]);
+  gulp.watch(dirDev + 'styles/**/*.css', ['build:style']);
 
   //#== Sass
-  gulp.watch([
-    mvApp.config().dir().dev + 'styles/**/*.scss'
-  ], [
-    'tool:sass'
-  ]);
+  gulp.watch(dirDev + 'styles/**/*.scss', ['tool:sass']);
 
   //#== Script
-  gulp.watch([
-    mvApp.config().dir().dev + 'scripts/**/*.js'
-  ], [
-    'build:script',
-    'build:jshint'
-  ]);
-
-  //#== Directives in partials
-  gulp.watch([
-    mvApp.config().dir().dev + "partials/directives/**/*.html"
-  ], [
-    'build:template'
-  ]);
-
-  //#== views *deprecated
-  //@todo remover
-  gulp.watch([
-    mvApp.config().dir().dev + "views/**/*.html"
-  ], [
-    'bs-reload'
-  ]);
+  gulp.watch(dirDev + 'scripts/**/*.js',['build:script','build:jshint']);
 
   //#== images
+  gulp.watch([dirDev + "images/**/*.{gif,png,jpg}"], ['tool:img']);
+
+  //#== Directives in partials
+  gulp.watch(dirDev + "partials/directives/**/*.html", ['build:template']);
+
+  //#== Demo
+  gulp.watch("demo/styles/**/*.scss", ['demo:sass']);
+
+  //#== Browser upload
   gulp.watch([
-    mvApp.config().dir().dev + "images/**/*.{gif,png,jpg}"
+    'module/**/*.{php,phtml}',
+    'demo/scripts/**/*.js',
+    'demo/styles/**/*.css',
+    'demo/**/*.html'
   ], [
-    'tool:img'
+    'tool:bsr'
   ]);
 });
