@@ -13,7 +13,8 @@ gulp.task('demo:sass', function () {
 
   return gulp.src('demo/styles/**/*.scss')
     .pipe($.sass())
-    .on('error', mvApp.error.handleError)
+    .pipe($.print())
+    .on('error', mvApp.error().handleError)
     .pipe(gulp.dest('demo/styles/'))
     .pipe($.size());
 });

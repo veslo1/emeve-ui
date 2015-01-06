@@ -15,7 +15,7 @@ gulp.task('tool:sass', function () {
 
   return gulp.src(dirDev + 'styles/**/*.scss')
     .pipe($.sass())
-    .on('error', mvApp.error.handleError)
+    .on('error', mvApp.error().handleError)
     .pipe(gulp.dest(dirTmp + 'styles/'))
     .pipe($.size());
 });
