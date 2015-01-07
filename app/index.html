@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="styles/main.css"/>
   <!-- endbuild -->
   <link rel="stylesheet" href="styles/demo.css"/>
-
 </head>
 
 <body>
@@ -24,10 +23,16 @@
     <h2 class="text-center">Uma interface de usuário onde cada detalhe é precioso</h2>
   </header>
 
-  <div class="container">
-    <aside id="mainNav" ng-include="'views/layout/main-nav.html'"></aside>
-    <section id="mainContent" ng-view=""></section>
-  </div>
+  <mv-container>
+    <mv-row>
+      <mv-col size="{sm:4}">
+        <aside id="mainNav" ng-include="'views/layout/main-nav.html'"></aside>
+      </mv-col>
+      <mv-col size="{sm:8}">
+        <section id="mainContent" ng-view=""></section>
+      </mv-col>
+    </mv-row>
+  </mv-container>
 
   <!-- tool:js({.,app}) scripts/oldieshim.js -->
   <!--[if lt IE 9]>
