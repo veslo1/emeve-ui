@@ -19,7 +19,7 @@ gulp.task('watch', function () {
   gulp.watch(dirDev + 'styles/**/*.scss', ['tool:sass']);
 
   //#== Script
-  gulp.watch(dirDev + 'scripts/**/*.js',['build:script','build:jshint']);
+  gulp.watch(dirDev + 'scripts/**/*.js',['build:script','tool:jshint']);
 
   //#== images
   gulp.watch([dirDev + "images/**/*.{gif,png,jpg}"], ['tool:img']);

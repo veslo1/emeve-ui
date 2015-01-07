@@ -18,7 +18,7 @@ angular.module('EmeveUiApp.Controller', [])
 
     $scope.setStatus = function (value) {
       $scope.status = value;
-      console.log(value);
+      //console.log(value);
     };
   }])
 

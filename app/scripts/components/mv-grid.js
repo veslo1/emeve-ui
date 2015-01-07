@@ -1,7 +1,7 @@
 angular.module('mvUi.Grid', [])
   .directive('mvCol', ['$parse', '$compile', function ($parse, $compile) {
     return {
-      restrict: 'C',
+      restrict: 'EAC',
       template: '',
       transclude: true,
       scope: {
@@ -28,6 +28,9 @@ angular.module('mvUi.Grid', [])
         scope.layoutPush = angular.isDefined(scope.layoutPush) ? $parse(scope.layoutPush)(scope) : scope.layoutObj;
         scope.layoutPull = angular.isDefined(scope.layoutPull) ? $parse(scope.layoutPull)(scope) : scope.layoutObj;
 
+        if(!element.hasClass('mv-col')){
+          element.addClass('mv-col')
+        }
 
         transclude(scope.$parent, function (clone, scope) {
           element.append(clone);
@@ -56,7 +59,7 @@ angular.module('mvUi.Grid', [])
   }])
   .directive('mvRow', [function () {
     return {
-      restrict: 'C',
+      restrict: 'EAC',
       template: '',
       scope: {
         layoutFill: '@'
@@ -66,6 +69,10 @@ angular.module('mvUi.Grid', [])
         scope.layoutFill = (angular.isDefined(scope.layoutFill)) ? JSON.parse(scope.layoutFill) : false;
         element.append(transclude());
 
+        if(!element.hasClass('mv-row')){
+          element.addClass('mv-row')
+        }
+
         if (scope.layoutFill) {
           var max = element[0].offsetHeight;
           angular.forEach(element[0].children, function (value) {
@@ -73,6 +80,23 @@ angular.module('mvUi.Grid', [])
           });
         }
 
+      }
+    };
+  }])
+  .directive('mvContainer',[function(){
+    return {
+      restrict: 'EAC',
+      scope:{
+        fluid: '@'
+      },
+      link: function(scope,element,attrs){
+        scope.fluid = (angular.isDefined(scope.fluid)) ? !!scope.fluid : false;
+
+        if(scope.fluid){
+          element.addClass('container-fluid');
+        }else{
+          element.addClass('container');
+        }
       }
     };
   }]);

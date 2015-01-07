@@ -1,15 +1,23 @@
 body{
- background-image: url("../images/textures/old_mathematics.png");
+
 }
 
 #mainHeader{
   text-align: center;
-
+  background-image: url("../images/cover_emeve.jpg");
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   img{
     width: auto;
   }
+  h2{
+    margin-top: -0.1rem;
+  }
 }
 
+#mainNav{
+
+}
 
 .content{
 

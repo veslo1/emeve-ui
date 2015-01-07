@@ -4,7 +4,6 @@
 // e o valor de '$grid-columns'.
 // Baseado no Bootstrap 3
 
-// [converter] This is defined recursively in LESS, but Sass supports real loops
 @mixin make-grid-columns($i: 1, $list: ".mv-col-#{$i}, .xs-#{$i}, .sm-#{$i}, .md-#{$i}, .lg-#{$i}") {
   @for $i from (1 + 1) through $grid-columns {
     $list: ".mv-col-#{$i}, #{$list}, .xs-#{$i}, .sm-#{$i}, .md-#{$i}, .lg-#{$i}";
@@ -25,9 +24,9 @@
   @for $i from (1 + 1) through $grid-columns {
     $list: "#{$list}, .#{$class}-#{$i}";
   }
-  //#{$list} {
-    //float: left;
-  //}
+  #{$list} {
+    float: left;
+  }
 }
 
 @mixin calc-grid-column($index, $class, $type) {

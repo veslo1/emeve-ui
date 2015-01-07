@@ -28,6 +28,7 @@
 // width for fluid, full width layouts.
 
 .container-fluid {
+  display: block;
   @include container-fixed();
 }
 
@@ -36,12 +37,13 @@
 //
 // Rows contain and clear the floats of your columns.
 
-.mv-row {
+.mv-row{
+  display: block;
   @include make-row();
-
 }
 
 .mv-col{
+  display: block;
   @include make-col();
 
   .mv-col-wrapper{
