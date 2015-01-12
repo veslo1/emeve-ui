@@ -103,7 +103,7 @@ var mvApp = function () {
    and forwards dynamic requests to your real backend */
 
   this.proxyMiddleware = function (req, res, next) {
-    if (/\.(html|css|map|js|png|jpg|jpeg|gif|ico|xml|rss|txt|eot|svg|ttf|woff|php|phtml)(\?((r|v|rel|rev)=[\-\.\w]*)?)?$/.test(req.url)) {
+    if (/\.(html|css|map|js|png|jpg|jpeg|gif|ico|xml|rss|txt|eot|svg|ttf|woff|php|phtml|json)(\?((r|v|rel|rev)=[\-\.\w]*)?)?$/.test(req.url)) {
       return next();
     } else {
       return this.proxyServer().web(req, res);
