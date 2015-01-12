@@ -1,5 +1,5 @@
 <!--<div class="mv-control mv-control-toggle mv-control-button">-->
-  <mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>
+  <mv-i ng-if="enableIcon" name="{{icon}}"></mv-i>
   <label for="{{id}}-control">{{label}}</label>
 
   <div class="mv-control-value" ng-switch="setup">
@@ -14,8 +14,8 @@
     <button class="mv-btn" type="button"
             ng-switch="setup"
             ng-click="setupToggle($event)">
-      <mv-i class="mv-btn-off" icon="toggle-off" ng-switch-when="false"></mv-i>
-      <mv-i class="mv-btn-on" icon="toggle-on" ng-switch-when="true"></mv-i>
+      <mv-i class="mv-btn-off" name="toggle-off" ng-switch-when="false"></mv-i>
+      <mv-i class="mv-btn-on" name="toggle-on" ng-switch-when="true"></mv-i>
     </button>
   </div>
 <!--</div>-->

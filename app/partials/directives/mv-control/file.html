@@ -1,4 +1,4 @@
-<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>
+<mv-i ng-if="enableIcon" name="{{icon}}"></mv-i>
 <label>{{label}}</label>
 <span class="mv-control-value">
   <strong  ng-show="showValue">{{value}}</strong>
@@ -6,7 +6,7 @@
 <div class="mv-control-button-area">
   <button type="button" class="mv-btn"
           ng-click="setupToggle($event)">
-    <mv-i icon="{{btnIcon}}"></mv-i>
+    <mv-i name="{{btnIcon}}"></mv-i>
   </button>
 </div>
 <div class="mv-control-setup-area" ng-class="{open:setup}">
@@ -19,6 +19,6 @@
     <input type="file" name="fileName"/>
   </div>
   <button class="mv-btn mv-control-file-button" type="button" ng-click="upload($event)">
-    <mv-i icon="cloud-upload"></mv-i> Upload
+    <mv-i name="cloud-upload"></mv-i> Upload
   </button>
 </div>

@@ -1,4 +1,4 @@
-<mv-i ng-if="enableIcon" icon="{{icon}}"></mv-i>
+<mv-i ng-if="enableIcon" name="{{icon}}"></mv-i>
 <label>{{label}}</label>
 <span class="mv-control-value">
   <strong  ng-show="showValue">{{ngModel}}</strong>
@@ -7,8 +7,8 @@
   <button class="mv-btn" type="button"
           ng-switch="setup"
           ng-click="setupToggle($event)">
-    <mv-i icon="angle-down" ng-switch-when="false"></mv-i>
-    <mv-i icon="angle-up" ng-switch-when="true"></mv-i>
+    <mv-i name="angle-down" ng-switch-when="false"></mv-i>
+    <mv-i name="angle-up" ng-switch-when="true"></mv-i>
   </button>
 </div>
 <ul class="mv-control-setup-area mv-container-fluid" ng-class="{open:setup}">

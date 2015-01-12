@@ -36,8 +36,9 @@ angular.module('EmeveUiApp.Controller', [])
 
       $scope.icons = [];
       $scope.error = false;
+      $scope.criterio = '';
 
-      $http.get('data/icons.json')
+      $http.get('/data/icons.json')
         .success(function(data,status,headers,config){
           $scope.icons = data.icons;
         })
@@ -45,7 +46,6 @@ angular.module('EmeveUiApp.Controller', [])
           $scope.icons = [];
           $scope.error = true;
         });
-
   }])
 
   .controller('FormController', ['$scope',function ($scope) {
