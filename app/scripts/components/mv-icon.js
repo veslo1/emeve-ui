@@ -4,7 +4,7 @@ angular.module('mvUi.Icon',[])
       restrict: 'EAC',
       template: '<i class="{{prefix}} {{prefix}}-{{icon}}"></i>',
       scope:{
-        icon: '@',
+        icon: '@name',
         prefix:'@'
       },
       link: function(scope,element,attr){
@@ -12,7 +12,7 @@ angular.module('mvUi.Icon',[])
         scope.prefix = angular.isDefined(scope.prefix) ? scope.prefix : 'fa';
 
         if(!element.hasClass('mv-icon')){
-          element.addClass('mv-icon')
+          element.addClass('mv-icon');
         }
       }
     };

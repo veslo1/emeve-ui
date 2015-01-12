@@ -49,9 +49,9 @@ angular.module('mvUi.Switch', [])
         restrict: 'EAC',
         template: $templateCache.get('mv-switch-nav.html'),
         transclude: true,
-        link: function (scope, iElement, iAttrs,mvSwitchCtrl) {
+        link: function (scope, iElement, iAttrs, mvSwitchCtrl) {
           scope.slides = mvSwitchCtrl.slides;
-          scope.selectSlide = mvSwitchCtrl.selectSlide
+          scope.selectSlide = mvSwitchCtrl.selectSlide;
         }
       };
     }]);

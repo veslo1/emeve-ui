@@ -1,8 +1,8 @@
 'use strict';
 
 exports.error = {
-  'handleError': function(err){
+  handleError: function(err){
       console.error(err.toString());
-      this.emit('end');
+      //this.emit('end');
   }
 }

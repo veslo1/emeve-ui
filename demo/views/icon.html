@@ -6,3871 +6,2788 @@
   </header>
 
   <h2>mv-icon <small>data-icon</small></h2>
-  <pre>&lt;mv-i icon=&quot;user&quot;&gt;&lt;mv-i/&gt;</pre>
-  <mv-i icon="user"></mv-i>
+  <pre>&lt;mv-i name=&quot;user&quot;&gt;&lt;mv-i/&gt;</pre>
+  <mv-i name="user"></mv-i>
 
   <h2>Prefixo <small>data-prefix</small></h2>
-  <pre>&lt;mv-i icon=&quot;cog&quot; prefix=&quot;fac&quot;&gt;&lt;mv-i/&gt;</pre>
-  <mv-i icon="cog" prefix="fa"></mv-i>
+  <pre>&lt;mv-i name=&quot;cog&quot; prefix=&quot;fac&quot;&gt;&lt;mv-i/&gt;</pre>
+  <mv-i name="cog" prefix="fa"></mv-i>
 
 </section>
 
 
 <section class="demo-section">
     <header>
-        <h1>Font Awesome</h1>
+        <h1>Lista</h1>
     </header>
-    <p>Incorporado os ícones do projeto FontAwesome 4.0.2.</p>
-    <p>Para exemplos de uso acesse:
-        <a href="http://fortawesome.github.io/Font-Awesome/examples/" target="_blank">
-            http://fortawesome.github.io/Font-Awesome/examples/
+    <p>Incorporado ícones do projeto
+      <a href="http://fortawesome.github.io/Font-Awesome/examples/" target="_blank">
+        FontAwesome 4.0.2.
         </a>
     </p>
 </section>
 
+  <mv-container fluid="true">
+    {{icons}}
+    <mv-row ng-repeat="icon in icons">
+      <mv-col size="{xs:6, md:3}">
+        <mv-i name="{{icon.name}}"></mv-i>
+        <span>{{icon.name}}</span>
+      </mv-col>
+    </mv-row>
+    <div class="" ng-if="0">
+      Erro ao Carregar
+    </div>
+  </mv-container>
+
+
+<!--
 <div class="mv-row">
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-adjust
-
-    <span class="muted">[&amp;#xf042;]</span>
+    adjust
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-adn
-
-    <span class="muted">[&amp;#xf170;]</span>
+    adn
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-align-center
-
-    <span class="muted">[&amp;#xf037;]</span>
+    align-center
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-align-justify
-
-    <span class="muted">[&amp;#xf039;]</span>
+    align-justify
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-align-left
-
-    <span class="muted">[&amp;#xf036;]</span>
+    align-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-align-right
-
-    <span class="muted">[&amp;#xf038;]</span>
+    align-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-ambulance
-
-    <span class="muted">[&amp;#xf0f9;]</span>
+    ambulance
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-anchor
-
-    <span class="muted">[&amp;#xf13d;]</span>
+    anchor
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-android
-
-    <span class="muted">[&amp;#xf17b;]</span>
+    android
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-angellist
-
-    <span class="muted">[&amp;#xf209;]</span>
+    angellist
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-angle-double-down
-
-    <span class="muted">[&amp;#xf103;]</span>
+    angle-double-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-angle-double-left
-
-    <span class="muted">[&amp;#xf100;]</span>
+    angle-double-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-angle-double-right
-
-    <span class="muted">[&amp;#xf101;]</span>
+    angle-double-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-angle-double-up
-
-    <span class="muted">[&amp;#xf102;]</span>
+    angle-double-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-angle-down
-
-    <span class="muted">[&amp;#xf107;]</span>
+    angle-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-angle-left
-
-    <span class="muted">[&amp;#xf104;]</span>
+    angle-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-angle-right
-
-    <span class="muted">[&amp;#xf105;]</span>
+    angle-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-angle-up
-
-    <span class="muted">[&amp;#xf106;]</span>
+    angle-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-apple
-
-    <span class="muted">[&amp;#xf179;]</span>
+    apple
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-archive
-
-    <span class="muted">[&amp;#xf187;]</span>
+    archive
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-area-chart
-
-    <span class="muted">[&amp;#xf1fe;]</span>
+    area-chart
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrow-circle-down
-
-    <span class="muted">[&amp;#xf0ab;]</span>
+    arrow-circle-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrow-circle-left
-
-    <span class="muted">[&amp;#xf0a8;]</span>
+    arrow-circle-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrow-circle-o-down
-
-    <span class="muted">[&amp;#xf01a;]</span>
+    arrow-circle-o-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrow-circle-o-left
-
-    <span class="muted">[&amp;#xf190;]</span>
+    arrow-circle-o-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrow-circle-o-right
-
-    <span class="muted">[&amp;#xf18e;]</span>
+    arrow-circle-o-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrow-circle-o-up
-
-    <span class="muted">[&amp;#xf01b;]</span>
+    arrow-circle-o-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrow-circle-right
-
-    <span class="muted">[&amp;#xf0a9;]</span>
+    arrow-circle-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrow-circle-up
-
-    <span class="muted">[&amp;#xf0aa;]</span>
+    arrow-circle-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrow-down
-
-    <span class="muted">[&amp;#xf063;]</span>
+    arrow-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrow-left
-
-    <span class="muted">[&amp;#xf060;]</span>
+    arrow-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrow-right
-
-    <span class="muted">[&amp;#xf061;]</span>
+    arrow-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrow-up
-
-    <span class="muted">[&amp;#xf062;]</span>
+    arrow-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrows
-
-    <span class="muted">[&amp;#xf047;]</span>
+    arrows
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrows-alt
-
-    <span class="muted">[&amp;#xf0b2;]</span>
+    arrows-alt
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrows-h
-
-    <span class="muted">[&amp;#xf07e;]</span>
+    arrows-h
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-arrows-v
-
-    <span class="muted">[&amp;#xf07d;]</span>
+    arrows-v
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-asterisk
-
-    <span class="muted">[&amp;#xf069;]</span>
+    asterisk
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-at
-
-    <span class="muted">[&amp;#xf1fa;]</span>
+    at
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-automobile
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1b9;]</span>
+    automobile
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-backward
-
-    <span class="muted">[&amp;#xf04a;]</span>
+    backward
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-ban
-
-    <span class="muted">[&amp;#xf05e;]</span>
+    ban
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bank
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf19c;]</span>
+    bank
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bar-chart
-
-    <span class="muted">[&amp;#xf080;]</span>
+    bar-chart
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bar-chart-o
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf080;]</span>
+    bar-chart-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-barcode
-
-    <span class="muted">[&amp;#xf02a;]</span>
+    barcode
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bars
-
-    <span class="muted">[&amp;#xf0c9;]</span>
+    bars
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-beer
-
-    <span class="muted">[&amp;#xf0fc;]</span>
+    beer
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-behance
-
-    <span class="muted">[&amp;#xf1b4;]</span>
+    behance
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-behance-square
-
-    <span class="muted">[&amp;#xf1b5;]</span>
+    behance-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bell
-
-    <span class="muted">[&amp;#xf0f3;]</span>
+    bell
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bell-o
-
-    <span class="muted">[&amp;#xf0a2;]</span>
+    bell-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bell-slash
-
-    <span class="muted">[&amp;#xf1f6;]</span>
+    bell-slash
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bell-slash-o
-
-    <span class="muted">[&amp;#xf1f7;]</span>
+    bell-slash-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bicycle
-
-    <span class="muted">[&amp;#xf206;]</span>
+    bicycle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-binoculars
-
-    <span class="muted">[&amp;#xf1e5;]</span>
+    binoculars
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-birthday-cake
-
-    <span class="muted">[&amp;#xf1fd;]</span>
+    birthday-cake
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bitbucket
-
-    <span class="muted">[&amp;#xf171;]</span>
+    bitbucket
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bitbucket-square
-
-    <span class="muted">[&amp;#xf172;]</span>
+    bitbucket-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bitcoin
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf15a;]</span>
+    bitcoin
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bold
-
-    <span class="muted">[&amp;#xf032;]</span>
+    bold
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bolt
-
-    <span class="muted">[&amp;#xf0e7;]</span>
+    bolt
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bomb
-
-    <span class="muted">[&amp;#xf1e2;]</span>
+    bomb
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-book
-
-    <span class="muted">[&amp;#xf02d;]</span>
+    book
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bookmark
-
-    <span class="muted">[&amp;#xf02e;]</span>
+    bookmark
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bookmark-o
-
-    <span class="muted">[&amp;#xf097;]</span>
+    bookmark-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-briefcase
-
-    <span class="muted">[&amp;#xf0b1;]</span>
+    briefcase
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-btc
-
-    <span class="muted">[&amp;#xf15a;]</span>
+    btc
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bug
-
-    <span class="muted">[&amp;#xf188;]</span>
+    bug
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-building
-
-    <span class="muted">[&amp;#xf1ad;]</span>
+    building
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-building-o
-
-    <span class="muted">[&amp;#xf0f7;]</span>
+    building-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bullhorn
-
-    <span class="muted">[&amp;#xf0a1;]</span>
+    bullhorn
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bullseye
-
-    <span class="muted">[&amp;#xf140;]</span>
+    bullseye
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-bus
-
-    <span class="muted">[&amp;#xf207;]</span>
+    bus
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cab
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1ba;]</span>
+    cab
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-calculator
-
-    <span class="muted">[&amp;#xf1ec;]</span>
+    calculator
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-calendar
-
-    <span class="muted">[&amp;#xf073;]</span>
+    calendar
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-calendar-o
-
-    <span class="muted">[&amp;#xf133;]</span>
+    calendar-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-camera
-
-    <span class="muted">[&amp;#xf030;]</span>
+    camera
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-camera-retro
-
-    <span class="muted">[&amp;#xf083;]</span>
+    camera-retro
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-car
-
-    <span class="muted">[&amp;#xf1b9;]</span>
+    car
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-caret-down
-
-    <span class="muted">[&amp;#xf0d7;]</span>
+    caret-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-caret-left
-
-    <span class="muted">[&amp;#xf0d9;]</span>
+    caret-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-caret-right
-
-    <span class="muted">[&amp;#xf0da;]</span>
+    caret-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-caret-square-o-down
-
-    <span class="muted">[&amp;#xf150;]</span>
+    caret-square-o-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-caret-square-o-left
-
-    <span class="muted">[&amp;#xf191;]</span>
+    caret-square-o-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-caret-square-o-right
-
-    <span class="muted">[&amp;#xf152;]</span>
+    caret-square-o-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-caret-square-o-up
-
-    <span class="muted">[&amp;#xf151;]</span>
+    caret-square-o-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-caret-up
-
-    <span class="muted">[&amp;#xf0d8;]</span>
+    caret-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cc
-
-    <span class="muted">[&amp;#xf20a;]</span>
+    cc
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cc-amex
-
-    <span class="muted">[&amp;#xf1f3;]</span>
+    cc-amex
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cc-discover
-
-    <span class="muted">[&amp;#xf1f2;]</span>
+    cc-discover
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cc-mastercard
-
-    <span class="muted">[&amp;#xf1f1;]</span>
+    cc-mastercard
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cc-paypal
-
-    <span class="muted">[&amp;#xf1f4;]</span>
+    cc-paypal
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cc-stripe
-
-    <span class="muted">[&amp;#xf1f5;]</span>
+    cc-stripe
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cc-visa
-
-    <span class="muted">[&amp;#xf1f0;]</span>
+    cc-visa
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-certificate
-
-    <span class="muted">[&amp;#xf0a3;]</span>
+    certificate
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-chain
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0c1;]</span>
+    chain
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-chain-broken
-
-    <span class="muted">[&amp;#xf127;]</span>
+    chain-broken
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-check
-
-    <span class="muted">[&amp;#xf00c;]</span>
+    check
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-check-circle
-
-    <span class="muted">[&amp;#xf058;]</span>
+    check-circle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-check-circle-o
-
-    <span class="muted">[&amp;#xf05d;]</span>
+    check-circle-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-check-square
-
-    <span class="muted">[&amp;#xf14a;]</span>
+    check-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-check-square-o
-
-    <span class="muted">[&amp;#xf046;]</span>
+    check-square-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-chevron-circle-down
-
-    <span class="muted">[&amp;#xf13a;]</span>
+    chevron-circle-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-chevron-circle-left
-
-    <span class="muted">[&amp;#xf137;]</span>
+    chevron-circle-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-chevron-circle-right
-
-    <span class="muted">[&amp;#xf138;]</span>
+    chevron-circle-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-chevron-circle-up
-
-    <span class="muted">[&amp;#xf139;]</span>
+    chevron-circle-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-chevron-down
-
-    <span class="muted">[&amp;#xf078;]</span>
+    chevron-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-chevron-left
-
-    <span class="muted">[&amp;#xf053;]</span>
+    chevron-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-chevron-right
-
-    <span class="muted">[&amp;#xf054;]</span>
+    chevron-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-chevron-up
-
-    <span class="muted">[&amp;#xf077;]</span>
+    chevron-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-child
-
-    <span class="muted">[&amp;#xf1ae;]</span>
+    child
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-circle
-
-    <span class="muted">[&amp;#xf111;]</span>
+    circle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-circle-o
-
-    <span class="muted">[&amp;#xf10c;]</span>
+    circle-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-circle-o-notch
-
-    <span class="muted">[&amp;#xf1ce;]</span>
+    circle-o-notch
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-circle-thin
-
-    <span class="muted">[&amp;#xf1db;]</span>
+    circle-thin
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-clipboard
-
-    <span class="muted">[&amp;#xf0ea;]</span>
+    clipboard
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-clock-o
-
-    <span class="muted">[&amp;#xf017;]</span>
+    clock-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-close
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf00d;]</span>
+    close
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cloud
-
-    <span class="muted">[&amp;#xf0c2;]</span>
+    cloud
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cloud-download
-
-    <span class="muted">[&amp;#xf0ed;]</span>
+    cloud-download
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cloud-upload
-
-    <span class="muted">[&amp;#xf0ee;]</span>
+    cloud-upload
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cny
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf157;]</span>
+    cny
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-code
-
-    <span class="muted">[&amp;#xf121;]</span>
+    code
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-code-fork
-
-    <span class="muted">[&amp;#xf126;]</span>
+    code-fork
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-codepen
-
-    <span class="muted">[&amp;#xf1cb;]</span>
+    codepen
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-coffee
-
-    <span class="muted">[&amp;#xf0f4;]</span>
+    coffee
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cog
-
-    <span class="muted">[&amp;#xf013;]</span>
+    cog
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cogs
-
-    <span class="muted">[&amp;#xf085;]</span>
+    cogs
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-columns
-
-    <span class="muted">[&amp;#xf0db;]</span>
+    columns
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-comment
-
-    <span class="muted">[&amp;#xf075;]</span>
+    comment
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-comment-o
-
-    <span class="muted">[&amp;#xf0e5;]</span>
+    comment-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-comments
-
-    <span class="muted">[&amp;#xf086;]</span>
+    comments
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-comments-o
-
-    <span class="muted">[&amp;#xf0e6;]</span>
+    comments-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-compass
-
-    <span class="muted">[&amp;#xf14e;]</span>
+    compass
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-compress
-
-    <span class="muted">[&amp;#xf066;]</span>
+    compress
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-copy
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0c5;]</span>
+    copy
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-copyright
-
-    <span class="muted">[&amp;#xf1f9;]</span>
+    copyright
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-credit-card
-
-    <span class="muted">[&amp;#xf09d;]</span>
+    credit-card
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-crop
-
-    <span class="muted">[&amp;#xf125;]</span>
+    crop
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-crosshairs
-
-    <span class="muted">[&amp;#xf05b;]</span>
+    crosshairs
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-css3
-
-    <span class="muted">[&amp;#xf13c;]</span>
+    css3
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cube
-
-    <span class="muted">[&amp;#xf1b2;]</span>
+    cube
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cubes
-
-    <span class="muted">[&amp;#xf1b3;]</span>
+    cubes
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cut
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0c4;]</span>
+    cut
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-cutlery
-
-    <span class="muted">[&amp;#xf0f5;]</span>
+    cutlery
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-dashboard
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0e4;]</span>
+    dashboard
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-database
-
-    <span class="muted">[&amp;#xf1c0;]</span>
+    database
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-dedent
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf03b;]</span>
+    dedent
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-delicious
-
-    <span class="muted">[&amp;#xf1a5;]</span>
+    delicious
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-desktop
-
-    <span class="muted">[&amp;#xf108;]</span>
+    desktop
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-deviantart
-
-    <span class="muted">[&amp;#xf1bd;]</span>
+    deviantart
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-digg
-
-    <span class="muted">[&amp;#xf1a6;]</span>
+    digg
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-dollar
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf155;]</span>
+    dollar
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-dot-circle-o
-
-    <span class="muted">[&amp;#xf192;]</span>
+    dot-circle-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-download
-
-    <span class="muted">[&amp;#xf019;]</span>
+    download
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-dribbble
-
-    <span class="muted">[&amp;#xf17d;]</span>
+    dribbble
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-dropbox
-
-    <span class="muted">[&amp;#xf16b;]</span>
+    dropbox
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-drupal
-
-    <span class="muted">[&amp;#xf1a9;]</span>
+    drupal
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-edit
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf044;]</span>
+    edit
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-eject
-
-    <span class="muted">[&amp;#xf052;]</span>
+    eject
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-ellipsis-h
-
-    <span class="muted">[&amp;#xf141;]</span>
+    ellipsis-h
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-ellipsis-v
-
-    <span class="muted">[&amp;#xf142;]</span>
+    ellipsis-v
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-empire
-
-    <span class="muted">[&amp;#xf1d1;]</span>
+    empire
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-envelope
-
-    <span class="muted">[&amp;#xf0e0;]</span>
+    envelope
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-envelope-o
-
-    <span class="muted">[&amp;#xf003;]</span>
+    envelope-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-envelope-square
-
-    <span class="muted">[&amp;#xf199;]</span>
+    envelope-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-eraser
-
-    <span class="muted">[&amp;#xf12d;]</span>
+    eraser
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-eur
-
-    <span class="muted">[&amp;#xf153;]</span>
+    eur
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-euro
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf153;]</span>
+    euro
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-exchange
-
-    <span class="muted">[&amp;#xf0ec;]</span>
+    exchange
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-exclamation
-
-    <span class="muted">[&amp;#xf12a;]</span>
+    exclamation
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-exclamation-circle
-
-    <span class="muted">[&amp;#xf06a;]</span>
+    exclamation-circle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-exclamation-triangle
-
-    <span class="muted">[&amp;#xf071;]</span>
+    exclamation-triangle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-expand
-
-    <span class="muted">[&amp;#xf065;]</span>
+    expand
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-external-link
-
-    <span class="muted">[&amp;#xf08e;]</span>
+    external-link
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-external-link-square
-
-    <span class="muted">[&amp;#xf14c;]</span>
+    external-link-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-eye
-
-    <span class="muted">[&amp;#xf06e;]</span>
+    eye
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-eye-slash
-
-    <span class="muted">[&amp;#xf070;]</span>
+    eye-slash
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-eyedropper
-
-    <span class="muted">[&amp;#xf1fb;]</span>
+    eyedropper
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-facebook
-
-    <span class="muted">[&amp;#xf09a;]</span>
+    facebook
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-facebook-square
-
-    <span class="muted">[&amp;#xf082;]</span>
+    facebook-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-fast-backward
-
-    <span class="muted">[&amp;#xf049;]</span>
+    fast-backward
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-fast-forward
-
-    <span class="muted">[&amp;#xf050;]</span>
+    fast-forward
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-fax
-
-    <span class="muted">[&amp;#xf1ac;]</span>
+    fax
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-female
-
-    <span class="muted">[&amp;#xf182;]</span>
+    female
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-fighter-jet
-
-    <span class="muted">[&amp;#xf0fb;]</span>
+    fighter-jet
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file
-
-    <span class="muted">[&amp;#xf15b;]</span>
+    file
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-archive-o
-
-    <span class="muted">[&amp;#xf1c6;]</span>
+    file-archive-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-audio-o
-
-    <span class="muted">[&amp;#xf1c7;]</span>
+    file-audio-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-code-o
-
-    <span class="muted">[&amp;#xf1c9;]</span>
+    file-code-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-excel-o
-
-    <span class="muted">[&amp;#xf1c3;]</span>
+    file-excel-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-image-o
-
-    <span class="muted">[&amp;#xf1c5;]</span>
+    file-image-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-movie-o
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1c8;]</span>
+    file-movie-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-o
-
-    <span class="muted">[&amp;#xf016;]</span>
+    file-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-pdf-o
-
-    <span class="muted">[&amp;#xf1c1;]</span>
+    file-pdf-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-photo-o
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1c5;]</span>
+    file-photo-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-picture-o
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1c5;]</span>
+    file-picture-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-powerpoint-o
-
-    <span class="muted">[&amp;#xf1c4;]</span>
+    file-powerpoint-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-sound-o
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1c7;]</span>
+    file-sound-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-text
-
-    <span class="muted">[&amp;#xf15c;]</span>
+    file-text
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-text-o
-
-    <span class="muted">[&amp;#xf0f6;]</span>
+    file-text-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-video-o
-
-    <span class="muted">[&amp;#xf1c8;]</span>
+    file-video-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-word-o
-
-    <span class="muted">[&amp;#xf1c2;]</span>
+    file-word-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-file-zip-o
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1c6;]</span>
+    file-zip-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-files-o
-
-    <span class="muted">[&amp;#xf0c5;]</span>
+    files-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-film
-
-    <span class="muted">[&amp;#xf008;]</span>
+    film
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-filter
-
-    <span class="muted">[&amp;#xf0b0;]</span>
+    filter
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-fire
-
-    <span class="muted">[&amp;#xf06d;]</span>
+    fire
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-fire-extinguisher
-
-    <span class="muted">[&amp;#xf134;]</span>
+    fire-extinguisher
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-flag
-
-    <span class="muted">[&amp;#xf024;]</span>
+    flag
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-flag-checkered
-
-    <span class="muted">[&amp;#xf11e;]</span>
+    flag-checkered
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-flag-o
-
-    <span class="muted">[&amp;#xf11d;]</span>
+    flag-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-flash
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0e7;]</span>
+    flash
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-flask
-
-    <span class="muted">[&amp;#xf0c3;]</span>
+    flask
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-flickr
-
-    <span class="muted">[&amp;#xf16e;]</span>
+    flickr
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-floppy-o
-
-    <span class="muted">[&amp;#xf0c7;]</span>
+    floppy-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-folder
-
-    <span class="muted">[&amp;#xf07b;]</span>
+    folder
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-folder-o
-
-    <span class="muted">[&amp;#xf114;]</span>
+    folder-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-folder-open
-
-    <span class="muted">[&amp;#xf07c;]</span>
+    folder-open
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-folder-open-o
-
-    <span class="muted">[&amp;#xf115;]</span>
+    folder-open-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-font
-
-    <span class="muted">[&amp;#xf031;]</span>
+    font
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-forward
-
-    <span class="muted">[&amp;#xf04e;]</span>
+    forward
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-foursquare
-
-    <span class="muted">[&amp;#xf180;]</span>
+    foursquare
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-frown-o
-
-    <span class="muted">[&amp;#xf119;]</span>
+    frown-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-futbol-o
-
-    <span class="muted">[&amp;#xf1e3;]</span>
+    futbol-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-gamepad
-
-    <span class="muted">[&amp;#xf11b;]</span>
+    gamepad
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-gavel
-
-    <span class="muted">[&amp;#xf0e3;]</span>
+    gavel
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-gbp
-
-    <span class="muted">[&amp;#xf154;]</span>
+    gbp
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-ge
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1d1;]</span>
+    ge
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-gear
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf013;]</span>
+    gear
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-gears
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf085;]</span>
+    gears
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-gift
-
-    <span class="muted">[&amp;#xf06b;]</span>
+    gift
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-git
-
-    <span class="muted">[&amp;#xf1d3;]</span>
+    git
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-git-square
-
-    <span class="muted">[&amp;#xf1d2;]</span>
+    git-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-github
-
-    <span class="muted">[&amp;#xf09b;]</span>
+    github
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-github-alt
-
-    <span class="muted">[&amp;#xf113;]</span>
+    github-alt
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-github-square
-
-    <span class="muted">[&amp;#xf092;]</span>
+    github-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-gittip
-
-    <span class="muted">[&amp;#xf184;]</span>
+    gittip
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-glass
-
-    <span class="muted">[&amp;#xf000;]</span>
+    glass
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-globe
-
-    <span class="muted">[&amp;#xf0ac;]</span>
+    globe
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-google
-
-    <span class="muted">[&amp;#xf1a0;]</span>
+    google
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-google-plus
-
-    <span class="muted">[&amp;#xf0d5;]</span>
+    google-plus
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-google-plus-square
-
-    <span class="muted">[&amp;#xf0d4;]</span>
+    google-plus-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-google-wallet
-
-    <span class="muted">[&amp;#xf1ee;]</span>
+    google-wallet
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-graduation-cap
-
-    <span class="muted">[&amp;#xf19d;]</span>
+    graduation-cap
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-group
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0c0;]</span>
+    group
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-h-square
-
-    <span class="muted">[&amp;#xf0fd;]</span>
+    h-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-hacker-news
-
-    <span class="muted">[&amp;#xf1d4;]</span>
+    hacker-news
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-hand-o-down
-
-    <span class="muted">[&amp;#xf0a7;]</span>
+    hand-o-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-hand-o-left
-
-    <span class="muted">[&amp;#xf0a5;]</span>
+    hand-o-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-hand-o-right
-
-    <span class="muted">[&amp;#xf0a4;]</span>
+    hand-o-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-hand-o-up
-
-    <span class="muted">[&amp;#xf0a6;]</span>
+    hand-o-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-hdd-o
-
-    <span class="muted">[&amp;#xf0a0;]</span>
+    hdd-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-header
-
-    <span class="muted">[&amp;#xf1dc;]</span>
+    header
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-headphones
-
-    <span class="muted">[&amp;#xf025;]</span>
+    headphones
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-heart
-
-    <span class="muted">[&amp;#xf004;]</span>
+    heart
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-heart-o
-
-    <span class="muted">[&amp;#xf08a;]</span>
+    heart-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-history
-
-    <span class="muted">[&amp;#xf1da;]</span>
+    history
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-home
-
-    <span class="muted">[&amp;#xf015;]</span>
+    home
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-hospital-o
-
-    <span class="muted">[&amp;#xf0f8;]</span>
+    hospital-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-html5
-
-    <span class="muted">[&amp;#xf13b;]</span>
+    html5
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-ils
-
-    <span class="muted">[&amp;#xf20b;]</span>
+    ils
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-image
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf03e;]</span>
+    image
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-inbox
-
-    <span class="muted">[&amp;#xf01c;]</span>
+    inbox
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-indent
-
-    <span class="muted">[&amp;#xf03c;]</span>
+    indent
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-info
-
-    <span class="muted">[&amp;#xf129;]</span>
+    info
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-info-circle
-
-    <span class="muted">[&amp;#xf05a;]</span>
+    info-circle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-inr
-
-    <span class="muted">[&amp;#xf156;]</span>
+    inr
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-instagram
-
-    <span class="muted">[&amp;#xf16d;]</span>
+    instagram
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-institution
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf19c;]</span>
+    institution
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-ioxhost
-
-    <span class="muted">[&amp;#xf208;]</span>
+    ioxhost
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-italic
-
-    <span class="muted">[&amp;#xf033;]</span>
+    italic
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-joomla
-
-    <span class="muted">[&amp;#xf1aa;]</span>
+    joomla
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-jpy
-
-    <span class="muted">[&amp;#xf157;]</span>
+    jpy
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-jsfiddle
-
-    <span class="muted">[&amp;#xf1cc;]</span>
+    jsfiddle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-key
-
-    <span class="muted">[&amp;#xf084;]</span>
+    key
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-keyboard-o
-
-    <span class="muted">[&amp;#xf11c;]</span>
+    keyboard-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-krw
-
-    <span class="muted">[&amp;#xf159;]</span>
+    krw
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-language
-
-    <span class="muted">[&amp;#xf1ab;]</span>
+    language
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-laptop
-
-    <span class="muted">[&amp;#xf109;]</span>
+    laptop
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-lastfm
-
-    <span class="muted">[&amp;#xf202;]</span>
+    lastfm
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-lastfm-square
-
-    <span class="muted">[&amp;#xf203;]</span>
+    lastfm-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-leaf
-
-    <span class="muted">[&amp;#xf06c;]</span>
+    leaf
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-legal
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0e3;]</span>
+    legal
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-lemon-o
-
-    <span class="muted">[&amp;#xf094;]</span>
+    lemon-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-level-down
-
-    <span class="muted">[&amp;#xf149;]</span>
+    level-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-level-up
-
-    <span class="muted">[&amp;#xf148;]</span>
+    level-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-life-bouy
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1cd;]</span>
+    life-bouy
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-life-buoy
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1cd;]</span>
+    life-buoy
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-life-ring
-
-    <span class="muted">[&amp;#xf1cd;]</span>
+    life-ring
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-life-saver
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1cd;]</span>
+    life-saver
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-lightbulb-o
-
-    <span class="muted">[&amp;#xf0eb;]</span>
+    lightbulb-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-line-chart
-
-    <span class="muted">[&amp;#xf201;]</span>
+    line-chart
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-link
-
-    <span class="muted">[&amp;#xf0c1;]</span>
+    link
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-linkedin
-
-    <span class="muted">[&amp;#xf0e1;]</span>
+    linkedin
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-linkedin-square
-
-    <span class="muted">[&amp;#xf08c;]</span>
+    linkedin-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-linux
-
-    <span class="muted">[&amp;#xf17c;]</span>
+    linux
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-list
-
-    <span class="muted">[&amp;#xf03a;]</span>
+    list
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-list-alt
-
-    <span class="muted">[&amp;#xf022;]</span>
+    list-alt
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-list-ol
-
-    <span class="muted">[&amp;#xf0cb;]</span>
+    list-ol
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-list-ul
-
-    <span class="muted">[&amp;#xf0ca;]</span>
+    list-ul
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-location-arrow
-
-    <span class="muted">[&amp;#xf124;]</span>
+    location-arrow
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-lock
-
-    <span class="muted">[&amp;#xf023;]</span>
+    lock
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-long-arrow-down
-
-    <span class="muted">[&amp;#xf175;]</span>
+    long-arrow-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-long-arrow-left
-
-    <span class="muted">[&amp;#xf177;]</span>
+    long-arrow-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-long-arrow-right
-
-    <span class="muted">[&amp;#xf178;]</span>
+    long-arrow-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-long-arrow-up
-
-    <span class="muted">[&amp;#xf176;]</span>
+    long-arrow-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-magic
-
-    <span class="muted">[&amp;#xf0d0;]</span>
+    magic
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-magnet
-
-    <span class="muted">[&amp;#xf076;]</span>
+    magnet
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-mail-forward
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf064;]</span>
+    mail-forward
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-mail-reply
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf112;]</span>
+    mail-reply
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-mail-reply-all
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf122;]</span>
+    mail-reply-all
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-male
-
-    <span class="muted">[&amp;#xf183;]</span>
+    male
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-map-marker
-
-    <span class="muted">[&amp;#xf041;]</span>
+    map-marker
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-maxcdn
-
-    <span class="muted">[&amp;#xf136;]</span>
+    maxcdn
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-meanpath
-
-    <span class="muted">[&amp;#xf20c;]</span>
+    meanpath
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-medkit
-
-    <span class="muted">[&amp;#xf0fa;]</span>
+    medkit
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-meh-o
-
-    <span class="muted">[&amp;#xf11a;]</span>
+    meh-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-microphone
-
-    <span class="muted">[&amp;#xf130;]</span>
+    microphone
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-microphone-slash
-
-    <span class="muted">[&amp;#xf131;]</span>
+    microphone-slash
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-minus
-
-    <span class="muted">[&amp;#xf068;]</span>
+    minus
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-minus-circle
-
-    <span class="muted">[&amp;#xf056;]</span>
+    minus-circle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-minus-square
-
-    <span class="muted">[&amp;#xf146;]</span>
+    minus-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-minus-square-o
-
-    <span class="muted">[&amp;#xf147;]</span>
+    minus-square-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-mobile
-
-    <span class="muted">[&amp;#xf10b;]</span>
+    mobile
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-mobile-phone
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf10b;]</span>
+    mobile-phone
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-money
-
-    <span class="muted">[&amp;#xf0d6;]</span>
+    money
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-moon-o
-
-    <span class="muted">[&amp;#xf186;]</span>
+    moon-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-mortar-board
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf19d;]</span>
+    mortar-board
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-music
-
-    <span class="muted">[&amp;#xf001;]</span>
+    music
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-navicon
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0c9;]</span>
+    navicon
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-newspaper-o
-
-    <span class="muted">[&amp;#xf1ea;]</span>
+    newspaper-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-openid
-
-    <span class="muted">[&amp;#xf19b;]</span>
+    openid
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-outdent
-
-    <span class="muted">[&amp;#xf03b;]</span>
+    outdent
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-pagelines
-
-    <span class="muted">[&amp;#xf18c;]</span>
+    pagelines
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-paint-brush
-
-    <span class="muted">[&amp;#xf1fc;]</span>
+    paint-brush
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-paper-plane
-
-    <span class="muted">[&amp;#xf1d8;]</span>
+    paper-plane
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-paper-plane-o
-
-    <span class="muted">[&amp;#xf1d9;]</span>
+    paper-plane-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-paperclip
-
-    <span class="muted">[&amp;#xf0c6;]</span>
+    paperclip
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-paragraph
-
-    <span class="muted">[&amp;#xf1dd;]</span>
+    paragraph
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-paste
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0ea;]</span>
+    paste
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-pause
-
-    <span class="muted">[&amp;#xf04c;]</span>
+    pause
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-paw
-
-    <span class="muted">[&amp;#xf1b0;]</span>
+    paw
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-paypal
-
-    <span class="muted">[&amp;#xf1ed;]</span>
+    paypal
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-pencil
-
-    <span class="muted">[&amp;#xf040;]</span>
+    pencil
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-pencil-square
-
-    <span class="muted">[&amp;#xf14b;]</span>
+    pencil-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-pencil-square-o
-
-    <span class="muted">[&amp;#xf044;]</span>
+    pencil-square-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-phone
-
-    <span class="muted">[&amp;#xf095;]</span>
+    phone
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-phone-square
-
-    <span class="muted">[&amp;#xf098;]</span>
+    phone-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-photo
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf03e;]</span>
+    photo
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-picture-o
-
-    <span class="muted">[&amp;#xf03e;]</span>
+    picture-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-pie-chart
-
-    <span class="muted">[&amp;#xf200;]</span>
+    pie-chart
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-pied-piper
-
-    <span class="muted">[&amp;#xf1a7;]</span>
+    pied-piper
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-pied-piper-alt
-
-    <span class="muted">[&amp;#xf1a8;]</span>
+    pied-piper-alt
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-pinterest
-
-    <span class="muted">[&amp;#xf0d2;]</span>
+    pinterest
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-pinterest-square
-
-    <span class="muted">[&amp;#xf0d3;]</span>
+    pinterest-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-plane
-
-    <span class="muted">[&amp;#xf072;]</span>
+    plane
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-play
-
-    <span class="muted">[&amp;#xf04b;]</span>
+    play
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-play-circle
-
-    <span class="muted">[&amp;#xf144;]</span>
+    play-circle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-play-circle-o
-
-    <span class="muted">[&amp;#xf01d;]</span>
+    play-circle-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-plug
-
-    <span class="muted">[&amp;#xf1e6;]</span>
+    plug
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-plus
-
-    <span class="muted">[&amp;#xf067;]</span>
+    plus
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-plus-circle
-
-    <span class="muted">[&amp;#xf055;]</span>
+    plus-circle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-plus-square
-
-    <span class="muted">[&amp;#xf0fe;]</span>
+    plus-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-plus-square-o
-
-    <span class="muted">[&amp;#xf196;]</span>
+    plus-square-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-power-off
-
-    <span class="muted">[&amp;#xf011;]</span>
+    power-off
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-print
-
-    <span class="muted">[&amp;#xf02f;]</span>
+    print
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-puzzle-piece
-
-    <span class="muted">[&amp;#xf12e;]</span>
+    puzzle-piece
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-qq
-
-    <span class="muted">[&amp;#xf1d6;]</span>
+    qq
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-qrcode
-
-    <span class="muted">[&amp;#xf029;]</span>
+    qrcode
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-question
-
-    <span class="muted">[&amp;#xf128;]</span>
+    question
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-question-circle
-
-    <span class="muted">[&amp;#xf059;]</span>
+    question-circle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-quote-left
-
-    <span class="muted">[&amp;#xf10d;]</span>
+    quote-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-quote-right
-
-    <span class="muted">[&amp;#xf10e;]</span>
+    quote-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-ra
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1d0;]</span>
+    ra
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-random
-
-    <span class="muted">[&amp;#xf074;]</span>
+    random
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-rebel
-
-    <span class="muted">[&amp;#xf1d0;]</span>
+    rebel
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-recycle
-
-    <span class="muted">[&amp;#xf1b8;]</span>
+    recycle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-reddit
-
-    <span class="muted">[&amp;#xf1a1;]</span>
+    reddit
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-reddit-square
-
-    <span class="muted">[&amp;#xf1a2;]</span>
+    reddit-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-refresh
-
-    <span class="muted">[&amp;#xf021;]</span>
+    refresh
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-remove
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf00d;]</span>
+    remove
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-renren
-
-    <span class="muted">[&amp;#xf18b;]</span>
+    renren
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-reorder
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0c9;]</span>
+    reorder
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-repeat
-
-    <span class="muted">[&amp;#xf01e;]</span>
+    repeat
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-reply
-
-    <span class="muted">[&amp;#xf112;]</span>
+    reply
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-reply-all
-
-    <span class="muted">[&amp;#xf122;]</span>
+    reply-all
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-retweet
-
-    <span class="muted">[&amp;#xf079;]</span>
+    retweet
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-rmb
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf157;]</span>
+    rmb
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-road
-
-    <span class="muted">[&amp;#xf018;]</span>
+    road
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-rocket
-
-    <span class="muted">[&amp;#xf135;]</span>
+    rocket
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-rotate-left
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0e2;]</span>
+    rotate-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-rotate-right
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf01e;]</span>
+    rotate-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-rouble
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf158;]</span>
+    rouble
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-rss
-
-    <span class="muted">[&amp;#xf09e;]</span>
+    rss
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-rss-square
-
-    <span class="muted">[&amp;#xf143;]</span>
+    rss-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-rub
-
-    <span class="muted">[&amp;#xf158;]</span>
+    rub
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-ruble
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf158;]</span>
+    ruble
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-rupee
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf156;]</span>
+    rupee
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-save
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0c7;]</span>
+    save
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-scissors
-
-    <span class="muted">[&amp;#xf0c4;]</span>
+    scissors
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-search
-
-    <span class="muted">[&amp;#xf002;]</span>
+    search
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-search-minus
-
-    <span class="muted">[&amp;#xf010;]</span>
+    search-minus
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-search-plus
-
-    <span class="muted">[&amp;#xf00e;]</span>
+    search-plus
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-send
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1d8;]</span>
+    send
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-send-o
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1d9;]</span>
+    send-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-share
-
-    <span class="muted">[&amp;#xf064;]</span>
+    share
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-share-alt
-
-    <span class="muted">[&amp;#xf1e0;]</span>
+    share-alt
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-share-alt-square
-
-    <span class="muted">[&amp;#xf1e1;]</span>
+    share-alt-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-share-square
-
-    <span class="muted">[&amp;#xf14d;]</span>
+    share-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-share-square-o
-
-    <span class="muted">[&amp;#xf045;]</span>
+    share-square-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-shekel
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf20b;]</span>
+    shekel
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sheqel
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf20b;]</span>
+    sheqel
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-shield
-
-    <span class="muted">[&amp;#xf132;]</span>
+    shield
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-shopping-cart
-
-    <span class="muted">[&amp;#xf07a;]</span>
+    shopping-cart
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sign-in
-
-    <span class="muted">[&amp;#xf090;]</span>
+    sign-in
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sign-out
-
-    <span class="muted">[&amp;#xf08b;]</span>
+    sign-out
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-signal
-
-    <span class="muted">[&amp;#xf012;]</span>
+    signal
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sitemap
-
-    <span class="muted">[&amp;#xf0e8;]</span>
+    sitemap
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-skype
-
-    <span class="muted">[&amp;#xf17e;]</span>
+    skype
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-slack
-
-    <span class="muted">[&amp;#xf198;]</span>
+    slack
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sliders
-
-    <span class="muted">[&amp;#xf1de;]</span>
+    sliders
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-slideshare
-
-    <span class="muted">[&amp;#xf1e7;]</span>
+    slideshare
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-smile-o
-
-    <span class="muted">[&amp;#xf118;]</span>
+    smile-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-soccer-ball-o
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1e3;]</span>
+    soccer-ball-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sort
-
-    <span class="muted">[&amp;#xf0dc;]</span>
+    sort
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sort-alpha-asc
-
-    <span class="muted">[&amp;#xf15d;]</span>
+    sort-alpha-asc
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sort-alpha-desc
-
-    <span class="muted">[&amp;#xf15e;]</span>
+    sort-alpha-desc
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sort-amount-asc
-
-    <span class="muted">[&amp;#xf160;]</span>
+    sort-amount-asc
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sort-amount-desc
-
-    <span class="muted">[&amp;#xf161;]</span>
+    sort-amount-desc
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sort-asc
-
-    <span class="muted">[&amp;#xf0de;]</span>
+    sort-asc
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sort-desc
-
-    <span class="muted">[&amp;#xf0dd;]</span>
+    sort-desc
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sort-down
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0dd;]</span>
+    sort-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sort-numeric-asc
-
-    <span class="muted">[&amp;#xf162;]</span>
+    sort-numeric-asc
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sort-numeric-desc
-
-    <span class="muted">[&amp;#xf163;]</span>
+    sort-numeric-desc
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sort-up
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0de;]</span>
+    sort-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-soundcloud
-
-    <span class="muted">[&amp;#xf1be;]</span>
+    soundcloud
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-space-shuttle
-
-    <span class="muted">[&amp;#xf197;]</span>
+    space-shuttle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-spinner
-
-    <span class="muted">[&amp;#xf110;]</span>
+    spinner
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-spoon
-
-    <span class="muted">[&amp;#xf1b1;]</span>
+    spoon
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-spotify
-
-    <span class="muted">[&amp;#xf1bc;]</span>
+    spotify
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-square
-
-    <span class="muted">[&amp;#xf0c8;]</span>
+    square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-square-o
-
-    <span class="muted">[&amp;#xf096;]</span>
+    square-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-stack-exchange
-
-    <span class="muted">[&amp;#xf18d;]</span>
+    stack-exchange
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-stack-overflow
-
-    <span class="muted">[&amp;#xf16c;]</span>
+    stack-overflow
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-star
-
-    <span class="muted">[&amp;#xf005;]</span>
+    star
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-star-half
-
-    <span class="muted">[&amp;#xf089;]</span>
+    star-half
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-star-half-empty
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf123;]</span>
+    star-half-empty
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-star-half-full
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf123;]</span>
+    star-half-full
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-star-half-o
-
-    <span class="muted">[&amp;#xf123;]</span>
+    star-half-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-star-o
-
-    <span class="muted">[&amp;#xf006;]</span>
+    star-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-steam
-
-    <span class="muted">[&amp;#xf1b6;]</span>
+    steam
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-steam-square
-
-    <span class="muted">[&amp;#xf1b7;]</span>
+    steam-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-step-backward
-
-    <span class="muted">[&amp;#xf048;]</span>
+    step-backward
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-step-forward
-
-    <span class="muted">[&amp;#xf051;]</span>
+    step-forward
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-stethoscope
-
-    <span class="muted">[&amp;#xf0f1;]</span>
+    stethoscope
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-stop
-
-    <span class="muted">[&amp;#xf04d;]</span>
+    stop
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-strikethrough
-
-    <span class="muted">[&amp;#xf0cc;]</span>
+    strikethrough
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-stumbleupon
-
-    <span class="muted">[&amp;#xf1a4;]</span>
+    stumbleupon
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-stumbleupon-circle
-
-    <span class="muted">[&amp;#xf1a3;]</span>
+    stumbleupon-circle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-subscript
-
-    <span class="muted">[&amp;#xf12c;]</span>
+    subscript
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-suitcase
-
-    <span class="muted">[&amp;#xf0f2;]</span>
+    suitcase
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-sun-o
-
-    <span class="muted">[&amp;#xf185;]</span>
+    sun-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-superscript
-
-    <span class="muted">[&amp;#xf12b;]</span>
+    superscript
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-support
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1cd;]</span>
+    support
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-table
-
-    <span class="muted">[&amp;#xf0ce;]</span>
+    table
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-tablet
-
-    <span class="muted">[&amp;#xf10a;]</span>
+    tablet
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-tachometer
-
-    <span class="muted">[&amp;#xf0e4;]</span>
+    tachometer
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-tag
-
-    <span class="muted">[&amp;#xf02b;]</span>
+    tag
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-tags
-
-    <span class="muted">[&amp;#xf02c;]</span>
+    tags
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-tasks
-
-    <span class="muted">[&amp;#xf0ae;]</span>
+    tasks
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-taxi
-
-    <span class="muted">[&amp;#xf1ba;]</span>
+    taxi
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-tencent-weibo
-
-    <span class="muted">[&amp;#xf1d5;]</span>
+    tencent-weibo
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-terminal
-
-    <span class="muted">[&amp;#xf120;]</span>
+    terminal
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-text-height
-
-    <span class="muted">[&amp;#xf034;]</span>
+    text-height
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-text-width
-
-    <span class="muted">[&amp;#xf035;]</span>
+    text-width
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-th
-
-    <span class="muted">[&amp;#xf00a;]</span>
+    th
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-th-large
-
-    <span class="muted">[&amp;#xf009;]</span>
+    th-large
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-th-list
-
-    <span class="muted">[&amp;#xf00b;]</span>
+    th-list
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-thumb-tack
-
-    <span class="muted">[&amp;#xf08d;]</span>
+    thumb-tack
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-thumbs-down
-
-    <span class="muted">[&amp;#xf165;]</span>
+    thumbs-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-thumbs-o-down
-
-    <span class="muted">[&amp;#xf088;]</span>
+    thumbs-o-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-thumbs-o-up
-
-    <span class="muted">[&amp;#xf087;]</span>
+    thumbs-o-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-thumbs-up
-
-    <span class="muted">[&amp;#xf164;]</span>
+    thumbs-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-ticket
-
-    <span class="muted">[&amp;#xf145;]</span>
+    ticket
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-times
-
-    <span class="muted">[&amp;#xf00d;]</span>
+    times
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-times-circle
-
-    <span class="muted">[&amp;#xf057;]</span>
+    times-circle
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-times-circle-o
-
-    <span class="muted">[&amp;#xf05c;]</span>
+    times-circle-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-tint
-
-    <span class="muted">[&amp;#xf043;]</span>
+    tint
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-toggle-down
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf150;]</span>
+    toggle-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-toggle-left
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf191;]</span>
+    toggle-left
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-toggle-off
-
-    <span class="muted">[&amp;#xf204;]</span>
+    toggle-off
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-toggle-on
-
-    <span class="muted">[&amp;#xf205;]</span>
+    toggle-on
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-toggle-right
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf152;]</span>
+    toggle-right
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-toggle-up
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf151;]</span>
+    toggle-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-trash
-
-    <span class="muted">[&amp;#xf1f8;]</span>
+    trash
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-trash-o
-
-    <span class="muted">[&amp;#xf014;]</span>
+    trash-o
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-tree
-
-    <span class="muted">[&amp;#xf1bb;]</span>
+    tree
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-trello
-
-    <span class="muted">[&amp;#xf181;]</span>
+    trello
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-trophy
-
-    <span class="muted">[&amp;#xf091;]</span>
+    trophy
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-truck
-
-    <span class="muted">[&amp;#xf0d1;]</span>
+    truck
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-try
-
-    <span class="muted">[&amp;#xf195;]</span>
+    try
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-tty
-
-    <span class="muted">[&amp;#xf1e4;]</span>
+    tty
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-tumblr
-
-    <span class="muted">[&amp;#xf173;]</span>
+    tumblr
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-tumblr-square
-
-    <span class="muted">[&amp;#xf174;]</span>
+    tumblr-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-turkish-lira
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf195;]</span>
+    turkish-lira
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-twitch
-
-    <span class="muted">[&amp;#xf1e8;]</span>
+    twitch
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-twitter
-
-    <span class="muted">[&amp;#xf099;]</span>
+    twitter
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-twitter-square
-
-    <span class="muted">[&amp;#xf081;]</span>
+    twitter-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-umbrella
-
-    <span class="muted">[&amp;#xf0e9;]</span>
+    umbrella
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-underline
-
-    <span class="muted">[&amp;#xf0cd;]</span>
+    underline
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-undo
-
-    <span class="muted">[&amp;#xf0e2;]</span>
+    undo
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-university
-
-    <span class="muted">[&amp;#xf19c;]</span>
+    university
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-unlink
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf127;]</span>
+    unlink
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-unlock
-
-    <span class="muted">[&amp;#xf09c;]</span>
+    unlock
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-unlock-alt
-
-    <span class="muted">[&amp;#xf13e;]</span>
+    unlock-alt
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-unsorted
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf0dc;]</span>
+    unsorted
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-upload
-
-    <span class="muted">[&amp;#xf093;]</span>
+    upload
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-usd
-
-    <span class="muted">[&amp;#xf155;]</span>
+    usd
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-user
-
-    <span class="muted">[&amp;#xf007;]</span>
+    user
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-user-md
-
-    <span class="muted">[&amp;#xf0f0;]</span>
+    user-md
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-users
-
-    <span class="muted">[&amp;#xf0c0;]</span>
+    users
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-video-camera
-
-    <span class="muted">[&amp;#xf03d;]</span>
+    video-camera
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-vimeo-square
-
-    <span class="muted">[&amp;#xf194;]</span>
+    vimeo-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-vine
-
-    <span class="muted">[&amp;#xf1ca;]</span>
+    vine
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-vk
-
-    <span class="muted">[&amp;#xf189;]</span>
+    vk
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-volume-down
-
-    <span class="muted">[&amp;#xf027;]</span>
+    volume-down
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-volume-off
-
-    <span class="muted">[&amp;#xf026;]</span>
+    volume-off
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-volume-up
-
-    <span class="muted">[&amp;#xf028;]</span>
+    volume-up
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-warning
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf071;]</span>
+    warning
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-wechat
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf1d7;]</span>
+    wechat
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-weibo
-
-    <span class="muted">[&amp;#xf18a;]</span>
+    weibo
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-weixin
-
-    <span class="muted">[&amp;#xf1d7;]</span>
+    weixin
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-wheelchair
-
-    <span class="muted">[&amp;#xf193;]</span>
+    wheelchair
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-wifi
-
-    <span class="muted">[&amp;#xf1eb;]</span>
+    wifi
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-windows
-
-    <span class="muted">[&amp;#xf17a;]</span>
+    windows
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-won
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf159;]</span>
+    won
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-wordpress
-
-    <span class="muted">[&amp;#xf19a;]</span>
+    wordpress
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-wrench
-
-    <span class="muted">[&amp;#xf0ad;]</span>
+    wrench
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-xing
-
-    <span class="muted">[&amp;#xf168;]</span>
+    xing
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-xing-square
-
-    <span class="muted">[&amp;#xf169;]</span>
+    xing-square
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-yahoo
-
-    <span class="muted">[&amp;#xf19e;]</span>
+    yahoo
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-yelp
-
-    <span class="muted">[&amp;#xf1e9;]</span>
+    yelp
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-yen
-    <span class="text-muted">(alias)</span>
-    <span class="muted">[&amp;#xf157;]</span>
+    yen
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-youtube
-
-    <span class="muted">[&amp;#xf167;]</span>
+    youtube
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-youtube-play
-
-    <span class="muted">[&amp;#xf16a;]</span>
+    youtube-play
 </div>
 
 <div class="mv-col md-4 sm-6 lg-3">
     <i class="fa fa-fw"></i>
-    fa-youtube-square
-
-    <span class="muted">[&amp;#xf166;]</span>
+    youtube-square
 </div>
 
 </div>
+-->

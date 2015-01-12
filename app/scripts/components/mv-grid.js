@@ -29,7 +29,7 @@ angular.module('mvUi.Grid', [])
         scope.layoutPull = angular.isDefined(scope.layoutPull) ? $parse(scope.layoutPull)(scope) : scope.layoutObj;
 
         if(!element.hasClass('mv-col')){
-          element.addClass('mv-col')
+          element.addClass('mv-col');
         }
 
         transclude(scope.$parent, function (clone, scope) {
@@ -70,7 +70,7 @@ angular.module('mvUi.Grid', [])
         element.append(transclude());
 
         if(!element.hasClass('mv-row')){
-          element.addClass('mv-row')
+          element.addClass('mv-row');
         }
 
         if (scope.layoutFill) {

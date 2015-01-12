@@ -31,6 +31,22 @@ angular.module('EmeveUiApp.Controller', [])
     $scope.blastoise = true;
   }])
 
+  .controller('IconController', ['$scope', '$http',
+    function ($scope, $http) {
+
+      $scope.icons = [];
+      $scope.error = false;
+
+      $http.get('data/icons.json')
+        .success(function(data,status,headers,config){
+          $scope.icons = data.icons;
+        })
+        .error(function(data,status,headers,config){
+          $scope.icons = [];
+          $scope.error = true;
+        });
+
+  }])
 
   .controller('FormController', ['$scope',function ($scope) {
     $scope.colors = [

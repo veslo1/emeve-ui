@@ -44,7 +44,7 @@ angular.module('mvUi.Control', [])
        */
       this.getSetup = function () {
         return this.setup;
-      }
+      };
       /**
        * Generate subclass for use in element
        * @param subclass
@@ -80,13 +80,13 @@ angular.module('mvUi.Control', [])
         $event.preventDefault();
         this.setup = !!!this.setup;
         return this.setup;
-      }
+      };
 
       this.init = function (control, subclass, icon) {
         this.checkMainClass();
         angular.forEach(subclass, function (sc) {
           control.addClass(this.genSubClass(sc));
-        })
+        });
 
       };
 
@@ -255,10 +255,10 @@ angular.module('mvUi.Control', [])
           };
 
           scope.select = function (index, item, $event) {
-            var index = scope.ngModel.indexOf(item);
+            //var itemIndex = scope.ngModel.indexOf(item);
 
             if (index === -1) {
-              scope.ngModel.splice(index, 0, item)
+              scope.ngModel.splice(index, 0, item);
             } else {
               scope.ngModel.splice(index, 1);
             }
@@ -364,13 +364,13 @@ angular.module('mvUi.Control', [])
           });
 
           if(scope.multiple){
-            inputFile.attr('multiple')
+            inputFile.attr('multiple');
           }
 
           scope.upload = function ($event) {
             $event.preventDefault();
             mvControlFileService.upload(scope.url, scope.files);
-          }
+          };
 
           scope.setupToggle = function ($event) {
             scope.setup = mvCtrl.setupToggle($event);
