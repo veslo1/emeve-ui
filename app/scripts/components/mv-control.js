@@ -132,9 +132,10 @@ angular.module('mvUi.Control', [])
           icon: '@',
           id: '@',
           type: '@',
-          name: '@',
+          //name: '@',
           ngModel: '='
         },
+        extend: 'input',
         transclude: true,
         controller: 'MvControlController',
         link: function (scope, iElement, iAttr, mvCtrl) {
