@@ -38,7 +38,7 @@
             placeholder="Qual item você gostaria de ver?"
             ng-model="criterio"></mv-input>
 </form>
-<mv-container fluid="true">
+<mv-container>
   <mv-row>
     <mv-col size="{xs:6, md:3}" ng-repeat="icon in icons | filter: criterio">
       <mv-i name="{{icon.id}}"></mv-i>

@@ -4,11 +4,6 @@ angular.module('mvUi.Grid', [])
       restrict: 'EAC',
       template: '',
       transclude: true,
-      scope: {
-        layout: '@size',
-        layoutPush: '@push',
-        layoutPull: '@pull'
-      },
       controller: function ($scope, $element, $attrs) {
         $scope.layoutObj = {};
 
@@ -24,9 +19,9 @@ angular.module('mvUi.Grid', [])
 
       },
       link: function (scope, element, attrs, mvColCtrl, transclude) {
-        scope.layout = angular.isDefined(scope.layout) ? $parse(scope.layout)(scope) : scope.layoutObj;
-        scope.layoutPush = angular.isDefined(scope.layoutPush) ? $parse(scope.layoutPush)(scope) : scope.layoutObj;
-        scope.layoutPull = angular.isDefined(scope.layoutPull) ? $parse(scope.layoutPull)(scope) : scope.layoutObj;
+        scope.layout = angular.isDefined(attrs.size) ? $parse(attrs.size)(scope) : scope.layoutObj;
+        scope.layoutPush = angular.isDefined(attrs.push) ? $parse(attrs.push)(scope) : scope.layoutObj;
+        scope.layoutPull = angular.isDefined(attrs.pull) ? $parse(attrs.pull)(scope) : scope.layoutObj;
 
         if(!element.hasClass('mv-col')){
           element.addClass('mv-col');
@@ -61,12 +56,9 @@ angular.module('mvUi.Grid', [])
     return {
       restrict: 'EAC',
       template: '',
-      scope: {
-        layoutFill: '@'
-      },
       transclude: true,
       link: function (scope, element, attrs, mvRowCtrl, transclude) {
-        scope.layoutFill = (angular.isDefined(scope.layoutFill)) ? JSON.parse(scope.layoutFill) : false;
+        scope.layoutFill = (angular.isDefined(attrs.fill)) ? JSON.parse(attrs.layoutFill) : false;
         element.append(transclude());
 
         if(!element.hasClass('mv-row')){
