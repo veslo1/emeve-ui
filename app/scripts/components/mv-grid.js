@@ -87,15 +87,16 @@ angular.module('mvUi.Grid', [])
     return {
       restrict: 'EAC',
       scope:{
-        fluid: '@'
+        mode: '@'
       },
       link: function(scope,element,attrs){
-        scope.fluid = (angular.isDefined(scope.fluid)) ? !!scope.fluid : false;
+        scope.mode = (angular.isDefined(scope.mode)) ? scope.mode : '';
 
-        if(scope.fluid){
-          element.addClass('container-fluid');
-        }else{
+        if(scope.mode === 'static'){
           element.addClass('container');
+        }else{
+          element.addClass('container-fluid');
+
         }
       }
     };
