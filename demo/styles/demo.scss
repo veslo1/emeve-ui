@@ -56,12 +56,6 @@ body{
   }
 }
 
-.mv-row{
-  .mv-col{
-
-  }
-}
-
 .demo-section{
   margin-bottom: 2rem;
   padding-bottom: 1rem;
@@ -80,7 +74,8 @@ body{
 @media (min-width: 720px){
   #mainHeader{
     img{
-      width: 512px;
+      max-width: 512px;
+      max-height: 100px;
     }
   }
 }

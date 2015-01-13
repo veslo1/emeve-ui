@@ -11,23 +11,16 @@
     <mv-i name="angle-up" ng-switch-when="true"></mv-i>
   </button>
 </div>
-<ul class="mv-control-setup-area mv-container-fluid" ng-class="{open:setup}">
+<div class="mv-control-setup-area mv-container-fluid" ng-class="{open:setup}">
   <mv-container>
-    <mv-row>
-      <mv-col></mv-col>
+    <mv-row ng-repeat="item in options">
+      <mv-col size="{xs:10}">
+        <label for="{{id}}-{{$index}}">{{item.label}}</label>
+      </mv-col>
+      <mv-col size="{xs:2}" class="mv-control-area">
+        <input type="checkbox" class="mv-control-checkbox" id="{{id}}-{{$index}}"
+               ng-click="select($index,item,$event)"/>
+      </mv-col>
     </mv-row>
   </mv-container>
-
-  <li ng-repeat="item in options">
-    <label for="{{id}}-{{$index}}">{{item.label}}</label>
-    <mv-row>
-    <div class="mv-col xs-10">
-
-    </div>
-    <div class="mv-control-area mv-col xs-2">
-      <input type="checkbox" class="mv-control-checkbox" id="{{id}}-{{$index}}"
-        ng-click="select($index,item,$event)"/>
-    </div>
-    </mv-row>
-  </li>
-</ul>
+</div>
