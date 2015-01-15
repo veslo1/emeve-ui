@@ -20,6 +20,6 @@ gulp.task('build:template', function () {
     .pipe($.angularTemplatecache(tcOptions))
     .pipe($.ngAnnotate())
     .pipe($.uglify())
-    .pipe(gulp.dest(dirTmp + 'scripts/'))
+    .pipe(gulp.dest(dirDev + 'scripts/'))
     .pipe(mvApp.reload());
 });
