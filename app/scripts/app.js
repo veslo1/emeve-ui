@@ -6,6 +6,7 @@ var mvUi = angular.module('mvUi', [
   'ngTouch',
   'mvUi.Template',
   'mvUi.Control',
+  'mvUi.Control.Toggle',
   'mvUi.Button',
   'mvUi.Dropdown',
   'mvUi.PageHeader',
