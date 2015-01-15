@@ -5,21 +5,24 @@
  */
 var mvApp = require('./../index');
 var gulp = mvApp.gulp;
+var dirDev = mvApp.config().dir().dev;
+var dirTmp = mvApp.config().dir().tmp;
 
 //#== Inicializa um servidor estático com diretório desenvolvimento
 gulp.task('server', ['watch'], function () {
   mvApp.initStaticServer([
-      mvApp.config().dir().dev,
+      dirDev,
       'demo/',
-      mvApp.config().dir().tmp
+      dirTmp
     ], [
-      'app/*.html',
-      'app/fonts/**/*.{otf,eot,svg,ttf,woff}',
-      'app/styles/**/*.css',
-      '.tmp/styles/**/*.css',
-      'app/scripts/**/*.js',
-      'app/partials/**/*.html',
-      'app/images/**/*'
+      dirDev + '*.html',
+      dirDev + 'fonts/**/*.{otf,eot,svg,ttf,woff}',
+      dirDev + 'styles/**/*.css',
+      dirTmp + 'styles/**/*.css',
+      dirDev + 'scripts/**/*.js',
+      dirTmp + 'scripts/**/*.js',
+      dirDev + 'partials/**/*.html',
+      dirDev + 'images/**/*'
     ],
     mvApp.config().server().browser
   );
