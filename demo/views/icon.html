@@ -40,10 +40,10 @@
 </form>
 <mv-container>
   <mv-row>
-    <mv-col size="{xs:6, md:3}" ng-repeat="icon in icons | filter: criterio">
+    <div class="mv-col sm-10 md-3" ng-repeat="icon in icons | filter: criterio">
       <mv-i name="{{icon.id}}"></mv-i>
       <span>{{icon.name}}</span>
-    </mv-col>
+    </div>
   </mv-row>
   <div class="" ng-if="0">
     Erro ao Carregar

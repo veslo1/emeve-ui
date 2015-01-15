@@ -12,5 +12,8 @@ var mvUi = angular.module('mvUi', [
   'mvUi.Grid',
   'mvUi.Tooltip',
   'mvUi.Icon',
-  'mvUi.Switch'
+  'mvUi.Switch',
+  'mvUi.Progress'
 ]);
+
+mvUi.constant("Modernizr",Modernizr);

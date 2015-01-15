@@ -90,7 +90,9 @@ angular.module('mvUi.Control', [])
 
       };
 
-    }])
+    }]);
+/*
+
   .directive('mvInfo', [
     '$templateCache',
     function ($templateCache) {
@@ -391,3 +393,4 @@ angular.module('mvUi.Control', [])
         }
       };
     }]);
+*/

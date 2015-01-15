@@ -1,39 +1,9 @@
 <h1>Formulário</h1>
 
-<!--<section class="demo-section">-->
-<!--<header>-->
-  <!--<h1>Input-->
-    <!--<small>.mv-input</small>-->
-  <!--</h1>-->
-<!--</header>-->
-
 <form class="mv-form mv-form-icon" name="mvf">
-
-  <!--<h2>mv-info</h2>-->
-
-  <!--<mv-info display="info" label="Info" icon="question-circle"-->
-           <!--ng-model="mvfData.version"></mv-info>-->
-
-  <!--<pre>{{mvfData.version}}</pre>-->
-
 
   <!--<h2>mv-input</h2>-->
 
-  <!--<mv-input label="Text" id="mvf-user" name="user" icon="user"-->
-             <!--ng-model="mvfData.user"></mv-input>-->
-  <!--<pre>{{mvfData.user}}</pre>-->
-
-  <!--<mv-input type="email" label="E-mail" id="mvf-email" name="email" icon="envelope"-->
-            <!--ng-model="mvfData.email"></mv-input>-->
-  <!--<pre>{{mvfData.email}}</pre>-->
-
-  <!--<mv-input type="password" label="Password" id="mvf-password" name="pasword"-->
-            <!--ng-model="mvfData.password"></mv-input>-->
-  <!--<pre>{{mvfData.password}}</pre>-->
-
-  <!--<mv-input type="number" label="Number" id="mvf-number" name="number"-->
-            <!--ng-model="mvfData.number"></mv-input>-->
-  <!--<pre>{{mvfData.number}}</pre>-->
 
   <!--<h2>mv-toggle</h2>-->
 
@@ -42,254 +12,355 @@
   <!--<h2>mv-select</h2>-->
 
   <!--<mv-select label="Selecione sua cor favorita" id="mvf-color" name="color" icon="tint"-->
-             <!--options="colors" col="name"-->
-             <!--ng-model="mvfData.color">-->
+  <!--options="colors" col="name"-->
+  <!--ng-model="mvfData.color">-->
   <!--</mv-select>-->
   <!--<pre>{{mvfData.color}}</pre>-->
 
-  <h2>mv-checklist</h2>
-  <mv-check-list label="Que cores você gosta?" id="mvf-colorlist"
-                 ng-model="mvfData.colorPerfil"
-                 options="colorNames">
-  </mv-check-list>
-  <pre>{{mvfData.colorPerfil}}</pre>
+  <!--<h2>mv-checklist</h2>-->
+  <!--<mv-check-list label="Que cores você gosta?" id="mvf-colorlist"-->
+  <!--ng-model="mvfData.colorPerfil"-->
+  <!--options="colorNames">-->
+  <!--</mv-check-list>-->
+  <!--<pre>{{mvfData.colorPerfil}}</pre>-->
 
-  <h2>mv-radiogroup</h2>
-  <mv-radio-group label="Qual sua cor favorita?" id="mvf-radiogroup" name="favoriteColor"
-                  ng-model="mvfData.favoriteColor"
-                 options="colorNames">
-  </mv-radio-group>
-  <pre>{{mvfData.favoriteColor}}</pre>
+  <!--<h2>mv-radiogroup</h2>-->
+  <!--<mv-radio-group label="Qual sua cor favorita?" id="mvf-radiogroup" name="favoriteColor"-->
+  <!--ng-model="mvfData.favoriteColor"-->
+  <!--options="colorNames">-->
+  <!--</mv-radio-group>-->
+  <!--<pre>{{mvfData.favoriteColor}}</pre>-->
 
-  <h2>mv-file</h2>
-  <mv-file label="Avatar" id="mvf-file" name="avatar" icon="camera-retro"
-           url="/index.html"
-           ng-model="mvfData.avatar">
-  </mv-file>
-  <pre>{{mvfData.avatar}}</pre>
+  <!--<h2>mv-file</h2>-->
+  <!--<mv-file label="Avatar" id="mvf-file" name="avatar" icon="camera-retro"-->
+  <!--url="/index.html"-->
+  <!--ng-model="mvfData.avatar">-->
+  <!--</mv-file>-->
+  <!--<pre>{{mvfData.avatar}}</pre>-->
 
 </form>
 
-<p>==================</p>
-
-<form class="mv-form mv-form-icon" novalidate style="display: none;">
 
 <!--Info (Information)-->
-<div class="mv-control mv-control-icon">
-  <mv-i icon="question-circle"></mv-i>
-  <label for="mvFormInfoName">Info</label>
-  <input type="text" name="toggleName" id="mvFormInfoName"
-         disabled
-         class="mv-control-info"
-         ng-model="mvFormData.textInfo"/>
-</div>
+<section class="demo-section">
+  <header>
+    <h1>Info
+      <small>.mv-control-info</small>
+    </h1>
+  </header>
+
+  <div class="mv-control mv-control-icon">
+    <mv-i name="question-circle"></mv-i>
+    <label for="mvf-version">Info</label>
+    <input type="text" name="toggleName" id="mvf-version" disabled
+           class="mv-control-info mv-control-value"
+           ng-model="mvfData.version"/>
+  </div>
+
+  <pre>
+    &lt;div class=&quot;mv-control mv-control-icon&quot;&gt;
+      &lt;mv-i name=&quot;question-circle&quot;&gt;&lt;/mv-i&gt;
+      &lt;label for=&quot;mvf-version&quot;&gt;Info&lt;/label&gt;
+      &lt;input type=&quot;text&quot; name=&quot;toggleName&quot; id=&quot;mvf-version&quot; disabled
+             class=&quot;mv-control-info mv-control-value&quot;
+             ng-model=&quot;mvfData.version&quot;/&gt;
+    &lt;/div&gt;</pre>
+
+  <!--<h2>mv-info</h2>-->
+
+  <!--<mv-info display="info" label="Info" name="question-circle"-->
+  <!--ng-model="mvfData.version"></mv-info>-->
+
+  <!--<pre>{{mvfData.version}}</pre>-->
+
+
+</section>
+
 
 <!--Text-->
-<div class="mv-control mv-control-warning mv-control-icon">
-  <mv-i icon="user"></mv-i>
-  <label for="mvFormTextName">Text</label>
-  <input type="text" name="textName" id="mvFormTextName" value=""
-         class="mv-control-input"
-         placeholder="Value"
-         ng-model="mvFormData.textName"/>
-</div>
+<section class="demo-section">
+  <header>
+    <h1>Input
+      <small>.mv-control-input</small>
+    </h1>
+  </header>
 
-<!--E-mail-->
-<div class="mv-control mv-control-icon">
-  <mv-i icon="envelope"></mv-i>
-  <label for="mvFormEmailName">E-mail</label>
-  <input type="email" name="emailName" id="mvFormEmailName" value=""
-         class="mv-control-input"
-         placeholder="meuemail@dominio.com"
-         ng-model="mvFormData.textEmail"/>
-</div>
 
-<!--Password-->
-<div class="mv-control">
-  <label for="mvFormPasswordName">Password</label>
-  <input type="password" name="passwordName" id="mvFormPasswordName" value=""
-         class="mv-control-input"
-         placeholder="****"
-         ng-model="mvFormData.textPassword"/>
-</div>
+  <!--<mv-input label="Text" id="mvf-user" name="user" icon="user"-->
+  <!--ng-model="mvfData.user"></mv-input>-->
+  <!--<pre>{{mvfData.user}}</pre>-->
 
-<!--Range-->
-<div class="mv-control">
-  <label for="mvFormRangeName">Range</label>
-  <input type="number" name="toggleName" id="mvFormRangeName" value="1"
-         class="mv-control-input"
-         ng-model="mvFormData.textRange"/>
-</div>
-
-<!--Toggle-->
-<div class="mv-control mv-control-toggle mv-control-button">
-  <label for="mvFormToggleName">Toggle</label>
-
-  <div class="mv-control-value" ng-switch="mvFormData.textToggle">
-    <span ng-switch-when="0">Value Off</span>
-    <span ng-switch-when="1">Value On</span>
+  <div class="mv-control mv-control-warning mv-control-icon">
+    <mv-i name="user"></mv-i>
+    <label for="mvFormTextName">Text</label>
+    <input type="text" name="textName" id="mvFormTextName" value=""
+           class="mv-control-input"
+           placeholder="Value"
+           ng-model="mvfData.user"/>
   </div>
-  <input type="number" name="toggleName" id="mvFormToggleName" value="1"
-         class="mv-control-input"
-         ng-model="mvFormData.textToggle"/>
 
-  <div class="mv-control-button-area">
-    <button class="mv-btn" type="button"
-            ng-switch="mvFormData.textToggle">
-      <mv-i class="mv-btn-off" icon="toggle-off" ng-switch-when="0"></mv-i>
-      <mv-i class="mv-btn-on" icon="toggle-on" ng-switch-when="1"></mv-i>
-    </button>
+  <pre>
+    &lt;div class=&quot;mv-control mv-control-warning mv-control-icon&quot;&gt;
+      &lt;mv-i name=&quot;user&quot;&gt;&lt;/mv-i&gt;
+      &lt;label for=&quot;mvFormTextName&quot;&gt;Text&lt;/label&gt;
+      &lt;input type=&quot;text&quot; name=&quot;textName&quot; id=&quot;mvFormTextName&quot; value=&quot;&quot;
+             class=&quot;mv-control-input&quot;
+             placeholder=&quot;Value&quot;
+             ng-model=&quot;mvfData.user&quot;/&gt;
+    &lt;/div&gt;</pre>
+
+
+  <!--E-mail-->
+
+  <!--<mv-input type="email" label="E-mail" id="mvf-email" name="email" icon="envelope"-->
+  <!--ng-model="mvfData.email"></mv-input>-->
+  <!--<pre>{{mvfData.email}}</pre>-->
+
+  <div class="mv-control mv-control-icon">
+    <mv-i name="envelope"></mv-i>
+    <label for="mvFormEmailName">E-mail</label>
+    <input type="email" name="emailName" id="mvFormEmailName" value=""
+           class="mv-control-input"
+           placeholder="meuemail@dominio.com"
+           ng-model="mvfData.email"/>
   </div>
-</div>
+  <code>E-mail: {{mvfData.email}}</code>
+  <pre>
+    &lt;div class=&quot;mv-control mv-control-icon&quot;&gt;
+      &lt;mv-i name=&quot;envelope&quot;&gt;&lt;/mv-i&gt;
+      &lt;label for=&quot;mvFormEmailName&quot;&gt;E-mail&lt;/label&gt;
+      &lt;input type=&quot;email&quot; name=&quot;emailName&quot; id=&quot;mvFormEmailName&quot; value=&quot;&quot;
+             class=&quot;mv-control-input&quot;
+             placeholder=&quot;meuemail@dominio.com&quot;
+             ng-model=&quot;mvFormData.textEmail&quot;/&gt;
+    &lt;/div&gt;</pre>
+
+  <!--Password-->
+
+  <!--<mv-input type="password" label="Password" id="mvf-password" name="pasword"-->
+  <!--ng-model="mvfData.password"></mv-input>-->
+  <!--<pre>{{mvfData.password}}</pre>-->
+
+  <div class="mv-control">
+    <label for="mvFormPasswordName">Password</label>
+    <input type="password" name="passwordName" id="mvFormPasswordName" value=""
+           class="mv-control-input"
+           placeholder="****"
+           ng-model="mvfData.password"/>
+  </div>
+
+  <code>Password: {{mvfData.password}}</code>
+  <pre>
+    &lt;div class=&quot;mv-control&quot;&gt;
+      &lt;label for=&quot;mvFormPasswordName&quot;&gt;Password&lt;/label&gt;
+      &lt;input type=&quot;password&quot; name=&quot;passwordName&quot; id=&quot;mvFormPasswordName&quot; value=&quot;&quot;
+             class=&quot;mv-control-input&quot;
+             placeholder=&quot;****&quot;
+             ng-model=&quot;mvfData.password&quot;/&gt;
+    &lt;/div&gt;</pre>
+
+  <!--Range-->
+
+  <!--<mv-input type="number" label="Number" id="mvf-number" name="number"-->
+  <!--ng-model="mvfData.number"></mv-input>-->
+  <!--<pre>{{mvfData.number}}</pre>-->
+
+  <div class="mv-control">
+    <label for="mvFormRangeName">Range</label>
+    <input type="number" name="toggleName" id="mvFormRangeName" value="1"
+           class="mv-control-input"
+           ng-model="mvfData.number"/>
+  </div>
+  <code>Number: {{mvfData.number}}</code>
+
+  <pre>
+    &lt;div class=&quot;mv-control&quot;&gt;
+      &lt;label for=&quot;mvFormRangeName&quot;&gt;Range&lt;/label&gt;
+      &lt;input type=&quot;number&quot; name=&quot;toggleName&quot; id=&quot;mvFormRangeName&quot; value=&quot;1&quot;
+             class=&quot;mv-control-input&quot;
+             ng-model=&quot;mvfData.number&quot;/&gt;
+    &lt;/div&gt;</pre>
 
 
-<!--Select-->
-<div class="mv-control">
-  <label for="mvFormSelectName">Selecione sua cor favorita</label>
-  <select id="mvFormSelectName" name="selectName"
-          class="mv-control-select"
-          ng-model="mvFormData.selectName"
-          ng-options="color.name for color in colors">
-  </select>
-</div>
+</section>
 
-<!--Check list-->
-<div class="mv-control mv-control-checklist mv-control-button mv-control-icon mv-control-setup ">
-  <mv-i icon="question-circle"></mv-i>
-  <label>Check List</label>
+
+<section class="demo-section">
+
+<form class="mv-form mv-form-icon" novalidate>
+
+
+
+
+  <!--Toggle-->
+  <div class="mv-control mv-control-toggle mv-control-button">
+    <label for="mvFormToggleName">Toggle</label>
+
+    <div class="mv-control-value" ng-switch="mvFormData.textToggle">
+      <span ng-switch-when="0">Value Off</span>
+      <span ng-switch-when="1">Value On</span>
+    </div>
+    <input type="number" name="toggleName" id="mvFormToggleName" value="1"
+           class="mv-control-input"
+           ng-model="mvFormData.textToggle"/>
+
+    <div class="mv-control-button-area">
+      <button class="mv-btn" type="button"
+              ng-switch="mvFormData.textToggle">
+        <mv-i class="mv-btn-off" name="toggle-off" ng-switch-when="0"></mv-i>
+        <mv-i class="mv-btn-on" name="toggle-on" ng-switch-when="1"></mv-i>
+      </button>
+    </div>
+  </div>
+
+
+  <!--Select-->
+  <div class="mv-control">
+    <label for="mvFormSelectName">Selecione sua cor favorita</label>
+    <select id="mvFormSelectName" name="selectName"
+            class="mv-control-select"
+            ng-model="mvFormData.selectName"
+            ng-options="color.name for color in colors">
+    </select>
+  </div>
+
+  <!--Check list-->
+  <div class="mv-control mv-control-checklist mv-control-button mv-control-icon mv-control-setup ">
+    <mv-i name="question-circle"></mv-i>
+    <label>Check List</label>
       <span class="mv-control-value">
         {{mvFormData.textCheck}}
       </span>
 
-  <div class="mv-control-button-area">
-    <button type="button" class="mv-btn">
-      <mv-i icon="angle-down"></mv-i>
-    </button>
+    <div class="mv-control-button-area">
+      <button type="button" class="mv-btn">
+        <mv-i name="angle-down"></mv-i>
+      </button>
+    </div>
+    <ul class="mv-control-setup-area mv-container-fluid">
+      <li class="mv-row">
+        <div class="mv-col xs-10">Em pé</div>
+        <div class="mv-control-area mv-col xs-2">
+          <input type="checkbox" class="mv-control-checkbox"
+                 ng-model="mvFormData.textCheck.empe"/>
+        </div>
+      </li>
+      <li class="mv-row">
+        <div class="mv-col xs-10">Sentado</div>
+        <div class="mv-control-area mv-col xs-2">
+          <input type="checkbox" class="mv-control-checkbox"
+                 ng-model="mvFormData.textCheck.sentado"/>
+        </div>
+      </li>
+    </ul>
   </div>
-  <ul class="mv-control-setup-area mv-container-fluid" ng-show="true">
-    <li class="mv-row">
-      <div class="mv-col xs-10">Em pé</div>
-      <div class="mv-control-area mv-col xs-2">
-        <input type="checkbox" class="mv-control-checkbox"
-               ng-model="mvFormData.textCheck.empe"/>
-      </div>
-    </li>
-    <li class="mv-row">
-      <div class="mv-col xs-10">Sentado</div>
-      <div class="mv-control-area mv-col xs-2">
-        <input type="checkbox" class="mv-control-checkbox"
-               ng-model="mvFormData.textCheck.sentado"/>
-      </div>
-    </li>
-  </ul>
-</div>
 
-<!--Radio List -->
-<div class="mv-control mv-control-radiogroup mv-control-setup mv-control-button">
-  <label>Radio List</label>
+  <!--Radio List -->
+  <div class="mv-control mv-control-radiogroup mv-control-setup mv-control-button">
+    <label>Radio List</label>
       <span class="mv-control-value">
         {{mvFormData.textRadio}}
       </span>
 
-  <div class="mv-control-button-area">
-    <button type="button" class="mv-btn">
-      <mv-i icon="angle-down"></mv-i>
-    </button>
+    <div class="mv-control-button-area">
+      <button type="button" class="mv-btn">
+        <mv-i name="angle-down"></mv-i>
+      </button>
+    </div>
+    <ul class="mv-control-setup-area mv-container-fluid" ng-show="true">
+      <li class="mv-row">
+        <div class="mv-col xs-10">Em pé</div>
+        <div class="mv-control-area mv-col xs-2">
+          <input type="radio" class="mv-control-radio" value="Em pé"
+                 ng-model="mvFormData.textRadio"/>
+        </div>
+      </li>
+      <li class="mv-row">
+        <div class="mv-col xs-10">Sentado</div>
+        <div class="mv-control-area mv-col xs-2">
+          <input type="radio" class="mv-control-radio" value="Sentado"
+                 ng-model="mvFormData.textRadio"/>
+        </div>
+      </li>
+    </ul>
   </div>
-  <ul class="mv-control-setup-area mv-container-fluid" ng-show="true">
-    <li class="mv-row">
-      <div class="mv-col xs-10">Em pé</div>
-      <div class="mv-control-area mv-col xs-2">
-        <input type="radio" class="mv-control-radio" value="Em pé"
-               ng-model="mvFormData.textRadio"/>
-      </div>
-    </li>
-    <li class="mv-row">
-      <div class="mv-col xs-10">Sentado</div>
-      <div class="mv-control-area mv-col xs-2">
-        <input type="radio" class="mv-control-radio" value="Sentado"
-               ng-model="mvFormData.textRadio"/>
-      </div>
-    </li>
-  </ul>
-</div>
 
-<!--File-->
-<div class="mv-control mv-control-file mv-control-icon mv-control-button mv-control-setup">
-  <mv-i icon="camera-retro"></mv-i>
-  <label for="mvFormFileName">File</label>
+  <!--File-->
+  <div class="mv-control mv-control-file mv-control-icon mv-control-button mv-control-setup">
+    <mv-i name="camera-retro"></mv-i>
+    <label for="mvFormFileName">File</label>
       <span class="mv-control-value">
         {{mvFormData.fileName.file[0]}}
       </span>
 
-  <div class="mv-control-button-area">
-    <button type="button" class="mv-btn">
-      <mv-i icon="paperclip"></mv-i>
-    </button>
-  </div>
-  <div class="mv-control-setup-area" ng-show="true">
-    <div class="mv-control-file-area">
-      <input type="file" id="mvFormFileName" name="fileName"
-             ng-model="mvFormData.fileName"/>
+    <div class="mv-control-button-area">
+      <button type="button" class="mv-btn">
+        <mv-i name="paperclip"></mv-i>
+      </button>
     </div>
-    <div class="mv-control-file-upload-area">
-      <mv-i icon="cloud-upload"></mv-i>
-      Clique ou arraste seu arquivo
+    <div class="mv-control-setup-area">
+      <div class="mv-control-file-area">
+        <input type="file" id="mvFormFileName" name="fileName"
+               ng-model="mvFormData.fileName"/>
+      </div>
+      <div class="mv-control-file-upload-area">
+        <mv-i name="cloud-upload"></mv-i>
+        Clique ou arraste seu arquivo
+      </div>
     </div>
   </div>
-</div>
 
-<!--Date-->
-<div class="mv-control mv-control-button mv-control-setup">
-  <label for="mvFormDateName">Date</label>
-  <input type="date" name="dateName" id="mvFormDateName" value=""
-         class="mv-control-input"
-         ng-model="mvFormData.textDate"/>
+  <!--Date-->
+  <div class="mv-control mv-control-button mv-control-setup">
+    <label for="mvFormDateName">Date</label>
+    <input type="date" name="dateName" id="mvFormDateName" value=""
+           class="mv-control-input"
+           ng-model="mvFormData.textDate"/>
 
-  <div class="mv-control-button-area">
-    <button type="button" class="mv-btn">
-      <mv-i icon="calendar"></mv-i>
-    </button>
+    <div class="mv-control-button-area">
+      <button type="button" class="mv-btn">
+        <mv-i name="calendar"></mv-i>
+      </button>
+    </div>
+    <div class="mv-control-setup-area" ng-show="true">
+      calendário
+    </div>
   </div>
-  <div class="mv-control-setup-area" ng-show="true">
-    calendário
   </div>
-</div>
-</div>
 
-<!--Time-->
-<div class="mv-control mv-control-button mv-control-setup">
-  <label for="mvFormDatetimeName">Time</label>
-  <input type="datetime" name="datetimeName" id="mvFormDatetimeName" value=""
-         class="mv-control-input"
-         ng-model="mvFormData.textDateTime"/>
+  <!--Time-->
+  <div class="mv-control mv-control-button mv-control-setup">
+    <label for="mvFormDatetimeName">Time</label>
+    <input type="datetime" name="datetimeName" id="mvFormDatetimeName" value=""
+           class="mv-control-input"
+           ng-model="mvFormData.textDateTime"/>
 
-  <div class="mv-control-button-area">
-    <button type="button" class="mv-btn">
-      <mv-i icon="clock-o"></mv-i>
-    </button>
+    <div class="mv-control-button-area">
+      <button type="button" class="mv-btn">
+        <mv-i name="clock-o"></mv-i>
+      </button>
+    </div>
+    <div class="mv-control-setup-area" ng-show="true">
+      time selector
+    </div>
   </div>
-  <div class="mv-control-setup-area" ng-show="true">
-    time selector
-  </div>
-</div>
 
-<!--Color-->
-<div class="mv-control mv-control-button mv-control-setup">
-  <label for="mvFormColorName">Color</label>
-  <input type="text" name="colorName" id="mvFormColorName" value="f4450c"
-         class="mv-control-input"
-         ng-model="mvFormData.textColor"/>
+  <!--Color-->
+  <div class="mv-control mv-control-button mv-control-setup">
+    <label for="mvFormColorName">Color</label>
+    <input type="text" name="colorName" id="mvFormColorName" value="f4450c"
+           class="mv-control-input"
+           ng-model="mvFormData.textColor"/>
 
-  <div class="mv-control-button-area">
-    <button type="button" class="mv-btn">
-      <mv-i icon="eyedropper"></mv-i>
-    </button>
+    <div class="mv-control-button-area">
+      <button type="button" class="mv-btn">
+        <mv-i name="eyedropper"></mv-i>
+      </button>
+    </div>
+    <div class="mv-control-setup-area" ng-show="true">
+      color selector
+    </div>
   </div>
-  <div class="mv-control-setup-area" ng-show="true">
-    color selector
-  </div>
-</div>
 </form>
 </section>
 

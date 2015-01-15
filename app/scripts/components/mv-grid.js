@@ -1,7 +1,7 @@
 angular.module('mvUi.Grid', [])
   .directive('mvCol', ['$parse', '$compile', function ($parse, $compile) {
     return {
-      restrict: 'EAC',
+      restrict: 'EA',
       template: '',
       transclude: true,
       controller: function ($scope, $element, $attrs) {
@@ -54,7 +54,7 @@ angular.module('mvUi.Grid', [])
   }])
   .directive('mvRow', [function () {
     return {
-      restrict: 'EAC',
+      restrict: 'EA',
       template: '',
       transclude: true,
       link: function (scope, element, attrs, mvRowCtrl, transclude) {
@@ -77,7 +77,7 @@ angular.module('mvUi.Grid', [])
   }])
   .directive('mvContainer',[function(){
     return {
-      restrict: 'EAC',
+      restrict: 'EA',
       scope:{
         mode: '@'
       },

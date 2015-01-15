@@ -1,7 +1,7 @@
 angular.module('mvUi.Icon',[])
   .directive('mvI',[function(){
     return {
-      restrict: 'EAC',
+      restrict: 'EA',
       template: '<i class="{{prefix}} {{prefix}}-{{icon}}"></i>',
       scope:{
         icon: '@name',
