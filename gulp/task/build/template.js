@@ -16,7 +16,7 @@ gulp.task('build:template', function () {
     standalone: true
   };
 
-  gulp.src(dirDev + 'partials/directives/**/*.html')
+  gulp.src(dirDev + 'partials/**/*.html')
     .pipe($.angularTemplatecache(tcOptions))
     .pipe($.ngAnnotate())
     .pipe($.uglify())

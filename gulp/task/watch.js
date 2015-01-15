@@ -25,7 +25,7 @@ gulp.task('watch', function () {
   gulp.watch([dirDev + "images/**/*.{gif,png,jpg}"], ['tool:img']);
 
   //#== Directives in partials
-  gulp.watch(dirDev + "partials/directives/**/*.html", ['build:template']);
+  gulp.watch(dirDev + "partials/**/*.html", ['build:template']);
 
   //#== Demo
   gulp.watch("demo/styles/**/*.scss", ['demo:sass']);
