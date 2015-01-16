@@ -1,59 +1,6 @@
-angular.module('mvUi.Button',[])
-  .directive('mvBtn', function ($parse) {
-    return {
-      restrict: 'C',
-      scope: {
-        icon: '@',
-        border: '@',
-        color: '@',
-        disabled: '@',
-        behavior: '@',
-        active: '@'
-      },
-      controller: function ($scope, $element, $attrs) {
-        $scope.active = false;
-
-        $scope.toogleActive = function () {
-          $scope.active = !$scope.active;
-        };
-
-        $scope.$watch('active', function (newValue) {
-          if (newValue) {
-            $element.addClass('active');
-          } else {
-            $element.removeClass('active');
-          }
-        });
-      },
-      link: function (scope, element, attrs, ctrl, transclude) {
-        scope.icon = angular.isDefined(scope.icon) ? scope.icon : false;
-        scope.border = angular.isDefined(scope.border) ? scope.border : false;
-        scope.color = angular.isDefined(scope.color) ? scope.color : 'default';
-
-        if (angular.isDefined(scope.disabled)) {
-          element.addClass('disabled');
-        }
-
-        if (scope.icon) {
-          var icon = angular.element('<i>');
-          icon.addClass('fa');
-          icon.addClass('fa-' + scope.icon);
-          icon.addClass('fa-fw');
-          element.prepend(icon);
-        }
-
-        if (scope.border) {
-          element.addClass(scope.border);
-        }
-
-        if (angular.isDefined(scope.border)) {
-          element.addClass(scope.color);
-        } else {
-          element.addClass('default');
-        }
-      }
-    };
-  })
+angular.module('mvUi.Button',[
+  'mvUi.Button.Btn'
+])
 
   .directive('mvBtnRadio', function ($parse) {
     return {

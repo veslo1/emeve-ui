@@ -1,25 +1,112 @@
-<h1>Conjunto de Ícones</h1>
+<h1>Ícones</h1>
 
 <section class="demo-section">
   <header>
-    <h1>Ícone
-      <small>.mv-icon</small>
+    <h1>
+      mv-icon
+      <small>[restrict: (A)]</small>
     </h1>
+
+    <p>Pode ser utilizado tanto como atributo <code>mv-icon</code> como classe <code>.mv-icon</code>.
+      Recomenda-se utilizar com o elemento <code>i</code>.</p>
+
   </header>
 
-  <h2>Nome
-    <small>data-name</small>
-  </h2>
-  <pre>&lt;mv-i name=&quot;user&quot;&gt;&lt;mv-i/&gt;</pre>
-  <mv-i name="user"></mv-i>
+  <h2>Atributos</h2>
 
-  <h2>Prefixo
-    <small>data-prefix</small>
-  </h2>
-  <pre>&lt;mv-i name=&quot;cog&quot; prefix=&quot;fac&quot;&gt;&lt;mv-i/&gt;</pre>
-  <mv-i name="cog" prefix="fa"></mv-i>
+  <ul>
+    <li>
+      <h3>name
+        <small>*obrigatório</small>
+      </h3>
+      <p>Nome que será utilizado no ícone segundo uma tabela definida com os ícones cadastrados</p>
+    </li>
+    <li>
+      <h3>fixed</h3>
+      <p>Define ícones com uma largura fixa. Ótimo para usar quando diferentes larguras de ícone estão fora de
+        alinhamento. Especialmente útil em coisas como listas de navegação e grupos de listas.</p>
+    </li>
+    <li>
+      <h3>
+        flip
+        <small>[h,v,a] {default:h}</small>
+      </h3>
+      <p>Cria efeito espelhamento tanto na vertical e/ou na horizontal. Com a opção <code>h</code> para horizontal,
+        <code>v</code> para vertical e <code>a</code> para ambos.</p>
+    </li>
+    <li>
+      <h3>inverse</h3>
+      <p>Altera para uma cor invertida. Usualmente utilizado em pilha de ícones.</p>
+    </li>
+    <li>
+      <h3>prefix
+        <small>{default: fa}</small>
+      </h3>
+      <p>Prefixo do recurso de fontes utilizada. Por padrão é utilizado <strong>fa</strong> por causa da inclusão do
+        FontAwesome. Mas pode ser alterado conforme a biblioteca de ícones de sua escolha.</p>
+    </li>
+    <li>
+      <h3>rotate
+        <small>[90, 180, 270]</small>
+      </h3>
+      <p>Rotaciona o ícone em 90º, 180º ou 270º</p>
+    </li>
+    <li>
+      <h3>spin</h3>
+      <p>Efetua uma animação onde o ícone fica girando em seu eixo central.</p>
+    </li>
+    <li>
+      <h3>zoom
+        <small>[lg, 2x, 3x, 4x, 5x]</small>
+      </h3>
+      <p>Aumenta o tamanho do ícone</p>
+    </li>
+  </ul>
+
+  <h2>Uso</h2>
+
+  <pre>&lt;i mv-icon name=&quot;user&quot;&gt;&lt;i/&gt;</pre>
+
+  <i mv-icon name="star"></i>
+  <i mv-icon name="globe" fixed></i>
+  <i mv-icon name="globe" spin></i><br/>
+  <i mv-icon name="user" zoom="lg"></i>
+  <i mv-icon name="globe" zoom="2x"></i>
+  <i mv-icon name="glass" zoom="3x"></i>
+  <i mv-icon name="tag" zoom="4x"></i>
+  <i mv-icon name="book" zoom="5x"></i><br/>
+  <i mv-icon name="user" zoom="lg"></i>
+  <i mv-icon name="globe" zoom="2x" flip="h"></i>
+  <i mv-icon name="glass" zoom="3x" flip="v"></i>
+  <i mv-icon name="tag" zoom="4x" flip="a"></i>
+  <i mv-icon name="book" zoom="5x" flip></i>
 
 </section>
+
+<section class="demo-section">
+  <header>
+    <h1>
+      mv-icon-list
+      <small>[restrict: (A)]</small>
+    </h1>
+
+    <p>Recomenda-se utilizar com o elemento <code>ul</code>.</p>
+  </header>
+
+  <h2>Uso</h2>
+
+  <pre>&lt;ul mv-icon-list&gt;
+  [...]
+&lt;/ul&gt;</pre>
+
+  <ul mv-icon-list>
+    <li><i mv-icon name="check-square"></i> um</li>
+    <li><i class="fa-li" mv-icon name="square"></i> dois</li>
+    <li><i mv-icon name="square"></i> três</li>
+    <li><i mv-icon name="square"></i> Quatro</li>
+  </ul>
+</section>
+<!--
 
 
 <section class="demo-section">
@@ -34,14 +121,14 @@
 </section>
 <form action="">
 
-  <mv-input label="Pesquisar" id="mvf-criterio" name="criterio" icon="search"
-            placeholder="Qual item você gostaria de ver?"
-            ng-model="criterio"></mv-input>
+  <input label="Pesquisar" id="mvf-criterio" name="criterio" icon="search"
+         placeholder="Qual item você gostaria de ver?"
+         ng-model="criterio"/>
 </form>
 <mv-container>
   <mv-row>
-    <div class="mv-col sm-10 md-3" ng-repeat="icon in icons | filter: criterio">
-      <mv-i name="{{icon.id}}"></mv-i>
+    <div class="mv-col sm-10 md-4" ng-repeat="icon in icons | filter: criterio">
+      <i mv-icon name="{{icon.id}}"></i>
       <span>{{icon.name}}</span>
     </div>
   </mv-row>
@@ -49,3 +136,4 @@
     Erro ao Carregar
   </div>
 </mv-container>
+-->

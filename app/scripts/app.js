@@ -4,6 +4,8 @@ var mvUi = angular.module('mvUi', [
   'ngResource',
   'ngSanitize',
   'ngTouch',
+  'mvUi.Config',
+  'mvUi.Core',
   'mvUi.Template',
   'mvUi.Control',
   'mvUi.Control.Toggle',

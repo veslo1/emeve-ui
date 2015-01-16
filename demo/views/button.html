@@ -1,197 +1,258 @@
-<h1>
-  Botões
-</h1>
+<h1>Botões</h1>
 
 <section class="demo-section">
   <header>
-    <h1>Tipos</h1>
+    <h1>
+      Uso
+    </h1>
+
+  </header>
+  <p>Pode ser utilizado tanto como atributo <code>mv-btn</code> como classe <code>.mv-btn</code>. Recomenda-se utilizar
+    com o elemento <code>button</code>. Veja o exemplo abaixo:</p>
+  <pre>&lt;button mv-btn&gt;Default&lt;/button&gt;</pre>
+</section>
+
+<section class="demo-section">
+  <header>
+    <h1>
+      Cor
+      <small>data-color</small>
+    </h1>
+  </header>
+  <p>Para cada estado existe um botão respectivo. Basta adicionar a classe com nome na cor.</p>
+
+  <p>Ao utilizar o atributo <code>color</code></p>
+
+  <table class="mv-table">
+    <thead>
+    <tr>
+      <th>Componente</th>
+      <th>Cor</th>
+      <th>Descrição</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <button mv-btn>Default</button>
+      </td>
+      <td>default</td>
+      <td>Botão padrão</td>
+    </tr>
+    <tr>
+      <td>
+        <button mv-btn data-color="info">Info</button>
+      </td>
+      <td>info</td>
+      <td>Botão de informações</td>
+    </tr>
+    <tr>
+      <td>
+        <button mv-btn data-color="error">Error</button>
+      </td>
+      <td>error</td>
+      <td>Botão de operações realizadas com erros</td>
+    </tr>
+    <tr>
+      <td>
+        <button mv-btn data-color="success">Success</button>
+      </td>
+      <td>success</td>
+      <td>Botão de operações realizadas com sucesso</td>
+    </tr>
+    <tr>
+      <td>
+        <button mv-btn data-color="warning">Warning</button>
+      </td>
+      <td>warning</td>
+      <td>Botão de atenção</td>
+    </tr>
+    <tr>
+      <td>
+        <button mv-btn data-color="muted">Muted</button>
+      </td>
+      <td>muted</td>
+      <td>Botão desativado</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<section class="demo-section">
+  <header>
+    <h1>Ícones</h1>
   </header>
 
-  <button class="mv-btn default">Default</button>
-  <button class="mv-btn info">Info</button>
-  <button class="mv-btn error">Error</button>
-  <button class="mv-btn success">Success</button>
-  <button class="mv-btn warning">Warning</button>
-  <button class="mv-btn muted">Muted</button>
+  <button mv-btn>
+    <i mv-icon name="globe"></i> Default
+  </button>
+</section>
+<!--
+
+<section class="demo-section">
+  <header>
+    <h1>Bordas</h1>
+  </header>
+
+  <h2>Arredondadas(.rounded)</h2>
+
+  <button class="mv-btn rounded default">Default</button>
+  <button class="mv-btn rounded info">Info</button>
+  <button class="mv-btn rounded error">Error</button>
+  <button class="mv-btn rounded success">Success</button>
+  <button class="mv-btn rounded warning">Warning</button>
+  <button class="mv-btn rounded muted">Muted</button>
+
+  <h2>Radiais (.radius)</h2>
+
+  <button class="mv-btn radius default">Default</button>
+  <button class="mv-btn radius info">Info</button>
+  <button class="mv-btn radius error">Error</button>
+  <button class="mv-btn radius success">Success</button>
+  <button class="mv-btn radius warning">Warning</button>
+  <button class="mv-btn radius muted">Muted</button>
+
+  <h2>Circulares(.circle)</h2>
+
+  <button class="mv-btn circle default">
+    <i class="fa fa-angle-down"></i>
+  </button>
+  <button class="mv-btn circle info">
+    <i class="fa fa-facebook"></i>
+  </button>
+  <button class="mv-btn circle error">
+    <i class="fa fa-youtube-play"></i>
+  </button>
+  <button class="mv-btn circle success">
+    <i class="fa fa-check"></i>
+  </button>
+  <button class="mv-btn circle warning">
+    <i class="fa fa-exclamation-triangle"></i>
+  </button>
+  <button class="mv-btn circle muted">
+    <i class="fa fa-spinner fa-spin"></i>
+  </button>
 </section>
 
 
 <section class="demo-section">
-    <header>
-        <h1>Ícones</h1>
-    </header>
+  <header>
+    <h1>Component</h1>
 
-    <button class="mv-btn default">
-        <i class="fa fa-globe"></i> Default
-    </button>
-    <button class="mv-btn info">
-        <i class="fa fa-globe"></i> Info
-    </button>
-    <button class="mv-btn error">
-        <i class="fa fa-globe"></i> Error
-    </button>
-    <button class="mv-btn success">
-        <i class="fa fa-globe"></i> Success
-    </button>
-    <button class="mv-btn warning">
-        <i class="fa fa-globe"></i> Warning
-    </button>
-    <button class="mv-btn muted">
-        <i class="fa fa-globe"></i> Muted
-    </button>
-    <button class="mv-btn inverse">
-        <i class="fa fa-globe"></i> Inverse
-    </button>
-</section>
+    <p>Para uso interno na construção de componentes</p>
+  </header>
 
-<section class="demo-section">
-    <header>
-        <h1>Bordas</h1>
-    </header>
-
-    <h2>Arredondadas(.rounded)</h2>
-
-    <button class="mv-btn rounded default">Default</button>
-    <button class="mv-btn rounded info">Info</button>
-    <button class="mv-btn rounded error">Error</button>
-    <button class="mv-btn rounded success">Success</button>
-    <button class="mv-btn rounded warning">Warning</button>
-    <button class="mv-btn rounded muted">Muted</button>
-
-    <h2>Radiais (.radius)</h2>
-
-    <button class="mv-btn radius default">Default</button>
-    <button class="mv-btn radius info">Info</button>
-    <button class="mv-btn radius error">Error</button>
-    <button class="mv-btn radius success">Success</button>
-    <button class="mv-btn radius warning">Warning</button>
-    <button class="mv-btn radius muted">Muted</button>
-
-    <h2>Circulares(.circle)</h2>
-
-    <button class="mv-btn circle default">
-        <i class="fa fa-angle-down"></i>
-    </button>
-    <button class="mv-btn circle info">
-        <i class="fa fa-facebook"></i>
-    </button>
-    <button class="mv-btn circle error">
-        <i class="fa fa-youtube-play"></i>
-    </button>
-    <button class="mv-btn circle success">
-        <i class="fa fa-check"></i>
-    </button>
-    <button class="mv-btn circle warning">
-        <i class="fa fa-exclamation-triangle"></i>
-    </button>
-    <button class="mv-btn circle muted">
-        <i class="fa fa-spinner fa-spin"></i>
-    </button>
-</section>
-
-
-<section class="demo-section">
-    <header>
-        <h1>Component</h1>
-
-        <p>Para uso interno na construção de componentes</p>
-    </header>
-
-    <button class="mv-btn component error">
-        <i class="fa fa-times"></i>
-    </button>
-    <button class="mv-btn component success">
-        <i class="fa fa-check"></i>
-    </button>
-    <button class="mv-btn component warning">
-        <i class="fa fa-phone"></i>
-    </button>
+  <button class="mv-btn component error">
+    <i class="fa fa-times"></i>
+  </button>
+  <button class="mv-btn component success">
+    <i class="fa fa-check"></i>
+  </button>
+  <button class="mv-btn component warning">
+    <i class="fa fa-phone"></i>
+  </button>
 
 </section>
 
 <section class="demo-section">
-    <header>
-        <h1>Disabled</h1>
-    </header>
+  <header>
+    <h1>Disabled</h1>
+  </header>
 
-    <button disabled="disabled" class="mv-btn default">Default</button>
-    <button disabled="disabled" class="mv-btn info">Info</button>
-    <button disabled="disabled" class="mv-btn error">Error</button>
-    <button disabled="disabled" class="mv-btn success">Success</button>
-    <button disabled="disabled" class="mv-btn warning">Warning</button>
-    <button disabled="disabled" class="mv-btn muted">Muted</button>
+  <button disabled="disabled" class="mv-btn default">Default</button>
+  <button disabled="disabled" class="mv-btn info">Info</button>
+  <button disabled="disabled" class="mv-btn error">Error</button>
+  <button disabled="disabled" class="mv-btn success">Success</button>
+  <button disabled="disabled" class="mv-btn warning">Warning</button>
+  <button disabled="disabled" class="mv-btn muted">Muted</button>
 </section>
 
 <section class="demo-section">
-    <header>
-        <h1>Grupo</h1>
-        <p>Importado de <a href="http://getbootstrap.com/components/button.html#btn-groups" target="_blank">Bootstrap 3</a> e
-        adaptado para AngularJS</p>
-    </header>
+  <header>
+    <h1>Grupo</h1>
 
-    <h2>Horizontal <small>.mv-btn-group</small></h2>
+    <p>Importado de <a href="http://getbootstrap.com/components/button.html#btn-groups" target="_blank">Bootstrap 3</a>
+      e
+      adaptado para AngularJS</p>
+  </header>
+
+  <h2>Horizontal
+    <small>.mv-btn-group</small>
+  </h2>
     <pre>&lt;div class=&quot;mv-btn-group&quot;&gt;
     &lt;button class=&quot;mv-btn&quot;&gt;Item 1&lt;/button&gt;
     &lt;button class=&quot;mv-btn&quot;&gt;Item 2&lt;/button&gt;
     &lt;button class=&quot;mv-btn&quot;&gt;Item 3&lt;/button&gt;
 &lt;/div&gt;</pre>
 
-    <div class="mv-btn-group">
-        <button class="mv-btn">Item 1</button>
-        <button class="mv-btn">Item 2</button>
-        <button class="mv-btn">Item 3</button>
-    </div>
+  <div class="mv-btn-group">
+    <button class="mv-btn">Item 1</button>
+    <button class="mv-btn">Item 2</button>
+    <button class="mv-btn">Item 3</button>
+  </div>
 
-    <h2>Vertical <small>.mv-btn-group-vertical</small></h2>
+  <h2>Vertical
+    <small>.mv-btn-group-vertical</small>
+  </h2>
 
-    <div class="mv-btn-group-vertical">
-        <button class="mv-btn">Item 1</button>
-        <button class="mv-btn">Item 2</button>
-        <button class="mv-btn">Item 3</button>
-    </div>
-
-</section>
-
-<section class="demo-section">
-    <header>
-        <h1>AngularJS</h1>
-    </header>
-
-    <h2>Tipos <small>data-border="circle | radius | rounded"</small></h2>
-    <pre>&lt;button class=&quot;mv-btn&quot; data-border=&quot;circle&quot;&gt;i&lt;/button&gt;</pre>
-    <button class="mv-btn" data-border="circle">i</button>
-
-
-    <h2>Cor <small>data-color="default | info | success | error | warning | muted"</small></h2>
-    <pre>&lt;button class=&quot;mv-btn&quot; data-color=&quot;info&quot;&gt;Info&lt;/button&gt;</pre>
-    <button class="mv-btn" data-border="rounded" data-color="info">Info</button>
-
-
-    <h2>Ícone <small>data-icon</small></h2>
-    <pre>&lt;button class=&quot;mv-btn warning&quot; data-icon=&quot;pencil&quot;&gt;Editar&lt;/button&gt;</pre>
-    <button class="mv-btn warning" data-icon="pencil">Editar</button>
+  <div class="mv-btn-group-vertical">
+    <button class="mv-btn">Item 1</button>
+    <button class="mv-btn">Item 2</button>
+    <button class="mv-btn">Item 3</button>
+  </div>
 
 </section>
 
 <section class="demo-section">
-    <header>
-        <h1>Radio</h1>
-    </header>
-    <strong>Número da sala: <code>{{numSala}}</code></strong> <br/>
-    <div class="mv-btn-group">
-        <button class="mv-btn-radio default" value="1" ng-model="numSala">Item 1</button>
-        <button class="mv-btn-radio default" value="2" ng-model="numSala">Item 2</button>
-        <button class="mv-btn-radio info" value="3" ng-model="numSala">Item 3</button>
-    </div>
+  <header>
+    <h1>AngularJS</h1>
+  </header>
+
+  <h2>Tipos
+    <small>data-border="circle | radius | rounded"</small>
+  </h2>
+  <pre>&lt;button class=&quot;mv-btn&quot; data-border=&quot;circle&quot;&gt;i&lt;/button&gt;</pre>
+  <button class="mv-btn" data-border="circle">i</button>
+
+
+  <h2>Cor
+    <small>data-color="default | info | success | error | warning | muted"</small>
+  </h2>
+  <pre>&lt;button class=&quot;mv-btn&quot; data-color=&quot;info&quot;&gt;Info&lt;/button&gt;</pre>
+  <button class="mv-btn" data-border="rounded" data-color="info">Info</button>
+
+
+  <h2>Ícone
+    <small>data-icon</small>
+  </h2>
+  <pre>&lt;button class=&quot;mv-btn warning&quot; data-icon=&quot;pencil&quot;&gt;Editar&lt;/button&gt;</pre>
+  <button class="mv-btn warning" data-icon="pencil">Editar</button>
+
 </section>
 
 <section class="demo-section">
-    <header>
-        <h1>Checkbox</h1>
-    </header>
-    <strong>Blastoise!!! <code>{{blastoise}}</code></strong> <br/>
-    <div class="mv-btn-group">
-        <button class="mv-btn-checkbox default" ng-model="blastoise">Blastoise</button>
-    </div>
+  <header>
+    <h1>Radio</h1>
+  </header>
+  <strong>Número da sala: <code>{{numSala}}</code></strong> <br/>
+
+  <div class="mv-btn-group">
+    <button class="mv-btn-radio default" value="1" ng-model="numSala">Item 1</button>
+    <button class="mv-btn-radio default" value="2" ng-model="numSala">Item 2</button>
+    <button class="mv-btn-radio info" value="3" ng-model="numSala">Item 3</button>
+  </div>
 </section>
 
+<section class="demo-section">
+  <header>
+    <h1>Checkbox</h1>
+  </header>
+  <strong>Blastoise!!! <code>{{blastoise}}</code></strong> <br/>
+
+  <div class="mv-btn-group">
+    <button class="mv-btn-checkbox default" ng-model="blastoise">Blastoise</button>
+  </div>
+</section>
+
+-->
