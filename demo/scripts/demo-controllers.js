@@ -38,9 +38,6 @@ angular.module('EmeveUiApp.Controller', [])
       $scope.error = false;
       $scope.criterio = '';
 
-      $scope.$watch('criterio',function(newValue){
-        console.log(newValue)
-      });
 
       $http.get('/data/icons.json')
         .success(function(data,status,headers,config){

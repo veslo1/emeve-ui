@@ -45,6 +45,16 @@
     .demo-section header h1, .demo-section header h2, .demo-section header h3, .demo-section header h4, .demo-section header h5, .demo-section header h6 {
       color: #9c0; }
 
+#listIcons {
+  min-height: 300px; }
+
+.item-icon {
+  min-height: 100px;
+  text-align: center; }
+  .item-icon span {
+    display: block;
+    text-align: center; }
+
 @media (min-width: 720px) {
   #mainHeader img {
     max-width: 512px;
