@@ -14,7 +14,6 @@ var mvUi = angular.module('mvUi', [
   'mvUi.Form',
   'mvUi.Grid', //review
   'mvUi.Icon',
-  'mvUi.PageHeader', //review
   'mvUi.Table',
   'mvUi.Tooltip', //review
   'mvUi.Progress', // review
