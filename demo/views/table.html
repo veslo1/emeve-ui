@@ -2,11 +2,40 @@
 
 <section class="demo-section">
   <header>
-    <h1>.mv-table</h1>
+    <h1>
+      mv-table
+      <small>[restrict: (A)]</small>
+    </h1>
+    <p>Estilização padrão de tabelas</p>
   </header>
-  <p>Estilização padrão de tabelas</p>
 
-  <table class="mv-table">
+  <h2>Atributos</h2>
+
+  <ul>
+    <li>
+      <h3>bordered</h3>
+      <p>Adiciona uma borda fina para transformar em quadro.</p>
+    </li>
+    <li>
+      <h3>condensed</h3>
+      <p>Uma tabela mais estreita</p>
+    </li>
+    <li>
+      <h3>hover</h3>
+      <p>Adicona efeito ao passar o cursor sobre a linha.</p>
+    </li>
+    <li>
+      <h3>responsive</h3>
+      <p>Uma camada que permite visualizar a tabela por completa em dispositivos móveis</p>
+    </li>
+    <li>
+      <h3>striped</h3>
+      <p>Uma camada que permite visualizar a tabela por completa em dispositivos móveis</p>
+    </li>
+  </ul>
+
+  <table mv-table
+         data-normal>
     <caption>Optional table caption.</caption>
     <thead>
     <tr>
@@ -41,9 +70,9 @@
 
 <section class="demo-section">
   <header>
-    <h1>.table-striped</h1>
+    <h1>.mv-table-striped</h1>
+    <p>Adiciona linhas</p>
   </header>
-  <p>Adiciona linhas</p>
 
   <table class="mv-table table-striped">
     <thead>
@@ -79,9 +108,9 @@
 
 <section class="demo-section">
   <header>
-    <h1>.table-bordered</h1>
+    <h1>.mv-table-bordered</h1>
+    <p>Adiciona uma borda fina para transformar em quadro.</p>
   </header>
-  <p>Adiciona uma borda fina para transformar em quadro.</p>
 
   <table class="mv-table table-bordered">
     <thead>
@@ -121,9 +150,9 @@
 
 <section class="demo-section">
   <header>
-    <h1>.table-hover</h1>
+    <h1>.mv-table-hover</h1>
+    <p>Adicona efeito ao passar o cursor sobre a linha.</p>
   </header>
-  <p>Efeito ao passar o cursor sobre a linha.</p>
 
   <table class="mv-table table-hover">
     <thead>
@@ -158,9 +187,9 @@
 
 <section class="demo-section">
   <header>
-    <h1>.table-condensed</h1>
+    <h1>.mv-table-condensed</h1>
+    <p>Uma tabela mais estreita</p>
   </header>
-  <p>Uma tabela mais estreita</p>
 
   <table class="mv-table table-condensed">
     <thead>
@@ -195,9 +224,9 @@
 
 <section class="demo-section">
   <header>
-    <h1>.table-responsive</h1>
+    <h1>.mv-table-responsive</h1>
+    <p>Uma camada que permite visualizar a tabela por completa em dispositivos móveis</p>
   </header>
-  <p>Uma camada que permite visualizar a tabela por completa em dispositivos móveis</p>
 
   <div class="table-responsive">
     <table class="mv-table">
@@ -242,7 +271,7 @@
       </tr>
       </tbody>
     </table>
-  </div><!-- /.table-responsive -->
+  </div><!-- /.mv-table-responsive -->
 </section>
 
 
@@ -253,8 +282,8 @@
       Estado
       <small>[.active; .success; .info; .warning; .error]</small>
     </h1>
+    <p>Vários destaques para as linhas</p>
   </header>
-  <p>Vários destaques para as linhas</p>
 
   <table class="mv-table table-condensed">
     <thead>

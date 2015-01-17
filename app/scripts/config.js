@@ -11,6 +11,16 @@ var mvUi = angular.module('mvUi.Config', [])
           default:{
             prefix: 'fa'
           }
+        },
+        table:{
+          cssClass: 'mv-table',
+          default:{
+            normalize:[
+              'condensed',
+              'hover',
+              'striped'
+            ]
+          }
         }
       }
     };
