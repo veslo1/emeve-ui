@@ -8,6 +8,7 @@ angular.module('mvUi.Grid.Col', [
   function (mvConfig, mvGridService, $parse) {
     return {
       restrict: 'EA',
+      scope:false,
       transclude: true,
       link: function (scope, iElement, iAttrs, ctrl, transclude) {
         var componentConfig = mvConfig.config.component.grid.col;
@@ -41,12 +42,8 @@ angular.module('mvUi.Grid.Col', [
           });
         }
 
-        transclude(scope.$parent, function (clone) {
+        transclude(scope.$new(), function (clone) {
           iElement.append(clone);
-
-          if(angular.isDefined(iAttrs.debug)){
-            console.log(clone)
-          }
         });
       }
     };
