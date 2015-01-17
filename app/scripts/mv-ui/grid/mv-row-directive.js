@@ -30,29 +30,3 @@ angular.module('mvUi.Grid.Row', [
       }
     };
   }]);
-
-/*
-
- .directive('mvRow', [function () {
- return {
- restrict: 'EA',
- template: '',
- transclude: true,
- link: function (scope, element, attrs, mvRowCtrl, transclude) {
- scope.layoutFill = (angular.isDefined(attrs.fill)) ? JSON.parse(attrs.layoutFill) : false;
- element.append(transclude());
-
- if(!element.hasClass('mv-row')){
- element.addClass('mv-row');
- }
-
- if (scope.layoutFill) {
- var max = element[0].offsetHeight;
- angular.forEach(element[0].children, function (value) {
- angular.element(value).css('height', max + 'px');
- });
- }
-
- }
- };
- }])*/

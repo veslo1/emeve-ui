@@ -1,12 +1,9 @@
 <h1>Grade de layout</h1>
 
 <mv-container>
-  <mv-col size="{xs:4}" ng-repeat="item in [{a:'a1'},{a:'a2'},{a:'a3'}]" debug>
-    <div class="test-content">{{item.a}}{{$index}}</div>
-  </mv-col>
-  <mv-row>
-    <mv-col size="{xs:4}" ng-repeat="item in [1,2,3,4,5,6,7,8,9]">
-      <div class="test-content">{{item}}i{{id}}</div>
+  <mv-row ng-repeat="linha in [1,2,3]">
+    <mv-col size="{xs:4}" ng-repeat="item in [1,2,3]">
+      <div class="test-content">{{linha}}{{item}}</div>
     </mv-col>
   </mv-row>
 </mv-container>
