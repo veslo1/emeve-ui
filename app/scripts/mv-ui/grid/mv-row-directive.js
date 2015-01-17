@@ -13,8 +13,6 @@ angular.module('mvUi.Grid.Row', [
         var componentConfig = mvConfig.config.component.grid.row;
         scope.layoutFill = (angular.isDefined(iAttrs.fill)) ? JSON.parse(iAttrs.layoutFill) : false;
 
-        iElement.append(transclude());
-
         if (!iElement.hasClass(componentConfig.cssClass)) {
           iElement.addClass(componentConfig.cssClass);
         }
@@ -25,6 +23,10 @@ angular.module('mvUi.Grid.Row', [
             angular.element(value).css('height', max + 'px');
           });
         }
+
+        transclude(scope.$new(), function (clone) {
+          iElement.append(clone);
+        });
       }
     };
   }]);
