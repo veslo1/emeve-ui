@@ -12,7 +12,6 @@ var dirTmp = mvApp.config().dir().tmp;
 gulp.task('server', ['watch'], function () {
   mvApp.initStaticServer([
       dirDev,
-      'demo/',
       dirTmp
     ], [
       dirDev + '*.html',
