@@ -7,31 +7,34 @@ var mvUi = angular.module('mvUi.Config', [])
         btn: {
           cssClass: 'mv-btn'
         },
-        icon:{
+        icon: {
           cssClass: 'mv-icon',
-          default:{
+          default: {
             prefix: 'fa'
           }
         },
-        form:{
+        form: {
           cssClass: 'mv-form'
         },
-        grid:{
-          col:{
+        grid: {
+          col: {
             cssClass: 'mv-col'
           },
-          container:{
+          container: {
             cssStrictClass: 'mv-container',
-            cssFluidClass: 'mv-container-fluid'
+            cssFluidClass: 'mv-container-fluid',
+            default: {
+              mode: 'fluid'
+            }
           },
-          row:{
+          row: {
             cssClass: 'mv-row'
           }
         },
-        table:{
+        table: {
           cssClass: 'mv-table',
-          default:{
-            normalize:[
+          default: {
+            normalize: [
               'condensed',
               'hover',
               'striped'

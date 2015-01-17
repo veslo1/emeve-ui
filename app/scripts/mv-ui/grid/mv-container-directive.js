@@ -1,28 +1,22 @@
-angular.module('mvUi.Grid.Row', [
+angular.module('mvUi.Grid.Container', [
   'mvUi.Config',
   'mvUi.Grid.Service'
-]).directive('mvRow', [
+]).directive('mvContainer', [
   'mvConfigService',
-  'mvGridService',
-  '$parse',
-  function (mvConfig, mvGridService, $parse) {
+  function (mvConfig) {
     return {
       restrict: 'EA',
       transclude: true,
       link: function (scope, iElement, iAttrs, ctrl, transclude) {
-        var componentConfig = mvConfig.config.component.grid.row;
-        scope.layoutFill = (angular.isDefined(iAttrs.fill)) ? JSON.parse(iAttrs.layoutFill) : false;
+        var componentConfig = mvConfig.config.component.grid.container;
+        var className = componentConfig.cssFluidClass;
+        scope.mode = (angular.isDefined(iAttrs.mode)) ? iAttrs.mode : componentConfig.default.mode;
 
-        if (!iElement.hasClass(componentConfig.cssClass)) {
-          iElement.addClass(componentConfig.cssClass);
+        if(scope.mode === 'static'){
+          className = componentConfig.cssStrictClass;
         }
 
-        if (scope.layoutFill) {
-          var max = iElement[0].offsetHeight;
-          angular.forEach(iElement[0].children, function (value) {
-            angular.element(value).css('height', max + 'px');
-          });
-        }
+        iElement.addClass(className);
 
         transclude(scope.$new(), function (clone) {
           iElement.append(clone);
@@ -30,29 +24,24 @@ angular.module('mvUi.Grid.Row', [
       }
     };
   }]);
-
 /*
 
- .directive('mvRow', [function () {
- return {
- restrict: 'EA',
- template: '',
- transclude: true,
- link: function (scope, element, attrs, mvRowCtrl, transclude) {
- scope.layoutFill = (angular.isDefined(attrs.fill)) ? JSON.parse(attrs.layoutFill) : false;
- element.append(transclude());
+.directive('mvContainer',[function(){
+  return {
+    restrict: 'EA',
+    scope:{
+      mode: '@'
+    },
+    link: function(scope,element,attrs){
+      scope.mode = (angular.isDefined(scope.mode)) ? scope.mode : '';
 
- if(!element.hasClass('mv-row')){
- element.addClass('mv-row');
- }
+      if(scope.mode === 'static'){
+        element.addClass('container');
+      }else{
+        element.addClass('container-fluid');
 
- if (scope.layoutFill) {
- var max = element[0].offsetHeight;
- angular.forEach(element[0].children, function (value) {
- angular.element(value).css('height', max + 'px');
- });
- }
-
- }
- };
- }])*/
+      }
+    }
+  };
+}]);
+*/
