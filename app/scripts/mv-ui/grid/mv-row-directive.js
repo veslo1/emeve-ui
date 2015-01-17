@@ -3,9 +3,7 @@ angular.module('mvUi.Grid.Row', [
   'mvUi.Grid.Service'
 ]).directive('mvRow', [
   'mvConfigService',
-  'mvGridService',
-  '$parse',
-  function (mvConfig, mvGridService, $parse) {
+  function (mvConfig) {
     return {
       restrict: 'EA',
       transclude: true,
