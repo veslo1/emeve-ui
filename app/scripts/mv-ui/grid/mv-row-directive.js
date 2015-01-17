@@ -1,6 +1,5 @@
 angular.module('mvUi.Grid.Row', [
   'mvUi.Config',
-  'mvUi.Grid.Service'
 ]).directive('mvRow', [
   'mvConfigService',
   function (mvConfig) {
