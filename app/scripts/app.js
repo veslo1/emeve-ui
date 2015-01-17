@@ -7,17 +7,18 @@ var mvUi = angular.module('mvUi', [
   'mvUi.Config',
   'mvUi.Core',
   'mvUi.Template',
-  'mvUi.Button',
-  'mvUi.Control',
-  'mvUi.Control.Toggle',
-  'mvUi.Dropdown',
-  'mvUi.Grid',
+  'mvUi.Button', // review
+  'mvUi.Control', //review
+  'mvUi.Control.Toggle', //remove
+  'mvUi.Dropdown', //review
+  'mvUi.Form',
+  'mvUi.Grid', //review
   'mvUi.Icon',
-  'mvUi.PageHeader',
+  'mvUi.PageHeader', //review
   'mvUi.Table',
-  'mvUi.Tooltip',
-  'mvUi.Progress',
-  'mvUi.Switch'
+  'mvUi.Tooltip', //review
+  'mvUi.Progress', // review
+  'mvUi.Switch' //review
 ]);
 
 mvUi.constant("Modernizr",Modernizr);

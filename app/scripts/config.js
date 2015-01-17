@@ -12,6 +12,9 @@ var mvUi = angular.module('mvUi.Config', [])
             prefix: 'fa'
           }
         },
+        form:{
+          cssClass: 'mv-form'
+        },
         table:{
           cssClass: 'mv-table',
           default:{
