@@ -1,6 +1,15 @@
-<h1>
-  Grade de layout
-</h1>
+<h1>Grade de layout</h1>
+
+<mv-container>
+  <mv-col size="{xs:4}" ng-repeat="item in [{a:'a1'},{a:'a2'},{a:'a3'}]" debug>
+    <div class="test-content">{{item.a}}</div>
+  </mv-col>
+  <mv-row>
+    <mv-col size="{xs:4}" ng-repeat="item in [1,2,3,4,5,6,7,8,9]">
+      <div class="test-content">{{item}}i{{id}}</div>
+    </mv-col>
+  </mv-row>
+</mv-container>
 
 <section class="demo-section">
   <header>
@@ -17,7 +26,6 @@
   <p>Delimita o conteúdo em uma grade responsiva</p>
 
 </section>
-
 
 
 <mv-container>
