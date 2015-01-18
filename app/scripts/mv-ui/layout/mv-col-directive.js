@@ -11,7 +11,7 @@ angular.module('mvUi.Layout.Col', [
       scope:false,
       transclude: true,
       link: function (scope, iElement, iAttrs, ctrl, transclude) {
-        var componentConfig = mvConfig.config.component.grid.col;
+        var componentConfig = mvConfig.config.component.layout.col;
         scope.layoutObj = {};
         scope.size = angular.isDefined(iAttrs.size) ? $parse(iAttrs.size)(scope) : {};
         scope.layoutPush = angular.isDefined(iAttrs.push) ? $parse(iAttrs.push)(scope) : {};

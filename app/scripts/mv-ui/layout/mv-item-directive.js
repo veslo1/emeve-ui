@@ -1,6 +1,6 @@
 angular.module('mvUi.Layout.Item', [
   'mvUi.Config',
-]).directive('mvCol', [
+]).directive('mvItem', [
   'mvConfigService',
   function (mvConfig, mvGridService) {
     return {
@@ -8,7 +8,7 @@ angular.module('mvUi.Layout.Item', [
       scope:false,
       transclude: true,
       link: function (scope, iElement, iAttrs, ctrl, transclude) {
-        var componentConfig = mvConfig.config.component.grid.col;
+        var componentConfig = mvConfig.config.component.layout.col;
 
         transclude(scope.$new(), function (clone) {
           iElement.append(clone);

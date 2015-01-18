@@ -16,7 +16,7 @@ var mvUi = angular.module('mvUi.Config', [])
         form: {
           cssClass: 'mv-form'
         },
-        grid: {
+        layout: {
           col: {
             cssClass: 'mv-col'
           },
