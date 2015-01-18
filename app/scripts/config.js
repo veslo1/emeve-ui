@@ -27,6 +27,9 @@ var mvUi = angular.module('mvUi.Config', [])
               mode: 'fluid'
             }
           },
+          item:{
+            cssClass: 'mv-item'
+          },
           row: {
             cssClass: 'mv-row'
           }
