@@ -1,190 +1,288 @@
-<h1>Grade de layout</h1>
-
-<mv-container>
-  <mv-row ng-repeat="linha in [1,2,3]">
-    <mv-col size="{xs:4}" ng-repeat="item in [1,2,3]">
-      <div class="test-content">{{linha}}{{item}}</div>
-    </mv-col>
-  </mv-row>
-</mv-container>
+<h1>Layout</h1>
 
 <section class="demo-section">
   <header>
-    <h1>Container
-      <small>.mv-container[-fluid]</small>
+    <h1>
+      mv-container
+      <small>[restrict: (EA)]</small>
     </h1>
-    Implementa um container básico para layout. Por padrão tem característica de exterder 100% da tela horizontalmente
-    , ou melhor, é fluido.
+    <p>Implementa um container básico para layout. Por padrão tem característica de exterder 100% da tela
+      horizontalmente, ou melhor, é fluido.</p>
   </header>
 
-  <h2>Mode
-    <small>[static]</small>
-  </h2>
-  <p>Delimita o conteúdo em uma grade responsiva</p>
+  <h2>Atributos</h2>
 
+  <ul>
+    <li>
+      <h3>fluid</h3>
+
+      <p>Altera o modo de operação para <code>fluid</code>, assim o seu comprimento é ajustado ao conteúdo da tela do
+        dispositivo.</p>
+    </li>
+    <li>
+      <h3>
+        mode
+        <small>[static,fluid] {default:fluid}</small>
+      </h3>
+      <p>Altera o modo de comprimento para <code>fluid</code> (porcentagem) ou <code>static</code>(definido para cada
+        resolução).</p>
+    </li>
+    <li>
+      <h3>static</h3>
+
+      <p>Altera o modo de operação para <code>static</code></p>
+    </li>
+  </ul>
+
+  <h2>Implementação</h2>
+
+  <p>Implementando por elemento:</p>
+  <pre>&lt;mv-container&gt;
+  [...]
+&lt;/mv-container&gt;</pre>
+
+  <p>Implementando por classe:</p>
+  <pre>&lt;div class=&quot;mv-container&quot;&gt;
+  [...]
+&lt;/div&gt;</pre>
+</section>
+
+<section class="demo-section">
+  <header>
+    <h1>
+      mv-row
+      <small>[restrict: (EA)]</small>
+    </h1>
+    <p>Insere linhas no layout da grade. Recomenda-se utilizar o elemento <code>div</code> caso seja implementado a
+      diretiva por classe.</p>
+  </header>
+
+  <h2>Atributos</h2>
+
+  <ul>
+    <li>
+      <h3>fill</h3>
+
+      <p>Define que todas as colunas tenham o mesmo tamanho.</p>
+    </li>
+  </ul>
+
+  <h2>Implementação</h2>
+
+  <p>Implementado por elemento:</p>
+  <pre>&lt;mv-container&gt;
+  &lt;mv-row&gt;
+    [...]
+  &lt;/mv-row&gt;
+&lt;/mv-container&gt;</pre>
+
+  <p>Implementando por classe</p>
+  <pre>&lt;div class=&quot;mv-container&quot;&gt;
+  &lt;div class=&quot;mv-row&quot;&gt;
+    [...]
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+</section>
+
+<!--Colunas-->
+
+<section class="demo-section">
+  <header>
+    <h1>
+      mv-col
+      <small>[restrict: (EA)]</small>
+    </h1>
+    <p>Insere colunas no layout da grade. Recomenda-se utilizar o elemento <code>div</code> caso seja implementado a
+      diretiva por classe.</p>
+  </header>
+
+  <h2>Tamanhos</h2>
+
+  <p>Cada tamanho se refere a uma largura de tela do dispositivo. Os tamanhos definidos são para o modo <i>strict</i>:</p>
+  <table mv-table normal>
+    <thead>
+    <tr>
+      <td>Tela</td>
+      <td>Tamanho</td>
+      <td>Prefixo</td>
+      <td>Dispositivo</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Extra Small</td>
+      <td>até 768px</td>
+      <td>xs</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Small</td>
+      <td>768px</td>
+      <td>sm</td>
+      <td>Tablet</td>
+    </tr>
+    <tr>
+      <td>Medium</td>
+      <td>992px</td>
+      <td>md</td>
+      <td>Desktop</td>
+    </tr>
+    <tr>
+      <td>Large</td>
+      <td>1200px</td>
+      <td>lg</td>
+      <td>Wide desktop</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h2>Atributos</h2>
+
+  <ul>
+    <li>
+      <h3>size</h3>
+
+      <p>Adiciona valores aos comprimentos de cada dispositivo. Ex.: {xs:1,sm:2,md:4,lg:8}.</p>
+    </li>
+    <li>
+      <h3>pull</h3>
+      <p>Puxa a coluna em <i>x</i>. Ex.: {lg:8}. Assim a coluna será puxada 8 colunas em dispositivos wide desktop</p>
+    </li>
+    <li>
+      <h3>push</h3>
+      <p>Empurra a coluna. Ex.: {sm:3}. Assim a coluna será empurrada 3 colunas em dispositivos mobile</p>
+    </li>
+  </ul>
+
+  <h2>Implementação</h2>
+
+  <p>Implementado por elemento:</p>
+  <pre>&lt;mv-container&gt;
+  &lt;mv-row&gt;
+    &lt;mv-col size=&quot;{xs:6, sm:3,md:4,lg:2}&quot;&gt;
+
+    &lt;/mv-col&gt;
+  &lt;/mv-row&gt;
+&lt;/mv-container&gt;</pre>
+
+
+  <p>Implementando por classe</p>
+  <pre>&lt;div class=&quot;mv-container&quot;&gt;
+  &lt;div class=&quot;mv-row&quot;&gt;
+    &lt;div class=&quot;mv-col xs-6 sm-3 md-4 lg-2&quot;&gt;
+      [...]
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
 </section>
 
 
-<mv-container>
-  <mv-row>
-    <mv-col size="{xs:4}">
-      <div class="test-content">coluna</div>
-    </mv-col>
-    <mv-col size="{xs:4}">
-      <div class="test-content">coluna</div>
-    </mv-col>
-    <mv-col size="{xs:4}">
-      <div class="test-content">coluna</div>
-    </mv-col>
-  </mv-row>
-  <mv-row>
-    <mv-col size="{xs:4}">
-      <div class="test-content">coluna</div>
-    </mv-col>
-    <mv-col size="{xs:8}">
-      <mv-row>
-        <mv-col size="{xs:4}">
-          <div class="test-content">coluna</div>
-        </mv-col>
-        <mv-col size="{xs:4}">
-          <div class="test-content">coluna</div>
-        </mv-col>
-        <mv-col size="{xs:4}">
-          <div class="test-content">coluna</div>
-        </mv-col>
-      </mv-row>
-    </mv-col>
-  </mv-row>
-</mv-container>
+<section class="demo-section">
+  <header>
+    <h1>Exemplos de uso</h1>
+  </header>
 
+  <h2>Por elementos</h2>
 
+  <mv-container>
+    <mv-row>
+      <mv-col size="{xs:4}">
+        <div class="test-content">coluna</div>
+      </mv-col>
+      <mv-col size="{xs:4}">
+        <div class="test-content">coluna</div>
+      </mv-col>
+      <mv-col size="{xs:4}">
+        <div class="test-content">coluna</div>
+      </mv-col>
+    </mv-row>
+    <mv-row>
+      <mv-col size="{xs:4}">
+        <div class="test-content">coluna</div>
+      </mv-col>
+      <mv-col size="{xs:8}">
+        <mv-row>
+          <mv-col size="{xs:4}">
+            <div class="test-content">coluna</div>
+          </mv-col>
+          <mv-col size="{xs:4}">
+            <div class="test-content">coluna</div>
+          </mv-col>
+          <mv-col size="{xs:4}">
+            <div class="test-content">coluna</div>
+          </mv-col>
+        </mv-row>
+      </mv-col>
+    </mv-row>
+  </mv-container>
 
-<mv-container>
-  <mv-row>
-    <mv-col id="content" size="{sm:12,lg:4}" push="{lg:4}">
-      <h2>Conteúdo</h2>
+  <h2>Atributos push pull</h2>
+  <pre>&lt;mv-container&gt;
+    &lt;mv-row&gt;
+      &lt;mv-col id=&quot;content&quot; size=&quot;{sm:12,lg:4}&quot; push=&quot;{lg:4}&quot;&gt;
+        &lt;h2&gt;Conte&uacute;do&lt;/h2&gt;
 
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-        into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-        release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-    </mv-col>
-    <mv-col id="sidebarLeft" size="{sm:6,lg:4}" pull="{lg:4}">
-      <h2>Esquerda</h2>
+        &lt;p&gt;...&lt;/p&gt;
+      &lt;/mv-col&gt;
+      &lt;mv-col id=&quot;sidebarLeft&quot; size=&quot;{sm:6,lg:4}&quot; pull=&quot;{lg:4}&quot;&gt;
+        &lt;h2&gt;Esquerda&lt;/h2&gt;
 
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-        into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-        release of Letraset sheets containing L
-        orem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        &lt;p&gt;...&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/mv-col&gt;
+      &lt;mv-col id=&quot;sidebarRight&quot; size=&quot;{sm:6,lg:4}&quot;&gt;
+        &lt;h2&gt;Direita&lt;/h2&gt;
+
+        &lt;p&gt;...&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/mv-col&gt;
+    &lt;/mv-row&gt;
+  &lt;/mv-container&gt;</pre>
+
+  <h2>Definição por classe</h2>
+
+  <div class="container-fluid">
+    <div class="mv-row">
+      <div class="mv-col" data-size="{sm:12, lg:4}" data-push="{lg:4}">
+        <h2>This is Content</h2>
+
+        <pre>data-size="{sm:12, lg:4}" data-push="{lg:4}"</pre>
+
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+          into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+          release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+          software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
-    </mv-col>
-    <mv-col id="sidebarRight" size="{sm:6,lg:4}">
-      <h2>Direita</h2>
+      <div class="mv-col" data-size="{sm:6, lg:4}" data-pull="{lg:4}">
 
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-        into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-        release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <h2>This is Left Sidebar</h2>
+        <pre>data-size="{sm:6, lg:4}" data-pull="{lg:4}</pre>
+
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+          into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+          release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+          software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
       </div>
-    </mv-col>
-  </mv-row>
-</mv-container>
-<div class="container-fluid">
-  <div class="mv-row">
+      <div class="mv-col" data-size="{sm:6, lg:4}">
 
-    <div id="sidebar-right" class="mv-col lg-4 sm-6">
+        <h2>This is Right Sidebar</h2>
+        <pre>data-size="{sm:6, lg:4}</pre>
 
-  </div>
-</div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+          into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+          release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+          software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-
-<div class="container-fluid">
-  <div class="mv-row">
-    <div class="mv-col" data-size="{sm:12, lg:4, 'lg-push':4}">
-      <h2>This is Content</h2>
-
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-        into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-        release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-    </div>
-    <div class="mv-col" data-size="{sm:6, lg:4, 'lg-pull':4}">
-
-      <h2>This is Left Sidebar</h2>
-
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-        into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-        release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-    </div>
-    <div class="mv-col" data-size="{sm:6, lg:4}">
-
-      <h2>This is Right Sidebar</h2>
-
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-        into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-        release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<hr/>
 
-<div class="container-fluid">
-  <div class="mv-row">
-    <div class="mv-col" data-size="{sm:12, lg:4}" data-push="{lg:4}">
-      <h2>This is Content</h2>
-
-      <pre>data-size="{sm:12, lg:4}" data-push="{lg:4}"</pre>
-
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-        into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-        release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-    </div>
-    <div class="mv-col" data-size="{sm:6, lg:4}" data-pull="{lg:4}">
-
-      <h2>This is Left Sidebar</h2>
-      <pre>data-size="{sm:6, lg:4}" data-pull="{lg:4}</pre>
-
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-        into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-        release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-    </div>
-    <div class="mv-col" data-size="{sm:6, lg:4}">
-
-      <h2>This is Right Sidebar</h2>
-      <pre>data-size="{sm:6, lg:4}</pre>
-
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-        into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-        release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-        software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-    </div>
-  </div>
-</div>

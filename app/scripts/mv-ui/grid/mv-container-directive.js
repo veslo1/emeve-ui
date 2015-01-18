@@ -12,7 +12,7 @@ angular.module('mvUi.Grid.Container', [
         var className = componentConfig.cssFluidClass;
         scope.mode = (angular.isDefined(iAttrs.mode)) ? iAttrs.mode : componentConfig.default.mode;
 
-        if(scope.mode === 'static'){
+        if (scope.mode === 'static' || (angular.isDefined(iAttrs.static))) {
           className = componentConfig.cssStrictClass;
         }
 
@@ -24,24 +24,3 @@ angular.module('mvUi.Grid.Container', [
       }
     };
   }]);
-/*
-
-.directive('mvContainer',[function(){
-  return {
-    restrict: 'EA',
-    scope:{
-      mode: '@'
-    },
-    link: function(scope,element,attrs){
-      scope.mode = (angular.isDefined(scope.mode)) ? scope.mode : '';
-
-      if(scope.mode === 'static'){
-        element.addClass('container');
-      }else{
-        element.addClass('container-fluid');
-
-      }
-    }
-  };
-}]);
-*/

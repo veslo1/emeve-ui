@@ -8,7 +8,7 @@ angular.module('mvUi.Grid.Row', [
       transclude: true,
       link: function (scope, iElement, iAttrs, ctrl, transclude) {
         var componentConfig = mvConfig.config.component.grid.row;
-        scope.layoutFill = (angular.isDefined(iAttrs.fill)) ? JSON.parse(iAttrs.layoutFill) : false;
+        scope.layoutFill = (angular.isDefined(iAttrs.fill)) ? JSON.parse(iAttrs.fill) : false;
 
         if (!iElement.hasClass(componentConfig.cssClass)) {
           iElement.addClass(componentConfig.cssClass);
