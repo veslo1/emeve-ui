@@ -1,6 +1,5 @@
-angular.module('mvUi.Grid.Container', [
-  'mvUi.Config',
-  'mvUi.Grid.Service'
+angular.module('mvUi.Layout.Container', [
+  'mvUi.Config'
 ]).directive('mvContainer', [
   'mvConfigService',
   function (mvConfig) {

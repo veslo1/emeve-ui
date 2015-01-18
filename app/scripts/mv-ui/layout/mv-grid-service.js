@@ -1,4 +1,4 @@
-angular.module('mvUi.Grid.Service', [
+angular.module('mvUi.Layout.Service', [
   'mvUi.Config'
 ]).service('mvGridService', [
   'mvConfigService',

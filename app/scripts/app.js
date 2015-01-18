@@ -12,7 +12,7 @@ var mvUi = angular.module('mvUi', [
   'mvUi.Control.Toggle', //remove
   'mvUi.Dropdown', //review
   'mvUi.Form',
-  'mvUi.Grid', //review
+  'mvUi.Layout', //review
   'mvUi.Icon',
   'mvUi.Table',
   'mvUi.Tooltip', //review

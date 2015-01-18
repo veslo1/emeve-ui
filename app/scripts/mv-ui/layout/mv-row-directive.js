@@ -1,4 +1,4 @@
-angular.module('mvUi.Grid.Row', [
+angular.module('mvUi.Layout.Row', [
   'mvUi.Config',
 ]).directive('mvRow', [
   'mvConfigService',

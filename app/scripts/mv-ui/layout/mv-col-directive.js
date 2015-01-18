@@ -1,6 +1,6 @@
-angular.module('mvUi.Grid.Col', [
+angular.module('mvUi.Layout.Col', [
   'mvUi.Config',
-  'mvUi.Grid.Service'
+  'mvUi.Layout.Service'
 ]).directive('mvCol', [
   'mvConfigService',
   'mvGridService',
