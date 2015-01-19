@@ -30,6 +30,9 @@ var mvUi = angular.module('mvUi.Config', [])
           item:{
             cssClass: 'mv-item'
           },
+          list:{
+            cssClass: 'mv-list'
+          },
           row: {
             cssClass: 'mv-row'
           }

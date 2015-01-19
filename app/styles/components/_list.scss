@@ -1,0 +1,61 @@
+.mv-list {
+  display: block;
+  @extend .mv-container-fluid;
+
+  .mv-item {
+    display: block;
+    @extend .mv-row;
+    position: relative;
+    padding: .5rem 0;
+    border-bottom: 1px solid #f5f5f5;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+    }
+    p {
+    }
+  }
+
+}
+
+/**
+ * Ladrilho (Tiles)
+ * @deprecated
+ */
+.mv-list-tile {
+  @extend .mv-col;
+}
+
+/*== Posição */
+
+
+/*== Imagens */
+.mv-list-img {
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+  }
+}
+
+/*== Botão */
+.mv-list-button {
+  .mv-btn {
+    min-width: 4rem;
+  }
+}
+
+// Small grid
+@media (min-width: $screen-sm-min) {
+
+}
+
+// Medium grid
+@media (min-width: $screen-md-min) {
+
+}
+
+// Large grid
+@media (min-width: $screen-lg-min) {
+
+}

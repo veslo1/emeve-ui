@@ -1,13 +1,18 @@
-angular.module('mvUi.Layout.Item', [
+angular.module('mvUi.Layout.List', [
   'mvUi.Config',
-]).directive('mvItem', [
+]).directive('mvList', [
   'mvConfigService',
-  function (mvConfig, mvGridService) {
+  function (mvConfig) {
     return {
       restrict: 'EA',
       transclude: true,
       link: function (scope, iElement, iAttrs, ctrl, transclude) {
-        var componentConfig = mvConfig.config.component.layout.item;
+        var componentConfigRow = mvConfig.config.component.layout.row;
+        var componentConfig = mvConfig.config.component.layout.list;
+
+        if (!iElement.hasClass(componentConfigRow.cssClass)) {
+          iElement.addClass(componentConfigRow.cssClass);
+        }
 
         if (!iElement.hasClass(componentConfig.cssClass)) {
           iElement.addClass(componentConfig.cssClass);

@@ -1,25 +1,91 @@
-<h1>
-  Grid system
-</h1>
+<h1>Lista</h1>
 
-<!--Lista de usuários-->
-<mv-list> <!--mv-container-fluid -->
-  <mv-item ng-repeat="i in [1,2,3,4,5,6,7,8]">
-    <mv-item-icon>
-      <mv-i name="user"></mv-i>
-    </mv-item-icon>
-    <mv-item-content>
-      <span class="item-first">Primary</span>
-      <p class="item-description">Descrição multilinha</p>
-    </mv-item-content>
-    <mv-item-button>
-      <mv-btn></mv-btn>
-    </mv-item-button>
-  </mv-item>
-</mv-list>
+<section class="demo-section">
+  <header>
+    <h1>
+      mv-list
+      <small>[restrict: (EA)]</small>
+    </h1>
+    <p>Implementa um container básico para itens a serem listados<code>mv-list</code>. Recomenda-se utilizar a tag <code>li</code>.</p>
+  </header>
 
+  <pre>&lt;ul mv-list&gt;
+  [...]
+&lt;/ul&gt;</pre>
 
+</section>
 
+<section class="demo-section">
+  <header>
+    <h1>
+      mv-item
+      <small>[restrict: (EA)]</small>
+    </h1>
+    <p>Adiciona um item na lista<code>mv-item</code>. Recomenda-se utilizar a tag <code>li</code>.</p>
+  </header>
 
+  <pre>&lt;ul mv-list&gt;
+  &lt;li mv-item&gt;
+    [...]
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
 
-<!--Lista de usuários-->
+</section>
+
+<section class="demo-section">
+  <header>
+    <h1>Demonstração
+    </h1>
+  </header>
+
+  <!--Lista de usuários -->
+  <ul mv-list>
+    <li mv-item ng-repeat="item in [1,2,3]" ng-init="itemStatus=false">
+
+      <mv-col size="{xs:2}" class="mv-list-img">
+        <img src="images/textures/old_mathematics.png" alt=""/>
+      </mv-col>
+
+      <mv-col size="{xs:8}">
+        <h3>Lorem {{$index}}</h3>
+        <h4>Função x</h4>
+        <i mv-icon name="circle"></i> Ativado
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda consectetur cumque delectus
+          deleniti.</p>
+      </mv-col>
+
+      <mv-col size="{xs:2}" class="mv-list-button">
+        <button mv-btn><i mv-icon name="pencil"></i></button>
+      </mv-col>
+
+    </li>
+  </ul>
+  <!--Lista de usuários -->
+
+</section>
+
+<!--<ul class="mv-list">
+  <li class="mv-item" ng-repeat="item in [1,2,3,4,5,6]">
+    <div mv-col class="mv-list-img xs-2">
+      <img src="images/textures/old_mathematics.png" alt=""/>
+    </div>
+    <div mv-col class="xs-10">
+      <div class="mv-row">
+        <div mv-col class="mv-list-content xs-10">
+          <h3>Lorem {{$index}}</h3>
+          <h4>Função x</h4>
+          <i mv-icon name="circle"></i> Ativado
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda consectetur cumque delectus deleniti.</p>
+        </div>
+        <div mv-col class="mv-list-button xs-2">
+          <button mv-btn><i mv-icon name="pencil"></i></button>
+        </div>
+        <div mv-col class="mv-list-content xs-12">
+          <button mv-btn><i mv-icon name="pencil"></i> Adicionar</button>
+          <button mv-btn><i mv-icon name="pencil"></i> Remover</button>
+          <button mv-btn><i mv-icon name="pencil"></i> Buscar</button>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>-->

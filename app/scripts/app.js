@@ -20,4 +20,4 @@ var mvUi = angular.module('mvUi', [
   'mvUi.Switch' //review
 ]);
 
-mvUi.constant("Modernizr",Modernizr);
+mvUi.constant("Modernizr", Modernizr);
