@@ -1,7 +1,7 @@
 Emeve UI
 ==============
 
-User interface for mvCosmos ERP.
+User interface for professional softwares.
 
 ## Author
 
