@@ -9,7 +9,8 @@ var mvUi = angular.module('mvUi.Config', [])
           default:{
             color: 'default',
             component: 'component'
-          }
+          },
+
         },
         icon: {
           cssClass: 'mv-icon',

@@ -10,9 +10,9 @@ angular.module('mvUi.Core.BtnRadio', [
         active: '@?',
         value: '@?'
       },
-      link: function (scope, element, attrs, controllers) {
+      link: function (scope, iElement, iAttrs, controllers) {
 
-        element.addClass('mv-btn');
+        iElement.addClass('mv-btn');
 
         var ngModelCtrl = controllers[0];
         if (!ngModelCtrl) return;
@@ -22,12 +22,12 @@ angular.module('mvUi.Core.BtnRadio', [
         //model -> ui
         ngModelCtrl.$render = function () {
           var analise = angular.equals(ngModelCtrl.$modelValue, scope.$eval(scope.value));
-          element.toggleClass('active', analise);
+          iElement.toggleClass('active', analise);
         };
 
         // ui -> model
-        element.bind('click', function ($event) {
-          var isActive = element.hasClass(scope.active);
+        iElement.bind('click', function ($event) {
+          var isActive = iElement.hasClass(scope.active);
 
           $event.preventDefault();
           scope.$apply(function () {
