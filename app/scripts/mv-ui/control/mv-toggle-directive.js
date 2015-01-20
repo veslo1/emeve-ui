@@ -1,7 +1,6 @@
 angular.module('mvUi.Control.Toggle', [
   'mvUi.Control'
-])
-  .directive('mvToggle', [
+]).directive('mvToggle', [
   '$templateCache',
   function ($templateCache) {
     return {

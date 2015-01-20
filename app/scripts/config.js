@@ -5,7 +5,11 @@ var mvUi = angular.module('mvUi.Config', [])
     this.config = {
       component: {
         btn: {
-          cssClass: 'mv-btn'
+          cssClass: 'mv-btn',
+          default:{
+            color: 'default',
+            component: 'component'
+          }
         },
         icon: {
           cssClass: 'mv-icon',
