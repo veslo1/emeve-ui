@@ -6,12 +6,19 @@
   {{list}}
 </div>
 <ul class="list-inline">
-  <li class="mv-dropdown">
-    <button class="mv-btn default" type="button">
+  <li mv-dropdown>
+    <button mv-btn type="button">
       MENU
     </button>
-    <ul class="dropdown-menu">
-      <li><a ng-click="setStatus(3)">Item</a></li>
+    <ul>
+      <li ng-repeat="item in [1,2,3]">
+        <a ng-click="setStatus(item)">
+          <i mv-icon name="th-list"></i>
+          Item{{item}}
+        </a>
+      </li>
+      <li class="divider"></li>
+      <li><a mv-btn href="#">Texto absurdo sendo escrito nesta área</a></li>
       <li><a ng-click="setStatus('sei la')">Item</a></li>
       <li><a class="mv-btn" ng-click="setStatus('vaaaai')" href="#">Item</a></li>
       <li><a href="#">Item</a></li>

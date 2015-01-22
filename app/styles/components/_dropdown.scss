@@ -8,7 +8,7 @@
   display: inline-block;
   width: 0;
   height: 0;
-  margin-left: 2px;
+  margin-left: .2rem;
   vertical-align: middle;
 }
 // The dropdown wrapper (div)
@@ -26,36 +26,32 @@
 }
 
 // Prevent the focus on the dropdown toggle when closing dropdowns
-.dropdown-toggle:focus {
+.mv-dropdown-toggle:focus {
   outline: 0;
 }
 
 // The dropdown menu (ul)
-.dropdown-menu {
+.mv-dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: -12%;
   left: 0;
   z-index: $zindex-dropdown;
   display: none; // none by default, but block on "open" of the menu
   float: left;
   min-width: 160px;
-  padding: 5px 0;
-  margin: 2px 0 0; // override default ul
+  padding: .2rem 0;
+  margin: .2rem 0 0; // override default ul
   list-style: none;
   font-size: $font-size-base;
   text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
   background-color: $color-light-alt;
   border: none;
+  border-style: solid;
+  border-width: .2rem 0;
+  border-color: $color-default;
   border-radius: $border-radius-base;
   background-clip: padding-box;
 
-  // Aligns the dropdown menu to right
-  //
-  // Deprecated as of 3.1.0 in favor of `.dropdown-menu-[dir]`
-  &.pull-right {
-    right: 0;
-    left: auto;
-  }
 
   // Dividers (basically an hr) within the dropdown
   .divider {
@@ -65,17 +61,19 @@
   // Links within the dropdown menu
   > li > a {
     display: block;
-    padding: 3px 20px;
+    padding: .4rem .6rem .4rem 2.2rem;
     clear: both;
     font-weight: normal;
     line-height: $line-height-base;
     color: $color-black;
     white-space: nowrap; // prevent links from randomly breaking onto new lines
+    cursor: pointer;
+    text-decoration: none;
   }
 }
 
 // Hover/Focus state
-.dropdown-menu > li > a {
+.mv-dropdown-menu > li > a {
   &:hover,
   &:focus {
     text-decoration: none;
@@ -85,7 +83,7 @@
 }
 
 // Active state
-.dropdown-menu > .active > a {
+.mv-dropdown-menu > .active > a {
   &,
   &:hover,
   &:focus {
@@ -100,7 +98,7 @@
 //
 // Gray out text and ensure the hover/focus state remains gray
 
-.dropdown-menu > .disabled > a {
+.mv-dropdown-menu > .disabled > a {
   &,
   &:hover,
   &:focus {
@@ -108,7 +106,7 @@
   }
 }
 // Nuke hover/focus effects
-.dropdown-menu > .disabled > a {
+.mv-dropdown-menu > .disabled > a {
   &:hover,
   &:focus {
     text-decoration: none;
@@ -122,7 +120,7 @@
 // Open state for the dropdown
 .open {
   // Show the menu
-  > .dropdown-menu {
+  > .mv-dropdown-menu {
     display: block;
   }
 
@@ -132,12 +130,25 @@
   }
 }
 
+//Icon position
+.mv-dropdown-menu > li > a > .mv-icon {
+  display: block;
+  float: left;
+  margin-left: -1.4rem;
+  line-height: $line-height-base;
+}
+
+//Button item
+.mv-dropdown-menu > li .mv-btn {
+  text-align: left;
+}
+
 // Menu positioning
 //
-// Add extra class to `.dropdown-menu` to flip the alignment of the dropdown
+// Add extra class to `.mv-dropdown-menu` to flip the alignment of the dropdown
 // menu with the parent.
-.dropdown-menu-right {
-  left: auto; // Reset the default from `.dropdown-menu`
+.mv-dropdown-menu-right {
+  left: auto; // Reset the default from `.mv-dropdown-menu`
   right: 0;
 }
 // With v3, we enabled auto-flipping if you have a dropdown within a right
@@ -146,13 +157,13 @@
 //
 // This is only for left-aligning a dropdown menu within a `.navbar-right` or
 // `.pull-right` nav component.
-.dropdown-menu-left {
+.mv-dropdown-menu-left {
   left: 0;
   right: auto;
 }
 
 // Dropdown section headers
-.dropdown-header {
+.mv-dropdown-header {
   display: block;
   padding: 3px 20px;
   font-size: $font-size-small;
@@ -162,17 +173,17 @@
 }
 
 // Backdrop to catch body clicks on mobile, etc.
-.dropdown-backdrop {
+.mv-dropdown-backdrop {
   position: fixed;
-  left: 0;
-  right: 0;
+  left: 3rem;
+  right: 3rem;
   bottom: 0;
   top: 0;
   z-index: ($zindex-dropdown - 10);
 }
 
 // Right aligned dropdowns
-.pull-right > .dropdown-menu {
+.pull-right > .mv-dropdown-menu {
   right: 0;
   left: auto;
 }
@@ -191,7 +202,7 @@
     content: "";
   }
   // Different positioning for bottom up menu
-  .dropdown-menu {
+  .mv-dropdown-menu {
     top: auto;
     bottom: 100%;
     margin-bottom: 1px;
@@ -205,12 +216,12 @@
 
 @media (min-width: $grid-float-breakpoint) {
   .navbar-right {
-    .dropdown-menu {
+    .mv-dropdown-menu {
       right: 0; left: auto;
     }
     // Necessary for overrides of the default right aligned menu.
     // Will remove come v4 in all likelihood.
-    .dropdown-menu-left {
+    .mv-dropdown-menu-left {
       left: 0; right: auto;
     }
   }

@@ -9,8 +9,7 @@ var mvUi = angular.module('mvUi.Config', [])
           default:{
             color: 'default',
             component: 'component'
-          },
-
+          }
         },
         icon: {
           cssClass: 'mv-icon',
@@ -40,6 +39,18 @@ var mvUi = angular.module('mvUi.Config', [])
           },
           row: {
             cssClass: 'mv-row'
+          }
+        },
+        menu:{
+          dropdown:{
+            cssClass: 'mv-dropdown',
+            css:{
+              backdrop: 'mv-dropdown-backdrop',
+              header: 'mv-dropdown-header',
+              menu: 'mv-dropdown-menu',
+              left: 'mv-dropdown-menu-left',
+              right: 'mv-dropdown-menu-right'
+            }
           }
         },
         table: {

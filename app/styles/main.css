@@ -2124,7 +2124,7 @@ table td[class*="col-"], table th[class*="col-"] {
   display: inline-block;
   width: 0;
   height: 0;
-  margin-left: 2px;
+  margin-left: 0.2rem;
   vertical-align: middle; }
 
 .mv-dropdown {
@@ -2135,30 +2135,30 @@ table td[class*="col-"], table th[class*="col-"] {
       padding: 0 0.5rem 0 0.25rem;
       margin: 0 0 0 0.25rem; }
 
-.dropdown-toggle:focus {
+.mv-dropdown-toggle:focus {
   outline: 0; }
 
-.dropdown-menu {
+.mv-dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: -12%;
   left: 0;
   z-index: 1000;
   display: none;
   float: left;
   min-width: 160px;
-  padding: 5px 0;
-  margin: 2px 0 0;
+  padding: 0.2rem 0;
+  margin: 0.2rem 0 0;
   list-style: none;
   font-size: 16px;
   text-align: left;
   background-color: #f5f5f5;
   border: none;
+  border-style: solid;
+  border-width: 0.2rem 0;
+  border-color: #b4e650;
   border-radius: 4px;
   background-clip: padding-box; }
-  .dropdown-menu.pull-right {
-    right: 0;
-    left: auto; }
-  .dropdown-menu .divider {
+  .mv-dropdown-menu .divider {
     display: block;
     height: 1px;
     margin: 11px 0;
@@ -2166,50 +2166,61 @@ table td[class*="col-"], table th[class*="col-"] {
     border-width: 0 0 0.1rem 0;
     border-style: solid;
     border-color: #e6e6e6; }
-  .dropdown-menu > li > a {
+  .mv-dropdown-menu > li > a {
     display: block;
-    padding: 3px 20px;
+    padding: 0.4rem 0.6rem 0.4rem 2.2rem;
     clear: both;
     font-weight: normal;
     line-height: 1.5;
     color: #222;
-    white-space: nowrap; }
+    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: none; }
 
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+.mv-dropdown-menu > li > a:hover, .mv-dropdown-menu > li > a:focus {
   text-decoration: none;
   color: #fff;
   background-color: #203240; }
 
-.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+.mv-dropdown-menu > .active > a, .mv-dropdown-menu > .active > a:hover, .mv-dropdown-menu > .active > a:focus {
   color: #fff;
   text-decoration: none;
   outline: 0;
   background-color: #b4e650; }
 
-.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+.mv-dropdown-menu > .disabled > a, .mv-dropdown-menu > .disabled > a:hover, .mv-dropdown-menu > .disabled > a:focus {
   color: #969696; }
 
-.dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+.mv-dropdown-menu > .disabled > a:hover, .mv-dropdown-menu > .disabled > a:focus {
   text-decoration: none;
   background-color: transparent;
   background-image: none;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   cursor: not-allowed; }
 
-.open > .dropdown-menu {
+.open > .mv-dropdown-menu {
   display: block; }
 .open > a {
   outline: 0; }
 
-.dropdown-menu-right {
+.mv-dropdown-menu > li > a > .mv-icon {
+  display: block;
+  float: left;
+  margin-left: -1.4rem;
+  line-height: 1.5; }
+
+.mv-dropdown-menu > li .mv-btn {
+  text-align: left; }
+
+.mv-dropdown-menu-right {
   left: auto;
   right: 0; }
 
-.dropdown-menu-left {
+.mv-dropdown-menu-left {
   left: 0;
   right: auto; }
 
-.dropdown-header {
+.mv-dropdown-header {
   display: block;
   padding: 3px 20px;
   font-size: 14px;
@@ -2217,15 +2228,15 @@ table td[class*="col-"], table th[class*="col-"] {
   color: #b4e650;
   white-space: nowrap; }
 
-.dropdown-backdrop {
+.mv-dropdown-backdrop {
   position: fixed;
-  left: 0;
-  right: 0;
+  left: 3rem;
+  right: 3rem;
   bottom: 0;
   top: 0;
   z-index: 990; }
 
-.pull-right > .dropdown-menu {
+.pull-right > .mv-dropdown-menu {
   right: 0;
   left: auto; }
 
@@ -2233,16 +2244,16 @@ table td[class*="col-"], table th[class*="col-"] {
   border-top: 0;
   border-bottom: 4px solid;
   content: ""; }
-.dropup .dropdown-menu, .navbar-fixed-bottom .mv-dropdown .dropdown-menu {
+.dropup .mv-dropdown-menu, .navbar-fixed-bottom .mv-dropdown .mv-dropdown-menu {
   top: auto;
   bottom: 100%;
   margin-bottom: 1px; }
 
 @media (min-width: 768px) {
-  .navbar-right .dropdown-menu {
+  .navbar-right .mv-dropdown-menu {
     right: 0;
     left: auto; }
-  .navbar-right .dropdown-menu-left {
+  .navbar-right .mv-dropdown-menu-left {
     left: 0;
     right: auto; }
  }
@@ -4002,7 +4013,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
