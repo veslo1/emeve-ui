@@ -14,8 +14,6 @@ angular.module('mvUi.Menu.Dropdown', [
           var compConfigBtn = mvConfig.config.component.btn;
           var btn = angular.element(iElement.children()[0]);
           var menu = angular.element(iElement.children()[1]);
-          var menuItens = menu.children();
-
           scope.isOpen = false;
 
           if (!iElement.hasClass(compConfig.cssClass)) {
@@ -36,6 +34,36 @@ angular.module('mvUi.Menu.Dropdown', [
             console.log(compConfig.css.backdrop)
           }
 
+          /**
+           * Habilita fechamento com clique fora
+           * @param touchMode
+           */
+          scope.registerCloseListeners = function(touchMode){
+            if (touchMode) {
+              $document.bind('click', scope.closeCallback);
+              menu.bind('mouseenter', scope.closeCallback);
+            } else {
+              menu.bind('mouseleave', scope.closeCallback);
+            }
+          };
+
+          /**
+           * Remove registros de fechamentos
+           * @param touchMode
+           */
+          scope.unregisterCloseListeners = function(touchMode){
+            if (touchMode) {
+              $document.unbind('click', scope.closeCallback);
+              menu.unbind('mouseenter', scope.closeCallback);
+            } else {
+              menu.unbind('mouseleave', scope.closeCallback);
+            }
+          };
+
+          /**
+           * Abre menu
+           * @param $event
+           */
           scope.openCallback = function ($event) {
             scope.isOpen = true;
             if (angular.isDefined($event)) {
@@ -43,33 +71,57 @@ angular.module('mvUi.Menu.Dropdown', [
             }
             iElement.attr('aria-expanded', scope.isOpen);
             iElement.addClass('open', scope.isOpen);
+            scope.registerCloseListeners(Modernizr.touch);
           };
 
+          /**
+           * Fecha menu
+           * @param $event
+           */
           scope.closeCallback = function ($event) {
+            if (angular.isDefined($event)) {
+              $event.stopPropagation();
+            }
+            console.log(scope.isOpen)
             scope.isOpen = false;
             iElement.removeClass('open', scope.isOpen);
             iElement.attr({'aria-expanded': scope.isOpen});
+
+            scope.unregisterCloseListeners(Modernizr.touch);
           };
 
-          //WAI ARIA
-          iElement.attr({'aria-haspopup': true, 'aria-expanded': false});
+          /**
+           * Adiciona ícone após botão
+           */
+          scope.addCaret = function(){
 
-          //adiciona botão
-          var iE = angular.element('<i>');
-          iE.attr('mv-icon', '');
-          iE.attr('name', 'ellipsis-v');
-          btn.append($compile(iE[0])(scope));
+            var iE = angular.element('<i>');
+            iE.attr('mv-icon', '');
+            iE.attr('name', 'ellipsis-v');
+            btn.append($compile(iE[0])(scope));
+          };
 
-          btn.on('click', scope.openCallback);
-          if(Modernizr.touch){
-            menu.bind('mouseenter', scope.closeCallback);
+          /**
+           * Enable WAI ARIA
+           */
+          scope.enableAria = function(){
+            iElement.attr({'aria-haspopup': true, 'aria-expanded': false});
           }
-          menu.bind('mouseleave click', scope.closeCallback);
 
+
+          /**
+           * Ao destruir
+           */
           scope.$on('$destroy', function () {
             btn.unbind('click', scope.openCallback);
             menu.unbind('mouseleave click', scope.closeCallback);
+            scope.unregisterCloseListeners(Modernizr.touch);
           });
+
+          scope.enableAria();
+          scope.addCaret();
+          btn.on('click', scope.openCallback);
+          menu.bind('click',scope.closeCallback);
         }
       };
     }]);
