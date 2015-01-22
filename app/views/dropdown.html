@@ -1,31 +1,74 @@
-<hr/>
-{{status}}
-  {{isOpen}}
-<hr/>
-<div class="mv-d">
-  {{list}}
-</div>
-<ul class="list-inline">
-  <li mv-dropdown>
+<h1>Dropdown</h1>
+
+<section class="demo-section">
+  <header>
+    <h1>
+      mv-dropdown
+      <small>[restrict: (A)]</small>
+    </h1>
+    <p>Provê um menu suspenso. Recomenda-se utilizar com o elemento <code>li</code> se estiver dentro de um
+      menu <code>ul</code>, ou dentro de um <code>div</code></p>
+  </header>
+
+  <h2>Atributos</h2>
+
+  <ul>
+    <li>
+      <h3>backdrop</h3>
+      <p>Proporciona experiência mobile preenchendo toda a página ao abrir o menu</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="demo-section">
+  <header>
+    <h1>Demonstração</h1>
+  </header>
+
+  <pre>Valor de status: {{status}}</pre>
+
+  <h2>Lista</h2>
+  <ul class="list-inline">
+    <li mv-dropdown>
+      <button mv-btn type="button">
+        Separar Doces
+      </button>
+      <ul>
+        <li><a class="mv-btn" ng-click="setStatus('agora é uma ação do controler')">Item</a></li>
+        <li><a class="mv-btn" ng-click="setStatus('outro controler')">Item</a></li>
+      </ul>
+    </li>
+    <li mv-dropdown>
+      <button mv-btn type="button">
+        Ícone
+      </button>
+      <ul>
+        <li ng-repeat="item in list">
+          <a ng-click="setStatus(item)">
+            {{$index}} -
+            {{item}}
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Camada <code>div</code></h2>
+
+  <p>Com opção backdrop acionada</p>
+
+  <div mv-dropdown data-backdrop>
     <button mv-btn type="button">
-      MENU
+      Cor
     </button>
     <ul>
-      <li ng-repeat="item in [1,2,3]">
-        <a ng-click="setStatus(item)">
-          <i mv-icon name="th-list"></i>
-          Item{{item}}
-        </a>
+      <li ng-repeat="linkx in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
+        <a class="mv-btn" ng-click="setStatus(linkx)">{{linkx}}</a>
       </li>
-      <li class="divider"></li>
-      <li><a mv-btn href="#">Texto absurdo sendo escrito nesta área</a></li>
-      <li><a ng-click="setStatus('sei la')">Item</a></li>
-      <li><a class="mv-btn" ng-click="setStatus('vaaaai')" href="#">Item</a></li>
-      <li><a href="#">Item</a></li>
+      <li><hr/></li>
+      <li><a class="mv-btn" ng-click="setStatus('Rosa')">Rosa</a></li>
     </ul>
-  </li>
-</ul>
-<button ng-click="setStatus(3)">3</button>
-<button ng-click="setStatus('sei la')">sei lá</button>
-<button ng-click="setStatus('status')">Reset</button>
+  </div>
 
+</section>

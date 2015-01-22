@@ -2230,8 +2230,8 @@ table td[class*="col-"], table th[class*="col-"] {
 
 .mv-dropdown-backdrop {
   position: fixed;
-  left: 3rem;
-  right: 3rem;
+  left: 0;
+  right: 0;
   bottom: 0;
   top: 0;
   z-index: 990; }
@@ -2248,6 +2248,10 @@ table td[class*="col-"], table th[class*="col-"] {
   top: auto;
   bottom: 100%;
   margin-bottom: 1px; }
+
+.touch .mv-dropdown-menu {
+  overflow-x: none;
+  overflow-y: auto; }
 
 @media (min-width: 768px) {
   .navbar-right .mv-dropdown-menu {

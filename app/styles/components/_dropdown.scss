@@ -2,7 +2,6 @@
 // Dropdown menus
 // --------------------------------------------------
 
-
 // Dropdown arrow/caret
 .caret {
   display: inline-block;
@@ -11,16 +10,17 @@
   margin-left: .2rem;
   vertical-align: middle;
 }
+
 // The dropdown wrapper (div)
 .mv-dropdown {
   position: relative;
 
-  & > .mv-btn{
+  & > .mv-btn {
     min-width: 2rem;
 
-    & > .fa{
+    & > .fa {
       padding: 0 .5rem 0 .25rem;
-      margin:0 0 0 .25rem;
+      margin: 0 0 0 .25rem;
     }
   }
 }
@@ -51,7 +51,6 @@
   border-color: $color-default;
   border-radius: $border-radius-base;
   background-clip: padding-box;
-
 
   // Dividers (basically an hr) within the dropdown
   .divider {
@@ -105,6 +104,7 @@
     color: $color-bright;
   }
 }
+
 // Nuke hover/focus effects
 .mv-dropdown-menu > .disabled > a {
   &:hover,
@@ -151,6 +151,7 @@
   left: auto; // Reset the default from `.mv-dropdown-menu`
   right: 0;
 }
+
 // With v3, we enabled auto-flipping if you have a dropdown within a right
 // aligned nav component. To enable the undoing of that, we provide an override
 // to restore the default dropdown menu alignment.
@@ -175,8 +176,8 @@
 // Backdrop to catch body clicks on mobile, etc.
 .mv-dropdown-backdrop {
   position: fixed;
-  left: 3rem;
-  right: 3rem;
+  left: 0;
+  right: 0;
   bottom: 0;
   top: 0;
   z-index: ($zindex-dropdown - 10);
@@ -209,6 +210,11 @@
   }
 }
 
+//Modernizr
+.touch .mv-dropdown-menu {
+  overflow-x: none;
+  overflow-y: auto;
+}
 
 // Component alignment
 //
@@ -217,12 +223,14 @@
 @media (min-width: $grid-float-breakpoint) {
   .navbar-right {
     .mv-dropdown-menu {
-      right: 0; left: auto;
+      right: 0;
+      left: auto;
     }
     // Necessary for overrides of the default right aligned menu.
     // Will remove come v4 in all likelihood.
     .mv-dropdown-menu-left {
-      left: 0; right: auto;
+      left: 0;
+      right: auto;
     }
   }
 }

@@ -7,8 +7,9 @@ body{
   background-image: url("../images/cover_emeve.jpg");
   padding-bottom: 1rem;
   margin-bottom: 1rem;
+
   img{
-    width: auto;
+    width: 100%;
   }
   h2{
     margin-top: -0.1rem;
@@ -29,6 +30,7 @@ body{
   li li{
     text-transform: none;
   }
+
   a{
     display: block;
     height: 2rem;

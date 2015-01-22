@@ -32,7 +32,8 @@ angular.module('mvUi.Menu.Dropdown', [
           }
 
           if (angular.isDefined(iAttrs.backdrop)) {
-            iElement.addClass(compConfig.css.backdrop);
+            menu.addClass(compConfig.css.backdrop);
+            console.log(compConfig.css.backdrop)
           }
 
           scope.openCallback = function ($event) {
@@ -60,6 +61,9 @@ angular.module('mvUi.Menu.Dropdown', [
           btn.append($compile(iE[0])(scope));
 
           btn.on('click', scope.openCallback);
+          if(Modernizr.touch){
+            menu.bind('mouseenter', scope.closeCallback);
+          }
           menu.bind('mouseleave click', scope.closeCallback);
 
           scope.$on('$destroy', function () {
