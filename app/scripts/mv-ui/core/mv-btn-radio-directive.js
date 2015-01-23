@@ -4,20 +4,17 @@ angular.module('mvUi.Core.BtnRadio', [
   'mvConfigService',
   function (mvConfig) {
     return {
-      restrict: 'C',
+      restrict: 'A',
       require: ['?ngModel'],
-      scope: {
-        active: '@?',
-        value: '@?'
-      },
+      scope: {},
       link: function (scope, iElement, iAttrs, controllers) {
-
-        iElement.addClass('mv-btn');
+        var componentConfig = mvConfig.config.component.btn;
+        scope.active = angular.isDefined(iAttrs.active) ? iAttrs.active : 'active';
+        scope.value = angular.isDefined(iAttrs.value) ? iAttrs.value : undefined;
 
         var ngModelCtrl = controllers[0];
         if (!ngModelCtrl) return;
 
-        scope.active = angular.isDefined(scope.active) ? scope.active : 'active';
 
         //model -> ui
         ngModelCtrl.$render = function () {

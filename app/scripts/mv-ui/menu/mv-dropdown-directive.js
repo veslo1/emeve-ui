@@ -81,7 +81,6 @@ angular.module('mvUi.Menu.Dropdown', [
             if (angular.isDefined($event)) {
               $event.stopPropagation();
             }
-            console.log(scope.isOpen)
             scope.isOpen = false;
             iElement.removeClass('open', scope.isOpen);
             iElement.attr({'aria-expanded': scope.isOpen});

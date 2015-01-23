@@ -4,45 +4,39 @@ angular.module('mvUi.Core.BtnCheckbox', [
   'mvConfigService',
   function (mvConfig) {
     return {
-      restrict: 'C',
+      restrict: 'A',
       require: ['?ngModel'],
-      scope: {
-        active: '@?',
-        on: '@?',
-        off: '@?'
-      },
-      controller: function ($scope, $element, $attrs) {
-        $scope.active = angular.isDefined($scope.active) ? $scope.active : 'active';
-      },
-      link: function (scope, element, attrs, controllers) {
-        element.addClass('mv-btn');
+      scope: {},
+      link: function (scope, iElement, iAttrs, controllers) {
+        var componentConfig = mvConfig.config.component.btn;
+        scope.active = angular.isDefined(iAttrs.active) ? iAttrs.active : 'active';
 
         var ngModelCtrl = controllers[0];
         if (!ngModelCtrl) return;
 
-        function getTrueValue() {
-          return getCheckboxValue(attrs.on, true);
-        }
-
-        function getFalseValue() {
-          return getCheckboxValue(attrs.off, false);
-        }
-
-        function getCheckboxValue(attributeValue, defaultValue) {
+        var getCheckboxValue = function (attributeValue, defaultValue) {
           var val = scope.$eval(attributeValue);
           return angular.isDefined(val) ? val : defaultValue;
-        }
+        };
+
+        var getTrueValue = function () {
+          return getCheckboxValue(iAttrs.on, true);
+        };
+
+        var getFalseValue = function () {
+          return getCheckboxValue(iAttrs.off, false);
+        };
 
         //model -> ui
         ngModelCtrl.$render = function () {
-          element.toggleClass('active', angular.equals(ngModelCtrl.$modelValue, getTrueValue()));
+          iElement.toggleClass('active', angular.equals(ngModelCtrl.$modelValue, getTrueValue()));
         };
 
         // ui -> model
-        element.bind('click', function ($event) {
+        iElement.bind('click', function ($event) {
           $event.preventDefault();
           scope.$apply(function () {
-            ngModelCtrl.$setViewValue(element.hasClass('active') ? getFalseValue() : getTrueValue());
+            ngModelCtrl.$setViewValue(iElement.hasClass('active') ? getFalseValue() : getTrueValue());
             ngModelCtrl.$render();
           });
         });
