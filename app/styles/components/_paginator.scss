@@ -1,0 +1,81 @@
+//
+// Pagination (multiple pages)
+// --------------------------------------------------
+.mv-paginator {
+  display: inline-block;
+  padding-left: 0;
+  margin: $line-height-computed 0;
+  border-radius: $border-radius-base;
+  > li {
+    display: inline; // Remove list-style and block-level defaults
+    > a,
+    > span {
+      position: relative;
+      float: left; // Collapse white-space
+      padding: $padding-base-vertical $padding-base-horizontal;
+      line-height: $line-height-base;
+      text-decoration: none;
+      color: $paginator-color;
+      background-color: $paginator-bg;
+      border: 1px solid $paginator-border;
+      margin-left: -1px;
+    }
+    &:first-child {
+      > a,
+      > span {
+        margin-left: 0;
+        @include border-left-radius($border-radius-base);
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        @include border-right-radius($border-radius-base);
+      }
+    }
+  }
+  > li > a,
+  > li > span {
+    &:hover,
+    &:focus {
+      color: $paginator-hover-color;
+      background-color: $paginator-hover-bg;
+      border-color: $paginator-hover-border;
+    }
+  }
+  > .active > a,
+  > .active > span {
+    &,
+    &:hover,
+    &:focus {
+      z-index: 2;
+      color: $paginator-active-color;
+      background-color: $paginator-active-bg;
+      border-color: $paginator-active-border;
+      cursor: default;
+    }
+  }
+  > .disabled {
+    > span,
+    > span:hover,
+    > span:focus,
+    > a,
+    > a:hover,
+    > a:focus {
+      color: $paginator-disabled-color;
+      background-color: $paginator-disabled-bg;
+      border-color: $paginator-disabled-border;
+      cursor: default;
+    }
+  }
+}
+// Sizing
+// --------------------------------------------------
+// Large
+.mv-paginator-lg {
+  @include pagination-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $border-radius-large);
+}
+// Small
+.mv-paginator-sm {
+  @include pagination-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $border-radius-small);
+}

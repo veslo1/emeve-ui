@@ -153,6 +153,22 @@ $container-large-desktop:      ((1140px + $grid-gutter-width)) !default;
 $container-lg:                 $container-large-desktop !default;
 
 
+
+//== Pagination
+$paginator-color: $link-color !default;
+$paginator-bg: #fff !default;
+$paginator-border: #ddd !default;
+$paginator-hover-color: $link-hover-color !default;
+$paginator-hover-bg: $color-light !default;
+$paginator-hover-border: #ddd !default;
+$paginator-active-color: #fff !default;
+$paginator-active-bg: $color-info !default;
+$paginator-active-border: $color-info !default;
+$paginator-disabled-color: $color-light-alt !default;
+$paginator-disabled-bg: #fff !default;
+$paginator-disabled-border: #ddd !default;
+
+
 //== Sizes
 $size-header: $font-size-base * 3; // 48px;
 $size-component-height: 4rem; //64px
@@ -164,7 +180,6 @@ $size-line-header: 3rem; //48px
 $size-header: 3rem; // 48px;
 $size-base: 4.25rem; // 68px
 $size-panel: 25rem;  // 400px
-
 
 //== Components
 $padding-base-vertical:     6px !default;

@@ -1,12 +1,10 @@
 var mvUi = angular.module('mvUi.Config', [])
   .service('mvConfigService', [function () {
-
-
     this.config = {
       component: {
         btn: {
           cssClass: 'mv-btn',
-          default:{
+          default: {
             color: 'default',
             component: 'component'
           }
@@ -31,25 +29,52 @@ var mvUi = angular.module('mvUi.Config', [])
               mode: 'fluid'
             }
           },
-          item:{
+          item: {
             cssClass: 'mv-item'
           },
-          list:{
+          list: {
             cssClass: 'mv-list'
           },
           row: {
             cssClass: 'mv-row'
           }
         },
-        menu:{
-          dropdown:{
+        menu: {
+          dropdown: {
             cssClass: 'mv-dropdown',
-            css:{
+            css: {
               backdrop: 'mv-dropdown-backdrop',
               header: 'mv-dropdown-header',
               menu: 'mv-dropdown-menu',
               left: 'mv-dropdown-menu-left',
               right: 'mv-dropdown-menu-right'
+            }
+          },
+          paginator: {
+            cssClass: 'mv-paginator',
+            default: {
+              ngModel: 1,
+              maxSize: null,
+              rotate: true,
+              item:{
+                total: 20,
+                perPage: 10
+              },
+              page:{
+                num: angular.noop
+              },
+              enable: {
+                links: {
+                  direction: true,
+                  boundary: false
+                }
+              },
+              text: {
+                previous: 'Previous',
+                next: 'Next',
+                first: 'First',
+                last: 'Last'
+              }
             }
           }
         },

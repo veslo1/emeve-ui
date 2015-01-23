@@ -3912,6 +3912,66 @@ table td[class*="col-"], table th[class*="col-"] {
       display: inline-block;
       color: #203240; }
 
+.mv-paginator {
+  display: inline-block;
+  padding-left: 0;
+  margin: 24px 0;
+  border-radius: 4px; }
+  .mv-paginator > li {
+    display: inline; }
+    .mv-paginator > li > a, .mv-paginator > li > span {
+      position: relative;
+      float: left;
+      padding: 6px 12px;
+      line-height: 1.5;
+      text-decoration: none;
+      color: #203240;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      margin-left: -1px; }
+    .mv-paginator > li:first-child > a, .mv-paginator > li:first-child > span {
+      margin-left: 0;
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px; }
+    .mv-paginator > li:last-child > a, .mv-paginator > li:last-child > span {
+      border-bottom-right-radius: 4px;
+      border-top-right-radius: 4px; }
+  .mv-paginator > li > a:hover, .mv-paginator > li > a:focus, .mv-paginator > li > span:hover, .mv-paginator > li > span:focus {
+    color: #070a0d;
+    background-color: #e6e6e6;
+    border-color: #ddd; }
+  .mv-paginator > .active > a, .mv-paginator > .active > a:hover, .mv-paginator > .active > a:focus, .mv-paginator > .active > span, .mv-paginator > .active > span:hover, .mv-paginator > .active > span:focus {
+    z-index: 2;
+    color: #fff;
+    background-color: #203240;
+    border-color: #203240;
+    cursor: default; }
+  .mv-paginator > .disabled > span, .mv-paginator > .disabled > span:hover, .mv-paginator > .disabled > span:focus, .mv-paginator > .disabled > a, .mv-paginator > .disabled > a:hover, .mv-paginator > .disabled > a:focus {
+    color: #f5f5f5;
+    background-color: #fff;
+    border-color: #ddd;
+    cursor: default; }
+
+.mv-paginator-lg > li > a, .mv-paginator-lg > li > span {
+  padding: 10px 16px;
+  font-size: 20px; }
+.mv-paginator-lg > li:first-child > a, .mv-paginator-lg > li:first-child > span {
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px; }
+.mv-paginator-lg > li:last-child > a, .mv-paginator-lg > li:last-child > span {
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px; }
+
+.mv-paginator-sm > li > a, .mv-paginator-sm > li > span {
+  padding: 5px 10px;
+  font-size: 14px; }
+.mv-paginator-sm > li:first-child > a, .mv-paginator-sm > li:first-child > span {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px; }
+.mv-paginator-sm > li:last-child > a, .mv-paginator-sm > li:last-child > span {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px; }
+
 .tooltip {
   position: absolute;
   z-index: 1070;
