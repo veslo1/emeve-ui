@@ -31,7 +31,6 @@ angular.module('mvUi.Menu.Dropdown', [
 
           if (angular.isDefined(iAttrs.backdrop)) {
             menu.addClass(compConfig.css.backdrop);
-            console.log(compConfig.css.backdrop)
           }
 
           /**

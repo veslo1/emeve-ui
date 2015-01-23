@@ -1,4 +1,4 @@
-angular.module('mvUi.Core.Btn', [
+angular.module('mvUi.Core.BtnGroup', [
   'mvUi.Config'
 ])
   .directive('mvBtnGroup', [

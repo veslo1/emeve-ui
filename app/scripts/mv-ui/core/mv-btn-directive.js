@@ -6,7 +6,7 @@ angular.module('mvUi.Core.Btn', [
       function (mvConfig) {
         return {
           restrict: 'A',
-          link: function (scope, iElement, iAttrs, ctrl, transclude) {
+          link: function (scope, iElement, iAttrs) {
             var componentConfig = mvConfig.config.component.btn;
             var defaultColor = componentConfig.default.color;
             scope.color = angular.isDefined(iAttrs.color) ? iAttrs.color.toLocaleLowerCase() : defaultColor;
