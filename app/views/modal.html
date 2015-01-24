@@ -1,0 +1,30 @@
+<h1>Modal</h1>
+
+<section class="demo-section">
+  <header>
+    <h1>
+      mv-modal
+      <small>[restrict: (EA)]</small>
+    </h1>
+    <p>Adiciona uma janela</p>
+  </header>
+
+  <pre>{{status}}</pre>
+
+  <button mv-btn mv-btn-modal data-target="myModalX">Abrir</button>
+
+  <section mv-modal title="Uma nova janela" id="myModalX">
+    <header mv-modal-header>
+      Título da Janela
+    </header>
+    <article mv-modal-body>
+      um texto
+    </article>
+    <footer mv-modal-footer>
+      <button type="button" mv-btn ng-click="close($event)">Fechar</button>
+      <button type="button" mv-btn data-color="info" ng-click="salvar($event);close($event);">Salvar</button>
+    </footer>
+  </section>
+  <!-- /.modal -->
+
+</section>

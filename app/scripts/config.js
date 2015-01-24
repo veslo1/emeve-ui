@@ -87,6 +87,26 @@ var mvUi = angular.module('mvUi.Config', [])
               'striped'
             ]
           }
+        },
+        window:{
+          modal:{
+            cssClass: 'mv-modal',
+            css:{
+              open: 'mv-modal-open',
+              body: 'mv-modal-body',
+              header: 'mv-modal-header',
+              footer: 'mv-modal-footer'
+            },
+            default:{
+              animation: 'fade'
+            },
+            templates:{
+              main: 'mv-ui/window/modal.html',
+              header: 'mv-ui/window/modal-header.html',
+              body: '',
+              footer: ''
+            }
+          }
         }
       }
     };

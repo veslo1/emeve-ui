@@ -14,6 +14,7 @@ var mvUi = angular.module('mvUi', [
   'mvUi.Layout', //review
   'mvUi.Menu',
   'mvUi.Table',
+  'mvUi.Window'
   //'mvUi.Tooltip', //review
   //'mvUi.Progress', // review
   //'mvUi.Switch' //review

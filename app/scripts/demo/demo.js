@@ -23,6 +23,10 @@ angular.module('EmeveUiApp.Route', ['ngRoute', 'ngAnimate'])
         templateUrl: 'views/icon.html',
         controller: 'IconController'
       })
+      .when('/modal', {
+        templateUrl: 'views/modal.html',
+        controller: 'ModalController'
+      })
       .when('/:controller',{
         templateUrl:function(attrs){
           return 'views/' + attrs.controller + '.html';

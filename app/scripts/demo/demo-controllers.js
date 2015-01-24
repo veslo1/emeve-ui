@@ -75,5 +75,16 @@ angular.module('EmeveUiApp.Controller', [])
     //  textInfo: 'Um informação qualquer'
     //};
 
+  }])
+
+  .controller('ModalController', [
+    '$scope',
+    function ($scope, mvModalService) {
+
+    $scope.status = false;
+
+    $scope.salvar = function($event){
+      $scope.status = 'Registro salvo';
+    };
   }]);
 
