@@ -2120,6 +2120,22 @@ table td[class*="col-"], table th[class*="col-"] {
 .mv-control-warning .mv-control-input, .mv-control-warning .mv-control-select, .mv-control-warning .mv-control-info {
   border-color: #ecc22f; }
 
+/**
+ * Control: Messages
+ * ------------------------------------------------------------------------ */
+.mv-control-messages {
+  border-top: 0.01em solid #f5f5f5; }
+  .mv-control-messages ul {
+    padding: 0;
+    margin-bottom: 0; }
+  .mv-control-messages li {
+    display: block;
+    list-style-type: none;
+    line-height: 1.5rem; }
+    .mv-control-messages li .mv-icon {
+      color: inherit;
+      line-height: inherit; }
+
 .caret {
   display: inline-block;
   width: 0;

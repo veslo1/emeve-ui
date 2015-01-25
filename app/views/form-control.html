@@ -2,6 +2,7 @@
 
 <form class="mv-form mv-form-icon" name="mvf">
 
+
 <!--<h2>mv-input</h2>-->
 
 
@@ -44,7 +45,7 @@
   </header>
 
   <div class="mv-control mv-control-icon">
-    <mv-i name="question-circle"></mv-i>
+    <i mv-icon name="question-circle"></i>
     <label for="mvf-version">Info</label>
     <input type="text" name="toggleName" id="mvf-version" disabled
            class="mv-control-info mv-control-value"
@@ -182,13 +183,23 @@
 <!--Toggle-->
 <section class="demo-section">
   <header>
-    <h1>Input
-      <small>.mv-control-input</small>
+    <h1>Toggle
+      <small>[restrict: (A)]</small>
     </h1>
   </header>
 
   <!--<h2>mv-toggle</h2>-->
-  <mv-toggle label="Toggle" icon="user" ng-model="mvfData.active"></mv-toggle>
+  <div mv-control-toggle label="Toggle" icon="user" ng-model="mvfData.active">
+    <input type="checkbox" id="user-control" name="toggleName" ng-model="mvfData.active"/>
+
+    <div class="mv-control-messages text-warning">
+      <ul mv-icon-list ng-switch="mvfData.active">
+        <li ng-switch-when="true"><i mv-icon mv-icon-item name="bell-o"></i> <strong>Cuidado:</strong> Este tipo de opção
+          pode prejudicar o desempenho do sistema.
+        </li>
+      </ul>
+    </div>
+  </div>
 
 </section>
 

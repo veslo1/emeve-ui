@@ -23,4 +23,20 @@ angular.module('mvUi.Core.IconList', [
           });
         }
       };
+    }])
+  .directive('mvIconItem', [
+    'mvConfigService',
+    function (mvConfig) {
+      return {
+        restrict: 'A',
+        require:['?^^mvIconList'],
+        scope: false,
+        link: function (scope, iElement, iAttrs) {
+          var componentConfig = mvConfig.config.component.icon;
+          scope.prefix = angular.isDefined(iAttrs.prefix) ? iAttrs.prefix : componentConfig.default.prefix;
+          if(!iElement.hasClass(scope.prefix + '-li')){
+            iElement.addClass(scope.prefix + '-li');
+          }
+        }
+      };
     }]);

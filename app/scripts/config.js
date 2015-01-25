@@ -9,6 +9,15 @@ var mvUi = angular.module('mvUi.Config', [])
             component: 'component'
           }
         },
+        control: {
+          cssClass: 'mv-control',
+          default:{
+            icon: 'name'
+          },
+          toggle:{
+            cssClass:'mv-control-toggle'
+          }
+        },
         icon: {
           cssClass: 'mv-icon',
           default: {
@@ -56,11 +65,11 @@ var mvUi = angular.module('mvUi.Config', [])
               ngModel: 1,
               maxSize: null,
               rotate: true,
-              item:{
+              item: {
                 total: 20,
                 perPage: 10
               },
-              page:{
+              page: {
                 num: angular.noop
               },
               enable: {
@@ -88,19 +97,19 @@ var mvUi = angular.module('mvUi.Config', [])
             ]
           }
         },
-        window:{
-          modal:{
+        window: {
+          modal: {
             cssClass: 'mv-modal',
-            css:{
+            css: {
               open: 'mv-modal-open',
               body: 'mv-modal-body',
               header: 'mv-modal-header',
               footer: 'mv-modal-footer'
             },
-            default:{
+            default: {
               animation: 'fade'
             },
-            templates:{
+            templates: {
               main: 'mv-ui/window/modal.html',
               header: 'mv-ui/window/modal-header.html',
               body: '',

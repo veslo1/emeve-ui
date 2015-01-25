@@ -206,3 +206,27 @@
     border-color: $color-warning;
   }
 }
+
+
+/**
+ * Control: Messages
+ * ------------------------------------------------------------------------ */
+
+.mv-control-messages{
+  border-top: .01em solid $color-light-alt;
+
+  ul{
+    padding: 0;
+    margin-bottom: 0;
+  }
+  li{
+    display: block;
+    list-style-type: none;
+    line-height: 1.5rem;
+
+    .mv-icon{
+      color: inherit;
+      line-height: inherit;
+    }
+  }
+}

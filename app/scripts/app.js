@@ -5,19 +5,30 @@ var mvUi = angular.module('mvUi', [
   'ngSanitize',
   'ngTouch',
   'mvUi.Config',
-  'mvUi.Core',
   'mvUi.Template',
-  //'mvUi.Control', //review
-  //'mvUi.Control.Toggle', //remove
-  //'mvUi.Dropdown', //review
-  'mvUi.Form',
-  'mvUi.Layout', //review
-  'mvUi.Menu',
-  'mvUi.Table',
-  'mvUi.Window'
+  'mvUi.Core.Icon',
+  'mvUi.Core.IconList',
+  'mvUi.Core.IconStack',
+  'mvUi.Core.Btn',
+  'mvUi.Core.BtnRadio',
+  'mvUi.Core.BtnCheckbox',
+  'mvUi.Core.BtnModal',
+  'mvUi.Layout.Col',
+  'mvUi.Layout.Item',
+  'mvUi.Layout.List',
+  'mvUi.Layout.Row',
+  'mvUi.Layout.Container',
+  'mvUi.Menu.Dropdown',
+  'mvUi.Menu.Paginator',
+  'mvUi.Table.Table',
+  'mvUi.Window.ModalService',
+  'mvUi.Window.Modal',
+  'mvUi.Window.ModalHeader',
+  'mvUi.Window.ModalBody',
+  'mvUi.Window.ModalFooter',
+  'mvUi.Form.Form',
+  'mvUi.Control', //review
   //'mvUi.Tooltip', //review
   //'mvUi.Progress', // review
   //'mvUi.Switch' //review
-]);
-
-mvUi.constant("Modernizr", Modernizr);
+]).constant("Modernizr", Modernizr);

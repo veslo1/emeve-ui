@@ -1,42 +1,39 @@
 angular.module('mvUi.Control.Toggle', [
-  'mvUi.Control'
-]).directive('mvToggle', [
+  'mvUi.Config',
+  'mvUi.Control.Controller'
+]).directive('mvControlToggle', [
+  'mvConfigService',
   '$templateCache',
-  function ($templateCache) {
+  function (mvConfig, $templateCache) {
     return {
-      restrict: 'E',
-      template: $templateCache.get('mv-control/toggle.html'),
+      restrict: 'A',
+      template: $templateCache.get('mv-ui/control/mv-toggle.html'),
+      require:['?^ngModel'],
       scope: {
-        label: '@',
-        icon: '@',
-        off: '@',
-        on: '@',
+      //  label: '@',
         ngModel: '='
       },
       transclude: true,
-      controller: 'MvControlController',
-      link: function (scope, iElement, iAttr, mvCtrl) {
-        var control = iElement.find('input');
-        scope.enableIcon = false;
-        scope.setup = angular.isDefined(scope.ngModel) ? !!scope.ngModel : mvCtrl.getSetup();
-        scope.on = angular.isDefined(scope.on) ? scope.on : 'On';
-        scope.off = angular.isDefined(scope.off) ? scope.off : 'Off';
+      controller:'mvControlController',
+      link: function (scope, iElement, iAttr, ctrl) {
+        scope.ngModel = angular.isDefined(scope.ngModel) ? !!scope.ngModel : undefined;
+        scope.on = angular.isDefined(iAttr.on) ? iAttr.on : 'On';
+        scope.off = angular.isDefined(iAttr.off) ? iAttr.off : 'Off';
 
-        scope.setupToggle = function ($event) {
-          scope.setup = mvCtrl.setupToggle($event);
-          scope.ngModel = scope.setup;
+        var input = iElement.find('input');
+        input.addClass(scope.generateSubClass('toggle'));
+
+        if(angular.isDefined(iAttr.label)){
+          var label = iElement.find('label');
+          label.attr('for',input.attr('id'));
+        }
+
+        scope.toggleValue = function ($event) {
+          $event.preventDefault();
+          scope.ngModel = !scope.ngModel;
         };
 
-        //init
-        mvCtrl.checkMainClass();
-        mvCtrl.setupFunctionality('toggle');
-        mvCtrl.setupFunctionality('button');
-
-        //enable icon
-        if (angular.isDefined(scope.icon)) {
-          mvCtrl.setupFunctionality('icon');
-          scope.enableIcon = true;
-        }
+        scope.init(iElement,['toggle','button']);
       }
     };
   }])
