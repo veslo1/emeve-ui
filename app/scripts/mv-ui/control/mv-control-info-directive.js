@@ -13,7 +13,7 @@ angular.module('mvUi.Control.Info', [
         ngModel: '='
       },
       transclude: true,
-      controller:'mvControlController',
+      controller:'MVControlController',
       link: function (scope, iElement, iAttr, ctrl) {
 
         scope.init(iElement,['info']);

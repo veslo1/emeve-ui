@@ -4,6 +4,7 @@ var mvUi = angular.module('mvUi', [
   'ngResource',
   'ngSanitize',
   'ngTouch',
+  'ngMessages',
   'mvUi.Config',
   'mvUi.Template',
   'mvUi.Core.Icon',

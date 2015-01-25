@@ -1,7 +1,7 @@
 angular.module('mvUi.Control.Controller', [
   'mvUi.Config',
   'mvUi.Control.Service'
-]).controller('mvControlController', [
+]).controller('MVControlController', [
   '$scope',
   '$element',
   '$attrs',

@@ -6,7 +6,7 @@ angular.module('mvUi.Core.Btn', [
   function (mvConfig) {
     return {
       restrict: 'A',
-      controller: 'mvControlController',
+      controller: 'MVControlController',
       link: function (scope, iElement, iAttrs, ctrl) {
         var componentConfig = mvConfig.config.component.control;
 
