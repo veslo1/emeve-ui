@@ -44,13 +44,16 @@
     </h1>
   </header>
 
-  <div class="mv-control mv-control-icon">
-    <i mv-icon name="question-circle"></i>
-    <label for="mvf-version">Info</label>
-    <input type="text" name="toggleName" id="mvf-version" disabled
-           class="mv-control-info mv-control-value"
-           ng-model="mvfData.version"/>
+  <div mv-control-info icon="question-circle" label="Info" ng-model="mvfData.version">
+
   </div>
+  <!--<div class="mv-control mv-control-icon">-->
+  <!--<i mv-icon name="question-circle"></i>-->
+  <!--<label for="mvf-version">Info</label>-->
+  <!--<input type="text" name="toggleName" id="mvf-version" disabled-->
+  <!--class="mv-control-info mv-control-value"-->
+  <!--ng-model="mvfData.version"/>-->
+  <!--</div>-->
 
   <pre>
     &lt;div class=&quot;mv-control mv-control-icon&quot;&gt;
@@ -194,7 +197,8 @@
 
     <div class="mv-control-messages text-warning">
       <ul mv-icon-list ng-switch="mvfData.active">
-        <li ng-switch-when="true"><i mv-icon mv-icon-item name="bell-o"></i> <strong>Cuidado:</strong> Este tipo de opção
+        <li ng-switch-when="true"><i mv-icon mv-icon-item name="bell-o"></i> <strong>Cuidado:</strong> Este tipo de
+          opção
           pode prejudicar o desempenho do sistema.
         </li>
       </ul>

@@ -2060,12 +2060,14 @@ table td[class*="col-"], table th[class*="col-"] {
   line-height: 2rem;
   color: #969696; }
 
+input.mv-control-input, input.mv-control-select, input.mv-control-info {
+  background-color: transparent; }
+
 .mv-control-input, .mv-control-select, .mv-control-info {
   display: block;
   width: 100%;
   min-height: 2rem;
   line-height: 2rem;
-  background-color: transparent;
   border-width: 0 0 0.2rem 0;
   border-style: solid;
   border-color: #e6e6e6; }

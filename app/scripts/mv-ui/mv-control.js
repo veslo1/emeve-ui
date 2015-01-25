@@ -1,40 +1,15 @@
 angular.module('mvUi.Control', [
   'mvUi.Control.Service',
   'mvUi.Control.Controller',
-  'mvUi.Control.Toggle'
+  'mvUi.Control.Toggle',
+  'mvUi.Control.Info'
 ]);
+
+
+
 /*
 
-  .directive('mvInfo', [
-    '$templateCache',
-    function ($templateCache) {
-      return {
-        restrict: 'E',
-        template: $templateCache.get('mv-control/text.html'),
-        scope: {
-          display: '@',
-          label: '@',
-          icon: '@',
-          ngModel: '='
-        },
-        transclude: true,
-        controller: 'MvControlController',
-        link: function (scope, iElement, iAttr, mvCtrl) {
-          var control = iElement.find('input');
-          scope.enableIcon = false;
 
-          //init
-          mvCtrl.checkMainClass();
-          control.addClass(mvCtrl.genSubClass('info'));
-
-          //enable icon
-          if (angular.isDefined(scope.icon)) {
-            mvCtrl.setupFunctionality('icon');
-            scope.enableIcon = true;
-          }
-        }
-      };
-    }])
   .directive('mvInput', [
     '$templateCache',
     function ($templateCache) {
@@ -267,3 +242,35 @@ angular.module('mvUi.Control', [
       };
     }]);
 */
+
+/*
+ .directive('mvInfo', [
+ '$templateCache',
+ function ($templateCache) {
+ return {
+ restrict: 'E',
+ template: $templateCache.get('mv-control/text.html'),
+ scope: {
+ display: '@',
+ label: '@',
+ icon: '@',
+ ngModel: '='
+ },
+ transclude: true,
+ controller: 'MvControlController',
+ link: function (scope, iElement, iAttr, mvCtrl) {
+ var control = iElement.find('input');
+ scope.enableIcon = false;
+
+ //init
+ mvCtrl.checkMainClass();
+ control.addClass(mvCtrl.genSubClass('info'));
+
+ //enable icon
+ if (angular.isDefined(scope.icon)) {
+ mvCtrl.setupFunctionality('icon');
+ scope.enableIcon = true;
+ }
+ }
+ };
+ }])*/

@@ -10,7 +10,6 @@ angular.module('mvUi.Control.Toggle', [
       template: $templateCache.get('mv-ui/control/mv-toggle.html'),
       require:['?^ngModel'],
       scope: {
-      //  label: '@',
         ngModel: '='
       },
       transclude: true,
