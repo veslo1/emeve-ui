@@ -96,4 +96,4 @@ angular.module('mvUi.Control.File', [
         scope.init(iElement, ['file','button','setup']);
       }
     };
-  }])
+  }]);

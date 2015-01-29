@@ -1,0 +1,22 @@
+<i mv-icon ng-if="enableIcon" name="{{icon}}"></i>
+<label>{{label}}</label>
+<span class="mv-control-value">
+  <strong  ng-show="showValue">{{value | date}}</strong>
+</span>
+<div class="mv-control-button-area">
+  <button mv-btn type="button" ng-class="{'active': setupArea}"
+          ng-click="toggleSetupArea($event)">
+    <i class="mv-icon fa fa-{{btnIcon}}"></i>
+  </button>
+</div>
+<div class="mv-control-setup-area" ng-class="{open:setupArea}" ng-transclude>
+
+</div>
+<div class="mv-control-messages text-error">
+  <ul mv-icon-list ng-messages="ngModel">
+    <li ng-message="$invalid">
+      <i mv-icon mv-icon-item name="bell-o"></i>
+      Formato inválido de data
+    </li>
+  </ul>
+</div>

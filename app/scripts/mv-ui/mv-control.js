@@ -7,7 +7,8 @@ angular.module('mvUi.Control', [
   'mvUi.Control.Select',
   'mvUi.Control.Checklist',
   'mvUi.Control.Radiogroup',
-  'mvUi.Control.File'
+  'mvUi.Control.File',
+  'mvUi.Control.Date'
 ]);
 
 
