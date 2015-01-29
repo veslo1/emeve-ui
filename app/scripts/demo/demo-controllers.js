@@ -66,8 +66,8 @@ angular.module('EmeveUiApp.Controller', [])
 
     $scope.mvfData = {
       version: '3.2.0b~Kernel2.5',
-      active:true
-      //colorPerfil: {}
+      active:true,
+      colorPerfil: []
     };
     // Número da sala de prova
     //$scope.mvFormData = {

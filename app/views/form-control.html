@@ -2,174 +2,147 @@
 
 <form class="mv-form mv-form-icon" name="mvf">
 
+  <!--Info (Information)-->
+  <section class="demo-section">
+    <header>
+      <h1>mv-control-info
+        <small>[restrict: (A)]</small>
+      </h1>
+    </header>
 
-<!--Info (Information)-->
-<section class="demo-section">
-  <header>
-    <h1>mv-control-info
-      <small>[restrict: (A)]</small>
-    </h1>
-  </header>
-
-  <div mv-control-info icon="question-circle" label="Info" ng-model="mvfData.version">
-  </div>
-
-</section>
-
-
-<section class="demo-section">
-  <header>
-    <h1>mv-control-input
-      <small>[restrict: (A)]</small>
-    </h1>
-  </header>
-
-  <!--Text-->
-  <div mv-control-input label="text">
-    <input type="text" name="textName" id="mvFormTextName" value="" placeholder="Value"
-           ng-model="mvfData.user"/>
-  </div>
-  <code>mvfData.user: {{mvfData.user}}</code>
-
-  <!--E-mail-->
-  <div mv-control-input label="E-mail">
-    <input type="email" name="emailName" id="mvFormEmailName" value=""
-           placeholder="meuemail@dominio.com"
-           ng-model="mvfData.email"/>
-
-    <div class="mv-control-messages text-error">
-      <ul mv-icon-list ng-messages="mvf.emailName">
-        <li ng-message="$invalid">
-          <i mv-icon mv-icon-item name="bell-o"></i>
-          Formato de e-mail inválido
-        </li>
-      </ul>
+    <div mv-control-info icon="question-circle" label="Info" ng-model="mvfData.version">
     </div>
-  </div>
-  <code>E-mail: {{mvfData.email}}</code>
+
+  </section>
 
 
-  <!--Password-->
-  <div mv-control-input label="Senha">
-    <input type="password" name="passwordName" id="mvFormPasswordName" value="" placeholder="****"
-           ng-model="mvfData.password"/>
-  </div>
-  <code>Password: {{mvfData.password}}</code>
+  <section class="demo-section">
+    <header>
+      <h1>mv-control-input
+        <small>[restrict: (A)]</small>
+      </h1>
+    </header>
 
-
-  <!--Range-->
-  <div mv-control-input label="Quantidade">
-    <input type="number" name="rangeName" id="mvFormRangeName" value="1"
-           ng-model="mvfData.number"/>
-    <div class="mv-control-messages text-error">
-      <ul mv-icon-list ng-messages="mvf.rangeName">
-        <li ng-message="$invalid">
-          <i mv-icon mv-icon-item name="bell-o"></i>
-          Número inválido
-        </li>
-      </ul>
+    <!--Text-->
+    <div mv-control-input label="text">
+      <input type="text" name="textName" id="mvFormTextName" value="" placeholder="Value"
+             ng-model="mvfData.user"/>
     </div>
-  </div>
+    <code>mvfData.user: {{mvfData.user}}</code>
 
-  <code>Number: {{mvfData.number}}</code>
-</section>
+    <!--E-mail-->
+    <div mv-control-input label="E-mail">
+      <input type="email" name="emailName" id="mvFormEmailName" value=""
+             placeholder="meuemail@dominio.com"
+             ng-model="mvfData.email"/>
 
-
-<!--Toggle-->
-<section class="demo-section">
-  <header>
-    <h1>Toggle
-      <small>[restrict: (A)]</small>
-    </h1>
-  </header>
-
-  <!--<h2>mv-toggle</h2>-->
-  <div mv-control-toggle label="Toggle" icon="user" ng-model="mvfData.active">
-    <input type="checkbox" id="user-control" name="toggleName" ng-model="mvfData.active"/>
-
-    <div class="mv-control-messages text-warning">
-      <ul mv-icon-list ng-switch="mvfData.active">
-        <li ng-switch-when="true"><i mv-icon mv-icon-item name="bell-o"></i> <strong>Cuidado:</strong> Este tipo de
-          opção
-          pode prejudicar o desempenho do sistema.
-        </li>
-      </ul>
+      <div class="mv-control-messages text-error">
+        <ul mv-icon-list ng-messages="mvf.emailName">
+          <li ng-message="$invalid">
+            <i mv-icon mv-icon-item name="bell-o"></i>
+            Formato de e-mail inválido
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-
-</section>
+    <code>E-mail: {{mvfData.email}}</code>
 
 
-<!-- Select -->
-<section class="demo-section">
-  <header>
-    <h1>mv-control-select
-      <small>[restrict: (A)]</small>
-    </h1>
-  </header>
+    <!--Password-->
+    <div mv-control-input label="Senha">
+      <input type="password" name="passwordName" id="mvFormPasswordName" value="" placeholder="****"
+             ng-model="mvfData.password"/>
+    </div>
+    <code>Password: {{mvfData.password}}</code>
 
-  <div mv-control-select icon="glass" label="Select">
+
+    <!--Range-->
+    <div mv-control-input label="Quantidade">
+      <input type="number" name="rangeName" id="mvFormRangeName" value="1"
+             ng-model="mvfData.number"/>
+
+      <div class="mv-control-messages text-error">
+        <ul mv-icon-list ng-messages="mvf.rangeName">
+          <li ng-message="$invalid">
+            <i mv-icon mv-icon-item name="bell-o"></i>
+            Número inválido
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <code>Number: {{mvfData.number}}</code>
+  </section>
+
+
+  <!--Toggle-->
+  <section class="demo-section">
+    <header>
+      <h1>Toggle
+        <small>[restrict: (A)]</small>
+      </h1>
+    </header>
+
+    <!--<h2>mv-toggle</h2>-->
+    <div mv-control-toggle label="Toggle" icon="user" ng-model="mvfData.active">
+      <input type="checkbox" id="user-control" name="toggleName" ng-model="mvfData.active"/>
+
+      <div class="mv-control-messages text-warning">
+        <ul mv-icon-list ng-switch="mvfData.active">
+          <li ng-switch-when="true"><i mv-icon mv-icon-item name="bell-o"></i> <strong>Cuidado:</strong> Este tipo de
+            opção
+            pode prejudicar o desempenho do sistema.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Select -->
+  <section class="demo-section">
+    <header>
+      <h1>mv-control-select
+        <small>[restrict: (A)]</small>
+      </h1>
+    </header>
+
+    <div mv-control-select icon="glass" label="Select">
       <select id="mvFormSelectName" name="selectName"
               ng-model="mvfData.selectName"
               ng-options="color.name for color in colors">
       </select>
-  </div>
-  <code>{{mvfData.selectName}}</code>
-  <!--
-  <div class="mv-control">
-      <label for="mvFormSelectName">Selecione sua cor favorita</label>
-      <select id="mvFormSelectName" name="selectName"
-              class="mv-control-select"
-              ng-model="mvFormData.selectName"
-              ng-options="color.name for color in colors">
-      </select>
     </div>
-    -->
+    <code>{{mvfData.selectName}}</code>
 
-</section>
+  </section>
+
+
+  <!-- Checklist -->
+  <section class="demo-section">
+    <header>
+      <h1>mv-control-checklist
+        <small>[restrict: (A)]</small>
+      </h1>
+    </header>
+
+    <div mv-control-checklist id="union" icon="envelope" label="Qual a sua cor favorita?"
+         options="colorNames"
+         ng-model="mvfData.colorPerfil">
+    </div>
+    <code>{{mvfData.colorPerfil}}</code>
+
+  </section>
 
 
 </form>
-
 
 
 <section class="demo-section">
 
   <form class="mv-form mv-form-icon" novalidate>
 
-    <!--Select-->
-
-
-    <!--Check list-->
-    <div class="mv-control mv-control-checklist mv-control-button mv-control-icon mv-control-setup ">
-      <mv-i name="question-circle"></mv-i>
-      <label>Check List</label>
-      <span class="mv-control-value">
-        {{mvFormData.textCheck}}
-      </span>
-
-      <div class="mv-control-button-area">
-        <button type="button" class="mv-btn">
-          <mv-i name="angle-down"></mv-i>
-        </button>
-      </div>
-      <ul class="mv-control-setup-area mv-container-fluid">
-        <li class="mv-row">
-          <div class="mv-col xs-10">Em pé</div>
-          <div class="mv-control-area mv-col xs-2">
-            <input type="checkbox" class="mv-control-checkbox"
-                   ng-model="mvFormData.textCheck.empe"/>
-          </div>
-        </li>
-        <li class="mv-row">
-          <div class="mv-col xs-10">Sentado</div>
-          <div class="mv-control-area mv-col xs-2">
-            <input type="checkbox" class="mv-control-checkbox"
-                   ng-model="mvFormData.textCheck.sentado"/>
-          </div>
-        </li>
-      </ul>
-    </div>
 
     <!--Radio List -->
     <div class="mv-control mv-control-radiogroup mv-control-setup mv-control-button">
@@ -378,4 +351,45 @@
          class="mv-control-input"
          placeholder="****"
          ng-model="mvfData.password"/>
+</div>-->
+
+<!--
+<div class="mv-control">
+    <label for="mvFormSelectName">Selecione sua cor favorita</label>
+    <select id="mvFormSelectName" name="selectName"
+            class="mv-control-select"
+            ng-model="mvFormData.selectName"
+            ng-options="color.name for color in colors">
+    </select>
+  </div>
+  -->
+<!--Check list-->
+<!--<div class="mv-control mv-control-checklist mv-control-button mv-control-icon mv-control-setup ">
+  <mv-i name="question-circle"></mv-i>
+  <label>Check List</label>
+  <span class="mv-control-value">
+    {{mvFormData.textCheck}}
+  </span>
+
+  <div class="mv-control-button-area">
+    <button type="button" class="mv-btn">
+      <mv-i name="angle-down"></mv-i>
+    </button>
+  </div>
+  <ul class="mv-control-setup-area mv-container-fluid">
+    <li class="mv-row">
+      <div class="mv-col xs-10">Em pé</div>
+      <div class="mv-control-area mv-col xs-2">
+        <input type="checkbox" class="mv-control-checkbox"
+               ng-model="mvFormData.textCheck.empe"/>
+      </div>
+    </li>
+    <li class="mv-row">
+      <div class="mv-col xs-10">Sentado</div>
+      <div class="mv-control-area mv-col xs-2">
+        <input type="checkbox" class="mv-control-checkbox"
+               ng-model="mvFormData.textCheck.sentado"/>
+      </div>
+    </li>
+  </ul>
 </div>-->

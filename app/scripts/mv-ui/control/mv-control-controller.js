@@ -20,11 +20,18 @@ angular.module('mvUi.Control.Controller', [
     $scope.setupArea = false;
 
     /**
+     * Mostra valores em controles que utilizam setupArea
+     * @type {boolean}
+     */
+    $scope.showValue = true;
+
+    /**
      * Habilita ícones
      * @type {boolean}
      */
     $scope.enableIcon = false;
     $scope.icon = angular.isDefined($attrs.icon) ? $attrs.icon : undefined;
+    console.log($scope.icon);
 
     /**
      * Label of controller
