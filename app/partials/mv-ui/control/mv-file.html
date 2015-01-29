@@ -1,0 +1,16 @@
+<i mv-icon ng-if="enableIcon" name="{{icon}}"></i>
+<label>{{label}}</label>
+<span class="mv-control-value">
+  <strong  ng-show="showValue">{{value}}</strong>
+</span>
+<div class="mv-control-button-area">
+  <button mv-btn type="button" ng-class="{'active': setupArea}"
+          ng-click="toggleSetupArea($event)">
+    <i class="mv-icon fa fa-{{btnIcon}}"></i>
+  </button>
+</div>
+<div class="mv-control-setup-area" ng-class="{open:setupArea}">
+  <div class="mv-control-file-area" ng-transclude>
+
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<i mv-icon ng-if="enableIcon" name="{{icon}}"></i>
+<label>{{label}}</label>
+<span class="mv-control-value">
+  <strong  ng-show="showValue">{{value}}</strong>
+</span>
+<div class="mv-control-button-area">
+  <button class="mv-btn" type="button" ng-click="upload($event)" ng-if="files.length>0">
+    <i mv-icon name="cloud-upload"></i>
+  </button>
+  <button mv-btn type="button" ng-class="{'active': setupArea}"
+          ng-click="toggleSetupArea($event)">
+    <i class="mv-icon fa fa-{{btnIcon}}"></i>
+  </button>
+</div>
+<div class="mv-control-setup-area" ng-class="{open:setupArea}">
+  <ul mv-icon-list>
+    <li ng-if="files.length>0" ng-repeat="file in files">
+      <i mv-icon name="paperclip"></i>
+      {{file.name}}
+      <button mv-btn data-component ng-click="removeFile($index)">
+        <i mv-icon name="minus"></i>
+      </button>
+    </li>
+  </ul>
+  <div class="mv-control-file-area" ng-transclude>
+
+  </div>
+</div>

@@ -12,7 +12,6 @@ angular.module('mvUi.Core.Icon', [
           scope.name = angular.isDefined(iAttrs.name) ? iAttrs.name : false;
           scope.prefix = angular.isDefined(iAttrs.prefix) ? iAttrs.prefix : componentConfig.default.prefix;
 
-          //console.log(iAttrs)
           iElement.addClass(componentConfig.cssClass);
           iElement.addClass(scope.prefix);
           iElement.addClass(scope.prefix + '-' + scope.name);

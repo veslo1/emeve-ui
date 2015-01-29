@@ -1,32 +1,24 @@
 <h1>Formulário</h1>
 
-<form class="mv-form mv-form-icon" name="mvf">
+<form class="mv-form mv-form-icon" name="mvf" enctype="multipart/form-data">
 
+<!-- Date -->
+<section class="demo-section">
+  <header>
+    <h1>mv-control-date
+      <small>[restrict: (A)]</small>
+    </h1>
+  </header>
 
-  <!--File-->
-  <div class="mv-control mv-control-file mv-control-icon mv-control-button mv-control-setup">
-    <mv-i name="camera-retro"></mv-i>
-    <label for="mvFormFileName">File</label>
-      <span class="mv-control-value">
-        {{mvFormData.fileName.file[0]}}
-      </span>
-
-    <div class="mv-control-button-area">
-      <button type="button" class="mv-btn">
-        <mv-i name="paperclip"></mv-i>
-      </button>
-    </div>
-    <div class="mv-control-setup-area">
-      <div class="mv-control-file-area">
-        <input type="file" id="mvFormFileName" name="fileName"
-               ng-model="mvFormData.fileName"/>
-      </div>
-      <div class="mv-control-file-upload-area">
-        <mv-i name="cloud-upload"></mv-i>
-        Clique ou arraste seu arquivo
-      </div>
-    </div>
+  <div mv-control-date icon="calendar" label="Data"
+       ng-model="mvfData.niver">
+    <input type="date" name="dateName" id="dataniver" value=""
+           class="mv-control-input"/>
   </div>
+
+  <code>{{mvfData.niver}}</code>
+</section>
+
 
   <!--Info (Information)-->
   <section class="demo-section">
@@ -175,6 +167,45 @@
     <code>{{mvfData.colorFav}}</code>
 
   </section>
+
+  <!-- File -->
+  <section class="demo-section">
+    <header>
+      <h1>mv-control-file
+        <small>[restrict: (A)]</small>
+      </h1>
+    </header>
+
+    <div mv-control-file icon="music" label="Arquivo"
+         url="http://localhost/"
+         ng-model="mvfData.avatar">
+      <input type="file" name="fileName" id="avatarUser" ng-model="mvfData.avatar"/>
+    </div>
+
+    <code>{{mvfData.avatar}}</code>
+
+  </section>
+
+  <!-- FileList -->
+  <section class="demo-section">
+    <header>
+      <h1>mv-control-file-upload
+        <small>[restrict: (A)]</small>
+      </h1>
+    </header>
+
+    <div mv-control-file-upload icon="picture-o" label="Album"
+         url="http://localhost/"
+         ng-model="mvfData.avatar">
+      <input type="file" name="album[]" id="album" ng-model="mvfData.album" multiple/>
+    </div>
+
+    <code>{{mvfData.album}}</code>
+  </section>
+
+
+
+
 
 
 

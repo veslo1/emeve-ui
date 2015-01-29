@@ -45,13 +45,14 @@
     top: 0;
     right: 0;
     margin: 0;
-    width: 4rem;
+    min-width: 4rem;
     font-size: 1.5rem;
 
     .mv-btn {
+      float: left;
       display: block;
       height: 4rem;
-      min-width: 100%;
+      min-width: 4rem;
       background-color: transparent;
       border: none;
     }
