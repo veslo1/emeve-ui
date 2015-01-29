@@ -31,7 +31,6 @@ angular.module('mvUi.Control.Controller', [
      */
     $scope.enableIcon = false;
     $scope.icon = angular.isDefined($attrs.icon) ? $attrs.icon : undefined;
-    console.log($scope.icon);
 
     /**
      * Label of controller

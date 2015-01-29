@@ -1,28 +1,29 @@
-<mv-i ng-if="enableIcon" name="{{icon}}"></mv-i>
+<i mv-icon name="{{icon}}" ng-if="enableIcon"></i>
 <label>{{label}}</label>
 <span class="mv-control-value">
-  <strong  ng-show="showValue">{{value}}</strong>
+  <strong ng-show="showValue">{{value}}</strong>
 </span>
 <div class="mv-control-button-area">
   <button class="mv-btn" type="button"
-          ng-switch="setup"
-          ng-click="setupToggle($event)">
-    <mv-i name="angle-down" ng-switch-when="false"></mv-i>
-    <mv-i name="angle-up" ng-switch-when="true"></mv-i>
+          ng-switch="setupArea"
+          ng-click="toggleSetupArea($event)">
+    <i mv-icon name="angle-down" ng-switch-when="false"></i>
+    <i mv-icon name="angle-up" ng-switch-when="true"></i>
   </button>
 </div>
-<ul class="mv-control-setup-area mv-container-fluid" ng-class="{open:setup}">
+<ul class="mv-control-setup-area mv-container-fluid" ng-class="{open:setupArea}">
   <li ng-repeat="item in options">
     <label for="{{id}}-{{$index}}">
-    <mv-row>
-    <div class="mv-col xs-10">
-      {{item.label}}
-    </div>
-    <div class="mv-control-area mv-col xs-2">
-      <input type="radio" name="{{name}}" class="mv-control-radio" id="{{id}}-{{$index}}"
-        ng-click="select($index,item,$event)"/>
-    </div>
-    </mv-row>
+      <mv-row>
+        <div class="mv-col xs-10">
+          {{item.label}}
+        </div>
+        <div class="mv-control-area mv-col xs-2">
+          <input type="radio" name="{{id}}-group" class="mv-control-radio" id="{{id}}-{{$index}}"
+                 ng-click="select($index,item,$event)"/>
+        </div>
+      </mv-row>
     </label>
   </li>
 </ul>
+<div ng-transclude></div>

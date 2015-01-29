@@ -6,7 +6,7 @@ angular.module('mvUi.Control', [
   'mvUi.Control.Input',
   'mvUi.Control.Select',
   'mvUi.Control.Checklist',
-  'mvUi.Control.RadioGroup'
+  'mvUi.Control.Radiogroup'
 ]);
 
 

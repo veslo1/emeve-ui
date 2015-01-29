@@ -2,6 +2,32 @@
 
 <form class="mv-form mv-form-icon" name="mvf">
 
+
+  <!--File-->
+  <div class="mv-control mv-control-file mv-control-icon mv-control-button mv-control-setup">
+    <mv-i name="camera-retro"></mv-i>
+    <label for="mvFormFileName">File</label>
+      <span class="mv-control-value">
+        {{mvFormData.fileName.file[0]}}
+      </span>
+
+    <div class="mv-control-button-area">
+      <button type="button" class="mv-btn">
+        <mv-i name="paperclip"></mv-i>
+      </button>
+    </div>
+    <div class="mv-control-setup-area">
+      <div class="mv-control-file-area">
+        <input type="file" id="mvFormFileName" name="fileName"
+               ng-model="mvFormData.fileName"/>
+      </div>
+      <div class="mv-control-file-upload-area">
+        <mv-i name="cloud-upload"></mv-i>
+        Clique ou arraste seu arquivo
+      </div>
+    </div>
+  </div>
+
   <!--Info (Information)-->
   <section class="demo-section">
     <header>
@@ -119,6 +145,21 @@
   </section>
 
 
+
+  <!-- RadioGroup -->
+  <section class="demo-section">
+    <header>
+      <h1>mv-control-radiogroup
+        <small>[restrict: (A)]</small>
+      </h1>
+    </header>
+    <div mv-control-radiogroup id="lamp" icon="tint" label="Cor do perfil"
+         options="colorNames"
+         ng-model="mvfData.colorPerfil">
+    </div>
+    <code>{{mvfData.colorPerfil}}</code>
+  </section>
+
   <!-- Checklist -->
   <section class="demo-section">
     <header>
@@ -129,11 +170,12 @@
 
     <div mv-control-checklist id="union" icon="envelope" label="Qual a sua cor favorita?"
          options="colorNames"
-         ng-model="mvfData.colorPerfil">
+         ng-model="mvfData.colorFav">
     </div>
-    <code>{{mvfData.colorPerfil}}</code>
+    <code>{{mvfData.colorFav}}</code>
 
   </section>
+
 
 
 </form>
@@ -144,60 +186,6 @@
   <form class="mv-form mv-form-icon" novalidate>
 
 
-    <!--Radio List -->
-    <div class="mv-control mv-control-radiogroup mv-control-setup mv-control-button">
-      <label>Radio List</label>
-      <span class="mv-control-value">
-        {{mvFormData.textRadio}}
-      </span>
-
-      <div class="mv-control-button-area">
-        <button type="button" class="mv-btn">
-          <mv-i name="angle-down"></mv-i>
-        </button>
-      </div>
-      <ul class="mv-control-setup-area mv-container-fluid" ng-show="true">
-        <li class="mv-row">
-          <div class="mv-col xs-10">Em pé</div>
-          <div class="mv-control-area mv-col xs-2">
-            <input type="radio" class="mv-control-radio" value="Em pé"
-                   ng-model="mvFormData.textRadio"/>
-          </div>
-        </li>
-        <li class="mv-row">
-          <div class="mv-col xs-10">Sentado</div>
-          <div class="mv-control-area mv-col xs-2">
-            <input type="radio" class="mv-control-radio" value="Sentado"
-                   ng-model="mvFormData.textRadio"/>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <!--File-->
-    <div class="mv-control mv-control-file mv-control-icon mv-control-button mv-control-setup">
-      <mv-i name="camera-retro"></mv-i>
-      <label for="mvFormFileName">File</label>
-      <span class="mv-control-value">
-        {{mvFormData.fileName.file[0]}}
-      </span>
-
-      <div class="mv-control-button-area">
-        <button type="button" class="mv-btn">
-          <mv-i name="paperclip"></mv-i>
-        </button>
-      </div>
-      <div class="mv-control-setup-area">
-        <div class="mv-control-file-area">
-          <input type="file" id="mvFormFileName" name="fileName"
-                 ng-model="mvFormData.fileName"/>
-        </div>
-        <div class="mv-control-file-upload-area">
-          <mv-i name="cloud-upload"></mv-i>
-          Clique ou arraste seu arquivo
-        </div>
-      </div>
-    </div>
 
     <!--Date-->
     <div class="mv-control mv-control-button mv-control-setup">
@@ -392,4 +380,36 @@
       </div>
     </li>
   </ul>
-</div>-->
+</div>
+
+<!--Radio List -->
+<!--<div class="mv-control mv-control-radiogroup mv-control-setup mv-control-button">-->
+  <!--<label>Radio List</label>-->
+      <!--<span class="mv-control-value">-->
+        <!--{{mvFormData.textRadio}}-->
+      <!--</span>-->
+
+  <!--<div class="mv-control-button-area">-->
+    <!--<button type="button" class="mv-btn">-->
+      <!--<mv-i name="angle-down"></mv-i>-->
+    <!--</button>-->
+  <!--</div>-->
+  <!--<ul class="mv-control-setup-area mv-container-fluid" ng-show="true">-->
+    <!--<li class="mv-row">-->
+      <!--<div class="mv-col xs-10">Em pé</div>-->
+      <!--<div class="mv-control-area mv-col xs-2">-->
+        <!--<input type="radio" class="mv-control-radio" value="Em pé"-->
+               <!--ng-model="mvFormData.textRadio"/>-->
+      <!--</div>-->
+    <!--</li>-->
+    <!--<li class="mv-row">-->
+      <!--<div class="mv-col xs-10">Sentado</div>-->
+      <!--<div class="mv-control-area mv-col xs-2">-->
+        <!--<input type="radio" class="mv-control-radio" value="Sentado"-->
+               <!--ng-model="mvFormData.textRadio"/>-->
+      <!--</div>-->
+    <!--</li>-->
+  <!--</ul>-->
+<!--</div>-->
+
+-->
