@@ -21,7 +21,37 @@ var mvUi = angular.module('mvUi.Config', [])
         editor:{
           cssClass: 'mv-editor',
           options : {
-            language: 'pt_br'
+            buttons: [
+              "selectAll",
+              "bold",
+              "italic",
+              "underline",
+              "strikeThrough",
+              "subscript",
+              "superscript",
+              "fontFamily",
+              "fontSize",
+              "color",
+              "formatBlock",
+              "blockStyle",
+              "inlineStyle",
+              "align",
+              "insertOrderedList",
+              "insertUnorderedList",
+              "outdent",
+              "indent",
+              "createLink",
+              "insertHorizontalRule",
+              "insertImage",
+              "insertVideo",
+              "table",
+              "undo",
+              "redo",
+              "removeFormat",
+              "fullscreen"
+            ],
+            language: 'pt_br',
+            height: 300
           }
         },
         icon: {
