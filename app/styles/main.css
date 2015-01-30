@@ -2003,7 +2003,7 @@ table td[class*="col-"], table th[class*="col-"] {
     line-height: 1.5rem;
     padding-top: 0.5rem;
     font-weight: bold;
-    color: #969696; }
+    color: #203240; }
   .mv-control input, .mv-control select, .mv-control textarea {
     outline: none; }
   .mv-control .bar {
@@ -2041,8 +2041,10 @@ table td[class*="col-"], table th[class*="col-"] {
     min-width: 4rem;
     background-color: transparent;
     border: none;
-    outline: none; }
+    outline: none;
+    transition: 0.3s ease all; }
   .mv-control-button .mv-control-button-area .mv-btn.active, .mv-control-range .mv-control-button-area .mv-btn.active {
+    color: #b4e650;
     background-color: #f5f5f5; }
 
 .mv-control-setup .mv-control-setup-area {
@@ -2077,7 +2079,7 @@ table td[class*="col-"], table th[class*="col-"] {
   line-height: 2.3rem;
   font-size: 1.5rem;
   text-align: center;
-  color: #969696;
+  color: #203240;
   border-right: 0.1rem solid #f5f5f5; }
 
 .mv-control-value {

@@ -9,8 +9,6 @@
   min-height: 4rem;
   padding: 0 .5rem;
   margin-bottom: 1rem;
-//  box-shadow: 0 0 2px 2px $color-bright;
-//  background-color: #fbfbfb;
 
   label {
     display: block;
@@ -18,11 +16,11 @@
     line-height: 1.5rem;
     padding-top: .5rem;
     font-weight: bold;
-    color: $color-bright;
+    color: $color-primary;
   }
 
   &.mv-control-button {
-    //    padding-right: 4.5rem;
+
   }
 
   input,
@@ -75,8 +73,10 @@
       background-color: transparent;
       border: none;
       outline: none;
+      transition: .3s ease all;
     }
     .mv-btn.active{
+      color: $color-default;
       background-color: $color-light-alt;
     }
 
@@ -135,9 +135,8 @@
   line-height: 2.3rem;
   font-size: 1.5rem;
   text-align: center;
-  color: $color-bright;
+  color: $color-primary;
   border-right: .1rem solid $color-light-alt;
-//  background-color: $color-light-alt;
 }
 
 .mv-control-value {
