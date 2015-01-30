@@ -7,9 +7,10 @@
   display: block;
   position: relative;
   min-height: 4rem;
-  padding: 0 .5rem .5rem .5em;
-  margin-bottom: .4rem;
-  background-color: #fbfbfb;
+  padding: 0 .5rem;
+  margin-bottom: 1rem;
+//  box-shadow: 0 0 2px 2px $color-bright;
+//  background-color: #fbfbfb;
 
   label {
     display: block;
@@ -17,7 +18,7 @@
     line-height: 1.5rem;
     padding-top: .5rem;
     font-weight: bold;
-    color: $color-info;
+    color: $color-bright;
   }
 
   &.mv-control-button {
@@ -26,8 +27,26 @@
 
   input,
   select,
-  textarea {
+  textarea{
     outline: none;
+  }
+  .bar{
+    position: relative;
+    display: block;
+  }
+  .bar:before{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: .2rem;
+    content: '';
+    transition: .2s ease all;
+    background: $color-default;
+  }
+  input:focus ~ .bar:before,
+  select:focus ~ .bar:before{
+    width: 100%;
   }
 
 }
@@ -43,7 +62,7 @@
   .mv-control-button-area {
     position: absolute;
     top: 0;
-    right: 0;
+    right: .5rem;
     margin: 0;
     min-width: 4rem;
     font-size: 1.5rem;
@@ -55,20 +74,38 @@
       min-width: 4rem;
       background-color: transparent;
       border: none;
+      outline: none;
     }
+    .mv-btn.active{
+      background-color: $color-light-alt;
+    }
+
   }
 
 }
 
 .mv-control-setup {
   .mv-control-setup-area {
-    display: none;
+    overflow: hidden;
     padding: 1rem .5rem;
     border-top: .2rem solid $color-light-alt;
-    background-color: $color-white;
+    background-color: $color-light-alt;
+    transition: .5s ease all;
 
     &.open{
-      display: block;
+      min-height:inherit;
+      max-height: auto;
+    }
+
+    .ng-animate.open-add,
+    .ng-animate.open-remove-active{
+      height: auto;
+      background-color: #009900;
+    }
+    .ng-animate.open-remove,
+    .ng-animate.open-add-active{
+      height: auto;
+      background-color: #009900;
     }
   }
 }
@@ -95,10 +132,12 @@
   left: 0;
   width: 4rem;
   height: 100%;
-  line-height: 4.2rem;
+  line-height: 2.3rem;
   font-size: 1.5rem;
   text-align: center;
-  background-color: $color-light-alt;
+  color: $color-bright;
+  border-right: .1rem solid $color-light-alt;
+//  background-color: $color-light-alt;
 }
 
 .mv-control-value {
@@ -233,4 +272,22 @@ input.mv-control-input{
       line-height: inherit;
     }
   }
+}
+
+
+/**
+ * Control: Animation
+ * ------------------------------------------------------------------------ */
+.mv-control-setup-area {
+  opacity: 1;
+}
+
+.mv-control-setup-area.ng-hide-add.ng-hide-add-active,
+.mv-control-setup-area.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all  0.3s;
+  transition: all linear 0.3s;
+}
+
+.mv-control-setup-area.ng-hide {
+  opacity: 0;
 }

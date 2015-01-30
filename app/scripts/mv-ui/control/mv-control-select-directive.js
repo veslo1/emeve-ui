@@ -17,8 +17,12 @@ angular.module('mvUi.Control.Select', [
       link: function (scope, iElement, iAttr, ctrl) {
         scope.ngModel = angular.isDefined(scope.ngModel) ? !!scope.ngModel : undefined;
 
+        var barra = angular.element('<div>');
+        barra.addClass('bar');
+
         var control = iElement.find('select');
         control.addClass(scope.generateSubClass('select'));
+        control.after(barra);
 
         if (angular.isDefined(iAttr.label)) {
           var label = iElement.find('label');

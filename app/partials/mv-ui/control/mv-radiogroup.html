@@ -11,7 +11,7 @@
     <i mv-icon name="angle-up" ng-switch-when="true"></i>
   </button>
 </div>
-<ul class="mv-control-setup-area mv-container-fluid" ng-class="{open:setupArea}">
+<ul class="mv-control-setup-area mv-container-fluid" ng-show="setupArea">
   <li ng-repeat="item in options">
     <label for="{{id}}-{{$index}}">
       <mv-row>

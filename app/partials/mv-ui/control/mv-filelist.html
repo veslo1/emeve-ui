@@ -12,7 +12,7 @@
     <i class="mv-icon fa fa-{{btnIcon}}"></i>
   </button>
 </div>
-<div class="mv-control-setup-area" ng-class="{open:setupArea}">
+<div class="mv-control-setup-area" ng-show="setupArea">
   <ul mv-icon-list>
     <li ng-if="files.length>0" ng-repeat="file in files">
       <i mv-icon name="paperclip"></i>

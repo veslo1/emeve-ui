@@ -1995,18 +1995,31 @@ table td[class*="col-"], table th[class*="col-"] {
   display: block;
   position: relative;
   min-height: 4rem;
-  padding: 0 0.5rem 0.5rem 0.5em;
-  margin-bottom: 0.4rem;
-  background-color: #fbfbfb; }
+  padding: 0 0.5rem;
+  margin-bottom: 1rem; }
   .mv-control label {
     display: block;
     min-height: 2rem;
     line-height: 1.5rem;
     padding-top: 0.5rem;
     font-weight: bold;
-    color: #203240; }
+    color: #969696; }
   .mv-control input, .mv-control select, .mv-control textarea {
     outline: none; }
+  .mv-control .bar {
+    position: relative;
+    display: block; }
+  .mv-control .bar:before {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0.2rem;
+    content: '';
+    transition: 0.2s ease all;
+    background: #b4e650; }
+  .mv-control input:focus ~ .bar:before, .mv-control select:focus ~ .bar:before {
+    width: 100%; }
 
 /**
  * Control: Types
@@ -2017,7 +2030,7 @@ table td[class*="col-"], table th[class*="col-"] {
 .mv-control-button .mv-control-button-area, .mv-control-range .mv-control-button-area {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 0.5rem;
   margin: 0;
   min-width: 4rem;
   font-size: 1.5rem; }
@@ -2027,15 +2040,26 @@ table td[class*="col-"], table th[class*="col-"] {
     height: 4rem;
     min-width: 4rem;
     background-color: transparent;
-    border: none; }
+    border: none;
+    outline: none; }
+  .mv-control-button .mv-control-button-area .mv-btn.active, .mv-control-range .mv-control-button-area .mv-btn.active {
+    background-color: #f5f5f5; }
 
 .mv-control-setup .mv-control-setup-area {
-  display: none;
+  overflow: hidden;
   padding: 1rem 0.5rem;
   border-top: 0.2rem solid #f5f5f5;
-  background-color: #fff; }
+  background-color: #f5f5f5;
+  transition: 0.5s ease all; }
   .mv-control-setup .mv-control-setup-area.open {
-    display: block; }
+    min-height: inherit;
+    max-height: auto; }
+  .mv-control-setup .mv-control-setup-area .ng-animate.open-add, .mv-control-setup .mv-control-setup-area .ng-animate.open-remove-active {
+    height: auto;
+    background-color: #009900; }
+  .mv-control-setup .mv-control-setup-area .ng-animate.open-remove, .mv-control-setup .mv-control-setup-area .ng-animate.open-add-active {
+    height: auto;
+    background-color: #009900; }
 
 .mv-control-range .mv-control-button-area .mv-btn {
   height: 2.2rem; }
@@ -2050,10 +2074,11 @@ table td[class*="col-"], table th[class*="col-"] {
   left: 0;
   width: 4rem;
   height: 100%;
-  line-height: 4.2rem;
+  line-height: 2.3rem;
   font-size: 1.5rem;
   text-align: center;
-  background-color: #f5f5f5; }
+  color: #969696;
+  border-right: 0.1rem solid #f5f5f5; }
 
 .mv-control-value {
   display: block;
@@ -2138,6 +2163,19 @@ input.mv-control-input, input.mv-control-select, input.mv-control-info {
     .mv-control-messages li .mv-icon {
       color: inherit;
       line-height: inherit; }
+
+/**
+ * Control: Animation
+ * ------------------------------------------------------------------------ */
+.mv-control-setup-area {
+  opacity: 1; }
+
+.mv-control-setup-area.ng-hide-add.ng-hide-add-active, .mv-control-setup-area.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all 0.3s;
+  transition: all linear 0.3s; }
+
+.mv-control-setup-area.ng-hide {
+  opacity: 0; }
 
 .caret {
   display: inline-block;

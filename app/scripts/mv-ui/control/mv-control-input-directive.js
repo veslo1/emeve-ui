@@ -17,8 +17,12 @@ angular.module('mvUi.Control.Input', [
       link: function (scope, iElement, iAttr, ctrl) {
         scope.ngModel = angular.isDefined(scope.ngModel) ? !!scope.ngModel : undefined;
 
+        var barra = angular.element('<div>');
+        barra.addClass('bar');
+
         var input = iElement.find('input');
         input.addClass(scope.generateSubClass('input'));
+        input.after(barra);
 
         if(angular.isDefined(iAttr.label)){
           var label = iElement.find('label');
