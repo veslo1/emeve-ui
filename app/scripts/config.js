@@ -19,7 +19,10 @@ var mvUi = angular.module('mvUi.Config', [])
           }
         },
         editor:{
-          cssClass: 'mv-editor'
+          cssClass: 'mv-editor',
+          options : {
+            language: 'pt_br'
+          }
         },
         icon: {
           cssClass: 'mv-icon',
