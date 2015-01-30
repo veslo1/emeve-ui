@@ -8,19 +8,11 @@ angular.module('mvUi.Control.Input', [
     return {
       restrict: 'A',
       template: $templateCache.get('mv-ui/control/mv-input.html'),
-      //require:['?^ngModel'],
-      scope: {
-        //ngModel: '='
-      },
+      scope: {},
       transclude: true,
-      controller:'MVControlController',
-      link: function (scope, iElement, iAttr, ctrl,transclude) {
-        //scope.ngModel = angular.isDefined(scope.ngModel) ? scope.ngModel : undefined;
+      controller: 'MVControlController',
+      link: function (scope, iElement, iAttr, ctrl, transclude) {
 
-        //var ngModelController = ctrl[0];
-        //ngModelController.$render = function(){
-        //  return ngModelController.$modelValue
-        //}
         var barra = angular.element('<div>');
         barra.addClass('bar');
 
@@ -28,13 +20,13 @@ angular.module('mvUi.Control.Input', [
         input.addClass(scope.generateSubClass('input'));
         input.after(barra);
 
-        if(angular.isDefined(iAttr.label)){
+        if (angular.isDefined(iAttr.label)) {
           var label = iElement.find('label');
-          label.attr('for',input.attr('id'));
+          label.attr('for', input.attr('id'));
         }
 
 
-        scope.init(iElement,[]);
+        scope.init(iElement, []);
       }
     };
   }])
