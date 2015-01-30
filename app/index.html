@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="bower_components/FroalaWysiwygEditor/css/froala_style.min.css" />
   <link rel="stylesheet" href="bower_components/FroalaWysiwygEditor/css/font-awesome.min.css" />
   <!-- endbower -->
+  <!--@todo remove froala fontawesome from compilation-->
   <!-- endbuild -->
   <!-- tool:css({.tmp,app}) mv-ui.css -->
   <link rel="stylesheet" href="styles/main.css"/>
@@ -83,6 +84,7 @@
               <strong>Formulário</strong>
               <ul>
                 <li><a href="#/control">Control</a></li>
+                <li><a href="#/editor">Editor</a></li>
               </ul>
             </li>
           </ul>
@@ -123,7 +125,9 @@
   <script src="bower_components/FroalaWysiwygEditor/js/plugins/char_counter.min.js"></script>
   <script src="bower_components/angular-froala/src/angular-froala.js"></script>
   <!-- endbower -->
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/angular-i18n/angular-locale_pt-br.js"></script>
+  <script src="bower_components/FroalaWysiwygEditor/js/langs/pt_br.js"></script>
   <!-- endbuild -->
 
   <!-- tool:js({.tmp,app}) mv-ui.js -->
@@ -131,16 +135,16 @@
   <script src="scripts/app.js"></script>
   <script src="scripts/config.js"></script>
   <script src="scripts/templates.js"></script>
-  <script src="scripts/mv-ui/mv-control.js"></script>
+  <script src="scripts/demo/demo-controllers.js"></script>
+  <script src="scripts/demo/demo.js"></script>
   <script src="scripts/mv-ui/mv-progess.js"></script>
   <script src="scripts/mv-ui/mv-switch.js"></script>
   <script src="scripts/mv-ui/mv-tooltip.js"></script>
-  <script src="scripts/demo/demo-controllers.js"></script>
-  <script src="scripts/demo/demo.js"></script>
   <script src="scripts/mv-ui/control/mv-control-checklist-directive.js"></script>
   <script src="scripts/mv-ui/control/mv-control-controller.js"></script>
   <script src="scripts/mv-ui/control/mv-control-date-directive.js"></script>
   <script src="scripts/mv-ui/control/mv-control-directive.js"></script>
+  <script src="scripts/mv-ui/control/mv-control-editor-directive.js"></script>
   <script src="scripts/mv-ui/control/mv-control-file-directive.js"></script>
   <script src="scripts/mv-ui/control/mv-control-info-directive.js"></script>
   <script src="scripts/mv-ui/control/mv-control-input-directive.js"></script>
@@ -149,6 +153,7 @@
   <script src="scripts/mv-ui/control/mv-control-service.js"></script>
   <script src="scripts/mv-ui/control/mv-control-time-directive.js"></script>
   <script src="scripts/mv-ui/control/mv-control-toggle-directive.js"></script>
+  <script src="scripts/mv-ui/form/mv-form-directive.js"></script>
   <script src="scripts/mv-ui/core/mv-btn-checkbox-directive.js"></script>
   <script src="scripts/mv-ui/core/mv-btn-directive.js"></script>
   <script src="scripts/mv-ui/core/mv-btn-group-directive.js"></script>
@@ -157,16 +162,15 @@
   <script src="scripts/mv-ui/core/mv-icon-directive.js"></script>
   <script src="scripts/mv-ui/core/mv-icon-list-directive.js"></script>
   <script src="scripts/mv-ui/core/mv-icon-stack-directive.js"></script>
+  <script src="scripts/mv-ui/menu/mv-dropdown-directive.js"></script>
+  <script src="scripts/mv-ui/menu/mv-dropdown-header-directive.js"></script>
+  <script src="scripts/mv-ui/menu/mv-paginator-directive.js"></script>
   <script src="scripts/mv-ui/layout/mv-col-directive.js"></script>
   <script src="scripts/mv-ui/layout/mv-container-directive.js"></script>
   <script src="scripts/mv-ui/layout/mv-grid-service.js"></script>
   <script src="scripts/mv-ui/layout/mv-item-directive.js"></script>
   <script src="scripts/mv-ui/layout/mv-list-directive.js"></script>
   <script src="scripts/mv-ui/layout/mv-row-directive.js"></script>
-  <script src="scripts/mv-ui/form/mv-form-directive.js"></script>
-  <script src="scripts/mv-ui/menu/mv-dropdown-directive.js"></script>
-  <script src="scripts/mv-ui/menu/mv-dropdown-header-directive.js"></script>
-  <script src="scripts/mv-ui/menu/mv-paginator-directive.js"></script>
   <script src="scripts/mv-ui/table/mv-table-directive.js"></script>
   <script src="scripts/mv-ui/window/mv-modal-body-directive.js"></script>
   <script src="scripts/mv-ui/window/mv-modal-directive.js"></script>

@@ -5,6 +5,7 @@ var mvUi = angular.module('mvUi', [
   'ngSanitize',
   'ngTouch',
   'ngMessages',
+  'froala',
   'mvUi.Config',
   'mvUi.Template',
   'mvUi.Core.Icon',
@@ -28,8 +29,21 @@ var mvUi = angular.module('mvUi', [
   'mvUi.Window.ModalBody',
   'mvUi.Window.ModalFooter',
   'mvUi.Form.Form',
-  'mvUi.Control', //review
+  'mvUi.Control.Service',
+  'mvUi.Control.Controller',
+  'mvUi.Control.Toggle',
+  'mvUi.Control.Info',
+  'mvUi.Control.Input',
+  'mvUi.Control.Select',
+  'mvUi.Control.Checklist',
+  'mvUi.Control.Radiogroup',
+  'mvUi.Control.File',
+  'mvUi.Control.Date',
+  'mvUi.Control.Time',
+  'mvUi.Control.Editor'
+  //'mvUi.Control', //review
   //'mvUi.Tooltip', //review
   //'mvUi.Progress', // review
   //'mvUi.Switch' //review
-]).constant("Modernizr", Modernizr);
+])
+  .constant("Modernizr", Modernizr);

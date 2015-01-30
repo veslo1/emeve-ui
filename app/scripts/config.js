@@ -18,6 +18,9 @@ var mvUi = angular.module('mvUi.Config', [])
             cssClass:'mv-control-toggle'
           }
         },
+        editor:{
+          cssClass: 'mv-editor'
+        },
         icon: {
           cssClass: 'mv-icon',
           default: {
@@ -117,6 +120,9 @@ var mvUi = angular.module('mvUi.Config', [])
             }
           }
         }
+      },
+      i18n:{
+        default: 'pt_br'
       }
     };
 

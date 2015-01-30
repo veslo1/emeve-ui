@@ -19,6 +19,10 @@ angular.module('EmeveUiApp.Route', ['ngRoute', 'ngAnimate'])
         templateUrl: 'views/form-control.html',
         controller: 'FormController'
       })
+      .when('/editor', {
+        templateUrl: 'views/editor.html',
+        controller: 'EditorController'
+      })
       .when('/icon', {
         templateUrl: 'views/icon.html',
         controller: 'IconController'
