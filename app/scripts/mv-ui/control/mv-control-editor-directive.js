@@ -13,6 +13,7 @@ angular.module('mvUi.Control.Editor', [
       scope: {
         icon: '@',
         btnIcon: '@',
+        description: '@',
         inlineMode: '@',
         ngModel: '=',
         options: '=?'

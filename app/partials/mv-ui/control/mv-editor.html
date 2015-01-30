@@ -1,10 +1,6 @@
 <i mv-icon name="{{icon}}" ng-if="enableIcon"></i>
 <label>{{label}}</label>
-<span class="mv-control-value" ng-switch="inlineMode">
-  Toolbar:
-  <span ng-switch-when="true">off</span>
-  <span ng-switch-when="false">on</span>
-</span>
+<span class="mv-control-value">{{description}}</span>
 <div class="mv-control-button-area">
   <button mv-btn type="button" ng-class="{'active': !inlineMode}"
           ng-click="toogleToolbarMode($event)">
