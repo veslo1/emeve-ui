@@ -36,7 +36,10 @@ angular.module('EmeveUiApp.Controller', [])
 
       $scope.icons = [];
       $scope.error = false;
-      $scope.criterio = '';
+
+      $scope.query = {
+        criterio: ''
+      };
 
 
       $http.get('data/icons.json')
@@ -69,7 +72,7 @@ angular.module('EmeveUiApp.Controller', [])
       active: true,
       colorPerfil: {},
       colorFav: [],
-      review:''
+      review: ''
     };
     // Número da sala de prova
     //$scope.mvFormData = {

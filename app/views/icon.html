@@ -140,34 +140,3 @@
   </span>
 
 </section>
-
-
-<section class="demo-section">
-  <header>
-    <h1>Lista</h1>
-  </header>
-  <p>Incorporado ícones do projeto
-    <a href="http://fortawesome.github.io/Font-Awesome/examples/" target="_blank">
-      FontAwesome 4.0.2.
-    </a>
-  </p>
-</section>
-<form novalidate="novalidate" id="listIcons">
-
-  <input label="Pesquisar" id="mvf-criterio" name="criterio" icon="search"
-         placeholder="Qual item você gostaria de ver?"
-         ng-model="criterio"/>
-  <hr/>
-<mv-container>
-  <mv-row>
-    <div class="mv-col sm-10 md-4 item-icon" ng-repeat="icon in icons | filter: criterio">
-      <i mv-icon name="{{icon.id}}" zoom="3x"></i>
-      <span>{{icon.name}}</span>
-      <i>{{icon.id}}</i>
-    </div>
-  </mv-row>
-  <div class="" ng-if="0">
-    Erro ao Carregar
-  </div>
-</mv-container>
-</form>
