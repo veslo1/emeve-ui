@@ -2,7 +2,7 @@
 <label>{{label}}</label>
 <span class="mv-control-value">{{description}}</span>
 <div class="mv-control-button-area">
-  <button mv-btn type="button" ng-class="{'active': !inlineMode}"
+  <button mv-btn type="button" ng-class="{'active': !inlineMode}" ng-if="setupArea"
           ng-click="toogleToolbarMode($event)">
     <i class="mv-icon fa fa-wrench"></i>
   </button>
