@@ -19,3 +19,11 @@ gulp.task('deploy:compile-zf2', function () {
     'init_autoloader.php'
   ]).pipe(gulp.dest('./' + dirBuild));
 });
+
+
+
+gulp.task('deploy:compile-project', [
+  'deploy:compile-prepare',
+  'build'
+]);
+

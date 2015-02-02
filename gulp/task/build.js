@@ -11,6 +11,7 @@ gulp.task('build', [
     'build:inject',
     'build:reference',
     'build:template',
+    'build:script',
     'tool:img',
     'font'
 ]);
