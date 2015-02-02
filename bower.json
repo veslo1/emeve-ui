@@ -6,7 +6,7 @@
   "authors": [
     "Marcus Vinicius <marcusvy@gmail.com>"
   ],
-  "description": "mvUi is a framework for developing responsive, mobile first web projects",
+  "description": "Emeve UI is a user interface for developing responsive, mobile first web projects",
   "keywords": [
     "emeve",
     "mvinicius",
@@ -43,8 +43,8 @@
     "angular-touch": "~1.3.x",
     "angular-route": "~1.3.x",
     "angular-i18n": "~1.3.x",
-    "angular-froala": "~1.2.5",
     "json3": "~3.3.1",
+    "angular-froala": "~1.2.5",
     "es5-shim": "~3.1.0",
     "normalize-scss": "~3.0.1",
     "fontawesome": "~4.2.0"
