@@ -5,7 +5,7 @@ angular.module('mvUi.Table.Table', [
     'mvConfigService',
     function (mvConfig) {
       return {
-        retrict: 'A',
+        restrict: 'A',
         scope: {},
         link: function (scope, iElement, iAttrs) {
           var componentConfig = mvConfig.config.component.table;

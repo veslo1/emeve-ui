@@ -16,7 +16,7 @@ angular.module('mvUi.Core.IconList', [
           var itemList = iElement.children();
 
           angular.forEach(itemList, function (item) {
-            var icon = angular.element(item.firstChild);
+            var icon = angular.element(item.children[0]);
             if (icon.hasClass(scope.prefix) && !icon.hasClass(scope.prefix + '-li')) {
               icon.addClass(scope.prefix + '-li');
             }

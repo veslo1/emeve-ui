@@ -23,84 +23,82 @@
 </head>
 
 <body  ng-app="EmeveUiApp">
+  <aside id="mainNav">
+    <button ng-click="open($event)" accesskey="2"
+            demo-btn-menu ng-class="{active: opened}">
+      <i class="fa fa-bars"></i> Menu
+    </button>
+    <ul demo-menu ng-show="opened">
+      <li>
+        <strong>CSS</strong>
+        <ul>
+          <li><a href="#/divisores">Divisores</a></li>
+          <li><a href="#/typography">Tipografia</a></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Layout</strong>
+        <ul>
+          <li><a href="#/grid">Grade</a></li>
+          <li><a href="#/list">Lista</a></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Componentes</strong>
+        <ul>
+          <li><a href="#/button">Botões</a></li>
+          <li><a href="#/icon">Ícones</a></li>
+          <li><a href="#/form">Formulário</a></li>
+          <li><a href="#/table">Tabelas</a></li>
+        </ul>
+      </li>
+      <!--<li>-->
+      <!--<strong>Flexível</strong>-->
+      <!--<ul>-->
+      <!--<li><a href="#/switch">Switch*</a></li>-->
+      <!--<li><a href="#/">Aba</a></li>-->
+      <!--<li><a href="#/">Acordeão</a></li>-->
+      <!--</ul>-->
+      <!--</li>-->
+      <li>
+        <strong>Menu</strong>
+        <ul>
+          <li><a href="#/dropdown">Dropdown</a></li>
+          <li><a href="#/paginator">Paginator</a></li>
+          <!--<li><a href="#/">Toolbar</a></li> <!-- (X) cancelado -->
+        </ul>
+      </li>
+      <li>
+        <strong>Janelas</strong>
+        <ul>
+          <li><a href="#/modal">Modal</a></li>
+          <!--<li><a href="#/">Notificação</a></li>-->
+          <!--<li><a href="#/tooltip">Tooltip</a></li>-->
+        </ul>
+      </li>
+      <li>
+        <strong>Formulário</strong>
+        <ul>
+          <li><a href="#/control">Control</a></li>
+          <li><a href="#/editor">Editor</a></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Recursos</strong>
+        <ul>
+          <li><a href="#/iconlist">Lista de icones</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+
   <header id="mainHeader">
     <a href="/index.html"><img src="images/logo-emeveui.png" alt=""/></a>
-    <h2 class="text-center">Supremacia em cada detalhe</h2>
+    <h3 class="text-center">Supremacia em cada detalhe</h3>
   </header>
 
-  <mv-container mode="static">
-    <mv-row>
-      <mv-col size="{xs:12,sm:3}">
-        <aside id="mainNav">
-          <ul>
-            <li>
-              <strong>CSS</strong>
-              <ul>
-                <li><a href="#/divisores">Divisores</a></li>
-                <li><a href="#/typography">Tipografia</a></li>
-              </ul>
-            </li>
-            <li>
-              <strong>Layout</strong>
-              <ul>
-                <li><a href="#/grid">Grade</a></li>
-                <li><a href="#/list">Lista</a></li>
-              </ul>
-            </li>
-            <li>
-              <strong>Componentes</strong>
-              <ul>
-                <li><a href="#/button">Botões</a></li>
-                <li><a href="#/icon">Ícones</a></li>
-                <li><a href="#/form">Formulário</a></li>
-                <li><a href="#/table">Tabelas</a></li>
-              </ul>
-            </li>
-            <!--<li>-->
-            <!--<strong>Flexível</strong>-->
-            <!--<ul>-->
-            <!--<li><a href="#/switch">Switch*</a></li>-->
-            <!--<li><a href="#/">Aba</a></li>-->
-            <!--<li><a href="#/">Acordeão</a></li>-->
-            <!--</ul>-->
-            <!--</li>-->
-            <li>
-              <strong>Menu</strong>
-              <ul>
-                <li><a href="#/dropdown">Dropdown</a></li>
-                <li><a href="#/paginator">Paginator</a></li>
-                <!--<li><a href="#/">Toolbar</a></li> <!-- (X) cancelado -->
-              </ul>
-            </li>
-            <li>
-              <strong>Janelas</strong>
-              <ul>
-                <li><a href="#/modal">Modal</a></li>
-                <!--<li><a href="#/">Notificação</a></li>-->
-                <!--<li><a href="#/tooltip">Tooltip</a></li>-->
-              </ul>
-            </li>
-            <li>
-              <strong>Formulário</strong>
-              <ul>
-                <li><a href="#/control">Control</a></li>
-                <li><a href="#/editor">Editor</a></li>
-              </ul>
-            </li>
-            <li>
-              <strong>Recursos</strong>
-              <ul>
-                <li><a href="#/iconlist">Lista de icones</a></li>
-              </ul>
-            </li>
-          </ul>
-        </aside>
-      </mv-col>
-      <mv-col size="{xs:12,sm:9}">
-        <section id="mainContent" ng-view=""></section>
-      </mv-col>
-    </mv-row>
-  </mv-container>
+  <section id="mainContent" ng-view="" class="mv-container"></section>
+
 
   <!-- tool:js({.,app}) scripts/oldieshim.js -->
   <!--[if lt IE 9]>
@@ -142,6 +140,8 @@
   <script src="scripts/config.js"></script>
   <script src="scripts/templates.js"></script>
   <script src="scripts/demo/demo-controllers.js"></script>
+  <script src="scripts/demo/demo-menu.js"></script>
+  <script src="scripts/demo/demo-route.js"></script>
   <script src="scripts/demo/demo.js"></script>
   <script src="scripts/mv-ui/mv-progess.js"></script>
   <script src="scripts/mv-ui/mv-switch.js"></script>

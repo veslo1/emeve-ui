@@ -1,6 +1,6 @@
 {
   "name": "emeve-ui",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "mvUi is a framework for developing responsive, mobile first web projects",
   "main": "gulpfile.js",
   "repository": {

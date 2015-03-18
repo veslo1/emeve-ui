@@ -1,3 +1,4 @@
+@import "variables";
 body{
 
 }
@@ -17,13 +18,40 @@ body{
 }
 
 #mainNav{
+  background-color: $color-light;
+
+  button{
+    display: block;
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: 1px solid $color-light;
+    background-color: transparent;
+
+    &.active{
+      color: $color-warning;
+    }
+  }
+
   ul{
     list-style: none;
-    padding: 1rem 0;
+    padding: 1rem;
+    overflow: hidden;
 
     li{
+      position: relative;
       display: block;
+      width: 25%;
+      min-height: 14rem;
+      float: left;
       text-transform: uppercase;
+    }
+
+    li li{
+      min-height: 2rem;
+      width: 100%;
     }
   }
 
@@ -87,6 +115,8 @@ body{
     text-align: center;
   }
 }
+
+
 
 @media (min-width: 720px){
   #mainHeader{

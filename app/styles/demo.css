@@ -8,20 +8,41 @@
   #mainHeader h2 {
     margin-top: -0.1rem; }
 
-#mainNav ul {
-  list-style: none;
-  padding: 1rem 0; }
-  #mainNav ul li {
+#mainNav {
+  background-color: #e6e6e6; }
+  #mainNav button {
     display: block;
-    text-transform: uppercase; }
-#mainNav li li {
-  text-transform: none; }
-#mainNav a {
-  display: block;
-  height: 2rem;
-  line-height: 2em;
-  text-decoration: none;
-  color: #323232; }
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: 1px solid #e6e6e6;
+    background-color: transparent; }
+    #mainNav button.active {
+      color: #ecc22f; }
+  #mainNav ul {
+    list-style: none;
+    padding: 1rem;
+    overflow: hidden; }
+    #mainNav ul li {
+      position: relative;
+      display: block;
+      width: 25%;
+      min-height: 14rem;
+      float: left;
+      text-transform: uppercase; }
+    #mainNav ul li li {
+      min-height: 2rem;
+      width: 100%; }
+  #mainNav li li {
+    text-transform: none; }
+  #mainNav a {
+    display: block;
+    height: 2rem;
+    line-height: 2em;
+    text-decoration: none;
+    color: #323232; }
 
 .test-content {
   width: 100%;
@@ -59,5 +80,6 @@
   #mainHeader img {
     width: auto;
     max-width: 512px;
-    max-height: 100px; }
- }
+    max-height: 100px; } }
+
+/*# sourceMappingURL=demo.css.map */
