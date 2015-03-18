@@ -8,11 +8,11 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- tool:css({.,app}) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/FroalaWysiwygEditor/css/froala_editor.min.css" />
-  <link rel="stylesheet" href="bower_components/FroalaWysiwygEditor/css/froala_content.min.css" />
-  <link rel="stylesheet" href="bower_components/FroalaWysiwygEditor/css/froala_style.min.css" />
-  <link rel="stylesheet" href="bower_components/FroalaWysiwygEditor/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="bower_components/FroalaWysiwygEditor/css/froala_editor.min.css"/>
+  <link rel="stylesheet" href="bower_components/FroalaWysiwygEditor/css/froala_content.min.css"/>
+  <link rel="stylesheet" href="bower_components/FroalaWysiwygEditor/css/froala_style.min.css"/>
+  <link rel="stylesheet" href="bower_components/FroalaWysiwygEditor/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css"/>
   <!-- endbower -->
   <!--@todo remove froala fontawesome from compilation-->
   <!-- endbuild -->
@@ -23,170 +23,174 @@
 </head>
 
 <body ng-app="EmeveUiApp">
-  <aside id="mainNav">
-    <button ng-click="open($event)" accesskey="2"
-            demo-btn-menu ng-class="{active: opened}">
-      <i class="fa fa-bars"></i> Menu
-    </button>
-    <ul demo-menu ng-show="opened">
-      <li>
-        <strong>CSS</strong>
-        <ul>
-          <li><a href="#/divisores">Divisores</a></li>
-          <li><a href="#/typography">Tipografia</a></li>
-        </ul>
-      </li>
-      <li>
-        <strong>Layout</strong>
-        <ul>
-          <li><a href="#/grid">Grade</a></li>
-          <li><a href="#/list">Lista</a></li>
-        </ul>
-      </li>
-      <li>
-        <strong>Componentes</strong>
-        <ul>
-          <li><a href="#/button">Botões</a></li>
-          <li><a href="#/icon">Ícones</a></li>
-          <li><a href="#/form">Formulário</a></li>
-          <li><a href="#/table">Tabelas</a></li>
-        </ul>
-      </li>
-      <!--<li>-->
-      <!--<strong>Flexível</strong>-->
-      <!--<ul>-->
-      <!--<li><a href="#/switch">Switch*</a></li>-->
-      <!--<li><a href="#/">Aba</a></li>-->
-      <!--<li><a href="#/">Acordeão</a></li>-->
-      <!--</ul>-->
-      <!--</li>-->
-      <li>
-        <strong>Menu</strong>
-        <ul>
-          <li><a href="#/dropdown">Dropdown</a></li>
-          <li><a href="#/paginator">Paginator</a></li>
-          <!--<li><a href="#/">Toolbar</a></li> <!-- (X) cancelado -->
-        </ul>
-      </li>
-      <li>
-        <strong>Janelas</strong>
-        <ul>
-          <li><a href="#/modal">Modal</a></li>
-          <!--<li><a href="#/">Notificação</a></li>-->
-          <!--<li><a href="#/tooltip">Tooltip</a></li>-->
-        </ul>
-      </li>
-      <li>
-        <strong>Formulário</strong>
-        <ul>
-          <li><a href="#/control">Control</a></li>
-          <li><a href="#/editor">Editor</a></li>
-        </ul>
-      </li>
-      <li>
-        <strong>Recursos</strong>
-        <ul>
-          <li><a href="#/iconlist">Lista de icones</a></li>
-        </ul>
-      </li>
-    </ul>
-  </aside>
 
-  <header id="mainHeader">
-    <a href="/index.html"><img src="images/logo-emeveui.png" alt=""/></a>
-    <h3 class="text-center">Supremacia em cada detalhe</h3>
-  </header>
+<header id="mainHeader">
+  <a href="/index.html"><img src="images/logo-emeveui.png" alt=""/></a>
 
-  <section id="mainContent" ng-view="" class="mv-container"></section>
+  <h3 class="text-center">Supremacia em cada detalhe</h3>
+</header>
+
+<aside id="mainNav">
+  <button ng-click="open($event)" accesskey="2"
+          demo-btn-menu ng-class="{active: opened}">
+    <i class="fa fa-bars"></i> Menu
+  </button>
+  <ul demo-menu ng-show="opened" class="mv-container">
+    <li>
+      <strong>CSS</strong>
+      <ul>
+        <li><a href="#/divisores">Divisores</a></li>
+        <li><a href="#/typography">Tipografia</a></li>
+      </ul>
+    </li>
+    <li>
+      <strong>Layout</strong>
+      <ul>
+        <li><a href="#/grid">Grade</a></li>
+        <li><a href="#/list">Lista</a></li>
+      </ul>
+    </li>
+    <li>
+      <strong>Componentes</strong>
+      <ul>
+        <li><a href="#/button">Botões</a></li>
+        <li><a href="#/icon">Ícones</a></li>
+        <li><a href="#/form">Formulário</a></li>
+        <li><a href="#/table">Tabelas</a></li>
+      </ul>
+    </li>
+    <!--<li>-->
+    <!--<strong>Flexível</strong>-->
+    <!--<ul>-->
+    <!--<li><a href="#/switch">Switch*</a></li>-->
+    <!--<li><a href="#/">Aba</a></li>-->
+    <!--<li><a href="#/">Acordeão</a></li>-->
+    <!--</ul>-->
+    <!--</li>-->
+    <li>
+      <strong>Menu</strong>
+      <ul>
+        <li><a href="#/dropdown">Dropdown</a></li>
+        <li><a href="#/paginator">Paginator</a></li>
+        <!--<li><a href="#/">Toolbar</a></li> <!-- (X) cancelado -->
+      </ul>
+    </li>
+    <li>
+      <strong>Janelas</strong>
+      <ul>
+        <li><a href="#/modal">Modal</a></li>
+        <!--<li><a href="#/">Notificação</a></li>-->
+        <!--<li><a href="#/tooltip">Tooltip</a></li>-->
+      </ul>
+    </li>
+    <li>
+      <strong>Formulário</strong>
+      <ul>
+        <li><a href="#/control">Control</a></li>
+        <li><a href="#/editor">Editor</a></li>
+      </ul>
+    </li>
+    <li>
+      <strong>Recursos</strong>
+      <ul>
+        <li><a href="#/iconlist">Lista de icones</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
+<a mv-anchor="mainContent" accesskey="1"></a>
+<section id="mainContent" class="mv-container" name="mainContent" ng-view=""></section>
 
 
-  <!-- tool:js({.,app}) scripts/oldieshim.js -->
-  <!--[if lt IE 9]>
-  <script src="bower_components/es5-shim/es5-shim.js"></script>
-  <script src="bower_components/json3/lib/json3.js"></script>
-  <![endif]-->
-  <!-- endbuild -->
+<!-- tool:js({.,app}) scripts/oldieshim.js -->
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.js"></script>
+<![endif]-->
+<!-- endbuild -->
 
-  <!-- tool:js({.,app}) scripts/vendor.js -->
-  <!-- bower:js -->
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/modernizr/modernizr.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-resource/angular-resource.js"></script>
-  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-  <script src="bower_components/angular-animate/angular-animate.js"></script>
-  <script src="bower_components/angular-touch/angular-touch.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/FroalaWysiwygEditor/js/froala_editor.min.js"></script>
-  <script src="bower_components/FroalaWysiwygEditor/js/plugins/block_styles.min.js"></script>
-  <script src="bower_components/FroalaWysiwygEditor/js/plugins/colors.min.js"></script>
-  <script src="bower_components/FroalaWysiwygEditor/js/plugins/media_manager.min.js"></script>
-  <script src="bower_components/FroalaWysiwygEditor/js/plugins/tables.min.js"></script>
-  <script src="bower_components/FroalaWysiwygEditor/js/plugins/video.min.js"></script>
-  <script src="bower_components/FroalaWysiwygEditor/js/plugins/font_family.min.js"></script>
-  <script src="bower_components/FroalaWysiwygEditor/js/plugins/font_size.min.js"></script>
-  <script src="bower_components/FroalaWysiwygEditor/js/plugins/char_counter.min.js"></script>
-  <script src="bower_components/angular-froala/src/angular-froala.js"></script>
-  <!-- endbower -->
-  <script src="bower_components/angular-messages/angular-messages.js"></script>
-  <script src="bower_components/angular-i18n/angular-locale_pt-br.js"></script>
-  <script src="bower_components/FroalaWysiwygEditor/js/langs/pt_br.js"></script>
-  <!-- endbuild -->
+<!-- tool:js({.,app}) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/modernizr/modernizr.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/FroalaWysiwygEditor/js/froala_editor.min.js"></script>
+<script src="bower_components/FroalaWysiwygEditor/js/plugins/block_styles.min.js"></script>
+<script src="bower_components/FroalaWysiwygEditor/js/plugins/colors.min.js"></script>
+<script src="bower_components/FroalaWysiwygEditor/js/plugins/media_manager.min.js"></script>
+<script src="bower_components/FroalaWysiwygEditor/js/plugins/tables.min.js"></script>
+<script src="bower_components/FroalaWysiwygEditor/js/plugins/video.min.js"></script>
+<script src="bower_components/FroalaWysiwygEditor/js/plugins/font_family.min.js"></script>
+<script src="bower_components/FroalaWysiwygEditor/js/plugins/font_size.min.js"></script>
+<script src="bower_components/FroalaWysiwygEditor/js/plugins/char_counter.min.js"></script>
+<script src="bower_components/angular-froala/src/angular-froala.js"></script>
+<!-- endbower -->
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-i18n/angular-locale_pt-br.js"></script>
+<script src="bower_components/FroalaWysiwygEditor/js/langs/pt_br.js"></script>
+<!-- endbuild -->
 
-  <!-- tool:js({.tmp,app}) mv-ui.js -->
-  <!-- mvApp:js -->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/config.js"></script>
-  <script src="scripts/templates.js"></script>
-  <script src="scripts/demo/demo-controllers.js"></script>
-  <script src="scripts/demo/demo-menu.js"></script>
-  <script src="scripts/demo/demo-route.js"></script>
-  <script src="scripts/demo/demo.js"></script>
-  <script src="scripts/mv-ui/mv-progess.js"></script>
-  <script src="scripts/mv-ui/mv-switch.js"></script>
-  <script src="scripts/mv-ui/mv-tooltip.js"></script>
-  <script src="scripts/mv-ui/control/mv-control-checklist-directive.js"></script>
-  <script src="scripts/mv-ui/control/mv-control-controller.js"></script>
-  <script src="scripts/mv-ui/control/mv-control-date-directive.js"></script>
-  <script src="scripts/mv-ui/control/mv-control-directive.js"></script>
-  <script src="scripts/mv-ui/control/mv-control-editor-directive.js"></script>
-  <script src="scripts/mv-ui/control/mv-control-file-directive.js"></script>
-  <script src="scripts/mv-ui/control/mv-control-info-directive.js"></script>
-  <script src="scripts/mv-ui/control/mv-control-input-directive.js"></script>
-  <script src="scripts/mv-ui/control/mv-control-radiogroup-directive.js"></script>
-  <script src="scripts/mv-ui/control/mv-control-select-directive.js"></script>
-  <script src="scripts/mv-ui/control/mv-control-service.js"></script>
-  <script src="scripts/mv-ui/control/mv-control-time-directive.js"></script>
-  <script src="scripts/mv-ui/control/mv-control-toggle-directive.js"></script>
-  <script src="scripts/mv-ui/core/mv-btn-checkbox-directive.js"></script>
-  <script src="scripts/mv-ui/core/mv-btn-directive.js"></script>
-  <script src="scripts/mv-ui/core/mv-btn-group-directive.js"></script>
-  <script src="scripts/mv-ui/core/mv-btn-modal-directive.js"></script>
-  <script src="scripts/mv-ui/core/mv-btn-radio-directive.js"></script>
-  <script src="scripts/mv-ui/core/mv-icon-directive.js"></script>
-  <script src="scripts/mv-ui/core/mv-icon-list-directive.js"></script>
-  <script src="scripts/mv-ui/core/mv-icon-stack-directive.js"></script>
-  <script src="scripts/mv-ui/form/mv-form-directive.js"></script>
-  <script src="scripts/mv-ui/layout/mv-col-directive.js"></script>
-  <script src="scripts/mv-ui/layout/mv-container-directive.js"></script>
-  <script src="scripts/mv-ui/layout/mv-grid-service.js"></script>
-  <script src="scripts/mv-ui/layout/mv-item-directive.js"></script>
-  <script src="scripts/mv-ui/layout/mv-list-directive.js"></script>
-  <script src="scripts/mv-ui/layout/mv-row-directive.js"></script>
-  <script src="scripts/mv-ui/menu/mv-dropdown-directive.js"></script>
-  <script src="scripts/mv-ui/menu/mv-dropdown-header-directive.js"></script>
-  <script src="scripts/mv-ui/menu/mv-paginator-directive.js"></script>
-  <script src="scripts/mv-ui/table/mv-table-directive.js"></script>
-  <script src="scripts/mv-ui/window/mv-modal-body-directive.js"></script>
-  <script src="scripts/mv-ui/window/mv-modal-directive.js"></script>
-  <script src="scripts/mv-ui/window/mv-modal-footer-directive.js"></script>
-  <script src="scripts/mv-ui/window/mv-modal-header-directive.js"></script>
-  <script src="scripts/mv-ui/window/mv-modal-service.js"></script>
-  <!-- endinject -->
-  <!-- endbuild -->
+<!-- tool:js({.tmp,app}) mv-ui.js -->
+<!-- mvApp:js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/config.js"></script>
+<script src="scripts/templates.js"></script>
+<script src="scripts/demo/demo-controllers.js"></script>
+<script src="scripts/demo/demo-menu.js"></script>
+<script src="scripts/demo/demo-route.js"></script>
+<script src="scripts/demo/demo.js"></script>
+<script src="scripts/mv-ui/mv-progess.js"></script>
+<script src="scripts/mv-ui/mv-switch.js"></script>
+<script src="scripts/mv-ui/mv-tooltip.js"></script>
+<script src="scripts/mv-ui/control/mv-control-checklist-directive.js"></script>
+<script src="scripts/mv-ui/control/mv-control-controller.js"></script>
+<script src="scripts/mv-ui/control/mv-control-date-directive.js"></script>
+<script src="scripts/mv-ui/control/mv-control-directive.js"></script>
+<script src="scripts/mv-ui/control/mv-control-editor-directive.js"></script>
+<script src="scripts/mv-ui/control/mv-control-file-directive.js"></script>
+<script src="scripts/mv-ui/control/mv-control-info-directive.js"></script>
+<script src="scripts/mv-ui/control/mv-control-input-directive.js"></script>
+<script src="scripts/mv-ui/control/mv-control-radiogroup-directive.js"></script>
+<script src="scripts/mv-ui/control/mv-control-select-directive.js"></script>
+<script src="scripts/mv-ui/control/mv-control-service.js"></script>
+<script src="scripts/mv-ui/control/mv-control-time-directive.js"></script>
+<script src="scripts/mv-ui/control/mv-control-toggle-directive.js"></script>
+<script src="scripts/mv-ui/core/mv-btn-checkbox-directive.js"></script>
+<script src="scripts/mv-ui/core/mv-btn-directive.js"></script>
+<script src="scripts/mv-ui/core/mv-btn-group-directive.js"></script>
+<script src="scripts/mv-ui/core/mv-btn-modal-directive.js"></script>
+<script src="scripts/mv-ui/core/mv-btn-radio-directive.js"></script>
+<script src="scripts/mv-ui/core/mv-icon-directive.js"></script>
+<script src="scripts/mv-ui/core/mv-icon-list-directive.js"></script>
+<script src="scripts/mv-ui/core/mv-icon-stack-directive.js"></script>
+<script src="scripts/mv-ui/core/mv-anchor-directive.js"></script>
+<script src="scripts/mv-ui/form/mv-form-directive.js"></script>
+<script src="scripts/mv-ui/layout/mv-col-directive.js"></script>
+<script src="scripts/mv-ui/layout/mv-container-directive.js"></script>
+<script src="scripts/mv-ui/layout/mv-grid-service.js"></script>
+<script src="scripts/mv-ui/layout/mv-item-directive.js"></script>
+<script src="scripts/mv-ui/layout/mv-list-directive.js"></script>
+<script src="scripts/mv-ui/layout/mv-row-directive.js"></script>
+<script src="scripts/mv-ui/menu/mv-dropdown-directive.js"></script>
+<script src="scripts/mv-ui/menu/mv-dropdown-header-directive.js"></script>
+<script src="scripts/mv-ui/menu/mv-paginator-directive.js"></script>
+<script src="scripts/mv-ui/table/mv-table-directive.js"></script>
+<script src="scripts/mv-ui/window/mv-modal-body-directive.js"></script>
+<script src="scripts/mv-ui/window/mv-modal-directive.js"></script>
+<script src="scripts/mv-ui/window/mv-modal-footer-directive.js"></script>
+<script src="scripts/mv-ui/window/mv-modal-header-directive.js"></script>
+<script src="scripts/mv-ui/window/mv-modal-service.js"></script>
+<!-- endinject -->
+<!-- endbuild -->
 
-  <!--demostração-->
+<!--demostração-->
 
 
 </body>

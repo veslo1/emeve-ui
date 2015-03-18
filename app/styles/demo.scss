@@ -1,65 +1,69 @@
 @import "variables";
-body{
+
+body {
 
 }
 
-#mainHeader{
+#mainHeader {
   text-align: center;
   background-image: url("../images/cover_emeve.jpg");
   padding-bottom: 1rem;
-  margin-bottom: 1rem;
 
-  img{
+  img {
     width: 100%;
   }
-  h2{
+  h2 {
     margin-top: -0.1rem;
   }
 }
 
-#mainNav{
-  background-color: $color-light;
+#mainNav {
+  color: $color-info;
+  background-image: url("../images/cover_emeve.jpg");
+  border-bottom: 1px solid $color-light;
 
-  button{
+  button {
     display: block;
     width: 100%;
-    height: 3rem;
+    min-height: 3rem;
     line-height: 3rem;
     font-size: 1.5rem;
     border: none;
-    border-bottom: 1px solid $color-light;
+
     background-color: transparent;
 
-    &.active{
+    &.active {
       color: $color-warning;
     }
   }
 
-  ul{
+  ul {
     list-style: none;
     padding: 1rem;
     overflow: hidden;
 
-    li{
+    li {
       position: relative;
       display: block;
-      width: 25%;
-      min-height: 14rem;
+      width: 100%;
       float: left;
       text-transform: uppercase;
     }
 
-    li li{
+    li li {
       min-height: 2rem;
       width: 100%;
     }
   }
 
-  li li{
+  ul ul {
+    padding:1rem 0;
+  }
+  li li {
     text-transform: none;
   }
 
-  a{
+  a {
     display: block;
     height: 2rem;
     line-height: 2em;
@@ -68,10 +72,11 @@ body{
   }
 }
 
-.content{
+.content {
 
 }
-.test-content{
+
+.test-content {
   width: 100%;
   height: 100%;
   min-height: 4rem;
@@ -80,50 +85,67 @@ body{
   background: #ffcaca;
 }
 
-.test{
-  hr{
+.test {
+  hr {
     border: 1px solid #fff;
   }
 }
 
-.demo-section{
+.demo-section {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  header{
+  header {
     padding: 1rem 0;
     margin-bottom: 1rem;
     border-bottom: 1px solid #f5f5f5;
     color: #999;
 
-    h1,h2,h3,h4,h5,h6{
+    h1, h2, h3, h4, h5, h6 {
       color: #9c0;
     }
   }
 }
 
-
-#listIcons{
+#listIcons {
   min-height: 300px;
 }
 
-.item-icon{
+.item-icon {
   min-height: 100px;
   text-align: center;
 
-  span{
+  span {
     display: block;
     text-align: center;
   }
 }
 
-
-
-@media (min-width: 720px){
-  #mainHeader{
-    img{
+@media (min-width: 720px) {
+  #mainHeader {
+    img {
       width: auto;
       max-width: 512px;
       max-height: 100px;
+    }
+  }
+
+  #mainNav {
+    ul {
+      li {
+        width: 33.33%;
+        min-height: 12rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 940px) {
+
+  #mainNav {
+    ul {
+      li {
+        width: 25%;
+      }
     }
   }
 }

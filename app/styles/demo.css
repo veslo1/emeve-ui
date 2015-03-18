@@ -1,23 +1,23 @@
 #mainHeader {
   text-align: center;
   background-image: url("../images/cover_emeve.jpg");
-  padding-bottom: 1rem;
-  margin-bottom: 1rem; }
+  padding-bottom: 1rem; }
   #mainHeader img {
     width: 100%; }
   #mainHeader h2 {
     margin-top: -0.1rem; }
 
 #mainNav {
-  background-color: #e6e6e6; }
+  color: #203240;
+  background-image: url("../images/cover_emeve.jpg");
+  border-bottom: 1px solid #e6e6e6; }
   #mainNav button {
     display: block;
     width: 100%;
-    height: 3rem;
+    min-height: 3rem;
     line-height: 3rem;
     font-size: 1.5rem;
     border: none;
-    border-bottom: 1px solid #e6e6e6;
     background-color: transparent; }
     #mainNav button.active {
       color: #ecc22f; }
@@ -28,13 +28,14 @@
     #mainNav ul li {
       position: relative;
       display: block;
-      width: 25%;
-      min-height: 14rem;
+      width: 100%;
       float: left;
       text-transform: uppercase; }
     #mainNav ul li li {
       min-height: 2rem;
       width: 100%; }
+  #mainNav ul ul {
+    padding: 1rem 0; }
   #mainNav li li {
     text-transform: none; }
   #mainNav a {
@@ -80,6 +81,13 @@
   #mainHeader img {
     width: auto;
     max-width: 512px;
-    max-height: 100px; } }
+    max-height: 100px; }
+
+  #mainNav ul li {
+    width: 33.33%;
+    min-height: 12rem; } }
+@media (min-width: 940px) {
+  #mainNav ul li {
+    width: 25%; } }
 
 /*# sourceMappingURL=demo.css.map */

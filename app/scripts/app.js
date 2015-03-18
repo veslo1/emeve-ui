@@ -8,6 +8,7 @@ var mvUi = angular.module('mvUi', [
   'froala',
   'mvUi.Config',
   'mvUi.Template',
+  'mvUi.Core.Anchor',
   'mvUi.Core.Icon',
   'mvUi.Core.IconList',
   'mvUi.Core.IconStack',

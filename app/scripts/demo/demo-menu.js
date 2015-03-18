@@ -17,18 +17,23 @@ angular.module('EmeveUiApp.Menu', [])
   //Menu Btn toggle
   .directive('demoBtnMenu', [
     'MenuService',
-    function (MenuService) {
+    '$location',
+    '$anchorScroll',
+    function (MenuService, $location, $anchorScroll) {
       return {
         restrict: 'A',
         link: function (scope, iElement, iAttrs) {
           scope.opened = MenuService.getOpened();
 
-          console.log(scope.opened);
           scope.open = function ($event) {
             $event.preventDefault();
+            if(!scope.opened){
+              $location.hash('mainHeader');
+              $anchorScroll();
+            }
+
             scope.opened = !scope.opened;
             MenuService.setOpened(scope.opened);
-            console.log(scope.opened)
           };
         }
       }
@@ -37,7 +42,10 @@ angular.module('EmeveUiApp.Menu', [])
   //Menu Directive
   .directive('demoMenu', [
     'MenuService',
-    function (MenuService) {
+    '$rootScope',
+    '$location',
+    '$anchorScroll',
+    function (MenuService, $rootScope, $location, $anchorScroll) {
       return {
         restrict: 'A',
         link: function (scope, iElement, iAttr) {
@@ -45,6 +53,15 @@ angular.module('EmeveUiApp.Menu', [])
 
           scope.$on('Menu.MenuService.setOpened', function (newValue) {
             scope.opened = MenuService.getOpened();
+          });
+
+          $rootScope.$on('$routeChangeSuccess', function () {
+            MenuService.setOpened(false);
+            $anchorScroll({yOffset: 0});
+          });
+
+          scope.$on('$destroy', function () {
+            MenuService.setOpened(false);
           });
         }
       }
