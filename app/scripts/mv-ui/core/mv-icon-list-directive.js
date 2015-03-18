@@ -10,7 +10,6 @@ angular.module('mvUi.Core.IconList', [
         link: function (scope, iElement, iAttrs) {
           var componentConfig = mvConfig.config.component.icon;
           scope.prefix = angular.isDefined(iAttrs.prefix) ? iAttrs.prefix : componentConfig.default.prefix;
-          //console.log(iAttrs)
           iElement.addClass(scope.prefix + '-ul');
 
           var itemList = iElement.children();
