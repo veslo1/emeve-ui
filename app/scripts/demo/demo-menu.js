@@ -17,9 +17,7 @@ angular.module('EmeveUiApp.Menu', [])
   //Menu Btn toggle
   .directive('demoBtnMenu', [
     'MenuService',
-    '$location',
-    '$anchorScroll',
-    function (MenuService, $location, $anchorScroll) {
+    function (MenuService) {
       return {
         restrict: 'A',
         link: function (scope, iElement, iAttrs) {
@@ -27,11 +25,6 @@ angular.module('EmeveUiApp.Menu', [])
 
           scope.open = function ($event) {
             $event.preventDefault();
-            if(!scope.opened){
-              $location.hash('mainHeader');
-              $anchorScroll();
-            }
-
             scope.opened = !scope.opened;
             MenuService.setOpened(scope.opened);
           };
