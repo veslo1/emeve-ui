@@ -23,7 +23,7 @@ angular.module('mvUi.Core.Btn', [
               iElement.addClass(iAttrs.border);
             }
 
-            // rouded, radius, circle
+            // rouded, radius, circle @todo remove
             if (angular.isDefined(iAttrs.component)) {
               iElement.addClass(componentConfig.default.component);
             }

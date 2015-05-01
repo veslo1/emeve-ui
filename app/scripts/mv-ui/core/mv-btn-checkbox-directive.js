@@ -41,6 +41,7 @@ angular.module('mvUi.Core.BtnCheckbox', [
           });
         });
 
+        //on destroy
       }
     };
   }]);
